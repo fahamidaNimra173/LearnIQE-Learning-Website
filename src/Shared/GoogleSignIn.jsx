@@ -11,12 +11,12 @@ const GoogleSignIn = () => {
     const { signInGoogle } = use(AuthContext);
     const navigate = useNavigate();
     const axiosSecure = AxiosSecure();
-
+   
     const { mutate: saveUser } = useMutation({
         mutationFn: (user) => axiosSecure.post('/users', user),
 
         onSuccess: (res) => {
-            // ✅ Show SweetAlert based on whether user was inserted or already existed
+            //  Show SweetAlert based on whether user was inserted or already existed
             const alreadyExists = res?.data?.inserted === false;
 
             Swal.fire({
