@@ -10,6 +10,7 @@ import Register from '../LayOuts/AuthLayout/Register';
 import DashBoard from '../LayOuts/DashBoard';
 import AllUsers from '../DashBoard/AllUsers/AllUsers';
 import UserProfile from '../Pages/Home/UserProfile/UserProfile';
+import TeacherForm from '../Pages/TeacherForm/TeacherForm';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         Component: Register
       }
       ,
+      {
+        path:'teacherform',
+        Component:TeacherForm
+      }
 
     ]
   },

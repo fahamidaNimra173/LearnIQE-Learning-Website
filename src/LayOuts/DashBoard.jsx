@@ -1,11 +1,11 @@
 import React from 'react';
-import { Outlet, NavLink } from 'react-router'; 
+import { Outlet, NavLink } from 'react-router';
 import { FiMenu, FiHome, FiUser, FiSettings } from 'react-icons/fi';
 
 const DashBoard = () => {
   return (
     <div className="drawer lg:drawer-open">
-     
+
       <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
 
       <div className="drawer-content flex flex-col">
@@ -46,6 +46,11 @@ const DashBoard = () => {
           <li>
             <NavLink to="/dashboard/userprofile" className="flex items-center gap-2">
               <FiSettings /> Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/allteachers" className="flex items-center gap-2">
+              <FiSettings /> Teacher Request
             </NavLink>
           </li>
         </ul>

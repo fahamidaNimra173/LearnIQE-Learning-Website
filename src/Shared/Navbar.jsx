@@ -99,7 +99,7 @@ const NavigationBar = () => {
         <NavLink to="/classes" className="dark:text-white text-white mt-4 text-[15px]">
           All Classes
         </NavLink>
-        <NavLink to="/teach" className="dark:text-white text-white mt-4 text-[15px]">
+        <NavLink to="/teacherform" className="dark:text-white text-white mt-4 text-[15px]">
           Teach On
         </NavLink>
      

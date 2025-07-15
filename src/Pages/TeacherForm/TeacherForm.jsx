@@ -50,11 +50,12 @@ const TeacherForm = () => {
       photoURL: user?.photoURL,
       status: 'pending'
     };
+    console.log(requestData)
     mutate(requestData);
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-base-200 rounded-lg shadow-lg mt-8">
+    <div className="max-w-2xl mx-auto p-6 bg-purple-200 mt-20 rounded-lg shadow-lg  text-black text-[20px] font-semibold">
       <h2 className="text-2xl font-bold text-center mb-6 text-purple-700">Apply to Teach</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -66,7 +67,7 @@ const TeacherForm = () => {
             type="text"
             className="input w-full bg-white text-black input-bordered"
             defaultValue={user?.displayName}
-            readOnly
+          
           />
         </div>
 
