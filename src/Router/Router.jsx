@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   createBrowserRouter,
-  
+
 } from "react-router";
 import Root from '../LayOuts/Root';
 import Home from '../Pages/Home/Home';
@@ -15,37 +15,38 @@ import UserProfile from '../Pages/Home/UserProfile/UserProfile';
 const router = createBrowserRouter([
   {
     path: "/",
-    Component:Root,
-    children:[
-        {
-            index:true,
-            Component:Home
-        },
-        {
-          path:'login',
-          Component:Login
-        },
-        {
-          path:'register',
-          Component:Register
-        }
-        ,
-        {
-          path:'userprofile',
-          Component:UserProfile
-        }
+    Component: Root,
+    children: [
+      {
+        index: true,
+        Component: Home
+      },
+      {
+        path: 'login',
+        Component: Login
+      },
+      {
+        path: 'register',
+        Component: Register
+      }
+      ,
+
     ]
   },
   {
-    path:'/dashboard',
-    Component:DashBoard,
-    children:[
+    path: '/dashboard',
+    Component: DashBoard,
+    children: [
       {
-        path:'users',
-        Component:AllUsers
+        path: 'users',
+        Component: AllUsers
+      },
+      {
+        path: 'userprofile',
+        Component: UserProfile
       }
     ]
-  
+
   }
 ]);
 
