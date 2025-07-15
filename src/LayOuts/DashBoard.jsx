@@ -44,7 +44,7 @@ const DashBoard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/settings" className="flex items-center gap-2">
+            <NavLink to="/dashboard/userprofile" className="flex items-center gap-2">
               <FiSettings /> Profile
             </NavLink>
           </li>
