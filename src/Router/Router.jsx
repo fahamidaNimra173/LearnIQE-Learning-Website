@@ -12,6 +12,8 @@ import AllUsers from '../DashBoard/AllUsers/AllUsers';
 import UserProfile from '../Pages/Home/UserProfile/UserProfile';
 import TeacherForm from '../Pages/TeacherForm/TeacherForm';
 import TeacherRequest from '../DashBoard/TeacherRequests/TeacherRequests';
+import AddClass from '../DashBoard/TeacherDashBoard/AddClass/AddClass';
+import Myclass from '../DashBoard/TeacherDashBoard/MyClass/Myclass';
 
 
 const router = createBrowserRouter([
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
       {
         path:'teachersrequest',
         Component:TeacherRequest
+      },
+      {
+        path:'addclass',
+        Component:AddClass
+      },
+      {
+        path:'myclass',
+        Component:Myclass
       }
     ]
 

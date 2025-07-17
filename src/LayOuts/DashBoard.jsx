@@ -53,7 +53,17 @@ const DashBoard = () => {
               <FiSettings /> Teacher Request
             </NavLink>
           </li>
-                    <li>
+          <li>
+            <NavLink to="/dashboard/addclass" className="flex items-center gap-2">
+              <FiSettings /> Add Class
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/myclass" className="flex items-center gap-2">
+              <FiSettings /> My Class
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/" className="flex items-center gap-2">
               <FiSettings /> Home
             </NavLink>
