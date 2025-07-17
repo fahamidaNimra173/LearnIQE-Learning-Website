@@ -14,6 +14,7 @@ import TeacherForm from '../Pages/TeacherForm/TeacherForm';
 import TeacherRequest from '../DashBoard/TeacherRequests/TeacherRequests';
 import AddClass from '../DashBoard/TeacherDashBoard/AddClass/AddClass';
 import Myclass from '../DashBoard/TeacherDashBoard/MyClass/Myclass';
+import AllClasses from '../DashBoard/AllClassRequests/AllClasses';
 
 
 const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path:'myclass',
         Component:Myclass
+      },
+            {
+        path:'allclasses',
+        Component:AllClasses
       }
     ]
 
