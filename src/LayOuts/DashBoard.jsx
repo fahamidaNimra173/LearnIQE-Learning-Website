@@ -49,8 +49,13 @@ const DashBoard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/allteachers" className="flex items-center gap-2">
+            <NavLink to="/dashboard/teachersrequest" className="flex items-center gap-2">
               <FiSettings /> Teacher Request
+            </NavLink>
+          </li>
+                    <li>
+            <NavLink to="/" className="flex items-center gap-2">
+              <FiSettings /> Home
             </NavLink>
           </li>
         </ul>

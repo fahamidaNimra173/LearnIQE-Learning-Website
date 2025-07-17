@@ -11,6 +11,7 @@ import DashBoard from '../LayOuts/DashBoard';
 import AllUsers from '../DashBoard/AllUsers/AllUsers';
 import UserProfile from '../Pages/Home/UserProfile/UserProfile';
 import TeacherForm from '../Pages/TeacherForm/TeacherForm';
+import TeacherRequest from '../DashBoard/TeacherRequests/TeacherRequests';
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: 'userprofile',
         Component: UserProfile
+      },
+      {
+        path:'teachersrequest',
+        Component:TeacherRequest
       }
     ]
 
