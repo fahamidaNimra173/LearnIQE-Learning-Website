@@ -16,7 +16,7 @@ const TeacherForm = () => {
   const {
     register,
     handleSubmit,
-    reset,
+    // reset,
     formState: { errors }
   } = useForm();
 
@@ -61,7 +61,7 @@ const TeacherForm = () => {
         confirmButtonColor: '#8b5cf6'
       });
       refetch();
-      reset();
+      // reset();
       setIsRejected(false);
     },
     onError: () => {
