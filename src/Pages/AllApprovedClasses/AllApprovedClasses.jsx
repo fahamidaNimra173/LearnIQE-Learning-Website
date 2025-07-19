@@ -1,10 +1,13 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import AxiosSecure from '../../Axios/AxiosSecure';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const AllApprovedClasses = () => {
   const axiosSecure = AxiosSecure();
+  const navigate=useNavigate()
 
   const { data: classes = [], isLoading } = useQuery({
     queryKey: ['approvedClasses'],
@@ -15,6 +18,12 @@ const AllApprovedClasses = () => {
   });
 
   if (isLoading) return <div className="text-center py-10 font-bold">Loading...</div>;
+
+
+  const handleEnrollment=(id)=>{
+    console.log('this button is clicked for this:',id)
+    navigate(`/classdetails/${id}`)
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-30">
@@ -50,7 +59,9 @@ const AllApprovedClasses = () => {
               <p className="text-sm text-gray-700 mb-3">
                 <span className="font-semibold">Total Enrolled:</span> {cls.totalEnroll || 0}
               </p>
-              <button className="btn btn-primary w-full mt-auto">Enroll</button>
+              <button 
+              onClick={()=>handleEnrollment(cls._id)}
+              className="btn btn-primary w-full mt-auto">Enroll</button>
             </div>
           </div>
         ))}
