@@ -15,6 +15,7 @@ import TeacherRequest from '../DashBoard/TeacherRequests/TeacherRequests';
 import AddClass from '../DashBoard/TeacherDashBoard/AddClass/AddClass';
 import Myclass from '../DashBoard/TeacherDashBoard/MyClass/Myclass';
 import AllClasses from '../DashBoard/AllClassRequests/AllClasses';
+import AllApprovedClasses from '../Pages/AllApprovedClasses/AllApprovedClasses';
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path:'teacherform',
         Component:TeacherForm
+      },
+      {
+        path:'allapprovedclasses',
+        Component:AllApprovedClasses
       }
 
     ]
