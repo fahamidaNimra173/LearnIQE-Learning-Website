@@ -1,7 +1,8 @@
-import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js';
-import { useQuery } from '@tanstack/react-query';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import React, { use } from 'react';
 import { useParams } from 'react-router';
+import Swal from 'sweetalert2';
 import AxiosSecure from '../../Axios/AxiosSecure';
 import { AuthContext } from '../../Context/AuthContext';
 
@@ -9,11 +10,10 @@ const PaymentForm = () => {
 
     const stripe = useStripe();
     const elements = useElements();
-    const { id: courceId } = useParams()
-    const axiosSecure = AxiosSecure()
-    const { user } = use(AuthContext)
-     const studentName=user.displayName
-
+    const { id: courceId } = useParams();
+    const axiosSecure = AxiosSecure();
+    const { user } = use(AuthContext);
+    const studentName = user.displayName;
 
     const { data: course, isLoading, error } = useQuery({
         queryKey: ['courseDetails', courceId],
@@ -23,28 +23,30 @@ const PaymentForm = () => {
             return res.data;
         }
     });
-     const amount = course.price * 100;
-     console.log(amount)
 
+    const amount = course?.price * 100;
 
-    if (isLoading) return <div className="text-center py-10 font-bold">Loading...</div>;
-    if (error) return <div className="text-center py-10 text-red-500">Failed to load course details</div>;
+    //  Mutation to post enrollment
+    const postEnrollment = useMutation({
+        mutationFn: (enrollmentData) => axiosSecure.post('/enrollment', enrollmentData),
+    });
+
+    //  Mutation to update totalEnroll count; the enrollment will increase from backend
+    const updateTotalEnroll = useMutation({
+        mutationFn: () => axiosSecure.patch(`/cources/${courceId}/increment-enroll`),
+    });
+
     const handleSubmit = async (event) => {
-
         event.preventDefault();
 
         if (!stripe || !elements) {
-
             return;
         }
 
-
         const card = elements.getElement(CardElement);
-
         if (card == null) {
             return;
         }
-
 
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
@@ -57,37 +59,58 @@ const PaymentForm = () => {
             console.log('[PaymentMethod]', paymentMethod);
         }
 
-
         const res = await axiosSecure.post('/create-payment-intent', {
-             amount,
+            amount,
             courceId
-        })
-        console.log(res)
-        const clientSecret = res.data.clientSecret;
-        const result = await stripe.confirmCardPayment( clientSecret,{
-           
-            
-            payment_method: {
-               card:elements.getElement(CardElement),
-               billing_details:{
-                name:studentName,
-
-               }
-            },
-            
         });
-        console.log('res from intent',res)
-        if(result.error){
-            console.log(result.error.message)
-        }
-        else{
-            if(result.paymentIntent.status==='succeeded'){
-                console.log('payment succeeded!')
+
+        const clientSecret = res.data.clientSecret;
+
+        const result = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: elements.getElement(CardElement),
+                billing_details: {
+                    name: studentName,
+                }
+            },
+        });
+
+        if (result.error) {
+            console.log(result.error.message);
+        } else {
+            if (result.paymentIntent.status === 'succeeded') {
+                console.log('payment succeeded!');
+
+                //  Send data to enrollment database
+                const enrollmentData = {
+                    studentEmail: user.email,
+                    studentName: user.displayName,
+                    time: new Date().toISOString(),
+                    courseId: course._id,
+                    courseTitle: course.title
+                };
+
+                try {
+                    await postEnrollment.mutateAsync(enrollmentData);
+                    await updateTotalEnroll.mutateAsync();
+
+                    //  Show sweet alert on payment successful 
+                    Swal.fire({
+                        title: 'Payment Successful!',
+                        text: `You have enrolled in ${course?.title}`,
+                        icon: 'success',
+                        confirmButtonText: 'Great!'
+                    });
+
+                } catch (err) {
+                    console.error('Failed to update enrollment:', err);
+                }
             }
         }
-
     };
 
+    if (isLoading) return <div className="text-center py-10 font-bold">Loading...</div>;
+    if (error) return <div className="text-center py-10 text-red-500">Failed to load course details</div>;
 
     return (
         <div className="max-w-md mx-auto my-30 bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
