@@ -1,6 +1,6 @@
 
 
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 
 import React from 'react';
@@ -10,6 +10,7 @@ import AxiosSecure from '../../Axios/AxiosSecure';
 const CourseDetails = () => {
   const { id } = useParams();
   const axiosSecure = AxiosSecure();
+  const navigate=useNavigate()
 
   const { data: course, isLoading, error } = useQuery({
     queryKey: ['courseDetails', id],
@@ -19,6 +20,14 @@ const CourseDetails = () => {
       return res.data;
     }
   });
+
+
+  const handleEnrollment=(id)=>{
+    console.log(id)
+    navigate(`/payment/${id}`)
+  }
+
+
 
   if (isLoading) return <div className="text-center py-10 font-bold">Loading...</div>;
   if (error) return <div className="text-center py-10 text-red-500">Failed to load course details</div>;
@@ -42,9 +51,11 @@ const CourseDetails = () => {
             <strong>Total Enrolled:</strong> {course.totalEnroll || 0}
           </p>
           <p className="text-md text-gray-800 mb-4">
-            <strong>Description:</strong> {course.description}
+            <strong>Description :</strong> {course.description}
           </p>
-          <button className="btn btn-primary w-full">Enroll Now</button>
+          <button
+          onClick={()=>handleEnrollment(course._id)}
+          className="btn btn-primary w-full">Enroll Now</button>
         </div>
       </div>
     </div>

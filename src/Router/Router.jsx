@@ -17,6 +17,7 @@ import Myclass from '../DashBoard/TeacherDashBoard/MyClass/Myclass';
 import AllClasses from '../DashBoard/AllClassRequests/AllClasses';
 import AllApprovedClasses from '../Pages/AllApprovedClasses/AllApprovedClasses';
 import CourseDetails from '../Pages/AllApprovedClasses/CourceDetails';
+import Payment from '../Pages/Payment/Payment';
 
 
 const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path:'classdetails/:id',
         Component:CourseDetails
+      },
+      {
+        path:'payment/:id',
+        Component:Payment
       }
 
     ]
