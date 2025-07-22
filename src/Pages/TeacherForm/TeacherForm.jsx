@@ -1,5 +1,3 @@
-// UPDATED TeacherForm.jsx with conditional rendering for rejected/approved status
-
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation, useQuery } from '@tanstack/react-query';
@@ -16,11 +14,35 @@ const TeacherForm = () => {
   const {
     register,
     handleSubmit,
-    // reset,
+    setValue,
+    watch,
     formState: { errors }
   } = useForm();
 
-  // Fetch user from users collection
+  // LocalStorage keys
+  const LOCAL_KEYS = {
+    experience: 'teacher_experience',
+    title: 'teacher_title',
+    category: 'teacher_category'
+  };
+
+  // Watch form fields
+  const watchFields = watch(['experience', 'title', 'category']);
+
+  // Save to localStorage when form fields change
+  useEffect(() => {
+    localStorage.setItem(LOCAL_KEYS.experience, watchFields[0] || '');
+    localStorage.setItem(LOCAL_KEYS.title, watchFields[1] || '');
+    localStorage.setItem(LOCAL_KEYS.category, watchFields[2] || '');
+  }, [watchFields]);
+
+  // Load saved data from localStorage on mount
+  useEffect(() => {
+    setValue('experience', localStorage.getItem(LOCAL_KEYS.experience) || '');
+    setValue('title', localStorage.getItem(LOCAL_KEYS.title) || '');
+    setValue('category', localStorage.getItem(LOCAL_KEYS.category) || '');
+  }, [setValue]);
+
   const { data: userData } = useQuery({
     queryKey: ['user', user?.email],
     queryFn: async () => {
@@ -30,7 +52,6 @@ const TeacherForm = () => {
     enabled: !!user?.email,
   });
 
-  // Fetch teacher request by email
   const { data: teacherRequestData, refetch } = useQuery({
     queryKey: ['teacher-request', user?.email],
     queryFn: async () => {
@@ -61,7 +82,8 @@ const TeacherForm = () => {
         confirmButtonColor: '#8b5cf6'
       });
       refetch();
-      // reset();
+      // Clear saved form fields
+      Object.values(LOCAL_KEYS).forEach(key => localStorage.removeItem(key));
       setIsRejected(false);
     },
     onError: () => {
