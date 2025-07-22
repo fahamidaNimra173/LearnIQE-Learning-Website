@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import React, { use } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Swal from 'sweetalert2';
 import AxiosSecure from '../../Axios/AxiosSecure';
 import { AuthContext } from '../../Context/AuthContext';
@@ -14,6 +14,7 @@ const PaymentForm = () => {
     const axiosSecure = AxiosSecure();
     const { user } = use(AuthContext);
     const studentName = user.displayName;
+    const navigate= useNavigate()
 
     const { data: course, isLoading, error } = useQuery({
         queryKey: ['courseDetails', courceId],
@@ -87,20 +88,25 @@ const PaymentForm = () => {
                     studentName: user.displayName,
                     time: new Date().toISOString(),
                     courseId: course._id,
-                    courseTitle: course.title
+                    courseTitle: course.title,
+                    coursePrice: course.price,
+                    courseImg: course.image,
+                    instructorName: course.name
                 };
 
                 try {
-                    await postEnrollment.mutateAsync(enrollmentData);
-                    await updateTotalEnroll.mutateAsync();
-
-                    //  Show sweet alert on payment successful 
-                    Swal.fire({
+                       Swal.fire({
                         title: 'Payment Successful!',
                         text: `You have enrolled in ${course?.title}`,
                         icon: 'success',
                         confirmButtonText: 'Great!'
                     });
+                    await postEnrollment.mutateAsync(enrollmentData);
+                    await updateTotalEnroll.mutateAsync();
+
+                    //  Show sweet alert on payment successful 
+                 
+                    navigate('/dashboard/my-enroll')
 
                 } catch (err) {
                     console.error('Failed to update enrollment:', err);

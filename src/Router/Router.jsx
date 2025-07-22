@@ -18,6 +18,7 @@ import AllClasses from '../DashBoard/AllClassRequests/AllClasses';
 import AllApprovedClasses from '../Pages/AllApprovedClasses/AllApprovedClasses';
 import CourseDetails from '../Pages/AllApprovedClasses/CourceDetails';
 import Payment from '../Pages/Payment/Payment';
+import MyEnrollmentClass from '../DashBoard/StudentDashBoard/MyEnrollmentClass/MyEnrollmentClass';
 
 
 const router = createBrowserRouter([
@@ -39,20 +40,20 @@ const router = createBrowserRouter([
       }
       ,
       {
-        path:'teacherform',
-        Component:TeacherForm
+        path: 'teacherform',
+        Component: TeacherForm
       },
       {
-        path:'allapprovedclasses',
-        Component:AllApprovedClasses
+        path: 'allapprovedclasses',
+        Component: AllApprovedClasses
       },
       {
-        path:'classdetails/:id',
-        Component:CourseDetails
+        path: 'classdetails/:id',
+        Component: CourseDetails
       },
       {
-        path:'payment/:id',
-        Component:Payment
+        path: 'payment/:id',
+        Component: Payment
       }
 
     ]
@@ -70,20 +71,25 @@ const router = createBrowserRouter([
         Component: UserProfile
       },
       {
-        path:'teachersrequest',
-        Component:TeacherRequest
+        path: 'teachersrequest',
+        Component: TeacherRequest
       },
       {
-        path:'addclass',
-        Component:AddClass
+        path: 'addclass',
+        Component: AddClass
       },
       {
-        path:'myclass',
-        Component:Myclass
+        path: 'myclass',
+        Component: Myclass
       },
-            {
-        path:'allclasses',
-        Component:AllClasses
+      {
+        path: 'allclasses',
+        Component: AllClasses
+      },
+      {
+        path:'my-enroll',
+        Component:MyEnrollmentClass,
+        
       }
     ]
 
