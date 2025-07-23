@@ -20,6 +20,7 @@ import CourseDetails from '../Pages/AllApprovedClasses/CourceDetails';
 import Payment from '../Pages/Payment/Payment';
 import MyEnrollmentClass from '../DashBoard/StudentDashBoard/MyEnrollmentClass/MyEnrollmentClass';
 import MyEnrollmentClassDetails from '../DashBoard/StudentDashBoard/EnrollmentClassDetails/MyEnrollmentClassDetails';
+import ClassDetails from '../DashBoard/TeacherDashBoard/MyClass/ClassDetails';
 
 
 const router = createBrowserRouter([
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
       {
         path: 'myclass',
         Component: Myclass
+      }
+      ,
+      {
+        path: 'my-class/:id',
+        Component: ClassDetails
       },
       {
         path: 'allclasses',

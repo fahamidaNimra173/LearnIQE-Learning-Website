@@ -5,9 +5,12 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router';
 import AxiosSecure from '../../../Axios/AxiosSecure';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Context/AuthContext';
 
 const MyEnrollmentClassDetails = () => {
  const {id} = useParams();
+ const{user}=useContext(AuthContext)
   const axiosSecure = AxiosSecure()
 //   const navigate=useNavigate()
 

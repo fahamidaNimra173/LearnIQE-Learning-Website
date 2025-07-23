@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 import AxiosSecure from '../../Axios/AxiosSecure';
 import { AuthContext } from '../../Context/AuthContext';
 import { FaUserGraduate } from 'react-icons/fa';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 const TeacherForm = () => {
   const { user } = useContext(AuthContext);
@@ -97,7 +99,7 @@ const TeacherForm = () => {
     }
   });
 
-  // ✅ PATCH (update rejected to pending)
+  // update rejected to pending
   const updateMutation = useMutation({
     mutationFn: async (data) => {
       const res = await axiosSecure.patch(`/teacher-request?email=${user?.email}`, data);
@@ -123,7 +125,7 @@ const TeacherForm = () => {
     }
   });
 
-  // ✅ Handles form submission (choose between POST and PATCH)
+  //  Handles form submission (choose between POST and PATCH)
   const onSubmit = (data) => {
     const requestData = {
       ...data,
@@ -142,8 +144,33 @@ const TeacherForm = () => {
 
   if (isTeacher) {
     return (
-      <div className="text-center mt-20 text-xl text-purple-700 font-semibold">
-        🎉 Congratulations! You are now a verified teacher on EduManage.
+      <div className="max-w-xl  mx-auto  my-40 p-6 light:bg-purple-600  border border-purple-300 rounded-2xl shadow-lg text-center animate-fade-in">
+
+
+        <DotLottieReact
+          src="https://lottie.host/eecdcde5-6299-4129-a421-d14e06778f99/kzqa4PS22f.lottie"
+          loop
+          autoplay
+        />
+        <div className='flex mx-auto justify-center items-center'>
+          <div className="flex justify-center ml-6 mb-4">
+            <FaUserGraduate className="text-purple-700 dark:text-blue-400 text-5xl drop-shadow" />
+          </div>
+          <DotLottieReact
+          className='-ml-12'
+            src="https://lottie.host/b4401454-6a55-4b67-a094-59f6bddc6551/Z6a8bSLWvV.lottie"
+            loop
+            autoplay
+          />
+          
+        </div>
+
+
+
+
+        <p className="text-2xl dark:text-white text-purple-700 font-medium">
+          You are now a <span className="font-semibold  underline dark:text-purple-300 underline-offset-2">verified teacher</span> on <span className="text-purple-900 dark:text-purple-300 font-bold">EduManage</span>.
+        </p>
       </div>
     );
   }
@@ -237,8 +264,8 @@ const TeacherForm = () => {
             {(createMutation.isPending || updateMutation.isPending)
               ? 'Submitting...'
               : isRejected
-              ? 'Request Another'
-              : 'Submit for Review'}
+                ? 'Request Another'
+                : 'Submit for Review'}
           </button>
         </div>
       </form>

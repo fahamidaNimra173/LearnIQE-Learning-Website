@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { Link } from 'react-router'; 
+import { Link } from 'react-router';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../Context/AuthContext';
 import AxiosSecure from '../../../Axios/AxiosSecure';
@@ -162,13 +162,12 @@ const MyClasses = () => {
             <p className="text-purple-950">
               <span className="font-semibold">Status:</span>{' '}
               <span
-                className={`uppercase font-semibold ${
-                  cls.status === 'approved'
+                className={`uppercase font-semibold ${cls.status === 'approved'
                     ? 'text-green-700'
                     : cls.status === 'rejected'
-                    ? 'text-red-700'
-                    : 'text-yellow-700'
-                }`}
+                      ? 'text-red-700'
+                      : 'text-yellow-700'
+                  }`}
               >
                 {cls.status}
               </span>
@@ -186,7 +185,7 @@ const MyClasses = () => {
                 Update
               </button>
 
-            
+
               <button
                 onClick={() => handleDelete(cls._id)}
                 className="btn btn-sm bg-red-600 text-white hover:bg-red-700"
@@ -194,19 +193,24 @@ const MyClasses = () => {
                 Delete
               </button>
 
-            
-              <Link to={`/dashboard/my-class/${cls._id}`}>
+
+              {cls.status === 'approved' ? (
+                <Link to={`/dashboard/my-class/${cls._id}`}>
+                  <button
+                    className="btn btn-sm bg-green-600 text-white hover:bg-green-700"
+                  >
+                    See Details
+                  </button>
+                </Link>
+              ) : (
                 <button
-                  disabled={cls.status !== 'approved'}
-                  className={`btn btn-sm ${
-                    cls.status === 'approved'
-                      ? 'bg-green-600 text-white hover:bg-green-700'
-                      : 'bg-gray-400 text-white cursor-not-allowed'
-                  }`}
+                  disabled
+                  className="btn btn-sm bg-gray-400 text-white cursor-not-allowed"
                 >
                   See Details
                 </button>
-              </Link>
+              )}
+
             </div>
           </div>
         ))}
