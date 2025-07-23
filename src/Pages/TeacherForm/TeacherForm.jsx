@@ -4,6 +4,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import AxiosSecure from '../../Axios/AxiosSecure';
 import { AuthContext } from '../../Context/AuthContext';
+import { FaUserGraduate } from 'react-icons/fa';
 
 const TeacherForm = () => {
   const { user } = useContext(AuthContext);
@@ -19,29 +20,29 @@ const TeacherForm = () => {
     formState: { errors }
   } = useForm();
 
-  // LocalStorage keys
   const LOCAL_KEYS = {
     experience: 'teacher_experience',
     title: 'teacher_title',
     category: 'teacher_category'
   };
 
-  // Watch form fields
-  const watchFields = watch(['experience', 'title', 'category']);
-
-  // Save to localStorage when form fields change
-  useEffect(() => {
-    localStorage.setItem(LOCAL_KEYS.experience, watchFields[0] || '');
-    localStorage.setItem(LOCAL_KEYS.title, watchFields[1] || '');
-    localStorage.setItem(LOCAL_KEYS.category, watchFields[2] || '');
-  }, [watchFields]);
-
-  // Load saved data from localStorage on mount
+  // Load saved values on mount
   useEffect(() => {
     setValue('experience', localStorage.getItem(LOCAL_KEYS.experience) || '');
     setValue('title', localStorage.getItem(LOCAL_KEYS.title) || '');
     setValue('category', localStorage.getItem(LOCAL_KEYS.category) || '');
   }, [setValue]);
+
+  // Save to localStorage on field change
+  useEffect(() => {
+    const subscription = watch((value) => {
+      localStorage.setItem(LOCAL_KEYS.experience, value.experience || '');
+      localStorage.setItem(LOCAL_KEYS.title, value.title || '');
+      localStorage.setItem(LOCAL_KEYS.category, value.category || '');
+    });
+
+    return () => subscription.unsubscribe();
+  }, [watch]);
 
   const { data: userData } = useQuery({
     queryKey: ['user', user?.email],
@@ -64,12 +65,14 @@ const TeacherForm = () => {
   useEffect(() => {
     if (userData?.role === 'teacher') {
       setIsTeacher(true);
+      Object.values(LOCAL_KEYS).forEach(key => localStorage.removeItem(key));
     } else if (teacherRequestData?.status === 'rejected') {
       setIsRejected(true);
     }
   }, [userData, teacherRequestData]);
 
-  const mutation = useMutation({
+  // update status from rejected to pending
+  const createMutation = useMutation({
     mutationFn: async (data) => {
       const res = await axiosSecure.post('/teacher-request', data);
       return res.data;
@@ -82,8 +85,6 @@ const TeacherForm = () => {
         confirmButtonColor: '#8b5cf6'
       });
       refetch();
-      // Clear saved form fields
-      Object.values(LOCAL_KEYS).forEach(key => localStorage.removeItem(key));
       setIsRejected(false);
     },
     onError: () => {
@@ -96,6 +97,33 @@ const TeacherForm = () => {
     }
   });
 
+  // ✅ PATCH (update rejected to pending)
+  const updateMutation = useMutation({
+    mutationFn: async (data) => {
+      const res = await axiosSecure.patch(`/teacher-request?email=${user?.email}`, data);
+      return res.data;
+    },
+    onSuccess: () => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Updated!',
+        text: 'Your request was updated and sent again for review.',
+        confirmButtonColor: '#8b5cf6'
+      });
+      refetch();
+      setIsRejected(false);
+    },
+    onError: () => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'Failed to update the request.',
+        confirmButtonColor: '#ef4444'
+      });
+    }
+  });
+
+  // ✅ Handles form submission (choose between POST and PATCH)
   const onSubmit = (data) => {
     const requestData = {
       ...data,
@@ -104,7 +132,12 @@ const TeacherForm = () => {
       photoURL: user?.photoURL,
       status: 'pending'
     };
-    mutation.mutate(requestData);
+
+    if (teacherRequestData?.status === 'rejected') {
+      updateMutation.mutate(requestData);
+    } else {
+      createMutation.mutate(requestData);
+    }
   };
 
   if (isTeacher) {
@@ -117,7 +150,9 @@ const TeacherForm = () => {
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-purple-200 mt-20 rounded-lg shadow-lg text-black text-[20px] font-semibold">
-      <h2 className="text-2xl font-bold text-center mb-6 text-purple-700">{isRejected ? 'Resubmit Teacher Request' : 'Apply to Teach'}</h2>
+      <h2 className="text-2xl font-bold text-center mb-6 text-purple-700">
+        {isRejected ? 'Resubmit Teacher Request' : 'Apply to Teach'}
+      </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
@@ -197,9 +232,13 @@ const TeacherForm = () => {
           <button
             type="submit"
             className="btn btn-primary w-full"
-            disabled={mutation.isPending}
+            disabled={createMutation.isPending || updateMutation.isPending}
           >
-            {mutation.isPending ? 'Submitting...' : isRejected ? 'Request Another' : 'Submit for Review'}
+            {(createMutation.isPending || updateMutation.isPending)
+              ? 'Submitting...'
+              : isRejected
+              ? 'Request Another'
+              : 'Submit for Review'}
           </button>
         </div>
       </form>
