@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 
 
@@ -16,14 +16,8 @@
   font-weight: 400;
   font-style: normal;
 }
-
-
-
-
-
-
-.gabriela-regular {
-  font-family: "Gabriela", serif;
+.righteous {
+  font-family: "Righteous", sans-serif;
   font-weight: 400;
   font-style: normal;
 }

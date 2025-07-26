@@ -21,6 +21,7 @@ import Payment from '../Pages/Payment/Payment';
 import MyEnrollmentClass from '../DashBoard/StudentDashBoard/MyEnrollmentClass/MyEnrollmentClass';
 import MyEnrollmentClassDetails from '../DashBoard/StudentDashBoard/EnrollmentClassDetails/MyEnrollmentClassDetails';
 import ClassDetails from '../DashBoard/TeacherDashBoard/MyClass/ClassDetails';
+import Error from '../Error/Error';
 
 
 const router = createBrowserRouter([
@@ -56,7 +57,8 @@ const router = createBrowserRouter([
       {
         path: 'payment/:id',
         Component: Payment
-      }
+      },
+
 
     ]
   },
@@ -105,6 +107,10 @@ const router = createBrowserRouter([
       }
     ]
 
+  },
+  {
+    path: '*',
+    Component: Error
   }
 ]);
 
