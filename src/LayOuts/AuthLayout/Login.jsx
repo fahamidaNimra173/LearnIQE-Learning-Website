@@ -89,8 +89,9 @@ const Login = () => {
           <div className="divider text-sm text-gray-500">OR</div>
 
           {/* Google Login */}
-         <GoogleSignIn></GoogleSignIn>
+         
         </form>
+        <GoogleSignIn></GoogleSignIn>
 
         {/* Register Redirect */}
         <p className="text-center text-sm text-gray-600 mt-6">

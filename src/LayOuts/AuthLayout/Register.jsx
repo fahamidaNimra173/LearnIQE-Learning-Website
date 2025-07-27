@@ -5,6 +5,8 @@ import { AuthContext } from '../../Context/AuthContext';
 import AxiosSecure from '../../Axios/AxiosSecure';
 import GoogleSignIn from '../../Shared/GoogleSignIn';
 import Swal from 'sweetalert2';
+import { reload } from 'firebase/auth';
+import { auth } from '../../../firebase.init';
 
 
 
@@ -28,29 +30,33 @@ const Register = () => {
                 }
                 updateUserProfile(profile)
                     .then(() => {
+                        reload(auth.currentUser).then(() => {
+                            const userInfo = {
+                                name: name,
+                                email: email,
+                                photo: photoURL,
+                                role: "student",
+                                createdAt: new Date().toISOString(),
+                                lastLogin: new Date().toISOString(),
+                            };
 
-                        const userInfo = {
-                            name: name,
-                            email: email,
-                            photo: photoURL,
-                            role: "student",
-                            createdAt: new Date().toISOString(),
-                            lastLogin: new Date().toISOString(),
-                        };
+                            axiosSecure.post('/users', userInfo)
+                                .then(() => {
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Registration Successful!',
+                                        text: 'Your account has been created.',
+                                        timer: 2000,
+                                        showConfirmButton: false,
+                                    });
 
-                        axiosSecure.post('/users', userInfo)
-                            .then(() => {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Registration Successful!',
-                                    text: 'Your account has been created.',
-                                    timer: 2000,
-                                    showConfirmButton: false,
+
+                                    navigate('/');
                                 });
+                        })
 
 
-                                navigate('/');
-                            });
+
                     });
             })
             .catch((error) => {

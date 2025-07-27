@@ -68,6 +68,9 @@ const DashBoard = () => {
               <FiSettings /> My Class
             </NavLink>
           </li>
+            <NavLink to="/dashboard/my-enroll" className="flex items-center gap-2">
+              <FiSettings /> My Enroll Classes
+            </NavLink>
           <li>
             <NavLink to="/" className="flex items-center gap-2">
               <FiSettings /> Home

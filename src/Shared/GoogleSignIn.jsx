@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, {  useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { useNavigate } from 'react-router';
 import { useMutation } from '@tanstack/react-query';
@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 
 const GoogleSignIn = () => {
-    const { signInGoogle } = use(AuthContext);
+    const { signInGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const axiosSecure = AxiosSecure();
    
@@ -54,6 +54,14 @@ const GoogleSignIn = () => {
                 lastLogin: new Date().toISOString(),
             };
             console.log(userData)
+            const userEmail={email:userData.email}
+            axiosSecure.post('/jwt',userEmail).then(res=>{
+                const token=res.data.token
+                console.log('Token from social login',token)
+                localStorage.setItem('Token',token)
+            }).catch(error=>{
+                console.log(error)
+            })
 
             saveUser(userData);
         } catch (err) {
