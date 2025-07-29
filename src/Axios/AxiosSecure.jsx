@@ -5,7 +5,7 @@ import React from 'react';
 
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://edu-web-server-brown.vercel.app',
  
 });
 const AxiosSecure = () => {
