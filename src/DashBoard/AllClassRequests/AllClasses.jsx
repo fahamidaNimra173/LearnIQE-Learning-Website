@@ -90,9 +90,16 @@ const AllClasses = () => {
                                     </button>
                                 </td>
                                 <td>
-                                    <button className="btn btn-sm btn-info text-white" disabled={cls.status !== 'approved'}>
-                                        View Progress
-                                    </button>
+                                    <Link to={`/dashboard/my-class/${cls._id}`}>
+                                        <button
+                                            className="btn btn-sm btn-info text-white"disabled={cls.status !== 'approved'}
+                                        >
+                                            View Progress
+                                        </button>
+                                    </Link>
+                                    {/* <button className="btn btn-sm btn-info text-white" disabled={cls.status !== 'approved'}> */}
+                                        
+                                    {/* </button> */}
                                     {/* <Link to={`/dashboard/class-progress/${cls._id}`}>
                                         <button className="btn btn-sm btn-info text-white" disabled={cls.status !== 'approved'}>
                                             View Progress
