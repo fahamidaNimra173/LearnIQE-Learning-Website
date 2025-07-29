@@ -82,7 +82,7 @@ const NavigationBar = () => {
                 <li><span className="text-xs">{user.email}</span></li>
                 <div className="divider my-1" />
                 <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-                <li><NavLink to="/userprofile">Your Profile</NavLink></li>
+                
                 <li><button onClick={handleLogout}>Sign out</button></li>
               </ul>
             </div>

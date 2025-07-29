@@ -1,43 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import AxiosSecure from '../../Axios/AxiosSecure';
-
-// import { FaUserShield } from 'react-icons/fa';
-// import { toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const AllUsers = () => {
-    const axiosSecure = AxiosSecure()
+  const axiosSecure = AxiosSecure();
+  const [searchEmail, setSearchEmail] = useState('');
 
-    const { data: users = [], isLoading } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await axiosSecure.get('/users');
-            return res.data;
-        },
+  const { data: users = [], isLoading, refetch } = useQuery({
+    queryKey: ['users', searchEmail],
+    queryFn: async () => {
+      const url = searchEmail ? `/users?email=${searchEmail}` : '/users';
+      const res = await axiosSecure.get(url);
+      return res.data;
+    },
+  });
+
+  // ✅ Only added this function
+  const handleMakeAdmin = async (user) => {
+    const confirm = await Swal.fire({
+      title: `Make ${user.name} an Admin?`,
+      text: "This action cannot be undone.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, make admin!',
+      cancelButtonText: 'Cancel',
     });
 
-    // const handleMakeAdmin = async (user) => {
-    //   const res = await axiosSecure.patch(`/users/admin/${user._id}`);
-    //   if (res.data.modifiedCount > 0) {
-    //     toast.success(`${user.name} is now an Admin`);
-    //     refetch();
-    //   }
-    // };
-
-
-
-    if (isLoading) {
-        return (
-            <div className="flex justify-center items-center h-64">
-                <span className="loading loading-spinner text-purple-700 w-16"></span>
-            </div>
-        );
+    if (confirm.isConfirmed) {
+      try {
+        const res = await axiosSecure.patch(`/users/admin/${user._id}`);
+        if (res.data.modifiedCount > 0) {
+          Swal.fire('Success', `${user.name} is now an Admin`, 'success');
+          refetch();
+        } else {
+          Swal.fire('No Change', 'User role was not updated', 'info');
+        }
+      } catch (error) {
+        Swal.fire('Error', 'Something went wrong while updating role', error);
+      }
     }
+  };
+
+  if (isLoading) {
     return (
-      <div className="overflow-x-auto px-4">
-      <h1 className="text-3xl font-bold my-6 text-center text-purple-950 dark:text-purple-100">
-        All Users ({users.length})
+      <div className="flex justify-center items-center h-64">
+        <span className="loading loading-spinner text-purple-700 w-16"></span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="overflow-x-auto px-4">
+      <h1 className="text-3xl font-semibold my-6 text-center text-purple-950 dark:text-purple-100">
+        User Management Overview &nbsp; <span className="text-base font-normal">({users.length} total)</span>
       </h1>
+
+
+      {/* 🔍 Search input by email */}
+      <div className="mb-4 flex justify-center">
+        <input
+          type="email"
+          value={searchEmail}
+          onChange={(e) => setSearchEmail(e.target.value)}
+          placeholder="Search by Email"
+          className="input input-bordered w-full max-w-xs mr-2"
+        />
+        <button
+          onClick={() => refetch()}
+          className="btn btn-info"
+        >
+          Search
+        </button>
+      </div>
 
       <div className="overflow-auto rounded-lg shadow border">
         <table className="table bg-purple-200 text-purple-950 w-full min-w-[800px]">
@@ -69,15 +104,10 @@ const AllUsers = () => {
                 <td>
                   <button
                     className="btn btn-sm btn-outline btn-info"
+                    onClick={() => handleMakeAdmin(user)}
                     disabled={user.role === 'admin'}
                   >
-                    {/* {user.role === 'admin' ? (
-                      <span className="flex items-center gap-1 text-green-600">
-                        <FaUserShield /> Admin
-                      </span>
-                    ) : ( */}
-                      Make Admin
-                    {/* )} */}
+                    {user.role === 'admin' ? 'Admin' : 'Make Admin'}
                   </button>
                 </td>
               </tr>
@@ -86,7 +116,7 @@ const AllUsers = () => {
         </table>
       </div>
     </div>
-    );
+  );
 };
 
 export default AllUsers;

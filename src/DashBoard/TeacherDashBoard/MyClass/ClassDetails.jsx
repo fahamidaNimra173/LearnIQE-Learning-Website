@@ -12,8 +12,8 @@ const ClassDetails = () => {
   const { user } = useContext(AuthContext);
   const queryClient = useQueryClient();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { register, handleSubmit, reset } = useForm();
 
-  // Fetch course details
   const { data: course, isLoading, error } = useQuery({
     queryKey: ['courseDetails', id],
     queryFn: async () => {
@@ -23,18 +23,13 @@ const ClassDetails = () => {
     enabled: !!id
   });
 
-  // React Hook Form setup
-  const { register, handleSubmit, reset } = useForm();
-
-  // Mutation to POST assignment
   const createAssignment = useMutation({
     mutationFn: async (assignmentData) => {
       const res = await axiosSecure.post('/assignment', assignmentData);
       return res.data;
     },
     onSuccess: () => {
-      // Step 2: update totalAssignment
-      updateAssignmentCount.mutate(); // increment
+      updateAssignmentCount.mutate();
       Swal.fire({
         icon: 'success',
         title: 'Assignment Created Successfully!',
@@ -46,16 +41,12 @@ const ClassDetails = () => {
     }
   });
 
-  // Mutation to PATCH totalAssignment +1
   const updateAssignmentCount = useMutation({
     mutationFn: async () => {
-      const res = await axiosSecure.patch(`/cources/update-assignment/${course._id}`, {
-        increment: 1,
-      });
+      const res = await axiosSecure.patch(`/cources/increment-assignment/${course._id}`);
       return res.data;
     },
     onSuccess: () => {
-      // Refresh course info
       queryClient.invalidateQueries(['courseDetails', id]);
     }
   });
@@ -78,25 +69,39 @@ const ClassDetails = () => {
   if (error) return <div className="text-center text-red-600 py-10">Error loading course.</div>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-2">{course.title}</h1>
-      <p className="mb-1">Instructor: {course.name}</p>
-      <p className="mb-1">Total Enrolled: {course.totalEnroll}</p>
-      <p className="mb-1">Total Assignments: {course.totalAssignment||0}</p>
+    <div className="max-w-5xl mx-auto p-6">
+      {/* Course Info Card */}
+      <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200">
+        <h1 className="text-3xl font-semibold text-purple-700 mb-2">{course.title}</h1>
+        <p className="text-gray-600">Instructor: <span className="font-medium">{course.name}</span></p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+          <div className="bg-gray-100 p-4 rounded-xl text-center">
+            <p className="text-lg font-semibold text-gray-700">Enrolled</p>
+            <p className="text-2xl text-purple-600 font-bold">{course.totalEnroll}</p>
+          </div>
+          <div className="bg-gray-100 p-4 rounded-xl text-center">
+            <p className="text-lg font-semibold text-gray-700">Assignments</p>
+            <p className="text-2xl text-purple-600 font-bold">{course.totalAssignment || 0}</p>
+          </div>
+          <div className="bg-gray-100 p-4 rounded-xl text-center">
+            <p className="text-lg font-semibold text-gray-700">Submissions</p>
+            <p className="text-2xl text-purple-600 font-bold">{course.totalSubmission || 0}</p>
+          </div>
+        </div>
 
-      <button
-        className="btn btn-primary mt-4"
-        onClick={() => setIsModalOpen(true)}
-      >
-        Create Assignment
-      </button>
+        <button
+          className="btn bg-purple-600 hover:bg-purple-700 text-white px-6 mt-6 rounded-lg"
+          onClick={() => setIsModalOpen(true)}
+        >
+          Create Assignment
+        </button>
+      </div>
 
       {/* Modal */}
       {isModalOpen && (
         <dialog id="create_modal" className="modal modal-open">
-          <div className="modal-box max-w-lg">
-            <h3 className="font-bold text-lg text-purple-700 mb-4">Create Assignment</h3>
-
+          <div className="modal-box max-w-lg bg-white rounded-2xl p-6">
+            <h3 className="text-xl font-bold text-purple-700 mb-4">Create New Assignment</h3>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <input
                 {...register('title', { required: true })}
@@ -114,17 +119,12 @@ const ClassDetails = () => {
                 {...register('description', { required: true })}
                 placeholder="Assignment Description"
                 className="textarea textarea-bordered w-full"
+                rows={4}
               ></textarea>
 
-              <div className="modal-action">
-                <button type="submit" className="btn btn-success">
-                  Create
-                </button>
-                <button
-                  type="button"
-                  className="btn"
-                  onClick={() => setIsModalOpen(false)}
-                >
+              <div className="modal-action flex justify-end gap-3">
+                <button type="submit" className="btn btn-success">Create</button>
+                <button type="button" className="btn btn-outline" onClick={() => setIsModalOpen(false)}>
                   Cancel
                 </button>
               </div>

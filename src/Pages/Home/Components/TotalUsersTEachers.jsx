@@ -1,57 +1,80 @@
 import React from "react";
+import { FaUserGraduate, FaLaptopCode, FaComments } from "react-icons/fa";
 
-const TotalUsersTeachers = () => {
+const PlatformFacilities = () => {
   return (
-    <div className="relative w-full">
-      {/* Section with fixed background image */}
+    <div className="relative w-full py-30 overflow-hidden">
+      <div className="max-w-4xl mx-auto text-center py-12 px-4">
+        <h1 className="text-4xl font-extrabold text-[#0A5EB0] mb-3">
+          Explore What Our Platform Offers
+        </h1>
+        <p className="text-gray-700 text-lg max-w-xl mx-auto">
+          Empowering students with easy access to learning tools and resources that foster success.
+        </p>
+      </div>
+
+      {/* Fixed Background Section */}
       <div
-        className="w-full h-[700px] bg-fixed bg-center bg-cover flex flex-col justify-between"
+        className="w-full min-h-[600px] bg-fixed bg-center bg-cover flex items-center justify-center px-4"
         style={{
-          backgroundImage:
-            "url('https://i.ibb.co/3msWj593/book-5336298-1280.jpg')",
+          backgroundImage: "url('https://i.ibb.co/3msWj593/book-5336298-1280.jpg')",
         }}
       >
         {/* Glass overlay */}
-        <div className="w-full h-full bg-white/10  flex flex-col justify-between">
+        <div className="w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-xl p-8">
           {/* Heading */}
-          <div className="text-center pt-20 px-6">
-            <h2 className="text-4xl font-bold text-white drop-shadow">
-              Total Users & Teachers
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white drop-shadow">
+              Why Students Love Our Platform
             </h2>
-            <p className="text-white/90 mt-2 max-w-2xl mx-auto">
-              Discover how our e-learning platform empowers learners and educators.
+            <p className="text-white text-[18px] font-medium text-shadow-2xs text-shadow-black mt-3 max-w-xl mx-auto">
+              Learn faster, smarter, and better with features designed just for you.
             </p>
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 pb-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              { title: "Total Users", count: "12,345" },
-              { title: "Total Teachers", count: "678" },
-              { title: "Active Courses", count: "89" },
-            ].map((item, index) => (
+              {
+                title: "Easy Enrollment",
+                description: "Enroll in your favorite courses instantly and start learning right away.",
+                icon: <FaUserGraduate size={40} className="text-[#0A5EB0]" />,
+              },
+              {
+                title: "Hands-on Projects",
+                description: "Practice what you learn through real assignments and feedback.",
+                icon: <FaLaptopCode size={40} className="text-[#0A5EB0]" />,
+              },
+              {
+                title: "Evaluate Teachers",
+                description: "Give feedback to help improve your learning experience.",
+                icon: <FaComments size={40} className="text-[#0A5EB0]" />,
+              },
+            ].map((item, i) => (
               <div
-                key={index}
-                className="bg-white/40 backdrop-blur-lg text-center p-6 rounded-xl shadow-md border border-white/30"
+                key={i}
+                className="bg-white/40 backdrop-blur-md text-center p-6 rounded-xl shadow-md border border-white/30 hover:shadow-xl transition"
               >
-                <h3 className="text-xl font-bold text-[#0A5EB0]">{item.title}</h3>
-                <p className="text-3xl text-gray-800 mt-2 font-semibold">
-                  {item.count}
-                </p>
+                <div className="mb-3 flex justify-center">{item.icon}</div>
+                <h3 className="text-xl font-bold text-[#0A5EB0] flex items-center justify-center gap-2">
+                  {item.icon}
+                  {item.title}
+                </h3>
+                <p className="text-gray-800 mt-2">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Next Section (covers image on scroll) */}
-      <div className="w-full bg-white py-20">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#0A5EB0] mb-4">
-            Welcome to the Next Section
+      {/* Cover Section */}
+      <div className="w-full bg-white py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0A5EB0] mb-4">
+            Designed for Modern Learners
           </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            As you scroll, this section covers the glass section, creating a layered scroll effect.
+          <p className="text-gray-700 max-w-xl mx-auto">
+            Our platform bridges the gap between traditional learning and modern digital convenience — accessible anytime, anywhere.
           </p>
         </div>
       </div>
@@ -59,4 +82,4 @@ const TotalUsersTeachers = () => {
   );
 };
 
-export default TotalUsersTeachers;
+export default PlatformFacilities;

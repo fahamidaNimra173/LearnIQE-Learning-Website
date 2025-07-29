@@ -1,128 +1,222 @@
+import React, { useContext, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
+import { FaHome, FaStar, FaRegStar } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { useForm } from "react-hook-form";
+import Rating from "react-rating";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import AxiosSecure from "../../Axios/AxiosSecure";
+import Swal from "sweetalert2";
 
-import React, { useState, useEffect, useContext } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { AuthContext } from '../../Context/AuthContext';
-import { HiMenu } from 'react-icons/hi';
-import '../../App.css';
-const DashNavBar = () => {
-
-    
-
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, LogOut } = useContext(AuthContext);
+const DashboardNavbar = () => {
+  const { user } = useContext(AuthContext);
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const isHomePage = location.pathname === '/';
+  const axiosSecure = AxiosSecure();
+  const queryClient = useQueryClient();
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const courseId = location.pathname.split("/").pop();
 
-  const handleLogout = () => {
-    LogOut()
-      .then(() => console.log('Logged out'))
-      .catch((err) => console.log(err));
+  // Fetch course title by ID
+  const { data: course, isLoading: isCourseLoading } = useQuery({
+    queryKey: ["courseDetails", courseId],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/cources/${courseId}`);
+      return res.data;
+    },
+    enabled: !!courseId,
+  });
+
+  // Fetch user role
+  const { data: userData, isLoading: isUserLoading } = useQuery({
+    queryKey: ["userRole", user?.email],
+    queryFn: async () => {
+      if (!user?.email) return null;
+      const res = await axiosSecure.get(`/users?email=${user.email}`);
+      return res.data;
+    },
+    enabled: !!user?.email,
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const role = userData?.role?.toLowerCase() || "";
+
+  const isStudentPath =
+    role === "student" &&
+    /^\/dashboard\/myenroll-class\/[^/]+\/?$/.test(location.pathname);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setValue,
+    formState: { errors },
+  } = useForm();
+
+  const mutation = useMutation({
+    mutationFn: (feedbackData) => axiosSecure.post("/feedback", feedbackData),
+    onSuccess: () => {
+      Swal.fire({
+        icon: "success",
+        title: "Feedback submitted!",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+      setIsOpen(false);
+      reset();
+      queryClient.invalidateQueries(["feedbacks"]);
+    },
+    onError: (error) => {
+      Swal.fire({
+        icon: "error",
+        title: "Failed to submit",
+        text:
+          error?.message ||
+          error?.response?.data?.message ||
+          "Please try again.",
+      });
+    },
+  });
+
+  const onSubmitFeedback = (data) => {
+    const feedbackData = {
+      ...data,
+      userEmail: user?.email,
+      userPhoto: user?.photoURL,
+      role,
+      CourseId: courseId,
+      courseTitle: course?.title || "Untitled Course",
+    };
+    mutation.mutate(feedbackData);
   };
 
-  // Determine text color class
-  const getTextColorClass = () => {
-    if (isHomePage && !isScrolled) return 'text-white';
-    return 'text-[#0A5EB0]';
-  };
+  if (isUserLoading || isCourseLoading) {
     return (
-  <div
-      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${
-        isScrolled ? 'bg-[#EBFFD8] shadow-md' : 'bg-transparent'
-      }`}
-    >
-      {/* Left - Brand */}
-      <div className="navbar-start">
-        <div className="flex items-center pt-1.5">
-          <span className={`text-2xl sm:text-3xl font-extrabold text-[#0A5EB0] ${getTextColorClass()} righteous`}>
-            Learn
-            <span className="text-[#FFCFEF] text-shadow-xs text-shadow-gray-950">IQ</span>
-          </span>
-          <img
-            src="https://i.ibb.co/8ndphk5P/Screenshot-2025-07-28-152838.png"
-            className="h-12 sm:h-15 sm:-ml-9 -ml-7 -mt-5"
-            alt="Logo"
-          />
-        </div>
+      <div className="p-4 text-center text-[#0A5EB0] font-semibold">
+        Loading...
       </div>
-
-      {/* Center - Links */}
-      <div className="navbar-center hidden lg:flex gap-6">
-        <NavLink to="/" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
-          Home
-        </NavLink>
-        <NavLink to="/allapprovedclasses" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
-          All Classes
-        </NavLink>
-        <NavLink to="/teacherform" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
-          Teach On
-        </NavLink>
-      </div>
-
-      {/* Right - Avatar or Login */}
-      <div className="navbar-end flex items-center gap-3">
-        {user ? (
-          <>
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-15 rounded-full">
-                  <img src={user.photoURL} alt="User" />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#FFCFEF] text-[#2A3335] rounded-box w-52"
-              >
-                <li><span className="text-sm font-bold">{user.displayName}</span></li>
-                <li><span className="text-xs">{user.email}</span></li>
-                <div className="divider my-1" />
-                <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-                <li><NavLink to="/userprofile">Your Profile</NavLink></li>
-                <li><button onClick={handleLogout}>Sign out</button></li>
-              </ul>
-            </div>
-            <div className="lg:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <HiMenu className={`${getTextColorClass()} text-3xl`} />
-              </button>
-            </div>
-          </>
-        ) : (
-          <>
-            <NavLink
-              to="/login"
-              className="btnUI"
-            >
-              Log In
-            </NavLink>
-            <div className="lg:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <HiMenu className={`${getTextColorClass()} text-3xl`} />
-              </button>
-            </div>
-          </>
-        )}
-      </div>
-
-      {/* Mobile Dropdown Menu */}
-      {isMenuOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-[#0A5EB0] rounded shadow-lg p-4 w-48 lg:hidden">
-          <NavLink to="/" className="block text-white py-1 hover:text-[#FFCFEF]">Home</NavLink>
-          <NavLink to="/allapprovedclasses" className="block text-white py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
-          <NavLink to="/teacherform" className="block text-white py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
-        </div>
-      )}
-    </div>
     );
+  }
+
+  return (
+    <div className="flex justify-between items-center mt-0 px-4 py-2 bg-[#EBFFD8] text-[#0A5EB0] shadow-md">
+      <NavLink to="/" className="flex items-center gap-2 text-xl font-bold">
+        <FaHome className="text-[#0A5EB0]" />
+        <span>Home</span>
+      </NavLink>
+
+      <div className="flex items-center gap-4">
+        {isStudentPath && (
+          <button
+            onClick={() => setIsOpen(true)}
+            className="bg-white text-[#0A5EB0] px-4 py-1 rounded hover:bg-purple-100 font-medium transition"
+          >
+            TER
+          </button>
+        )}
+        <NavLink to="/dashboard/userprofile">
+          <img
+            src={user?.photoURL}
+            alt="user"
+            className="w-10 h-10 rounded-full border-2 border-white"
+          />
+        </NavLink>
+      </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+            className="bg-slate-900/20 backdrop-blur p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0, rotate: "12.5deg" }}
+              animate={{ scale: 1, rotate: "0deg" }}
+              exit={{ scale: 0, rotate: "0deg" }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-gradient-to-br from-violet-600 to-indigo-600 text-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
+            >
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-center mb-4">
+                  Teacher Evaluation
+                </h3>
+                <form onSubmit={handleSubmit(onSubmitFeedback)} className="space-y-4">
+                  <div>
+                    <label className="text-sm">Your Name</label>
+                    <input
+                      defaultValue={user?.displayName || ""}
+                      {...register("name", { required: true })}
+                      className="w-full px-3 py-2 rounded text-black"
+                    />
+                    {errors.name && (
+                      <p className="text-red-200 text-sm mt-1">Name is required.</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="text-sm">Description</label>
+                    <textarea
+                      {...register("description", { required: true })}
+                      className="w-full px-3 py-2 rounded text-black"
+                      rows={4}
+                      placeholder="Write your feedback..."
+                    />
+                    {errors.description && (
+                      <p className="text-red-200 text-sm mt-1">
+                        Description is required.
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="text-sm">Rating</label>
+                    <div className="text-yellow-400">
+                      <Rating
+                        emptySymbol={<FaRegStar />}
+                        fullSymbol={<FaStar />}
+                        fractions={2}
+                        onChange={(value) => setValue("rating", value)}
+                      />
+                      <input
+                        type="hidden"
+                        {...register("rating", { required: true })}
+                        name="rating"
+                      />
+                      {errors.rating && (
+                        <p className="text-red-200 text-sm">Rating is required.</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end gap-2 mt-4">
+                    <button
+                      type="button"
+                      onClick={() => setIsOpen(false)}
+                      className="px-4 py-2 bg-gray-300 text-gray-800 rounded"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-green-400 text-white rounded"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
-export default DashNavBar;
-
-
+export default DashboardNavbar;

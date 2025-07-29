@@ -134,13 +134,13 @@ const Dashboard = () => {
           <h1 className="ml-4 text-xl font-semibold text-[#0A5EB0] dark:text-white">Dashboard</h1>
         </header>
 
-        <main className="p-6 flex-1 bg-white dark:bg-gray-900">
+        <main className=" flex-1 bg-white dark:bg-gray-900">
           <DashNavBar></DashNavBar>
           <Outlet />
           {isDashboardRoot && (
             <div className="text-center mt-20">
               <h1 className="text-3xl font-bold text-[#0A5EB0] dark:text-white">
-                Welcome {user?.name || 'to your Dashboard'} 👋
+                Welcome {user?.name || 'to your Dashboard'} 
               </h1>
               <p className="text-gray-600 dark:text-gray-300 mt-2">
                 Use the sidebar to navigate through your role-based tools.
