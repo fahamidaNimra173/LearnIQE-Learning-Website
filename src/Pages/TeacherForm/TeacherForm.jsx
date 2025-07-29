@@ -188,7 +188,7 @@ const TeacherForm = () => {
             type="text"
             className="input w-full bg-white text-black input-bordered"
             defaultValue={user?.displayName}
-            readOnly
+            
           />
         </div>
 
@@ -208,7 +208,7 @@ const TeacherForm = () => {
             type="text"
             className="input w-full bg-white text-black input-bordered"
             defaultValue={user?.photoURL}
-            readOnly
+            
           />
         </div>
 

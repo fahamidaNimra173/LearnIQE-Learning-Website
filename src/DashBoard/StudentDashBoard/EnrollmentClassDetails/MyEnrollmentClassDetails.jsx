@@ -143,38 +143,47 @@ const AssignmentRow = ({ assignment, index, course, user, axiosSecure, isSubmitt
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-  const onSubmit = async (data) => {
-    setLoading(true);
+ const onSubmit = async (data) => {
+  setLoading(true);
 
-    const submissionData = {
-      submissionText: data.submissionText,
-      assignmentId: assignment._id,
-      assignmentTitle: assignment.title,
-      assignmentDescription: assignment.description,
-      courseId: course._id,
-      courseTitle: course.title,
-      courseImage: course.image,
-      courseDescription: course.description,
-      userEmail: user.email,
-      userName: user.displayName,
-      userImage: user.photoURL,
-      submittedAt: new Date().toISOString()
-    };
-
-    try {
-      await axiosSecure.post('/submission', submissionData);
-      await axiosSecure.patch(`/cources/update-assignment/${course._id}`, { increment: 1 });
-      await queryClient.invalidateQueries(['submittedAssignments', user.email]);
-      setSubmitted(true);
-      reset();
-    } catch (error) {
-      console.error('Submission failed:', error);
-      alert('Submission failed. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+  const submissionData = {
+    submissionText: data.submissionText,
+    assignmentId: assignment._id,
+    assignmentTitle: assignment.title,
+    assignmentDescription: assignment.description,
+    courseId: course._id,
+    courseTitle: course.title,
+    courseImage: course.image,
+    courseDescription: course.description,
+    userEmail: user.email,
+    userName: user.displayName,
+    userImage: user.photoURL,
+    submittedAt: new Date().toISOString()
   };
 
+  try {
+    // Submit the assignment
+    await axiosSecure.post('/submission', submissionData);
+
+    // Only update assignment count if course._id is valid
+    if (course?._id) {
+      await axiosSecure.patch(`/cources/update-assignment/${course._id}`, { increment: 1 });
+    }
+
+    // Invalidate cached submission list
+    await queryClient.invalidateQueries(['submittedAssignments', user.email]);
+
+    setSubmitted(true);
+    reset();
+  } catch (error) {
+    console.error('Submission failed:', error);
+    alert('Submission failed. Please try again.');
+  } finally {
+    setLoading(false);
+  }
+};
+
+console.log('this is course id',course._id)
   return (
     <tr className="hover:bg-purple-50 transition-all">
       <td className="px-6 py-4 text-purple-950 font-semibold">{index + 1}</td>
