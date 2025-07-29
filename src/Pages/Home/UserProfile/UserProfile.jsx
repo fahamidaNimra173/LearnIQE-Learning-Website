@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../Context/AuthContext';
 import AxiosSecure from '../../../Axios/AxiosSecure';
+import Loader1 from '../../../Shared/Loaders/Loader1';
 
 const UserProfile = () => {
   const { user, loading } = useContext(AuthContext);
@@ -20,7 +21,7 @@ const UserProfile = () => {
   });
 
   if (loading || !user?.email || isLoading) {
-    return <p className="text-center text-lg">Loading profile...</p>;
+    return <div><Loader1></Loader1></div>;
   }
 
   return (

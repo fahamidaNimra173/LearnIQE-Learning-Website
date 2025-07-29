@@ -1,10 +1,13 @@
+
 import React, { useState, useEffect, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { AuthContext } from '../Context/AuthContext';
+import { AuthContext } from '../../Context/AuthContext';
 import { HiMenu } from 'react-icons/hi';
-import '../App.css';
+import '../../App.css';
+const DashNavBar = () => {
 
-const NavigationBar = () => {
+    
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, LogOut } = useContext(AuthContext);
@@ -29,9 +32,8 @@ const NavigationBar = () => {
     if (isHomePage && !isScrolled) return 'text-white';
     return 'text-[#0A5EB0]';
   };
-
-  return (
-    <div
+    return (
+  <div
       className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${
         isScrolled ? 'bg-[#EBFFD8] shadow-md' : 'bg-transparent'
       }`}
@@ -118,7 +120,9 @@ const NavigationBar = () => {
         </div>
       )}
     </div>
-  );
+    );
 };
 
-export default NavigationBar;
+export default DashNavBar;
+
+

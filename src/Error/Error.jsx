@@ -17,11 +17,11 @@ const Error = () => {
                 </h1>
                 <Link to='/'>
                     <button
-                        class="bg-purple-200 dark:bg-white  text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+                        className="bg-purple-200 dark:bg-white  text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
                         type="button"
                     >
                         <div
-                            class="bg-purple-500 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
+                            className="bg-purple-500 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const Error = () => {
                                 ></path>
                             </svg>
                         </div>
-                        <p class="translate-x-2">Go Back</p>
+                        <p className="translate-x-2">Go Back</p>
                     </button>
                 </Link>
 

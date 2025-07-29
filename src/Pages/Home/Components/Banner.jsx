@@ -4,25 +4,26 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Banner = () => {
   const slides = [
+
     {
-      title: "Empower Your Learning Journey",
-      text: "Explore expert-led courses across development, design, marketing, and more. Learn at your own pace.",
-      image: "https://i.ibb.co/G4D6mWNM/skill-Morph-Banner1.png"
+      title: "   Learn Smarter, Grow Faster",
+      text: "Access quality content, submit assignments, and earn certifications – all at your own pace and schedule.",
+      image: "https://i.ibb.co/W4vZ56bt/home-based-learning-8968710-1280-1.png"
     },
     {
-      title: "Upgrade Your Skills Today",
-      text: "Join thousands of learners on SkillMorph and boost your career with practical knowledge.",
-      image: "https://i.ibb.co/whRD2hkq/Skill-Morph-Banner2.png"
+      title: "Master Modern Skills from Anywhere",
+      text: "Unlock in-demand skills with flexible, expert-led online courses designed for real-world success.",
+      image: "https://i.ibb.co/q3yR36jz/desk-7781833-1280.jpg"
     },
     {
-      title: "Flexible Learning, Real Results",
-      text: "Attend classes, complete assignments, and get certified – all from the comfort of your home.",
-      image: "https://i.ibb.co/whRD2hkq/Skill-Morph-Banner2.png"
+      title: "Advance Your Career with Confidence",
+      text: "Join a vibrant learning community and gain practical knowledge to accelerate your professional growth.",
+      image: "https://i.ibb.co/PZxCMhvb/cup-coffee-with-cinnamons-cookies.jpg.png"
     },
   ];
 
   return (
-    <div className="h-[80vh] w-full">
+    <div className="h-[80vh]  w-full">
       <Carousel
         showArrows={false}
         showThumbs={false}
@@ -37,17 +38,17 @@ const Banner = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="relative h-[80vh] w-full bg-cover bg-center"
+            className="relative h-[80vh]  w-full bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            {/* Dark overlay */}
-            <div className="absolute inset-0  bg-opacity-60"></div>
+            {/* Semi-transparent dark overlay */}
+            <div className="absolute inset-0 bg-[#2A3335]/60"></div>
 
             {/* Centered content */}
-            <div className="relative z-10 flex h-full pt-15 items-center justify-center text-center text-white px-4">
+            <div className="relative z-10  flex h-full md:pt-0  pt-18 items-center justify-center text-center text-white px-4">
               <div className="space-y-4 max-w-2xl">
-                <h1 className="text-3xl md:text-5xl font-bold">{slide.title}</h1>
-                <p className="text-base md:text-lg">{slide.text}</p>
+                <h1 className="text-3xl md:text-5xl font-bold leading-tight drop-shadow-lg">{slide.title}</h1>
+                <p className="text-base md:text-lg drop-shadow-md">{slide.text}</p>
               </div>
             </div>
           </div>

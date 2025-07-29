@@ -2,10 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 
 
-
+.righteous {
+  font-family: "Righteous", sans-serif;
+ 
+  
+  font-style: normal;
+}
 .metal {
   font-family: "Metal Mania", system-ui;
   font-weight: 400;
@@ -20,6 +26,13 @@
   font-family: "Righteous", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.active{
+  font-size: large;
+  font-weight: 700;
+  padding-bottom: 2px;
+  text-decoration: underline;
 }
 /* loading for myenrollmentclass of student dashboard */
 /* From Uiverse.io by Praashoo7 */ 
@@ -189,7 +202,7 @@
 		linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
 }
 
-/* Animations */
+/* Animations Loader-1 */
 @keyframes hamster {
   from, to {
     transform: rotate(4deg) translate(-0.8em,1.85em);
@@ -298,4 +311,134 @@
   to {
     transform: rotate(-1turn);
   }
+}
+/* Button for login  */
+
+.btnUI {
+  font-size: 17px;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #1e7bde;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.btnUI::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #f5bdec;
+  transition: 0.5s ease;
+}
+
+.btnUI:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.btnUI:hover::before {
+  width: 100%;
+}
+
+.btnUI::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #f5bdec;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btnUI:hover::after {
+  height: 100%;
+  justify-items: center;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+/* Loader-2  */
+
+.preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: spinner 1.6s infinite ease;
+  transform-style: preserve-3d;
+}
+
+.spinner > div {
+  background-color: rgba(229, 197, 159, 0.1);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border: 4px solid rgb(229, 197, 159);
+  border-radius: 50%;
+}
+
+.spinner div:nth-of-type(1) {
+  transform: translateZ(-35px) rotateY(180deg);
+}
+
+.spinner div:nth-of-type(2) {
+  transform: rotateY(-270deg) translateX(50%);
+  transform-origin: top right;
+}
+
+.spinner div:nth-of-type(3) {
+  transform: rotateY(270deg) translateX(-50%);
+  transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+  transform: rotateX(90deg) translateY(-50%);
+  transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+  transform: rotateX(-90deg) translateY(50%);
+  transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+  transform: translateZ(35px);
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotate(180deg) rotateX(180deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotate(360deg) rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.text {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 24px;
+  background: linear-gradient(to right, #925555, #e0a47c, #d33fd3, #eed600);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  padding-top: 20px;
+  text-align: center;
 }

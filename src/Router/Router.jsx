@@ -22,6 +22,7 @@ import MyEnrollmentClass from '../DashBoard/StudentDashBoard/MyEnrollmentClass/M
 import MyEnrollmentClassDetails from '../DashBoard/StudentDashBoard/EnrollmentClassDetails/MyEnrollmentClassDetails';
 import ClassDetails from '../DashBoard/TeacherDashBoard/MyClass/ClassDetails';
 import Error from '../Error/Error';
+import PrivateRoute from '../Routes/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -44,15 +45,18 @@ const router = createBrowserRouter([
       ,
       {
         path: 'teacherform',
-        Component: TeacherForm
+        element:<PrivateRoute><TeacherForm></TeacherForm></PrivateRoute>
+      
       },
       {
         path: 'allapprovedclasses',
+        
         Component: AllApprovedClasses
       },
       {
         path: 'classdetails/:id',
-        Component: CourseDetails
+         element:<PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>
+       
       },
       {
         path: 'payment/:id',
@@ -64,7 +68,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    Component: DashBoard,
+    element:<PrivateRoute> <DashBoard></DashBoard></PrivateRoute>,
     children: [
       {
         path: 'users',

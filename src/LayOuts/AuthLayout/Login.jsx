@@ -2,10 +2,16 @@ import React, { use } from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
 import GoogleSignIn from '../../Shared/GoogleSignIn';
 
 const Login = () => {
+   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
+
     const {signInUser}=use(AuthContext)
   const {
     register,
@@ -15,9 +21,10 @@ const Login = () => {
 
   const onSubmit = (data) => {
     console.log("Login Info:", data);
-    // TODO: Email/password login
-         signInUser(data.email,data.password).then(result=>{
-            console.log(result.user)
+   
+         signInUser(data.email,data.password).then(()=>{
+          
+             navigate(from, { replace: true });
          }).catch(error=>{
             console.log(error)
          })

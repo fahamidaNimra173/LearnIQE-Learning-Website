@@ -1,8 +1,9 @@
-import React, {  useContext } from 'react';
+import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { useNavigate } from 'react-router';
 import { useMutation } from '@tanstack/react-query';
 import AxiosSecure from '../Axios/AxiosSecure';
+import {  useLocation} from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import Swal from 'sweetalert2';
 
@@ -11,7 +12,9 @@ const GoogleSignIn = () => {
     const { signInGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const axiosSecure = AxiosSecure();
-   
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const { mutate: saveUser } = useMutation({
         mutationFn: (user) => axiosSecure.post('/users', user),
 
@@ -22,12 +25,12 @@ const GoogleSignIn = () => {
             Swal.fire({
                 icon: alreadyExists ? 'info' : 'success',
                 title: alreadyExists ? 'Welcome back' : 'Login Successful!',
-               
+
                 timer: 2000,
                 showConfirmButton: false,
             });
 
-            navigate('/');
+            navigate(from, { replace: true });
         },
 
         onError: (err) => {
@@ -54,12 +57,13 @@ const GoogleSignIn = () => {
                 lastLogin: new Date().toISOString(),
             };
             console.log(userData)
-            const userEmail={email:userData.email}
-            axiosSecure.post('/jwt',userEmail).then(res=>{
-                const token=res.data.token
-                console.log('Token from social login',token)
-                localStorage.setItem('Token',token)
-            }).catch(error=>{
+            const userEmail = { email: userData.email }
+            axiosSecure.post('/jwt', userEmail).then(res => {
+                const token = res.data.token
+                console.log('Token from social login', token)
+                localStorage.setItem('Token', token)
+                
+            }).catch(error => {
                 console.log(error)
             })
 

@@ -1,85 +1,165 @@
-import React from 'react';
-import { Outlet, NavLink } from 'react-router';
-import { FiMenu, FiHome, FiUser, FiSettings } from 'react-icons/fi';
+import React, { useContext, useEffect, useState } from 'react';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
+import {
+  FaUser, FaHome, FaChalkboardTeacher,
+  FaClipboardList, FaUsers, FaBook,
+  FaClipboardCheck, FaBars, FaTimes
+} from 'react-icons/fa';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-const DashBoard = () => {
+import AxiosSecure from '../Axios/AxiosSecure';
+import DashNavBar from '../DashBoard/DasboardNavbar/DashNavBar';
+
+
+const Dashboard = () => {
+  const { user } = useContext(AuthContext);
+  const location = useLocation();
+  const [role, setRole] = useState(null);
+  const axiosSecure = AxiosSecure()
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    if (user?.email) {
+      axiosSecure.get('/users')
+        .then(res => {
+          const currentUser = res.data.find(u => u.email === user.email);
+          setRole(currentUser?.role);
+        })
+        .catch(err => console.error(err));
+    }
+  }, [user]);
+
+  const isDashboardRoot = location.pathname === '/dashboard';
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
+  // Link styles with vertical layout
+  const linkClasses = ({ isActive }) =>
+    `flex items-center gap-3 px-4 py-3 rounded-md text-lg font-medium transition-colors
+    ${isActive
+      ? 'bg-white text-[#0A5EB0] shadow-lg font-semibold'
+      : 'text-[#0A5EB0] hover:bg-white hover:text-[#073b78]'
+    }`;
+
+  const commonLinks = (
+    <>
+      <NavLink to="/dashboard" className={linkClasses}>
+        <FaHome /> Dashboard Home
+      </NavLink>
+      <NavLink to="/" className={linkClasses}>
+        <FaHome /> Home
+      </NavLink>
+      <NavLink to="/dashboard/userprofile" className={linkClasses}>
+        <FaUser /> Profile
+      </NavLink>
+    </>
+  );
+
+  const adminLinks = (
+    <>
+      <NavLink to="/dashboard/allclasses" className={linkClasses}>
+        <FaClipboardList /> All Classes
+      </NavLink>
+      <NavLink to="/dashboard/users" className={linkClasses}>
+        <FaUsers /> All Users
+      </NavLink>
+      <NavLink to="/dashboard/teachersrequest" className={linkClasses}>
+        <FaChalkboardTeacher /> Teacher Requests
+      </NavLink>
+    </>
+  );
+
+  const teacherLinks = (
+    <>
+      <NavLink to="/dashboard/addclass" className={linkClasses}>
+        <FaBook /> Add Class
+      </NavLink>
+      <NavLink to="/dashboard/myclass" className={linkClasses}>
+        <FaClipboardCheck /> My Class
+      </NavLink>
+    </>
+  );
+
+  const studentLinks = (
+    <>
+      <NavLink to="/dashboard/my-enroll" className={linkClasses}>
+        <FaBook /> My Enroll Classes
+      </NavLink>
+    </>
+  );
+
   return (
-    <div className="drawer lg:drawer-open">
-
-      <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-
-      <div className="drawer-content flex flex-col">
-        {/* Top Navbar for mobile */}
-        <div className="w-full navbar bg-base-200 px-4 lg:hidden">
-          <div className="flex-1">
-            {/* Clicking this label will toggle the checkbox automatically */}
-            <label htmlFor="dashboard-drawer" className="btn btn-ghost">
-              <FiMenu size={20} />
-            </label>
-            <h2 className="text-xl font-semibold ml-2">Admin Dashboard</h2>
-          </div>
+    <div className="flex min-h-screen bg-white dark:bg-gray-900 relative">
+      {/* Sidebar */}
+      <div
+        className={`
+          fixed top-0 left-0 z-50 h-screen w-64
+          bg-gradient-to-b from-[#EBFFD8] via-[#FFCFEF] to-[#0A5EB0]
+          shadow-lg
+          transform transition-transform duration-300
+          md:translate-x-0
+          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+        `}
+      >
+        <div className="flex justify-between items-center p-5">
+          <h2 className="text-2xl font-bold text-[#0A5EB0] dark:text-white select-none">Dashboard</h2>
+          <button
+            onClick={toggleSidebar}
+            className="md:hidden text-[#0A5EB0] dark:text-white text-2xl"
+            aria-label="Close Sidebar"
+          >
+            <FaTimes />
+          </button>
         </div>
-
-        {/* Main content */}
-        <div className="p-6">
-          <Outlet />
-        </div>
+        <nav className="flex flex-col gap-1 px-2">
+          {commonLinks}
+          {role === 'admin' && adminLinks}
+          {role === 'teacher' && teacherLinks}
+          {role === 'student' && studentLinks}
+        </nav>
       </div>
 
-      {/* Sidebar drawer */}
-      <div className="drawer-side">
-        {/* Clicking outside will auto-close on small screen */}
-        <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-72 min-h-full bg-base-100 text-base-content space-y-1">
-          <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
+      {/* Content */}
+      <div className="flex-1 ml-0 md:ml-64 transition-all duration-300 min-h-screen flex flex-col">
+        {/* Mobile menu toggle */}
+        <header className="md:hidden flex items-center p-4 bg-white dark:bg-gray-900 shadow">
+          <button
+            onClick={toggleSidebar}
+            className="text-[#0A5EB0] dark:text-white text-3xl"
+            aria-label="Open Sidebar"
+          >
+            <FaBars />
+          </button>
+          <h1 className="ml-4 text-xl font-semibold text-[#0A5EB0] dark:text-white">Dashboard</h1>
+        </header>
 
-          <li>
-            <NavLink to="/dashboard" className="flex items-center gap-2">
-              <FiHome /> Dashboard Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/allclasses" className="flex items-center gap-2">
-              <FiUser /> All Classes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/users" className="flex items-center gap-2">
-              <FiUser /> All Users
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/userprofile" className="flex items-center gap-2">
-              <FiSettings /> Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/teachersrequest" className="flex items-center gap-2">
-              <FiSettings /> Teacher Request
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/addclass" className="flex items-center gap-2">
-              <FiSettings /> Add Class
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/myclass" className="flex items-center gap-2">
-              <FiSettings /> My Class
-            </NavLink>
-          </li>
-            <NavLink to="/dashboard/my-enroll" className="flex items-center gap-2">
-              <FiSettings /> My Enroll Classes
-            </NavLink>
-          <li>
-            <NavLink to="/" className="flex items-center gap-2">
-              <FiSettings /> Home
-            </NavLink>
-          </li>
-        </ul>
+        <main className="p-6 flex-1 bg-white dark:bg-gray-900">
+          <DashNavBar></DashNavBar>
+          <Outlet />
+          {isDashboardRoot && (
+            <div className="text-center mt-20">
+              <h1 className="text-3xl font-bold text-[#0A5EB0] dark:text-white">
+                Welcome {user?.name || 'to your Dashboard'} 👋
+              </h1>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
+                Use the sidebar to navigate through your role-based tools.
+              </p>
+              <DotLottieReact
+                src="https://lottie.host/e2c3698d-4895-49a7-9f5a-f3ba9ea0f405/iQ1apuityN.lottie"
+                loop
+                autoplay
+              />
+
+            </div>
+          )}
+        </main>
       </div>
     </div>
   );
 };
 
-export default DashBoard;
+export default Dashboard;
+// make a navbar under dashboard on that navbar user image icon and home route will be and a button which is TER(teacher evalution report) but this button will on;y show when the user role is student and the path is :'/dashboard/myenroll-class/:id' . if i click on that button then a modal with a react hook form inside it will open where will be user name , then Description
+// ratings use(react raring components)
+// Send button after send button click the datas: form data, user email, user name, teacher email, teacher name will save on a collection name feedBack . 

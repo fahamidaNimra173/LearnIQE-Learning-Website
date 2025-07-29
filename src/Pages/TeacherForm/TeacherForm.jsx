@@ -154,7 +154,7 @@ const TeacherForm = () => {
         />
         <div className='flex mx-auto justify-center items-center'>
           <div className="flex justify-center ml-6 mb-4">
-            <FaUserGraduate className="text-purple-700 dark:text-blue-400 text-5xl drop-shadow" />
+            <FaUserGraduate className="dark:text-[rgb(255,145,73)] text-[rgb(96,181,255)] text-5xl drop-shadow" />
           </div>
           <DotLottieReact
           className='-ml-12'
@@ -168,8 +168,8 @@ const TeacherForm = () => {
 
 
 
-        <p className="text-2xl dark:text-white text-purple-700 font-medium">
-          You are now a <span className="font-semibold  underline dark:text-purple-300 underline-offset-2">verified teacher</span> on <span className="text-purple-900 dark:text-purple-300 font-bold">EduManage</span>.
+        <p className="text-2xl dark:text-[rgb(175,221,255)] text-[rgb(96,181,255)] font-medium">
+          You are now a <span className="font-semibold  underline dark:text-purple-300 underline-offset-2">verified teacher</span> on <span className=" dark:text-[rgb(10,94,176)] text-[rgb(10,94,176)] font-bold righteous">Learn<span className="text-[#FFCFEF] text-shadow-xs text-shadow-gray-950">IQ</span></span>.
         </p>
       </div>
     );
