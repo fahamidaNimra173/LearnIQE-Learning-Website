@@ -47,9 +47,7 @@ const Dashboard = () => {
       <NavLink to="/dashboard" className={linkClasses}>
         <FaHome /> Dashboard Home
       </NavLink>
-      <NavLink to="/" className={linkClasses}>
-        <FaHome /> Home
-      </NavLink>
+
       <NavLink to="/dashboard/userprofile" className={linkClasses}>
         <FaUser /> Profile
       </NavLink>

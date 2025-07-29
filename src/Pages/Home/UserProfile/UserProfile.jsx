@@ -14,30 +14,29 @@ const UserProfile = () => {
     enabled: !!user?.email && !loading,
     queryKey: ['dbUser', user?.email],
     queryFn: async () => {
-      // faced error as i cant get the data of a single user from server, because AxiosSecure is a function so after it i need to use() but i didt use it so data were not loading
       const res = await AxiosSecure().get(`/users?email=${user.email}`);
       return res.data;
     },
   });
 
   if (loading || !user?.email || isLoading) {
-    return <div><Loader1></Loader1></div>;
+    return <Loader1 />;
   }
 
   return (
-    <div className="max-w-md mx-auto bg-white mt-20 text-black p-6 shadow rounded-lg space-y-4">
-      <div className="flex items-center gap-4">
+    <div className="max-w-md mx-auto mt-20 p-6 rounded-2xl shadow-lg bg-white/70 backdrop-blur-md border border-white/30">
+      <div className="flex items-center gap-5">
         <img
-          src={dbUser?.photo }
+          src={dbUser?.photo || "https://i.ibb.co/sF4L5rN/user-default.png"}
           alt="User"
-          className="w-20 h-20 rounded-full object-cover border"
+          className="w-24 h-24 rounded-full border-4 border-[#FFCFEF] object-cover"
         />
-        <div>
-          <h2 className="text-xl font-semibold">{dbUser?.name }</h2>
-          <p className="text-gray-600">{user?.email}</p>
-          <p className="badge badge-primary capitalize">
-            {dbUser?.role }
-          </p>
+        <div className="space-y-1">
+          <h2 className="text-2xl font-bold text-[#0A5EB0]">{dbUser?.name}</h2>
+          <p className="text-sm text-gray-700">{user?.email}</p>
+          <span className="inline-block px-3 py-1 text-sm font-medium bg-[#FFCFEF] text-black rounded-full">
+            {dbUser?.role || 'Student'}
+          </span>
         </div>
       </div>
     </div>

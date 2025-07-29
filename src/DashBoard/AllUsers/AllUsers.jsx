@@ -16,7 +16,7 @@ const AllUsers = () => {
     },
   });
 
-  // ✅ Only added this function
+  // 
   const handleMakeAdmin = async (user) => {
     const confirm = await Swal.fire({
       title: `Make ${user.name} an Admin?`,
