@@ -6,17 +6,27 @@ import Swal from 'sweetalert2';
 const AllUsers = () => {
   const axiosSecure = AxiosSecure();
   const [searchEmail, setSearchEmail] = useState('');
+  const [queryEmail, setQueryEmail] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const limit = 5; // Number of users per page
 
-  const { data: users = [], isLoading, refetch } = useQuery({
-    queryKey: ['users', searchEmail],
+  const { data = {}, isLoading, refetch } = useQuery({
+    queryKey: ['users', queryEmail, currentPage],
     queryFn: async () => {
-      const url = searchEmail ? `/users?email=${searchEmail}` : '/users';
+      // Always send page & limit, and add email if searching
+      const url = queryEmail
+        ? `/users?email=${encodeURIComponent(queryEmail)}&page=${currentPage}&limit=${limit}`
+        : `/users?page=${currentPage}&limit=${limit}`;
       const res = await axiosSecure.get(url);
       return res.data;
     },
+    keepPreviousData: true,
   });
 
-  // 
+  const users = data.users || [];
+  const totalUsers = data.total || 0; // Note: backend sends "total"
+  const totalPages = Math.ceil(totalUsers / limit);
+
   const handleMakeAdmin = async (user) => {
     const confirm = await Swal.fire({
       title: `Make ${user.name} an Admin?`,
@@ -42,6 +52,11 @@ const AllUsers = () => {
     }
   };
 
+  const handleSearch = () => {
+    setQueryEmail(searchEmail.trim());
+    setCurrentPage(1); // reset to first page on new search
+  };
+
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -53,9 +68,9 @@ const AllUsers = () => {
   return (
     <div className="overflow-x-auto px-4">
       <h1 className="text-3xl font-semibold my-6 text-center text-purple-950 dark:text-purple-100">
-        User Management Overview &nbsp; <span className="text-base font-normal">({users.length} total)</span>
+        User Management Overview &nbsp;
+        <span className="text-base font-normal">({totalUsers} total)</span>
       </h1>
-
 
       {/* 🔍 Search input by email */}
       <div className="mb-4 flex justify-center">
@@ -66,10 +81,7 @@ const AllUsers = () => {
           placeholder="Search by Email"
           className="input input-bordered w-full max-w-xs mr-2"
         />
-        <button
-          onClick={() => refetch()}
-          className="btn btn-info"
-        >
+        <button onClick={handleSearch} className="btn btn-info">
           Search
         </button>
       </div>
@@ -77,7 +89,7 @@ const AllUsers = () => {
       <div className="overflow-auto rounded-lg shadow border">
         <table className="table bg-purple-200 text-purple-950 w-full min-w-[800px]">
           <thead className="bg-purple-200 text-purple-950 font-semibold">
-            <tr className='border-b-1 border-b-black text-[20px]'>
+            <tr className="border-b-1 border-b-black text-[20px]">
               <th>#</th>
               <th>User Image</th>
               <th>Name</th>
@@ -86,35 +98,62 @@ const AllUsers = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
-              <tr
-                key={user._id}
-                className="hover:bg-black hover:text-white border-b-1 border-b-black transition duration-200"
-              >
-                <td className='font-bold'>{index + 1}</td>
-                <td>
-                  <div className="avatar">
-                    <div className="w-15 rounded-full">
-                      <img src={user.photo} alt={user.name} />
+            {users.length > 0 ? (
+              users.map((user, index) => (
+                <tr
+                  key={user._id}
+                  className="hover:bg-black hover:text-white border-b-1 border-b-black transition duration-200"
+                >
+                  <td className="font-bold">{(currentPage - 1) * limit + index + 1}</td>
+                  <td>
+                    <div className="avatar">
+                      <div className="w-14 rounded-full">
+                        <img src={user.photo} alt={user.name} />
+                      </div>
                     </div>
-                  </div>
-                </td>
-                <td className="font-bold text-[18px] hover:text-purple-100 text-purple-950">{user.name}</td>
-                <td>{user.email}</td>
-                <td>
-                  <button
-                    className="btn btn-sm btn-outline btn-info"
-                    onClick={() => handleMakeAdmin(user)}
-                    disabled={user.role === 'admin'}
-                  >
-                    {user.role === 'admin' ? 'Admin' : 'Make Admin'}
-                  </button>
+                  </td>
+                  <td className="font-bold text-[18px] hover:text-purple-100 text-purple-950">
+                    {user.name}
+                  </td>
+                  <td>{user.email}</td>
+                  <td>
+                    <button
+                      className="btn btn-sm btn-outline btn-info"
+                      onClick={() => handleMakeAdmin(user)}
+                      disabled={user.role === 'admin'}
+                    >
+                      {user.role === 'admin' ? 'Admin' : 'Make Admin'}
+                    </button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5" className="text-center py-4 text-gray-500">
+                  No users found.
                 </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>
+
+      {/* 🔢 Pagination */}
+      {!queryEmail && totalPages > 1 && (
+        <div className="flex justify-center my-6 gap-2">
+          {[...Array(totalPages).keys()].map((num) => (
+            <button
+              key={num + 1}
+              onClick={() => setCurrentPage(num + 1)}
+              className={`btn btn-sm ${
+                currentPage === num + 1 ? 'btn-active btn-primary' : 'btn-outline'
+              }`}
+            >
+              {num + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

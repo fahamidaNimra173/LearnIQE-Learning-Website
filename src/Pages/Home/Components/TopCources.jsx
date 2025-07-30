@@ -38,7 +38,7 @@ const TopCources = () => {
             <div className="absolute inset-0  z-0" />
             <div className="relative z-10 max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-[#0A5EB0] dark:text-white/90 mb-8">
-                    Approved Courses
+                    Student Favorite Courses
                 </h2>
 
                 <Swiper
@@ -85,3 +85,4 @@ const TopCources = () => {
 };
 
 export default TopCources;
+

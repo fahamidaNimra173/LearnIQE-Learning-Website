@@ -6,7 +6,7 @@ import Loader1 from '../../../Shared/Loaders/Loader1';
 
 const UserProfile = () => {
   const { user, loading } = useContext(AuthContext);
-
+  const axiosSecure=AxiosSecure()
   const {
     data: dbUser = {},
     isLoading,
@@ -14,10 +14,11 @@ const UserProfile = () => {
     enabled: !!user?.email && !loading,
     queryKey: ['dbUser', user?.email],
     queryFn: async () => {
-      const res = await AxiosSecure().get(`/users?email=${user.email}`);
+      const res = await axiosSecure.get(`/users/me?email=${user.email}`);
       return res.data;
     },
   });
+  console.log('this is user',dbUser)
 
   if (loading || !user?.email || isLoading) {
     return <Loader1 />;

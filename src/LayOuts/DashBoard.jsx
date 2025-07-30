@@ -19,16 +19,19 @@ const Dashboard = () => {
   const axiosSecure = AxiosSecure()
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  useEffect(() => {
+useEffect(() => {
     if (user?.email) {
-      axiosSecure.get('/users')
+      // Fetch current user info directly from a "me" endpoint to avoid pagination issues
+      axiosSecure.get(`/users/me?email=${user.email}`)
         .then(res => {
-          const currentUser = res.data.find(u => u.email === user.email);
-          setRole(currentUser?.role);
+          setRole(res.data?.role || null);
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+          console.error(err);
+          setRole(null);
+        });
     }
-  }, [user]);
+  }, [user, axiosSecure]);
 
   const isDashboardRoot = location.pathname === '/dashboard';
 
