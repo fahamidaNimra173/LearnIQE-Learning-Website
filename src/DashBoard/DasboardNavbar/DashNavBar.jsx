@@ -17,9 +17,21 @@ const DashboardNavbar = () => {
   const axiosSecure = AxiosSecure();
   const queryClient = useQueryClient();
 
-  const courseId = location.pathname.split("/").pop();
+  // Validate MongoDB ObjectId format (24 hex chars)
+  const isValidObjectId = (id) => /^[0-9a-fA-F]{24}$/.test(id);
 
-  // Fetch course title by ID
+  // Extract last segment of pathname
+  const pathSegments = location.pathname.split("/").filter(Boolean);
+  const lastSegment = pathSegments[pathSegments.length - 1];
+
+  // Use lastSegment as courseId only if valid ObjectId
+  const courseId = isValidObjectId(lastSegment) ? lastSegment : null;
+
+  // Debug logs (remove in production)
+  console.log("DashboardNavbar courseId:", courseId);
+  console.log("Current path:", location.pathname);
+
+  // Fetch course details only if courseId valid
   const { data: course, isLoading: isCourseLoading } = useQuery({
     queryKey: ["courseDetails", courseId],
     queryFn: async () => {
@@ -34,7 +46,7 @@ const DashboardNavbar = () => {
     queryKey: ["userRole", user?.email],
     queryFn: async () => {
       if (!user?.email) return null;
-      const res = await axiosSecure.get(`/users?email=${user.email}`);
+      const res = await axiosSecure.get(`/users/me?email=${user.email}`);
       return res.data;
     },
     enabled: !!user?.email,
@@ -43,9 +55,12 @@ const DashboardNavbar = () => {
 
   const role = userData?.role?.toLowerCase() || "";
 
+  // Check if path is student enrolled class page and courseId valid
   const isStudentPath =
-    role === "student" &&
-    /^\/dashboard\/myenroll-class\/[^/]+\/?$/.test(location.pathname);
+     role === "student" &&
+    location.pathname.startsWith("/dashboard/myenroll-class/")&&
+    courseId!==null;
+    console.log('this is to check ter',isStudentPath)
 
   const {
     register,

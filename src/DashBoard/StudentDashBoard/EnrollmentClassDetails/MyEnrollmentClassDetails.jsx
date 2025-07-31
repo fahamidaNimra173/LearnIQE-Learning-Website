@@ -167,7 +167,7 @@ const AssignmentRow = ({ assignment, index, course, user, axiosSecure, isSubmitt
 
     // Only update assignment count if course._id is valid
     if (course?._id) {
-      await axiosSecure.patch(`/cources/update-assignment/${course._id}`, { increment: 1 });
+      await axiosSecure.patch(`/cources/increment-submission/${course._id}`, { increment: 1 });
     }
 
     // Invalidate cached submission list

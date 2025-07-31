@@ -25,7 +25,9 @@ const TeacherForm = () => {
   const LOCAL_KEYS = {
     experience: 'teacher_experience',
     title: 'teacher_title',
-    category: 'teacher_category'
+    category: 'teacher_category',
+    name: 'teacher_name',
+    photoURL: 'teacher_photoURL'
   };
 
   // Load saved values on mount
@@ -33,6 +35,8 @@ const TeacherForm = () => {
     setValue('experience', localStorage.getItem(LOCAL_KEYS.experience) || '');
     setValue('title', localStorage.getItem(LOCAL_KEYS.title) || '');
     setValue('category', localStorage.getItem(LOCAL_KEYS.category) || '');
+    setValue('name', localStorage.getItem(LOCAL_KEYS.name) || '');
+    setValue('photoURL', localStorage.getItem(LOCAL_KEYS.photoURL) || '');
   }, [setValue]);
 
   // Save to localStorage on field change
@@ -41,6 +45,8 @@ const TeacherForm = () => {
       localStorage.setItem(LOCAL_KEYS.experience, value.experience || '');
       localStorage.setItem(LOCAL_KEYS.title, value.title || '');
       localStorage.setItem(LOCAL_KEYS.category, value.category || '');
+      localStorage.setItem(LOCAL_KEYS.name, value.name || '');
+      localStorage.setItem(LOCAL_KEYS.photoURL, value.photoURL || '');
     });
 
     return () => subscription.unsubscribe();
@@ -49,7 +55,7 @@ const TeacherForm = () => {
   const { data: userData } = useQuery({
     queryKey: ['user', user?.email],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/users?email=${user?.email}`);
+      const res = await axiosSecure.get(`/users/me?email=${user?.email}`);
       return res.data;
     },
     enabled: !!user?.email,
@@ -129,9 +135,8 @@ const TeacherForm = () => {
   const onSubmit = (data) => {
     const requestData = {
       ...data,
-      name: user?.displayName,
+
       email: user?.email,
-      photoURL: user?.photoURL,
       status: 'pending'
     };
 
@@ -157,12 +162,12 @@ const TeacherForm = () => {
             <FaUserGraduate className="dark:text-[rgb(255,145,73)] text-[rgb(96,181,255)] text-5xl drop-shadow" />
           </div>
           <DotLottieReact
-          className='-ml-12'
+            className='-ml-12'
             src="https://lottie.host/b4401454-6a55-4b67-a094-59f6bddc6551/Z6a8bSLWvV.lottie"
             loop
             autoplay
           />
-          
+
         </div>
 
 
@@ -186,9 +191,10 @@ const TeacherForm = () => {
           <label className="label">Name</label>
           <input
             type="text"
+            {...register('name', { required: true })}
             className="input w-full bg-white text-black input-bordered"
             defaultValue={user?.displayName}
-            
+
           />
         </div>
 
@@ -206,9 +212,10 @@ const TeacherForm = () => {
           <label className="label">Photo URL</label>
           <input
             type="text"
+            {...register('photoURL', { required: true })}
             className="input w-full bg-white text-black input-bordered"
             defaultValue={user?.photoURL}
-            
+
           />
         </div>
 
