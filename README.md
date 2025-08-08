@@ -1,7 +1,14 @@
 # LearnIQ
 
-#EduManage – MERN Based Educational Management Platform
-![EduManage Screenshot](https://i.ibb.co/ZphBpv8B/Screenshot-2025-08-08-183218.png)
+<h2 align="center">EduManage – MERN Based Educational Management Platform</h2>
+
+<div style="text-align: center;">
+  <img 
+    src="https://i.ibb.co/ZphBpv8B/Screenshot-2025-08-08-183218.png" 
+    alt="EduManage Screenshot" 
+    style="width: 100%; max-width: 900px;" 
+  />
+</div>
 
 A full-featured educational management platform built with the MERN stack that enables institutions to offer courses, teachers to create and manage classes, and students to enroll, pay, and track their learning progress — all within a secure, responsive, and interactive environment.
 ## 🚀 Technologies Used
