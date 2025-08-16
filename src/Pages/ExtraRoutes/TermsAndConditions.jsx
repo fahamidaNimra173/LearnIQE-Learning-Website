@@ -43,8 +43,8 @@ const TermsAndConditions = () => {
 
       <p className="mt-8 text-center font-medium">
         If you have any questions about these Terms, please contact us at{" "}
-        <a href="mailto:support@learniq.com" className="text-blue-600 underline">
-          support@learniq.com
+        <a href="mailto:fahmidanimra.com" className="text-blue-600 underline">
+          fahmidanimra.com
         </a>.
       </p>
     </div>
