@@ -25,6 +25,7 @@ import Error from '../Error/Error';
 import PrivateRoute from '../Routes/PrivateRoute';
 import AboutUs from '../Pages/ExtraRoutes/AboutUs';
 import ContactUs from '../Pages/ExtraRoutes/ContactUs';
+import AllTeacher from '../Pages/ExtraRoutes/AllTeacher';
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path:'aboutUs',
         Component:AboutUs
+      },
+      {
+        path:'allTeacher',
+        Component:AllTeacher
       },
       {
         path:'contactUs',

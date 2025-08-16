@@ -32,9 +32,8 @@ const NavigationBar = () => {
 
   return (
     <div
-      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${
-        isScrolled ? 'bg-[#EBFFD8] dark:bg-[#2a4114] shadow-md' : 'bg-transparent'
-      }`}
+      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${isScrolled ? 'bg-[#EBFFD8] dark:bg-[#2a4114] shadow-md' : 'bg-transparent'
+        }`}
     >
       {/* Left - Brand */}
       <div className="navbar-start">
@@ -62,6 +61,10 @@ const NavigationBar = () => {
         <NavLink to="/teacherform" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
           Teach On
         </NavLink>
+        <NavLink to="/allTeacher" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
+          Instructors
+        </NavLink>
+        <NavLink to="/aboutUs" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>About Us</NavLink>
       </div>
 
       {/* Right - Avatar or Login */}
@@ -82,7 +85,7 @@ const NavigationBar = () => {
                 <li><span className="text-xs">{user.email}</span></li>
                 <div className="divider my-1" />
                 <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-                
+
                 <li><button onClick={handleLogout}>Sign out</button></li>
               </ul>
             </div>
@@ -115,6 +118,8 @@ const NavigationBar = () => {
           <NavLink to="/" className="block text-white py-1 hover:text-[#FFCFEF]">Home</NavLink>
           <NavLink to="/allapprovedclasses" className="block text-white py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
           <NavLink to="/teacherform" className="block text-white py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
+          <NavLink to="/allTeacher" className="block text-white py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
+          <NavLink to="/aboutUs" className="block text-white py-1 hover:text-[#FFCFEF]">About Us</NavLink>
         </div>
       )}
     </div>
