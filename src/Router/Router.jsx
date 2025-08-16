@@ -23,6 +23,8 @@ import MyEnrollmentClassDetails from '../DashBoard/StudentDashBoard/EnrollmentCl
 import ClassDetails from '../DashBoard/TeacherDashBoard/MyClass/ClassDetails';
 import Error from '../Error/Error';
 import PrivateRoute from '../Routes/PrivateRoute';
+import AboutUs from '../Pages/ExtraRoutes/AboutUs';
+import ContactUs from '../Pages/ExtraRoutes/ContactUs';
 
 
 const router = createBrowserRouter([
@@ -62,6 +64,15 @@ const router = createBrowserRouter([
         path: 'payment/:id',
         Component: Payment
       },
+      {
+        path:'aboutUs',
+        Component:AboutUs
+      },
+      {
+        path:'contactUs',
+        Component:ContactUs
+
+      }
 
 
     ]
