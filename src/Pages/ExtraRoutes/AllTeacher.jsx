@@ -8,9 +8,9 @@ const InstructorsPage = () => {
   const { data: teachers = [], isLoading: teachersLoading } = useQuery({
     queryKey: ["teachers"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/users");
+      const res = await axiosSecure.get("/allUser");
       // Only return teachers
-      return res.data.users.filter((user) => user.role === "teacher");
+      return res.data.filter((user) => user.role === "teacher");
     },
   });
   console.log(teachers)
