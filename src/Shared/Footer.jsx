@@ -42,8 +42,8 @@ const FooteR = () => {
             <div>
               <FooterTitle title="About" />
               <FooterLinkGroup col>
-                <FooterLink href="#">About LearnIQ</FooterLink>
-                <FooterLink href="#">Our Mission</FooterLink>
+                <FooterLink href="/aboutUs">About Us</FooterLink>
+                <FooterLink href="#">Terms & Condition</FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
