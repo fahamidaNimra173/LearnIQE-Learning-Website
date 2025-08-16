@@ -10,6 +10,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 import AxiosSecure from '../Axios/AxiosSecure';
 import DashNavBar from '../DashBoard/DasboardNavbar/DashNavBar';
+import UserRoleChart from '../DashBoard/AllUsers/Components/UserRoleChart';
 
 
 const Dashboard = () => {
@@ -146,11 +147,12 @@ useEffect(() => {
               <p className="text-gray-600 dark:text-gray-300 mt-2">
                 Use the sidebar to navigate through your role-based tools.
               </p>
-              <DotLottieReact
+              {/* <DotLottieReact
                 src="https://lottie.host/e2c3698d-4895-49a7-9f5a-f3ba9ea0f405/iQ1apuityN.lottie"
                 loop
                 autoplay
-              />
+              /> */}
+              <UserRoleChart></UserRoleChart>
 
             </div>
           )}
