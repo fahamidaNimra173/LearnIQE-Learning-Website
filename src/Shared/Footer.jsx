@@ -49,15 +49,15 @@ const FooteR = () => {
             <div>
               <FooterTitle title="Follow us" />
               <FooterLinkGroup col>
-                <FooterLink href="https://github.com/" target="_blank">GitHub</FooterLink>
-                <FooterLink href="https://discord.com/" target="_blank">Discord</FooterLink>
+                <FooterLink href="https://github.com/fahamidaNimra173" target="_blank">GitHub</FooterLink>
+                <FooterLink href="https://www.linkedin.com/in/fahmida-nimra/" target="_blank">Linkedin</FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
               <FooterTitle title="Legal" />
               <FooterLinkGroup col>
-                <FooterLink href="#">Privacy Policy</FooterLink>
-                <FooterLink href="#">Terms & Conditions</FooterLink>
+                <FooterLink href="privacy">Privacy Policy</FooterLink>
+                <FooterLink href="termsandcondition">Terms & Conditions</FooterLink>
               </FooterLinkGroup>
             </div>
           </div>

@@ -26,6 +26,8 @@ import PrivateRoute from '../Routes/PrivateRoute';
 import AboutUs from '../Pages/ExtraRoutes/AboutUs';
 import ContactUs from '../Pages/ExtraRoutes/ContactUs';
 import AllTeacher from '../Pages/ExtraRoutes/AllTeacher';
+import PrivacyPolicy from '../Pages/ExtraRoutes/PrivacyPolicy';
+import TermsAndConditions from '../Pages/ExtraRoutes/TermsAndConditions';
 
 
 const router = createBrowserRouter([
@@ -74,8 +76,13 @@ const router = createBrowserRouter([
         Component:AllTeacher
       },
       {
-        path:'contactUs',
-        Component:ContactUs
+        path:'privacy',
+        Component:PrivacyPolicy
+
+      },
+      {
+        path:'termsandcondition',
+        Component:TermsAndConditions
 
       }
 
