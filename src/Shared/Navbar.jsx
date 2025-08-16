@@ -33,13 +33,13 @@ const NavigationBar = () => {
   return (
     <div
       className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${
-        isScrolled ? 'bg-[#EBFFD8] shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-[#EBFFD8] dark:bg-[#2a4114] shadow-md' : 'bg-transparent'
       }`}
     >
       {/* Left - Brand */}
       <div className="navbar-start">
         <div className="flex items-center pt-1.5">
-          <span className={`text-2xl sm:text-3xl font-extrabold text-[#0A5EB0] ${getTextColorClass()} righteous`}>
+          <span className={`text-2xl sm:text-3xl font-extrabold text-[#0A5EB0] dark:text-[#51a3f5] ${getTextColorClass()} righteous`}>
             Learn
             <span className="text-[#FFCFEF] text-shadow-xs text-shadow-gray-950">IQ</span>
           </span>
@@ -88,7 +88,7 @@ const NavigationBar = () => {
             </div>
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <HiMenu className={`${getTextColorClass()} text-3xl`} />
+                <HiMenu className={`${getTextColorClass()} text-3xl dark:text-[#51a3f5]`} />
               </button>
             </div>
           </>
@@ -111,7 +111,7 @@ const NavigationBar = () => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-[#0A5EB0] rounded shadow-lg p-4 w-48 lg:hidden">
+        <div className="absolute top-full right-0 mt-2 bg-[#0A5EB0] dark:text-[#51a3f5] rounded shadow-lg p-4 w-48 lg:hidden">
           <NavLink to="/" className="block text-white py-1 hover:text-[#FFCFEF]">Home</NavLink>
           <NavLink to="/allapprovedclasses" className="block text-white py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
           <NavLink to="/teacherform" className="block text-white py-1 hover:text-[#FFCFEF]">Teach On</NavLink>

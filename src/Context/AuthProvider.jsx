@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
             if(currentUser?.email){
                 const userData={email: currentUser?.email};
                 axios.post('https://edu-web-server-brown.vercel.app/jwt',userData).then(res=>{
-                    console.log('the jwt token',res.data.token)
+                    // console.log('the jwt token',res.data.token)
                     const token=res.data.token;
                     localStorage.setItem('token',token)
                 }).catch(error=>{

@@ -60,7 +60,7 @@ const GoogleSignIn = () => {
             const userEmail = { email: userData.email }
             axiosSecure.post('/jwt', userEmail).then(res => {
                 const token = res.data.token
-                console.log('Token from social login', token)
+                // console.log('Token from social login', token)
                 localStorage.setItem('Token', token)
                 
             }).catch(error => {

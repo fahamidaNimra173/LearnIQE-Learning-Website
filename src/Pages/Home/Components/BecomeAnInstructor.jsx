@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const BecomeInstructor = () => {
   return (
-    <div className="w-full px-4 py-12 mt-32 flex flex-col lg:flex-row items-center justify-center gap-10">
+    <div className="w-full px-4 py-12 mt-32 mb-15 flex flex-col lg:flex-row items-center justify-center gap-10">
       {/* Image Side */}
       <motion.div
         className="w-full lg:w-1/2 flex justify-center"
@@ -37,17 +37,27 @@ const BecomeInstructor = () => {
         </motion.h2>
 
         {/* Typewriter animation */}
-        <p className="text-[19px]  sm:text-xl text-black font-semibold mb-5 dark:text-[#FFCFEF] ">
+        <p className="text-[19px]  sm:text-xl text-black font-semibold mb-5 dark:text-[#fcedf7] ">
+          Teaching is more than just sharing knowledge—
+          it’s about empowering someone to believe in themselves.
+
+          As an instructor, you have the chance to make a real difference.
+          To guide. To inspire. To help students see possibilities they never saw before.
+
+          And the best part? You can do it from anywhere.
+          Your voice, your passion, and your expertise are all you need.
+
+          So if you’ve ever wanted to teach—this is your sign.
+          Step forward. Share what you know.
           Empower students. Teach from anywhere.
         </p>
 
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-[#0A5EB0] hover:bg-[#FFCFEF] hover:text-black text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
+        <button
+         
+          className=" crush font-bold text-center "
         >
-          Get Started
-        </motion.button>
+          <p>Get Started</p>
+        </button>
       </motion.div>
 
       {/* Keyframes */}

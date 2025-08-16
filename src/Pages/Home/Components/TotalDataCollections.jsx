@@ -20,7 +20,7 @@ const TotalDataCollections = ({ totalUsers, totalClasses, totalEnrollments }) =>
     return (
         <div>
 
-            <section className="pt-30 pb-10 px-4 bg-gradient-to-b from-[#EBFFD8] via-[#FFCFEF] to-[#0A5EB0] text-black">
+            <section className="pt-30 pb-10 px-4 dark:text-[#51a3f5] text-black">
                 {/* Title + Description */}
 
                 <div className="max-w-3xl mx-auto text-center mb-10">
