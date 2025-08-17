@@ -181,8 +181,8 @@ const TeacherForm = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-purple-200 mt-20 rounded-lg shadow-lg text-black text-[20px] font-semibold">
-      <h2 className="text-2xl font-bold text-center mb-6 text-purple-700">
+    <div className="max-w-2xl dark:text-black text-white mx-auto p-6 bg-[#0A5EB0] dark:bg-[#51a3f5] mt-20 rounded-lg shadow-lg  text-[20px] font-semibold">
+      <h2 className="text-2xl font-bold text-center mb-6 text-black dark:text-white">
         {isRejected ? 'Resubmit Teacher Request' : 'Apply to Teach'}
       </h2>
 

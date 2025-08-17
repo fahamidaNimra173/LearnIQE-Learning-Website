@@ -19,11 +19,11 @@ import {
 
 const FooteR = () => {
   return (
-    <Footer container className="bg-[#EBFFD8] rounded-none shadow-none">
-      <div className="w-full">
+    <Footer container className="bg-[#EBFFD8] dark:bg-[#2a4114] rounded-none shadow-none">
+      <div className="w-full lg:px-25 ">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           {/* Custom Brand */}
-          <div className="navbar-start">
+          <div className="flex flex-col mb-5">
             <div className="flex items-center pt-1.5">
               <span className="text-2xl sm:text-3xl font-extrabold text-[#0A5EB0] righteous">
                 Learn
@@ -35,6 +35,7 @@ const FooteR = () => {
                 alt="LearnIQ Logo"
               />
             </div>
+            <p className=''>Your Journey to Knowledge Starts Here.</p>
           </div>
 
           {/* Link Sections */}
@@ -43,7 +44,7 @@ const FooteR = () => {
               <FooterTitle title="About" />
               <FooterLinkGroup col>
                 <FooterLink href="/aboutUs">About Us</FooterLink>
-                <FooterLink href="#">Terms & Condition</FooterLink>
+                {/* <FooterLink href="#">Terms & Condition</FooterLink> */}
               </FooterLinkGroup>
             </div>
             <div>

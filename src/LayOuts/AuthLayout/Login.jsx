@@ -51,15 +51,15 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 px-4">
+    <div className="min-h-screen flex items-center justify-center my-30  px-4">
       <div className="w-full max-w-md bg-white shadow-xl p-8 rounded-xl border border-blue-100">
-        <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">Login to SkillMorph</h2>
+        <h2 className="text-3xl font-bold text-center text-[#0A5EB0] mb-6">Login to SkillMorph</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
           {/* Email */}
           <div>
-            <label className="label font-semibold text-blue-600">Email</label>
+            <label className="label font-semibold text-[#0A5EB0]">Email</label>
             <input
               type="email"
               placeholder="Your Email"
@@ -79,7 +79,7 @@ const Login = () => {
 
           {/* Password */}
           <div>
-            <label className="label font-semibold text-blue-600">Password</label>
+            <label className="label font-semibold text-[#0A5EB0]">Password</label>
             <input
               type="password"
               placeholder="Enter password"
@@ -106,7 +106,7 @@ const Login = () => {
           {/* Login Button */}
           <button
             type="submit"
-            className="btn btn-primary w-full text-white tracking-wide"
+            className="btn bg-[#FFCFEF] dark:bg-[#51a3f5] w-full text-black font-bold tracking-wide"
           >
             Login
           </button>
@@ -122,7 +122,7 @@ const Login = () => {
         {/* Register Redirect */}
         <p className="text-center text-sm text-gray-600 mt-6">
           Don't have an account?{" "}
-          <Link to="/register" className="text-blue-600 font-semibold hover:underline">
+          <Link to="/register" className="text-[#0A5EB0] font-semibold hover:underline">
             Register here
           </Link>
         </p>

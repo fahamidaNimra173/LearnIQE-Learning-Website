@@ -49,6 +49,16 @@
   font-style: normal;
 }
 
+
+.lightColor1{
+  background-color:#EBFFD8;
+  
+}
+.darkColor1{
+  background-color:#2a4114;
+}
+
+
 .active{
   font-size: large;
   font-weight: 700;

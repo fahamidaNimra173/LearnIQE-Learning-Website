@@ -11,6 +11,9 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import AxiosSecure from '../Axios/AxiosSecure';
 import DashNavBar from '../DashBoard/DasboardNavbar/DashNavBar';
 import UserRoleChart from '../DashBoard/AllUsers/Components/UserRoleChart';
+import CategoryEnrollmentChart from '../DashBoard/AllUsers/Components/CategoryEnrollmentChart';
+import MyClassesChart from '../DashBoard/AllUsers/Components/Teacher/MyClassesChart';
+import StudentAssignmentsChart from '../DashBoard/AllUsers/Components/Student/StudentAssignmentsChart';
 
 
 const Dashboard = () => {
@@ -20,7 +23,7 @@ const Dashboard = () => {
   const axiosSecure = AxiosSecure()
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-useEffect(() => {
+  useEffect(() => {
     if (user?.email) {
       // Fetch current user info directly from a "me" endpoint to avoid pagination issues
       axiosSecure.get(`/users/me?email=${user.email}`)
@@ -140,22 +143,58 @@ useEffect(() => {
           <DashNavBar></DashNavBar>
           <Outlet />
           {isDashboardRoot && (
-            <div className="text-center mt-20">
+            <div className="text-center mt-20 px-4 md:px-10">
               <h1 className="text-3xl font-bold text-[#0A5EB0] dark:text-white">
-                Welcome {user?.name || 'to your Dashboard'} 
+                Welcome {user?.name || 'to your Dashboard'}
               </h1>
-              <p className="text-gray-600 dark:text-gray-300 mt-2">
-                Use the sidebar to navigate through your role-based tools.
+              <p className="text-gray-600 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
+                Welcome back! Every day is a new chance to discover, improve, and achieve your goals.
+                Start exploring and enjoy the journey.
               </p>
-              {/* <DotLottieReact
-                src="https://lottie.host/e2c3698d-4895-49a7-9f5a-f3ba9ea0f405/iQ1apuityN.lottie"
-                loop
-                autoplay
-              /> */}
-              <UserRoleChart></UserRoleChart>
 
+              {role === 'admin' && (
+                <div className="mt-10 space-y-8">
+                  {/* First Chart - Category Enrollment */}
+                  <div className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6 max-w-5xl mx-auto">
+                    <h2 className="text-2xl font-semibold text-center mb-3 text-[#7E3AF2] dark:text-white">
+                      Overview of Course Enrollments
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-300 text-center mb-6">
+                      Visual representation of total student enrollments across different categories.
+                    </p>
+                    <CategoryEnrollmentChart />
+                  </div>
+
+                  {/* Second Chart - User Roles */}
+                  <div className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6 max-w-5xl mx-auto">
+                    <h2 className="text-2xl font-semibold text-center mb-3 text-[#F97316] dark:text-white">
+                      User Role Distribution
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-300 text-center mb-6">
+                      Breakdown of users by their roles: admin, teacher, and student.
+                    </p>
+                    <UserRoleChart />
+                  </div>
+                </div>
+              )}
+              {
+                role==='teacher'&& (
+                  <div>
+                    <MyClassesChart></MyClassesChart>
+                  </div>
+                )
+              }
+              {
+                role==='student'&& (
+                  <div>
+                    <StudentAssignmentsChart></StudentAssignmentsChart>
+                  </div>
+                )
+              }
             </div>
           )}
+
+
         </main>
       </div>
     </div>

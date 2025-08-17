@@ -27,7 +27,7 @@ const NavigationBar = () => {
   // Determine text color class
   const getTextColorClass = () => {
     if (isHomePage && !isScrolled) return 'text-white';
-    return 'text-[#0A5EB0]';
+    return 'text-[#0A5EB0] dark:text-[#51a3f5]';
   };
 
   return (
@@ -51,8 +51,8 @@ const NavigationBar = () => {
       </div>
 
       {/* Center - Links */}
-      <div className="navbar-center hidden lg:flex gap-6">
-        <NavLink to="/" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
+      <div className="navbar-center hidden dark:text-[#51a3f5] lg:flex gap-6">
+        <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-bold text-[18px] hover:text-[#0A97B0]`}>
           Home
         </NavLink>
         <NavLink to="/allapprovedclasses" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>

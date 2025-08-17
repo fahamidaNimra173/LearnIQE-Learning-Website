@@ -29,8 +29,8 @@ const InstructorsPage = () => {
   }
 
   return (
-    <section className="py-12 max-w-7xl mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-10 text-purple-800">
+    <section className="py-12 mt-20 max-w-7xl mx-auto px-4">
+      <h2 className="text-4xl font-bold text-center mb-10 text-[#0A5EB0] dark:text-[#51a3f5]">
         Meet Our Expert Instructors
       </h2>
 

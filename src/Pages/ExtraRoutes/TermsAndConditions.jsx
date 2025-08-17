@@ -2,7 +2,7 @@ import React from "react";
 
 const TermsAndConditions = () => {
   return (
-    <div className="max-w-5xl mx-auto p-6 my-30 dark:text-white text-gray-800">
+    <div className="lg:px-25 p-6 my-30 dark:text-white text-gray-800">
       <h1 className="text-4xl font-bold mb-6 text-center">Terms & Conditions</h1>
       <p className="mb-4">
         Welcome to <strong>LearnIQ</strong>. By accessing or using our platform,

@@ -47,7 +47,7 @@ const UserRoleChart = () => {
   ];
 
   return (
-    <div className="bg-white my-10 mx-10 shadow-md p-5 rounded-2xl">
+    <div className="bg-white my-10 lg:mx-10 mx-1 shadow-md py-5 px-1 lg:p-5 rounded-2xl">
       <h2 className="text-xl font-semibold text-black mb-4 text-center">
         User Role Distribution
       </h2>

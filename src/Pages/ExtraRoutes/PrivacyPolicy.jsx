@@ -2,7 +2,7 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="max-w-5xl mx-auto p-6 text-gray-800 my-40 dark:text-white">
+    <div className=" lg:px-25 p-6 text-gray-800 my-40 dark:text-white">
       <h1 className="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>
       <p className="mb-4">
         At <strong>LearnIQ</strong>, we value your privacy and are committed to
