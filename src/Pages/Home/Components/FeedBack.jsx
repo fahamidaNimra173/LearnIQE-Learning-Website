@@ -37,7 +37,7 @@ const FeedBack = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-purple-900 mb-12">
+        <h2 className="text-4xl font-bold text-center text-[#6c4370] mb-12">
           What Our Students Say
         </h2>
 
@@ -62,14 +62,14 @@ const FeedBack = () => {
                     alt={item.name}
                     className="w-16 h-16 mx-auto rounded-full mb-3 border-2 border-purple-300"
                   />
-                  <h3 className="text-lg font-bold text-purple-800">
+                  <h3 className="text-lg font-bold text-[#6c4370]">
                     {item.name}
                   </h3>
-                  <p className="text-sm italic text-purple-700 mt-2">
+                  <p className="text-sm italic text-[#6c4370] mt-2">
                     “{item.description}”
                   </p>
                 </div>
-                <p className="text-sm text-purple-500 mt-3">
+                <p className="text-sm text-[#6c4370] mt-3">
                   Course: {item.courseTitle}
                 </p>
               </div>

@@ -51,7 +51,7 @@ const NavigationBar = () => {
       </div>
 
       {/* Center - Links */}
-      <div className="navbar-center hidden dark:text-[#e7efee] lg:flex gap-6">
+      <div className="navbar-center habibi hidden dark:text-[#e7efee] lg:flex gap-6">
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-bold text-[18px] hover:text-[#0A97B0]`}>
           Home
         </NavLink>
