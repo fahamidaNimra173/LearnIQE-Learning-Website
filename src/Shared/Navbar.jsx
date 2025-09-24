@@ -27,18 +27,18 @@ const NavigationBar = () => {
   // Determine text color class
   const getTextColorClass = () => {
     if (isHomePage && !isScrolled) return 'text-white';
-    return 'text-[#0A5EB0] dark:text-[#51a3f5]';
+    return 'text-[#e7efee] dark:text-[#e7efee]';
   };
 
   return (
     <div
-      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${isScrolled ? 'bg-[#EBFFD8] dark:bg-[#2a4114] shadow-md' : 'bg-transparent'
+      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${isScrolled ? 'bg-[#6c4370] dark:bg-[#6c4370] shadow-md' : 'bg-transparent'
         }`}
     >
       {/* Left - Brand */}
       <div className="navbar-start">
         <div className="flex items-center pt-1.5">
-          <span className={`text-2xl sm:text-3xl font-extrabold text-[#0A5EB0] dark:text-[#51a3f5] ${getTextColorClass()} righteous`}>
+          <span className={`text-2xl sm:text-3xl font-extrabold text-[#e7efee] dark:text-[#e7efee] ${getTextColorClass()} righteous`}>
             Learn
             <span className="text-[#FFCFEF] text-shadow-xs text-shadow-gray-950">IQ</span>
           </span>
@@ -51,7 +51,7 @@ const NavigationBar = () => {
       </div>
 
       {/* Center - Links */}
-      <div className="navbar-center hidden dark:text-[#51a3f5] lg:flex gap-6">
+      <div className="navbar-center hidden dark:text-[#e7efee] lg:flex gap-6">
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-bold text-[18px] hover:text-[#0A97B0]`}>
           Home
         </NavLink>
@@ -79,7 +79,7 @@ const NavigationBar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#FFCFEF] text-[#2A3335] rounded-box w-52"
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#e7efee] text-[#2A3335] rounded-box w-52"
               >
                 <li><span className="text-sm font-bold">{user.displayName}</span></li>
                 <li><span className="text-xs">{user.email}</span></li>
@@ -91,7 +91,7 @@ const NavigationBar = () => {
             </div>
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <HiMenu className={`${getTextColorClass()} text-3xl dark:text-[#51a3f5]`} />
+                <HiMenu className={`${getTextColorClass()} text-3xl dark:text-[#e7efee]`} />
               </button>
             </div>
           </>
@@ -114,7 +114,7 @@ const NavigationBar = () => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-[#0A5EB0] dark:text-[#51a3f5] rounded shadow-lg p-4 w-48 lg:hidden">
+        <div className="absolute top-full right-0 mt-2 bg-[#6c4370]  rounded shadow-lg p-4 w-48 lg:hidden">
           <NavLink to="/" className="block text-white py-1 hover:text-[#FFCFEF]">Home</NavLink>
           <NavLink to="/allapprovedclasses" className="block text-white py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
           <NavLink to="/teacherform" className="block text-white py-1 hover:text-[#FFCFEF]">Teach On</NavLink>

@@ -1,76 +1,61 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const StatsCard = ({ title, count, bgColor, textColor }) => {
+export default function TotalDataCollections({
+    totalUsers,
+    totalClasses,
+    totalEnrollments,
+    backgroundImage = "https://i.ibb.co/9mbv8shF/desk-3139127-1280.jpg",
+}) {
+    const [counts, setCounts] = useState({
+        users: 0,
+        classes: 0,
+        enrollments: 0,
+    });
+
+    useEffect(() => {
+        const duration = 2000;
+        const start = performance.now();
+
+        function animate(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            setCounts({
+                users: Math.floor(progress * totalUsers),
+                classes: Math.floor(progress * totalClasses),
+                enrollments: Math.floor(progress * totalEnrollments),
+            });
+            if (progress < 1) requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+    }, [totalUsers, totalClasses, totalEnrollments]);
+
     return (
-        <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className={`rounded-xl p-6 shadow-lg mb-6`}
-            style={{ backgroundColor: bgColor, color: textColor }}
-        >
-            <h3 className="text-xl font-semibold mb-2">{title}</h3>
-            <p className="text-3xl font-bold">{count}</p>
-        </motion.div>
+        <section>
+            <h1 className="text-4xl font-bold text-[#272a2d] text-center mt-40 righteous uppercase ">
+                <span className="text-[#6c4370] text-5xl habibi font-extrabold "> Join</span> the Movement to Learn & Grow
+            </h1>
+            <div
+                className="relative w-full h-[70vh] mt-15 flex items-center justify-center bg-cover bg-center"
+                style={{ backgroundImage: `url(${backgroundImage})` }}
+            >
+                {/* Custom overlay with #1e8a78 and 50% opacity */}
+                <div className="absolute inset-0 bg-[#1e8a78]/95" />
+
+                {/* Counter content */}
+                <div className="relative z-10 flex flex-col items-center justify-center sm:flex-row gap-20 text-white text-center">
+                    <Stat value={counts.users} label="Users" />
+                    <Stat value={counts.classes} label="Classes" />
+                    <Stat value={counts.enrollments} label="Enrollments" />
+                </div>
+            </div>
+        </section>
     );
-};
+}
 
-const TotalDataCollections = ({ totalUsers, totalClasses, totalEnrollments }) => {
+function Stat({ value, label }) {
     return (
-        <div>
-
-            <section className="pt-30 pb-10 px-4 dark:text-[#51a3f5] text-black">
-                {/* Title + Description */}
-
-                <div className="max-w-3xl mx-auto text-center mb-10">
-                    <h2 className="text-4xl font-extrabold mb-3">Our Website Impact</h2>
-                    <p className="text-lg max-w-xl mx-auto">
-                        See how many students, teachers, and classes make up our vibrant learning community.
-                    </p>
-                </div>
-                {/* Content: Left stats cards + Right image */}
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch gap-10">
-                    {/* Left: Cards */}
-                    <div className="flex-1 w-full h-full flex flex-col justify-between">
-                        <StatsCard
-                            title="Total Users"
-                            count={totalUsers}
-                            bgColor="#EBFFD8"
-                            textColor="#0A5EB0"
-                        />
-                        <StatsCard
-                            title="Total Classes"
-                            count={totalClasses}
-                            bgColor="#FFCFEF"
-                            textColor="#0A5EB0"
-                        />
-                        <StatsCard
-                            title="Total Enrollments"
-                            count={totalEnrollments}
-                            bgColor="#0A5EB0"
-                            textColor="#EBFFD8"
-                        />
-                    </div>
-
-                    {/* Right: Image */}
-                    <div className="flex-1 w-full h-full">
-                        <motion.img
-                            src="https://i.ibb.co/9mbv8shF/desk-3139127-1280.jpg"
-                            alt="Online Learning"
-                            className="rounded-xl shadow-lg w-full h-full object-cover max-h-[500px]"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1 }}
-                        />
-                    </div>
-                </div>
-
-            </section>
-
+        <div className="flex flex-col items-center merienda gap-5 justify-center">
+            <p className="lg:text-7xl text-5xl font-bold merienda">{value}+</p>
+            <p className="mt-2 font-bold uppercase tracking-wide border-b-1 box-shadow-2 shadow-2xl shadow-black pb-1   text-2xl">{label}</p>
         </div>
-
     );
-};
-
-export default TotalDataCollections;
+}
