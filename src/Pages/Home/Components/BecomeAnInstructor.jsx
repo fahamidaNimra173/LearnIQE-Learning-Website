@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const BecomeInstructor = () => {
   return (
-    <div className="w-full px-4 py-12 mt-32 mb-15 flex flex-col lg:flex-row items-center justify-center gap-10">
+    <div className="w-full px-6 md:px-25 bg-[#6c4370] py-12 mt-32 mb-15 flex flex-col lg:flex-row items-center justify-center gap-10 md:gap-5">
       {/* Image Side */}
       <motion.div
         className="w-full lg:w-1/2 flex justify-center"
@@ -15,7 +15,7 @@ const BecomeInstructor = () => {
         <img
           src="https://i.ibb.co/wZJJz8qG/never-Sto-Learning.jpg"
           alt="Become Instructor"
-          className="w-[90%] max-w-[400px] rounded-xl object-contain"
+          className="   object-contain"
         />
       </motion.div>
 
@@ -28,7 +28,7 @@ const BecomeInstructor = () => {
         viewport={{ once: true }}
       >
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 text-[#0A5EB0]"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 habibi uppercase text-[#1e8a78] "
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1 }}
@@ -37,7 +37,7 @@ const BecomeInstructor = () => {
         </motion.h2>
 
         {/* Typewriter animation */}
-        <p className="text-[19px]  sm:text-xl text-black font-semibold mb-5 dark:text-[#fcedf7] ">
+        <p className="text-[19px]  sm:text-xl text-white font-semibold mb-5 dark:text-white habibi ">
           Teaching is more than just sharing knowledge—
           it’s about empowering someone to believe in themselves.
 
