@@ -33,7 +33,7 @@ const TopCources = () => {
     return (
         <div className="relative py-10 px-6 md:px-25">
             <div className="relative z-10 mx-auto">
-                <h1 className="text-[#6c4370] md:text-5xl text-3xl habibi font-extrabold uppercase mt-40 mb-15 text-center">
+                <h1 className="text-[#6c4370] md:text-5xl text-2xl habibi font-extrabold uppercase mt-10 md:mt-40 mb-15 text-center">
                     Popular <span className="text-[#1e8a78]">Courses</span> to Boost Your Skills
                 </h1>
 
@@ -119,13 +119,13 @@ const TopCources = () => {
                         ref={prevRef}
                         className=" border-4 bg-[#d4f3ed] border-[#937f94] border-dashed hover:bg-[#1e8a78]  p-6  rounded-full"
                     >
-                        <IoIosArrowBack className='w-10 h-10 text-[#937f94]' />
+                        <IoIosArrowBack className='md:w-10 w-5 h-5 md:h-10 text-[#937f94]' />
                     </button>
                     <button
                         ref={nextRef}
                         className="border-4 bg-[#d4f3ed] border-[#937f94] hover:bg-[#1e8a78]   border-dashed p-6  rounded-full"
                     >
-                        <IoIosArrowForward className='w-10 h-10 text-[#937f94]' />
+                        <IoIosArrowForward className='md:w-10 w-5 h-5 md:h-10 text-[#937f94]' />
                     </button>
                 </div>
             </div>
