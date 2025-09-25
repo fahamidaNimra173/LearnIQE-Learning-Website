@@ -32,8 +32,11 @@ const NavigationBar = () => {
 
   return (
     <div
-      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${isScrolled ? 'bg-[#6c4370] dark:bg-[#6c4370] shadow-md' : 'bg-transparent'
-        }`}
+      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${ isHomePage
+        ? isScrolled
+          ? 'bg-[#6c4370] dark:bg-[#6c4370] shadow-md'
+          : 'bg-transparent'
+        : 'bg-[#6c4370] dark:bg-[#6c4370] shadow-md'}`}
     >
       {/* Left - Brand */}
       <div className="navbar-start">
