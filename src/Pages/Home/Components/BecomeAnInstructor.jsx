@@ -12,12 +12,21 @@ const BecomeInstructor = () => {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <img
-          src="https://i.ibb.co/wZJJz8qG/never-Sto-Learning.jpg"
-          alt="Become Instructor"
-          className="   object-contain"
-        />
+        <div className="relative">
+          {/* Yellow box behind */}
+          <div className="absolute inset-0 flex justify-center">
+            <div className="bg-yellow-400 p-5 w-[950px] md:h-96 h-40 z-0 -ml-10 -mt-5 md:-mt-10 mr-6 "></div>
+          </div>
+
+          {/* Image on top */}
+          <img
+            src="https://i.ibb.co/wZJJz8qG/never-Sto-Learning.jpg"
+            alt="Become Instructor"
+            className="relative object-contain z-10"
+          />
+        </div>
       </motion.div>
+
 
       {/* Text Side */}
       <motion.div
@@ -33,7 +42,7 @@ const BecomeInstructor = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1 }}
         >
-          Become an Instructor
+          Become <span className='text-pink-100'>an</span> Instructor
         </motion.h2>
 
         {/* Typewriter animation */}
@@ -53,7 +62,7 @@ const BecomeInstructor = () => {
         </p>
 
         <button
-         
+
           className=" crush font-bold text-center "
         >
           <p>Get Started</p>

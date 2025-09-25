@@ -11,6 +11,7 @@ import FeedBack from './Components/FeedBack';
 import TopCources from './Components/TopCources';
 import BecomeAnInstructor from './Components/BecomeAnInstructor';
 import Motivation from './Components/Motivation';
+import NewsLatter from './Components/NewsLatter';
 
 
 
@@ -51,6 +52,7 @@ const Home = () => {
             <Motivation></Motivation>
 
             <PartnerMarquee></PartnerMarquee>
+            {/* <NewsLatter></NewsLatter> */}
         </div>
     );
 };

@@ -55,24 +55,26 @@ const TopCources = () => {
                     >
                         {courses.map((course) => (
                             <SwiperSlide key={course._id}>
-                                <div className="bg-[#ffffff] rounded-lg overflow-hidden hover:shadow-xl transition duration-300 flex flex-col h-full">
+                                <div className=" rounded-lg overflow-hidden hover:shadow-xl transition duration-300  h-full">
                                     <img
                                         src={course.image}
                                         alt={course.title}
                                         className="w-full h-48 object-cover"
                                     />
-                                    <div className="p-4 flex-1  flex flex-col items-center justify-center">
+                                    <div className="p-4 bg-gradient-to-t from-[#1e8a78] via-fuchsia-100  to-pink-200 flex-1  flex flex-col items-center justify-center">
                                         <h3 className="text-xl h-20 my-auto font-extrabold text-[#6c4370] merienda min-h-1/2  text-center mb-3 ">{course.title}</h3>
+                                        <div className=''>
+                                            <div className="flex items-center border-b-1 border-l-1 bg-gradient-to-t from-[#aec9c4] via-transparent shadow-2xl shadow-pink-200  p-2 gap-2 text-gray-700 mb-2">
+                                                <FiUsers className="text-[#6c4370] w-7 h-7" />
+                                                <span className="text-md text-black"><strong className='habibi text-[#6c4370]'>Enrollments:</strong> {course.totalEnroll}</span>
+                                            </div>
 
-                                        <div className="flex items-center gap-2 text-gray-700 mb-2">
-                                            <FiUsers className="text-[#6c4370] w-5 h-5" />
-                                            <span className="text-md text-black"><strong className='habibi text-[#6c4370]'>Enrollments:</strong> {course.totalEnroll}</span>
+                                            <div className="flex items-center border-t-1 border-r-1 p-2 bg-gradient-to-b from-pink-100 via-transparent to-transparent  gap-2 text-gray-700 mb-3">
+                                                <FiDollarSign className="text-[#6c4370] w-7 h-7" />
+                                                <span className="text-md text-black"><strong className='habibi text-[#6c4370]'>Price:</strong> ৳{course.price}</span>
+                                            </div>
                                         </div>
 
-                                        <div className="flex items-center gap-2 text-gray-700 mb-3">
-                                            <FiDollarSign className="text-[#6c4370] w-5 h-5" />
-                                            <span className="text-md text-black"><strong className='habibi text-[#6c4370]'>Price:</strong> ৳{course.price}</span>
-                                        </div>
                                         <button
                                             onClick={() => navigate(`/classdetails/${course._id}`)}
                                             className="mt-2  buttonMore"

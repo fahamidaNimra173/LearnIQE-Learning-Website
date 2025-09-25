@@ -22,11 +22,16 @@ const partners = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
     description: "Skill-based programs and certification support.",
   },
+  {
+    name: "Udemy",
+    logo: "https://i.ibb.co/V0DrBrMY/Screenshot-2025-07-29-184609.png",
+    description: "Thousands of expert-led courses for skills development.",
+  },
 ];
 
 const PartnerMarquee = () => {
   return (
-    <div className="relative py-16 px-4 overflow-hidden">
+    <div className="relative py-16 px-4 mb-15 md:mb-30 overflow-hidden">
       {/* Background Image with Blur and Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center filter blur-sm"
@@ -50,7 +55,7 @@ const PartnerMarquee = () => {
           {partners.map((partner, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center bg-white bg-opacity-90 text-black mx-4 p-4 rounded-xl shadow-lg min-w-[250px] max-w-xs text-center"
+              className="flex flex-col items-center justify-center bg-white bg-opacity-90 text-black mx-4 p-4 rounded-xl shadow-lg min-w-[250px] max-w-xs h-48 text-center"
             >
               <img
                 src={partner.logo}

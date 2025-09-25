@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { BiSolidQuoteLeft, BiSolidQuoteRight } from "react-icons/bi";
 
 const FeedBack = () => {
   const axiosSecure = AxiosSecure();
@@ -19,63 +20,68 @@ const FeedBack = () => {
 
   if (!feedbacks || feedbacks.length < 1) {
     return (
-      <div className="text-center text-lg py-10 text-purple-800">
+      <div className="text-center text-lg py-10 text-[#6c4370]">
         No feedback available yet.
       </div>
     );
   }
 
   return (
-    <div
-      className="relative bg-cover bg-center bg-no-repeat py-20"
-      style={{
-        backgroundImage: "url('https://i.ibb.co/DDP6747Y/ai-generated-8337506-1280.png')",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+    <div>
+      <h2 className="md:text-4xl text-2xl habibi uppercase font-bold text-center text-[#6c4370] md:mt-30 mt-15  mb-12">
+        What Our Students Say
+      </h2>
+      <div
+        className="relative bg-cover bg-center bg-no-repeat py-20"
+        style={{
+          backgroundImage: "url('https://i.ibb.co/DDP6747Y/ai-generated-8337506-1280.png')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-white/10 "></div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-[#6c4370] mb-12">
-          What Our Students Say
-        </h2>
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
 
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          loop={true}
-          spaceBetween={30}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {feedbacks.map((item, i) => (
-            <SwiperSlide key={i}>
-              <div className="bg-white bg-opacity-90 p-6 rounded-xl shadow-xl h-80 flex flex-col justify-between text-center">
-                <div>
-                  <img
-                    src={item.userPhoto}
-                    alt={item.name}
-                    className="w-16 h-16 mx-auto rounded-full mb-3 border-2 border-purple-300"
-                  />
-                  <h3 className="text-lg font-bold text-[#6c4370]">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm italic text-[#6c4370] mt-2">
-                    “{item.description}”
+
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            loop={true}
+            spaceBetween={30}
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {feedbacks.map((item, i) => (
+              <SwiperSlide key={i}>
+                <div className="bg-white bg-opacity-90 p-6 rounded-xl shadow-xl h-96 flex flex-col justify-center gap-10 text-center">
+                  <div>
+                    <div className='flex items-center  justify-center gap-5'>
+                      <img
+                        src={item.userPhoto}
+                        alt={item.name}
+                        className="w-20 h-20  rounded-full mb-3 border-2 border-purple-300"
+                      />
+                      <h3 className="text-2xl max-h-24 my-0 righteous tracking-wider font-bold text-[#1e8a78] ">
+                        {item.name}
+                      </h3>
+                    </div>
+                    <p className="text-[22px] flex  items-center justify-center gap-5 habibi italic text-[#6c4370] mt-2">
+                      <BiSolidQuoteLeft className="w-20 h-20 text-[#1e8a78]" />{item.description}<BiSolidQuoteRight className="w-20 h-20 text-[#1e8a78]" />
+                    </p>
+                  </div>
+                  <p className="text-[18px] mb-10 text-[#6c4370] mt-3">
+                    <span className="text-[#1e8a78] font-bold uppercase">Course~</span> <span className='habibi'>{item.courseTitle}</span>
                   </p>
                 </div>
-                <p className="text-sm text-[#6c4370] mt-3">
-                  Course: {item.courseTitle}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </div>
   );
