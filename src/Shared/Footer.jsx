@@ -19,7 +19,7 @@ import {
 
 const FooteR = () => {
   return (
-    <Footer container className="bg-[#6c4370] dark:bg-[#6c4370]  rounded-none shadow-none">
+    <Footer container className="bg-[#6c4370] text-[#e7efee] dark:text-[#e7efee] dark:bg-[#6c4370]  rounded-none shadow-none">
       <div className="w-full lg:px-25 ">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           {/* Custom Brand */}
@@ -39,7 +39,7 @@ const FooteR = () => {
           </div>
 
           {/* Link Sections */}
-          <div className="grid grid-cols-2 text-[#e7efee] gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+          <div className="grid grid-cols-2 text-[#e7efee] dark:text-[#e7efee] gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
               <FooterTitle title="About" />
               <FooterLinkGroup col>

@@ -6,16 +6,16 @@ const Loader1 = () => {
             <div class="flex  p-8 justify-center items-center h-[450px]">
                 <div class="text-center space-y-6">
                     <div
-                        class="w-24 h-24 border-4 border-t-[#f1b2fa] border-gray-700 rounded-full animate-spin mx-auto"
+                        class="w-24 h-24 border-4 border-t-[#1e8a78] border-gray-700 rounded-full animate-spin mx-auto"
                     ></div>
                     <div
-                        class="text-[#0A5EB0] font-semibold text-4xl opacity-90 animate-fadeIn"
+                        class="text-[#1e8a78] font-semibold text-4xl opacity-90 animate-fadeIn"
                     >
                         Almost There...
                     </div>
-                    <div class="dark:text-[#FFCFEF] text-[#0A5EB0]  text-[18px] opacity-80 animate-fadeIn">
-                        <p>We're getting everything ready for you...</p>
-                        <p>Sit tight for just a moment.</p>
+                    <div class="dark:text-[#6c4370] text-[#6c4370]  text-[18px] opacity-80 animate-fadeIn">
+                        <p className='text[20px] font-medium'>We're getting everything ready for you...</p>
+                        <p className='text[20px] font-medium'>Sit tight for just a moment.</p>
                     </div>
                 </div>
             </div>
