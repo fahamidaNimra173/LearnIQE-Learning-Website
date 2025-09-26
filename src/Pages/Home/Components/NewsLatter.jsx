@@ -1,31 +1,37 @@
 import React from 'react';
-import Image from '../../../assets/Screenshot 2025-09-25 215732.png'
+import Image from '../../../assets/Screenshot_2025-09-25_215732-removebg-preview.png'
 const NewsLatter = () => {
     return (
-        <div className="relative py-16 px-4 bg-[#6c4370] mb-1  md:mb-30 overflow-hidden">
-            {/* Background Image with Blur and Overlay */}
+        <div className="relative py-16 px-4 mb-1 overflow-hidden">
+            {/* Background Image with slight blur */}
             <div
-                className="absolute inset-0 bg-cover bg-center filter blur-sm"
+                className="absolute inset-0 bg-cover bg-center  z-0"
                 style={{
-                    backgroundImage: { Image },
-                    zIndex: 0,
+                    backgroundImage: `url(${Image})`,
                 }}
-            ></div>
-            <div className="">
-                <div className="relative z-10 text-white">
-                    <h1 className='md:text-7xl font-bold text-3xl righteous text-[#1e8a78]  tracking-widest'>Be a member</h1>
-                    <p className='habibi  font-medium text-2xl'>Subscribe our website to get latest Information </p>
-                </div>
-                <div className='flex flex-col items-center justify-center'>
-                    <legend>Your Email</legend>
-                    <input type="email" placeholder='Write your email' className='border-1 px-10 py-2 bg-gray-300 text-black' />
-                    <button className='buttonMore '>SUBSCRIBE</button>
-                </div>
-
-            </div>
+            />
 
             {/* Foreground Content */}
+            <div className="relative z-10 flex flex-col lg:gap-30 lg:flex-row gap-4 mt-2 lg:mt-0 text-center lg:text-left text-white lg:justify-between items-center lg:px-25">
+                <div>
+                    <h1 className="md:text-7xl text-4xl font-bold righteous lg:text-pink-200 text-[#1e8a78] mb-4 tracking-widest">
+                        Be a member
+                    </h1>
+                    <p className="habibi  text-[20px] font-extrabold lg:text-white text-[#01a78c] md:text-2xl">
+                        Subscribe to get the latest information
+                    </p>
+                </div>
 
+                <div className="flex flex-1 flex-col items-center lg:border-1 lg:backdrop-blur-sm lg:p-4 rounded-2xl   gap-3 justify-center">
+                    <label className="lg:text-[#6c4370] text-pink-200 lg:text-5xl text-2xl font-bold habibi uppercase mt-2 mb-4 ">Your Email</label>
+                    <input
+                        type="email"
+                        placeholder="Write your email"
+                        className="px-4 py-2 w-full mb-3 bg-[#1e8a78] text-white lg:bg-gray-100 lg:text-black rounded border"
+                    />
+                    <button className="crush"><p>Subscribe</p></button>
+                </div>
+            </div>
         </div>
     );
 };

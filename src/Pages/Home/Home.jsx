@@ -52,7 +52,7 @@ const Home = () => {
             <Motivation></Motivation>
 
             <PartnerMarquee></PartnerMarquee>
-            {/* <NewsLatter></NewsLatter> */}
+            <NewsLatter></NewsLatter>
         </div>
     );
 };

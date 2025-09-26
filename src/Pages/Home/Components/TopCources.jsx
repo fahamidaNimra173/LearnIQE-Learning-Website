@@ -42,7 +42,11 @@ const TopCources = () => {
                         modules={[Navigation]}
                         spaceBetween={20}
                         slidesPerView={1}
-                        breakpoints={{ 768: { slidesPerView: 3 } }}
+                        breakpoints={{
+                            768: { slidesPerView: 2 },
+                            1000: { slidesPerView: 3 }
+
+                        }}
                         navigation={{
                             prevEl: prevRef.current,
                             nextEl: nextRef.current,

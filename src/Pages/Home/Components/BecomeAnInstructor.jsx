@@ -6,7 +6,7 @@ const BecomeInstructor = () => {
     <div className="w-full px-6 md:px-25 bg-[#6c4370] py-12 mt-32 mb-15 flex flex-col lg:flex-row items-center justify-center gap-10 md:gap-5">
       {/* Image Side */}
       <motion.div
-        className="w-full lg:w-1/2 flex justify-center"
+        className="w-full lg:w-1/2 flex mb-3 justify-center"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
