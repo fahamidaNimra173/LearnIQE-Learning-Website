@@ -50,6 +50,31 @@
 }
 
 
+.hoverText {
+  display: inline-block;
+  transition: all 0.35s ease;
+  cursor: default;
+}
+
+/* Hovered letter */
+.hoverText:hover {
+  font-weight: 900;
+  color: #6c4370;
+  transform: scale(1.2);
+}
+
+/* Next siblings */
+.hoverText:hover ~ .hoverText {
+  font-weight: 500;
+  color: #6c4370;
+  transform: scale(1.1);
+}
+
+/* Optional: second next sibling */
+.hoverText:hover ~ .hoverText ~ .hoverText {
+  font-weight: 300;
+  transform: scale(1);
+}
 
 
 

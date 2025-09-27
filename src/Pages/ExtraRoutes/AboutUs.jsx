@@ -1,24 +1,29 @@
 import React from "react";
-
+import { motion } from 'framer-motion';
+import  '../../App.css'
 const AboutUs = () => {
   return (
     <div className=" text-gray-900">
       {/* Banner */}
-     <div className="flex flex-col lg:flex-row lg:items-center bg-white/30 lg:justify-center mt-20 dark:border-b-7 border-[#FFCFEF]">
+     <div className="flex flex-col lg:flex-row lg:items-center bg-gradient-to-r from-pink-200 via-[#1e8a78] to-transparent backdrop-blur-sm shadow-inner shadow-black lg:justify-center mt-20 dark:border-b-7 border-[#6c4370]">
       <div className="md:text-center px-2 lg:px-10 py-10 ">
-        <h1 className="text-5xl  mt-10 mb-5 text-[#0A5EB0] dark:text-white">Building a Community of Learning</h1>
-        <p className=" lg:text-left text-[#0A5EB0] dark:text-white text-[20px]">LearnIQ bridges learners and educators, creating a space where knowledge grows, skills are built, and opportunities thrive.</p>
+        <BubbleText />
+        <p className=" lg:text-left text-[#6c4370] dark:text-[#6c4370] font-medium text-[20px]">LearnIQ bridges learners and educators, creating a space where knowledge grows, skills are built, and opportunities thrive.</p>
       </div>
-      <div>
+      <motion.div
+        initial={{ scale:0 }}
+        whileInView={{ scale:1}}
+        transition={{ duration: 3 }}
+        viewport={{ once: true }}>
         <img src="https://i.ibb.co.com/MqXny7y/Screenshot-2025-08-16-234031.png" alt="" />
-      </div>
+      </motion.div>
      </div>
 
       <div className="max-w-6xl mx-auto px-6 py-12 space-y-16">
         {/* Our Story */}
         <section className="space-y-4 text-center">
-          <h2 className="text-3xl font-bold text-[#0A5EB0] dark:text-white">Our Story</h2>
-          <p className="max-w-3xl dark:text-white mx-auto text-lg text-gray-700">
+          <h2 className="lg:text-5xl text-3xl righteous font-extrabold text-[#1e8a78] dark:text-[#1e8a78]">Our Story</h2>
+          <p className="max-w-3xl  mx-auto text-lg text-[#6c4370] dark:text-[#6c4370]">
             LearnIQ was born from a simple idea: making quality education
             accessible to everyone, everywhere. What started as a vision to
             connect learners with passionate instructors has now become a
@@ -32,7 +37,7 @@ const AboutUs = () => {
             <h2 className="text-3xl text-center font-bold text-[#0A5EB0] dark:text-white mb-4">
               Our Mission
             </h2>
-            <p className="text-gray-700 dark:text-white text-lg">
+            <p className="text-text-[#6c4370] dark:text-[#6c4370] text-lg">
               To empower learners with skills, knowledge, and opportunities
               through modern, engaging, and flexible online education.
             </p>
@@ -41,7 +46,7 @@ const AboutUs = () => {
             <h2 className="text-3xl text-center font-bold text-[#0A5EB0] dark:text-white mb-4">
               Our Vision
             </h2>
-            <p className="text-gray-700 dark:text-white text-lg">
+            <p className="text-text-[#6c4370] dark:text-[#6c4370] text-lg">
               To build a global learning platform where **students and
               instructors** grow together, breaking barriers of geography,
               background, and resources.
@@ -134,5 +139,19 @@ const AboutUs = () => {
     </div>
   );
 };
+
+
+const BubbleText = () => {
+  return (
+    <h2 className="text-5xl mt-10 mb-5 text-[#6c4370] habibi uppercase dark:text-[rgb(108,67,112)]">
+      {"Building a Community of Learning".split("").map((char, idx) => (
+        <span className="hoverText" key={idx}>
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </h2>
+  );
+};
+
 
 export default AboutUs;
