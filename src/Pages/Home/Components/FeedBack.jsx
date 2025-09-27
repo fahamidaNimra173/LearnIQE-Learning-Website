@@ -58,9 +58,9 @@ const FeedBack = () => {
           >
             {feedbacks.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className="bg-white bg-opacity-90 p-6 rounded-xl shadow-xl h-96 flex flex-col justify-center gap-10 text-center">
+                <div className="bg-white bg-opacity-90 p-6 rounded-xl shadow-xl h-[400px] flex flex-col justify-center lg:gap-10 gap-6 text-center">
                   <div>
-                    <div className='flex items-center  justify-center gap-5'>
+                    <div className='flex items-center  justify-center gap-5 '>
                       <img
                         src={item.userPhoto}
                         alt={item.name}

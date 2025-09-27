@@ -12,18 +12,18 @@ const NewsLatter = () => {
             />
 
             {/* Foreground Content */}
-            <div className="relative z-10 flex flex-col lg:gap-30 lg:flex-row gap-4 mt-2 lg:mt-0 text-center lg:text-left text-white lg:justify-between items-center lg:px-25">
+            <div className="relative z-10 flex flex-col-reverse lg:gap-30 lg:flex-row gap-4 mt-2 lg:mt-0 text-center lg:text-left text-white lg:justify-between items-center lg:px-25">
                 <div>
                     <h1 className="md:text-7xl text-4xl font-bold righteous lg:text-pink-200 text-[#1e8a78] mb-4 tracking-widest">
                         Be a member
                     </h1>
-                    <p className="habibi  text-[20px] font-extrabold lg:text-white text-[#01a78c] md:text-2xl">
+                    <p className="habibi  text-[20px] font-extrabold lg:text-white text-pink-100 md:text-2xl">
                         Subscribe to get the latest information
                     </p>
                 </div>
 
-                <div className="flex flex-1 flex-col items-center lg:border-1 lg:backdrop-blur-sm lg:p-4 rounded-2xl   gap-3 justify-center">
-                    <label className="lg:text-[#6c4370] text-pink-200 lg:text-5xl text-2xl font-bold habibi uppercase mt-2 mb-4 ">Your Email</label>
+                <div className="flex flex-1 flex-col items-center border-1 backdrop-blur-sm p-4 rounded-2xl   gap-3 justify-center">
+                    <label className="lg:text-[#6c4370] text-[#6c4370] lg:text-5xl text-2xl font-bold habibi uppercase mt-2 mb-4 ">Your Email</label>
                     <input
                         type="email"
                         placeholder="Write your email"

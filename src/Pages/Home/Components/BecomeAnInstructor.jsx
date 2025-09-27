@@ -37,7 +37,7 @@ const BecomeInstructor = () => {
         viewport={{ once: true }}
       >
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 habibi uppercase text-[#1e8a78] "
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 habibi uppercase text-[#5bffe4] "
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1 }}

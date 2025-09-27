@@ -3,7 +3,7 @@ import { FaUserGraduate, FaLaptopCode, FaComments } from "react-icons/fa";
 
 const PlatformFacilities = () => {
   return (
-    <div className="relative w-full py-10s md:py-30 overflow-hidden">
+    <div className="relative w-full py-10  overflow-hidden">
       <div className="max-w-4xl mx-auto text-center md:py-12 px-4">
         <h1 className="text-[#6c4370] md:leading-15 md:text-5xl text-2xl habibi font-extrabold uppercase  text-center">
           Explore What Our Platform Offers
@@ -69,7 +69,7 @@ const PlatformFacilities = () => {
 
       {/* Cover Section */}
       <div
-        className="w-full  bg-white pt-10   bg-[url('https://i.ibb.co.com/M5VsKrsC/Wireframe-Wave-3d-PNG-Transparent-Wireframe-Wave-3d-Background-Abstract-Grid-Surface-In-Technology-A.png')] bg-contain bg-repeat-x bg-center "
+        className="w-full  bg-white pt-10   bg-[url('https://i.ibb.co.com/GfnqkSGZ/Wireframe-Wave-3d-PNG.png')] bg-contain bg-repeat-x bg-center "
       >
         <div className="max-w-full  mx-auto text-center opacity-100 bg-white/60 rounded-xl py-7 px-3 md:py-13 ">
           <h2 className="text-2xl habibi uppercase md:text-4xl font-extrabold text-[#1e8a78] mb-4">

@@ -19,7 +19,7 @@ import {
 
 const FooteR = () => {
   return (
-    <Footer container className="bg-[#6c4370] text-[#e7efee] dark:text-[#e7efee] dark:bg-[#6c4370]  rounded-none shadow-none">
+    <Footer container className="bg-[#6c4370] text-[#e7efee] dark:text-[#f9fdfc] dark:bg-[#6c4370]  rounded-none shadow-none">
       <div className="w-full lg:px-25 ">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           {/* Custom Brand */}
@@ -39,26 +39,26 @@ const FooteR = () => {
           </div>
 
           {/* Link Sections */}
-          <div className="grid grid-cols-2 text-[#e7efee] dark:text-[#e7efee] gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+          <div className="grid grid-cols-2 text-[#fcffff] dark:text-[#fefefe] gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
-              <FooterTitle title="About" />
+              <FooterTitle className='text-[#fcffff] dark:text-[#fefefe]' title="About" />
               <FooterLinkGroup col>
-                <FooterLink href="/aboutUs">About Us</FooterLink>
+                <FooterLink className='text-[#fcffff] dark:text-[#fefefe]' href="/aboutUs">About Us</FooterLink>
                 {/* <FooterLink href="#">Terms & Condition</FooterLink> */}
               </FooterLinkGroup>
             </div>
             <div>
-              <FooterTitle title="Follow us" />
+              <FooterTitle className='text-[#fcffff] dark:text-[#fefefe]' title="Follow us" />
               <FooterLinkGroup col>
-                <FooterLink href="https://github.com/fahamidaNimra173" target="_blank">GitHub</FooterLink>
-                <FooterLink href="https://www.linkedin.com/in/fahmida-nimra/" target="_blank">Linkedin</FooterLink>
+                <FooterLink className='text-[#fcffff] dark:text-[#fefefe]' href="https://github.com/fahamidaNimra173" target="_blank">GitHub</FooterLink>
+                <FooterLink className='text-[#fcffff] dark:text-[#fefefe]' href="https://www.linkedin.com/in/fahmida-nimra/" target="_blank">Linkedin</FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
-              <FooterTitle title="Legal" />
+              <FooterTitle className='text-[#fcffff] dark:text-[#fefefe]' title="Legal" />
               <FooterLinkGroup col>
-                <FooterLink href="privacy">Privacy Policy</FooterLink>
-                <FooterLink href="termsandcondition">Terms & Conditions</FooterLink>
+                <FooterLink className='text-[#fcffff] dark:text-[#fefefe]' href="privacy">Privacy Policy</FooterLink>
+                <FooterLink className='text-[#fcffff] dark:text-[#fefefe]' href="termsandcondition">Terms & Conditions</FooterLink>
               </FooterLinkGroup>
             </div>
           </div>
