@@ -75,6 +75,16 @@
   font-weight: 300;
   transform: scale(1);
 }
+/* Add this in your global CSS or module */
+.card-bg-zoom {
+  transform: scale(1) translate(0, 0);
+  transition: transform 0.5s ease;
+}
+
+.card-bg-zoom.zoom {
+  transform: scale(1.3) translate(20%, 30%); /* move 20% right and 20% down */
+}
+
 
 
 

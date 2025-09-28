@@ -1,19 +1,35 @@
 import { useQuery } from "@tanstack/react-query";
 import AxiosSecure from "../../Axios/AxiosSecure";
+import '../../App.css'
+import { useEffect } from "react";
 
 const InstructorsPage = () => {
   const axiosSecure = AxiosSecure();
+  useEffect(() => {
+    const handleScroll = () => {
+      document.querySelectorAll('.card-bg-zoom').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('zoom');
+        } else {
+          el.classList.remove('zoom');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
   // Fetch teachers
   const { data: teachers = [], isLoading: teachersLoading } = useQuery({
     queryKey: ["teachers"],
     queryFn: async () => {
       const res = await axiosSecure.get("/allUser");
-      // Only return teachers
       return res.data.filter((user) => user.role === "teacher");
     },
   });
-  console.log(teachers)
 
   // Fetch approved courses
   const { data: classes = [], isLoading: coursesLoading } = useQuery({
@@ -25,56 +41,80 @@ const InstructorsPage = () => {
   });
 
   if (teachersLoading || coursesLoading) {
-    return <p className="text-center text-lg font-semibold">Loading instructors...</p>;
+    return (
+      <p className="text-center text-lg font-semibold">
+        Loading instructors...
+      </p>
+    );
   }
 
+  // ✅ only ONE return for the component
   return (
-    <section className="py-12 mt-20 max-w-7xl mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-10 text-[#0A5EB0] dark:text-[#51a3f5]">
+    <section className="py-12 lg:mt-30 mt-20 max-w-7xl mx-auto px-4">
+      <h2 className="text-4xl font-bold text-center mb-15 text-[#6c4370] dark:text-[#6c4370] habibi">
         Meet Our Expert Instructors
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 gap-8">
         {teachers.map((teacher) => {
-          // Find courses taught by this teacher
           const teacherCourses = classes.filter(
             (course) => course.email === teacher.email
           );
 
+          // 👇 implicit return of JSX from the map callback
           return (
             <div
               key={teacher._id}
-              className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+              className="relative flex shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-[#6c4370]"
             >
-              <img
-                src={teacher.photo || "https://i.ibb.co/2M3Ncm1/avatar.png"}
-                alt={teacher.name}
-                className="w-full h-48 object-cover"
-              />
+              {/* Background Image */}
+              <div
+                className="absolute card-bg-zoom top-0 right-0 w-96 h-96 bg-no-repeat bg-contain opacity-40 pointer-events-none transform transition-transform duration-500"
+                style={{ backgroundImage: `url('https://i.ibb.co.com/fVpXBt5S/sphere-2878024-1280-removebg-preview.png')` }}
+              ></div>
 
-              <div className="p-5 text-center">
-                <h3 className="text-xl font-semibold text-gray-800">{teacher.name}</h3>
-                <p className="text-sm text-gray-500">{teacher.email}</p>
-
-                <div className="mt-4">
-                  <h4 className="text-purple-700 font-semibold mb-2">
-                    Courses:
-                  </h4>
-                  {teacherCourses.length > 0 ? (
-                    <ul className="text-sm text-gray-700 space-y-1">
-                      {teacherCourses.map((course) => (
-                        <li key={course._id} className="truncate">
-                          • {course.title}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-gray-500 text-sm">No courses assigned yet.</p>
-                  )}
-                </div>
+              {/* Left Image Section */}
+              <div className="flex-shrink-0 flex flex-col items-center justify-center bg-amber-500 w-64 h-96 ">
+                <img
+                  src={teacher.photo || "https://i.ibb.co/2M3Ncm1/avatar.png"}
+                  alt={teacher.name}
+                  className="w-full h-72 object-cover rounded-t-lg"
+                />
+                <h3 className="text-2xl font-bold text-[#fcfafd] dark:text-[#fafafa] righteous  mt-2">{teacher.name}</h3>
+                <p className="text-lg font-bold habibi text-[#6c4370] dark:text-[#6c4370]">{teacher.email}</p>
               </div>
+
+              {/* Right Content Section */}
+              <div className="flex-1 text-center p-5">
+                <h4 className="text-2xl font-bold mb-4 text-[#fcfafd] dark:text-[#fafafa]">
+                  🎓 Explore Courses
+                </h4>
+
+                {teacherCourses.length > 0 ? (
+                  <p className="text-sm mb-3 text-[#fcfafd] dark:text-[#fafafa]">
+                    Our students love these courses! Here's what <span className="font-semibold">{teacher.name}</span> teaches:
+                  </p>
+                ) : (
+                  <p className="text-sm mb-3 text-[#fcfafd] dark:text-[#fafafa]">
+                    No courses assigned yet.
+                  </p>
+                )}
+
+                <ul className="flex flex-wrap justify-center gap-4">
+                  {teacherCourses.map((course) => (
+                    <li
+                      key={course._id}
+                      className="bg-purple-700 dark:bg-purple-900 text-white text-md px-4 py-2 habibi rounded-full shadow-md hover:scale-105 transition-transform duration-300"
+                    >
+                      {course.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
             </div>
           );
+
         })}
       </div>
     </section>
