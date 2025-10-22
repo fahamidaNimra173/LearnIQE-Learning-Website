@@ -1,195 +1,283 @@
-import React from "react";
-import { motion } from 'framer-motion';
-import '../../App.css'
-
-import { FaChalkboardTeacher } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaChalkboardTeacher, FaRocket, FaGlobe } from "react-icons/fa";
 import { MdCastForEducation } from "react-icons/md";
 import { IoMdCodeWorking } from "react-icons/io";
+import { useNavigate } from "react-router";
+
 
 const AboutUs = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const navigate=useNavigate()
+
   return (
-    <div className=" text-gray-900">
-      {/* Banner */}
-      <div className="flex flex-col lg:flex-row lg:items-center bg-gradient-to-r from-pink-200 via-[#1e8a78] to-transparent backdrop-blur-sm shadow-inner shadow-black lg:justify-center mt-20 dark:border-b-7 border-[#6c4370]">
-        <div className="md:text-center px-4 lg:px-25 py-10 ">
-          <BubbleText />
-          <p className=" lg:text-left text-[#6c4370] dark:text-[#6c4370] font-medium text-[20px]">LearnIQ bridges learners and educators, creating a space where knowledge grows, skills are built, and opportunities thrive.</p>
-        </div>
-        <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 3 }}
-          viewport={{ once: true }}>
-          <img src="https://i.ibb.co.com/MqXny7y/Screenshot-2025-08-16-234031.png" alt="" />
-        </motion.div>
-      </div>
-
-      <div className=" mx-auto  lg:mt-20 mt-15 py-12 lg:space-y-0 space-y-16">
-        {/* Our Story */}
-        <section className="space-y-4 px-4 lg:px-25 border-b-3 shadow-2xl pb-10 lg:shadow-transparent shadow-pink-300 border-gray-100  bg-gradient-to-t from-[#05f7ce] via-pink-100 to-transparent p-4 text-center">
-          <h2 className="lg:text-5xl text-3xl righteous font-extrabold text-[#6c4370] dark:text-[[#6c4370]">Our Story</h2>
-          <p className="max-w-3xl  mx-auto text-lg text-[#6c4370] dark:text-[#6c4370]">
-            LearnIQ was born from a simple idea: making quality education
-            accessible to everyone, everywhere. What started as a vision to
-            connect learners with passionate instructors has now become a
-            growing community of curious minds.
-          </p>
-        </section>
-
-        {/* Mission & Vision */}
-        <section className="grid px-4 lg:px-25 md:grid-cols-2  items-center">
-          <div className="p-13  border-r-3  border-white lg:border-b-3 lg:border-white bg-gradient-to-l from-pink-100 via-pink-100 to-transparent  ">
-            <h2 className="lg:text-5xl text-center my-7 text-3xl righteous font-extrabold text-[#1e8a78] dark:text-[#1e8a78]">
-              Our Mission
-            </h2>
-            <p className="text-[#6c4370] text-center dark:text-[#6c4370] text-lg">
-              To empower learners with skills, knowledge, and opportunities
-              through modern, engaging, and flexible online education.
-            </p>
-          </div>
-          <div className="p-10  border-l-3 lg:border-b-3 lg:border-white border-white bg-gradient-to-r from-[#d682de] via-pink-100 to-transparent  ">
-            <h2 className="lg:text-5xl text-center my-7 text-3xl righteous font-extrabold text-[#1e8a78] dark:text-[#1e8a78]">
-              Our Vision
-            </h2>
-            <p className="text-[#6c4370] text-center dark:text-[#6c4370] text-lg">
-              To build a global learning platform where **students and
-              instructors** grow together, breaking barriers of geography,
-              background, and resources.
-            </p>
-          </div>
-        </section>
-
-        {/* What We Offer */}
-
-
-
-
-
-        <div
-          className="relative lg:mt-40 mt-20 p-4 bg-center bg-cover"
-          style={{ backgroundImage: "url('https://i.ibb.co/twJJ5LmD/school-work-851328-1280.jpg')" }}
-        >
-          {/* Overlay: change bg-opacity-30 → 20/40/50 as needed */}
-          <div className="absolute inset-0  bg-[#6c4370]/80 bg-opacity-40"></div>
-
-          <div className="relative lg:px-25 py-15 px-4">
-            <h2 className="lg:text-5xl text-3xl my-10 righteous font-extrabold text-[#f1f7f6] dark:text-[#f6faf9]">
-              What We Offer
-            </h2>
-            <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
-              <Card title="Expert Instructors" subtitle="Learn from industry professionals and subject experts." href="#" icon={FaChalkboardTeacher} />
-              <Card title="Flexible Learning" subtitle="Access courses anytime, anywhere at your own pace." href="#" icon={MdCastForEducation} />
-              <Card title="Practical Skills" subtitle="Hands-on projects, real-world examples, and career growth." href="#" icon={IoMdCodeWorking} />
-            </div>
-          </div>
+    <div className="min-h-screen bg-[#e7efee] dark:bg-[#e7efee] text-gray-900 overflow-hidden">
+      {/* Hero Section with Animated Gradient */}
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Animated Background Orbs */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6c4370] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#1e8a78] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-[#6c4370] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
 
-
-
-
-
-
-
-        {/* <section className="text-center space-y-6">
-          <h2 className="lg:text-5xl text-3xl righteous font-extrabold text-[#1e8a78] dark:text-[#1e8a78]">What We Offer</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-[#6c4370] dark:bg-[#6c4370] dark:text-white rounded-xl shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Expert Instructors</h3>
-              <p>Learn from industry professionals and subject experts.</p>
-            </div>
-            <div className="p-6 bg-[#6c4370] dark:bg-[#6c4370] dark:text-white rounded-xl shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Flexible Learning</h3>
-              <p>Access courses anytime, anywhere at your own pace.</p>
-            </div>
-            <div className="p-6 bg-[#6c4370] dark:bg-[#6c4370] dark:text-white rounded-xl shadow-md">
-              <h3 className="text-xl dark:text-white font-semibold mb-2">Practical Skills</h3>
-              <p>Hands-on projects, real-world examples, and career growth.</p>
-            </div>
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h1 className="text-7xl md:text-9xl font-black mb-6 bg-gradient-to-r from-[#6c4370] via-[#1e8a78] to-[#6c4370] bg-clip-text text-transparent animate-pulse-slow">
+              LearnIQ
+            </h1>
+            <div className="h-1 w-32 bg-gradient-to-r from-[#6c4370] to-[#1e8a78] mx-auto mb-8"></div>
           </div>
-        </section> */}
-
-        {/* Impact in Numbers */}
-
-        {/* Meet Our Instructors Preview */}
-        <section className="text-center my-20 space-y-4">
-          <h2 className="text-3xl font-bold text-[#0A5EB0] dark:text-[#6c4370]">
-            Meet Our Instructors
-          </h2>
-          <p className="max-w-2xl mx-auto text-gray-700 dark:text-[#6c4370]">
-            Behind every successful student, there’s an inspiring instructor.
-            Get to know the mentors who are shaping futures.
+          
+          <p className="text-2xl md:text-4xl font-light mb-8 text-gray-700">
+            Where <span className="text-[#6c4370] font-bold">Knowledge</span> Meets{" "}
+            <span className="text-[#1e8a78] font-bold">Innovation</span>
           </p>
-          <button className="mt-4 px-6 py-3 bg-[#6c4370] text-white dark:bg-[#6c4370] dark:text-white  rounded-lg font-semibold hover:bg-purple-700 transition">
-            Explore Instructors
-          </button>
-        </section>
-
-        {/* Student Success Stories */}
-        <section className="text-center my-20 space-y-6">
-          <h2 className="text-3xl font-bold text-[#6c4370] dark:[#6c4370]">
-            Student Success Stories
-          </h2>
-          <p className="text-[#6c4370] dark:text-[#6c4370] max-w-3xl mx-auto">
-            Thousands of learners have upskilled and transformed their careers
-            with LearnIQ. From landing dream jobs to starting new ventures,
-            their journeys inspire us every day.
+          
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Bridging learners and educators in a space where skills are built, 
+            opportunities thrive, and futures are shaped.
           </p>
-        </section>
 
-        {/* Call to Action */}
-        <section className="text-center py-12   bg-gradient-to-r from-[#6c4370] to-pink-300  text-white dark:text-white rounded-xl">
-          <h2 className="text-4xl font-bold mb-4">Join the LearnIQ Journey</h2>
-          <p className="text-lg mb-6">
-            Start your path to knowledge, growth, and success today.
-          </p>
-          <div className="space-x-4 space-y-3">
-            <button className="px-6 py-3 bg-[#EBFFD8] dark:bg-[#FFCFEF] text-[#2a4114] rounded-lg font-semibold hover:bg-gray-200 transition">
-              Start Learning Today
+          <div className="mt-12 flex flex-wrap gap-4 justify-center">
+            <button onClick={()=>{navigate('/allapprovedclasses')}} className="group relative px-8 py-4 bg-[#6c4370] text-white rounded-full font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl">
+              <span className="relative z-10">Start Learning</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#6c4370] to-[#1e8a78] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-            <button className="px-6 py-3  bg-[#FFCFEF] dark:bg-[#51a3f5] text-purple-900 dark:text-white rounded-lg font-semibold hover:bg-yellow-300 transition">
+            <button onClick={()=>{navigate('/teacherform')}} className="px-8 py-4 bg-transparent border-2 border-[#1e8a78] text-[#1e8a78] rounded-full font-bold text-lg hover:bg-[#1e8a78] hover:text-white transition-all duration-300 hover:scale-105 shadow-lg">
               Become an Instructor
             </button>
           </div>
-        </section>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-[#6c4370] rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-[#1e8a78] rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
       </div>
+
+      {/* Our Story Section with Image */}
+      <div className="relative py-32 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <h2 className="text-6xl font-black">
+                <span className="bg-gradient-to-r from-[#6c4370] to-[#1e8a78] bg-clip-text text-transparent">
+                  Our Story
+                </span>
+              </h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-[#6c4370] to-[#1e8a78]"></div>
+              <p className="text-xl text-gray-700 leading-relaxed">
+                LearnIQ was born from a simple idea: making quality education 
+                accessible to everyone, everywhere. What started as a vision to 
+                connect learners with passionate instructors has now become a 
+                growing community of curious minds.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We believe that education should break barriers, not create them. 
+                Every student deserves access to world-class learning experiences.
+              </p>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#6c4370] to-[#1e8a78] rounded-3xl transform rotate-3"></div>
+              <div className="relative bg-white border-2 border-[#1e8a78] rounded-3xl overflow-hidden transform -rotate-1 hover:rotate-0 transition-transform duration-300 shadow-2xl">
+                <img 
+                  src="https://i.ibb.co.com/MqXny7y/Screenshot-2025-08-16-234031.png" 
+                  alt="LearnIQ Platform" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="relative py-20 px-6 bg-gradient-to-b from-white to-[#e7efee]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <StatCard number="50K+" label="Active Learners" />
+            <StatCard number="1K+" label="Expert Instructors" />
+            <StatCard number="500+" label="Courses Available" />
+            <StatCard number="95%" label="Success Rate" />
+          </div>
+        </div>
+      </div>
+
+      {/* Mission & Vision */}
+      <div className="relative py-32 px-6 bg-[#e7efee]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Mission */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#6c4370] to-transparent opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500"></div>
+              <div className="relative bg-white backdrop-blur-sm border-2 border-[#6c4370]/20 rounded-3xl p-12 h-full hover:border-[#6c4370] transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <FaRocket className="text-6xl text-[#6c4370] mb-6" />
+                <h3 className="text-4xl font-black mb-6 text-[#6c4370]">Our Mission</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  To empower learners with skills, knowledge, and opportunities 
+                  through modern, engaging, and flexible online education that 
+                  adapts to your pace and goals.
+                </p>
+              </div>
+            </div>
+
+            {/* Vision */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1e8a78] to-transparent opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500"></div>
+              <div className="relative bg-white backdrop-blur-sm border-2 border-[#1e8a78]/20 rounded-3xl p-12 h-full hover:border-[#1e8a78] transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <FaGlobe className="text-6xl text-[#1e8a78] mb-6" />
+                <h3 className="text-4xl font-black mb-6 text-[#1e8a78]">Our Vision</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  To build a global learning platform where students and 
+                  instructors grow together, breaking barriers of geography, 
+                  background, and resources.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* What We Offer - with background image */}
+      <div 
+        className="relative py-32 px-6 bg-cover bg-center"
+        style={{ backgroundImage: "url('https://i.ibb.co/twJJ5LmD/school-work-851328-1280.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-[#6c4370]/85"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-6xl font-black mb-6 text-white">
+              What We Offer
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-white to-[#1e8a78] mx-auto"></div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <FeatureCard
+              icon={FaChalkboardTeacher}
+              title="Expert Instructors"
+              description="Learn from industry professionals and subject experts who are passionate about teaching."
+              color="#6c4370"
+              isHovered={hoveredCard === 0}
+              onHover={() => setHoveredCard(0)}
+              onLeave={() => setHoveredCard(null)}
+            />
+            <FeatureCard
+              icon={MdCastForEducation}
+              title="Flexible Learning"
+              description="Access courses anytime, anywhere at your own pace. Learn on your schedule."
+              color="#1e8a78"
+              isHovered={hoveredCard === 1}
+              onHover={() => setHoveredCard(1)}
+              onLeave={() => setHoveredCard(null)}
+            />
+            <FeatureCard
+              icon={IoMdCodeWorking}
+              title="Practical Skills"
+              description="Hands-on projects, real-world examples, and career growth opportunities await."
+              color="#6c4370"
+              isHovered={hoveredCard === 2}
+              onHover={() => setHoveredCard(2)}
+              onLeave={() => setHoveredCard(null)}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="relative py-32 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="relative bg-gradient-to-r from-[#6c4370] via-[#1e8a78] to-[#6c4370] rounded-3xl p-16 overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzBoLTZ2LTZoNnYtNmg2djZoNnY2aC02djZoLTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')]"></div>
+            </div>
+            
+            <div className="relative z-10">
+              <h2 className="text-5xl font-black mb-6 text-white">Join the LearnIQ Journey</h2>
+              <p className="text-2xl mb-10 text-white/90">
+                Start your path to knowledge, growth, and success today.
+              </p>
+              
+              <div className="flex flex-wrap gap-6 justify-center">
+                <button nClick={()=>{navigate('/allapprovedclasses')}} className="group relative px-10 py-5 bg-white text-[#6c4370] rounded-full font-bold text-xl overflow-hidden transition-all duration-300 hover:scale-110 shadow-xl">
+                  <span className="relative z-10">Explore Courses</span>
+                </button>
+                <button nClick={()=>{navigate('/teacherform')}} className="px-10 py-5 bg-transparent backdrop-blur-sm border-2 border-white text-white rounded-full font-bold text-xl hover:bg-white/20 transition-all duration-300 hover:scale-110">
+                  Teach With Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          25% { transform: translate(20px, -50px) scale(1.1); }
+          50% { transform: translate(-20px, 20px) scale(0.9); }
+          75% { transform: translate(50px, 50px) scale(1.05); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        .animate-pulse-slow {
+          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+      `}</style>
     </div>
   );
 };
 
+const StatCard = ({ number, label }) => (
+  <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
+    <div className="text-5xl font-black bg-gradient-to-r from-[#6c4370] to-[#1e8a78] bg-clip-text text-transparent mb-2">
+      {number}
+    </div>
+    <div className="text-gray-600 font-medium">{label}</div>
+  </div>
+);
 
-const BubbleText = () => {
-  return (
-    <h2 className="lg:text-5xl text-3xl mt-10 mb-5 text-[#6c4370] habibi uppercase dark:text-[rgb(108,67,112)]">
-      {"Building a Community of Learning".split("").map((char, idx) => (
-        <span className="hoverText" key={idx}>
-          {char === " " ? "\u00A0" : char}
-        </span>
-      ))}
-    </h2>
-  );
-};
-
-
-const Card = ({ title, subtitle, icon: Icon, href }) => {
-  return (
-    <a
-      href={href}
-      className="w-full p-4 rounded border-[1px] border-slate-300 relative overflow-hidden group bg-white"
-    >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#6c4370] to-pink-200 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
-
-      <Icon className="absolute z-10 -top-12 -right-12 text-9xl text-slate-200 group-hover:text-[#1e8a78] group-hover:rotate-12 transition-transform duration-300" />
-      <Icon className="mb-2 text-2xl text-[#1e8a78] dark:text-[#1e8a78] group-hover:text-white transition-colors relative z-10 duration-300" />
-      <h3 className="font-medium text-lg text-slate-950 group-hover:text-white relative z-10 duration-300">
+const FeatureCard = ({ icon: Icon, title, description, color, isHovered, onHover, onLeave }) => (
+  <div
+    onMouseEnter={onHover}
+    onMouseLeave={onLeave}
+    className="group relative cursor-pointer"
+  >
+    <div className={`absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-0 group-hover:opacity-30 rounded-3xl transition-all duration-500 blur-xl`}></div>
+    
+    <div className="relative bg-white/90 backdrop-blur-sm border-2 border-white/50 rounded-3xl p-10 h-full hover:border-white transition-all duration-300 transform hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+      <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+        isHovered ? 'bg-gradient-to-br from-[#6c4370] to-[#1e8a78] scale-110' : 'bg-[#e7efee]'
+      }`}>
+        <Icon className={`text-4xl ${isHovered ? 'text-white' : 'text-[#6c4370]'} transition-colors duration-300`} />
+      </div>
+      
+      <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-[#1e8a78] transition-colors duration-300">
         {title}
       </h3>
-      <p className="text-slate-400 group-hover:text-violet-200 relative z-10 duration-300">
-        {subtitle}
+      
+      <p className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
+        {description}
       </p>
-    </a>
-  );
-};
-
-
+      
+      <div className="mt-6 flex items-center text-[#1e8a78] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
+        <span className="text-sm font-semibold">Learn More</span>
+        <span className="ml-2">→</span>
+      </div>
+    </div>
+  </div>
+);
 
 export default AboutUs;
