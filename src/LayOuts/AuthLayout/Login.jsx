@@ -53,7 +53,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center my-30  px-4">
       <div className="w-full max-w-md bg-white dark:bg-white shadow-xl p-8 rounded-xl border border-blue-100">
-        <h2 className="text-3xl font-bold text-center habibi uppercase text-[#6c4370] dark:text-[#6c4370] mb-6">Login to SkillMorph</h2>
+        <h2 className="text-3xl font-bold text-center habibi uppercase text-[#6c4370] dark:text-[#6c4370] mb-6">Login to  LearnIQ</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
@@ -63,7 +63,7 @@ const Login = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className={`input input-bordered w-full ${errors.email ? "border-red-500" : "border-blue-300"}`}
+              className={`input input-bordered bg-white dark:bg-white text-black dark:text-black w-full ${errors.email ? "border-red-500" : "border-blue-300"}`}
               {...register("email", {
                 required: "Email is required",
                 pattern: {
@@ -83,7 +83,7 @@ const Login = () => {
             <input
               type="password"
               placeholder="Enter password"
-              className={`input input-bordered w-full ${errors.password ? "border-red-500" : "border-blue-300"}`}
+              className={`input input-bordered bg-white dark:bg-white text-black dark:text-black w-full ${errors.password ? "border-red-500" : "border-blue-300"}`}
               {...register("password", {
                 required: "Password is required",
                 minLength: {

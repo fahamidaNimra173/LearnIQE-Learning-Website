@@ -79,7 +79,7 @@ const GoogleSignIn = () => {
     };
 
     return (
-        <button onClick={handleGoogleLogin} className="btn btn-outline w-full hover:text-white flex items-center gap-2">
+        <button onClick={handleGoogleLogin} className="btn btn-outline w-full hover:text-white flex bg-pink-200 items-center gap-2">
             <FcGoogle className="text-xl" />
             <p className='dark:text-purple-700 hover:text-white text-blue-800'>Sign in with Google</p>
         </button>
