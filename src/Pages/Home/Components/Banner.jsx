@@ -8,12 +8,12 @@ const Banner = () => {
     {
       title: "   Learn Smarter, Grow Faster",
       text: "Access quality content, submit assignments, and earn certifications – all at your own pace and schedule.",
-      image: "https://i.ibb.co/W4vZ56bt/home-based-learning-8968710-1280-1.png"
+      image: "https://i.ibb.co.com/6CMt2Q8/home-based-learning-8968710-1280-1-1.png"
     },
     {
       title: "Master Modern Skills from Anywhere",
       text: "Unlock in-demand skills with flexible, expert-led online courses designed for real-world success.",
-      image: "https://i.ibb.co/q3yR36jz/desk-7781833-1280.jpg"
+      image: "https://i.ibb.co.com/s9ytFxV1/desk-7781833-1280-1.jpg"
     },
     {
       title: "Advance Your Career with Confidence",

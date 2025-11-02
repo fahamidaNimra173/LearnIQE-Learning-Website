@@ -54,35 +54,53 @@ const TopCources = () => {
                 >
                     {courses.map((course) => (
                         <SwiperSlide key={course._id}>
-                            <div className="rounded-lg overflow-hidden hover:shadow-xl transition duration-300 h-full">
-                                <img
-                                    src={course.image}
-                                    alt={course.title}
-                                    className="w-full h-48 object-cover"
-                                />
-                                <div className="p-4 bg-gradient-to-t from-[#1e8a78] via-fuchsia-100 to-pink-200 flex-1 flex flex-col items-center justify-center">
-                                    <h3 className="text-xl h-20 my-auto font-extrabold text-[#6c4370] merienda text-center mb-3">
+                            <div className="relative rounded-2xl overflow-hidden h-full bg-gradient-to-br from-purple-50 via-pink-50 to-teal-50 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white">
+                                {/* Decorative Corner Shape */}
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#6c4370] opacity-10 rounded-bl-full"></div>
+                                <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1e8a78] opacity-10 rounded-tr-full"></div>
+
+                                {/* Image Section */}
+                                <div className="relative m-4 rounded-xl overflow-hidden shadow-md h-48">
+                                    <img
+                                        src={course.image}
+                                        alt={course.title}
+                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#6c4370]/80 via-transparent to-transparent"></div>
+                                </div>
+
+                                {/* Content Area */}
+                                <div className="px-6 pb-6 space-y-4">
+                                    {/* Title */}
+                                    <h3 className="text-xl font-extrabold text-[#6c4370] merienda text-center min-h-[4rem] flex items-center justify-center leading-tight">
                                         {course.title}
                                     </h3>
-                                    <div>
-                                        <div className="flex items-center border-b bg-gradient-to-t from-[#aec9c4] via-transparent shadow-2xl shadow-pink-200 p-2 gap-2 text-gray-700 mb-2">
-                                            <FiUsers className="text-[#6c4370] w-7 h-7" />
-                                            <span className="text-md text-black">
-                                                <strong className="habibi text-[#6c4370]">Enrollments:</strong>{' '}
-                                                {course.totalEnroll}
-                                            </span>
+
+                                    {/* Info Grid */}
+                                    <div className="grid grid-cols-2 gap-3">
+                                        {/* Enrollments Box */}
+                                        <div className="relative bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-[#6c4370]">
+                                            <div className="flex flex-col items-center text-center">
+                                                <FiUsers className="text-[#6c4370] w-7 h-7 mb-2" />
+                                                <span className="text-xs text-gray-500 habibi mb-1">Enrollments</span>
+                                                <span className="text-lg font-bold text-[#6c4370]">{course.totalEnroll}</span>
+                                            </div>
                                         </div>
-                                        <div className="flex items-center border-t p-2 bg-gradient-to-b from-pink-100 via-transparent to-transparent gap-2 text-gray-700 mb-3">
-                                            <FiDollarSign className="text-[#6c4370] w-7 h-7" />
-                                            <span className="text-md text-black">
-                                                <strong className="habibi text-[#6c4370]">Price:</strong> ৳{course.price}
-                                            </span>
+
+                                        {/* Price Box */}
+                                        <div className="relative bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-[#1e8a78]">
+                                            <div className="flex flex-col items-center text-center">
+                                                <FiDollarSign className="text-[#1e8a78] w-7 h-7 mb-2" />
+                                                <span className="text-xs text-gray-500 habibi mb-1">Price</span>
+                                                <span className="text-lg font-bold text-[#1e8a78]">৳{course.price}</span>
+                                            </div>
                                         </div>
                                     </div>
 
+                                    {/* Button */}
                                     <button
                                         onClick={() => navigate(`/classdetails/${course._id}`)}
-                                        className="mt-2  buttonMore"
+                                        className="w-full buttonMore"
                                     >
                                         <span className="buttonMore__icon-wrapper">
                                             <svg
