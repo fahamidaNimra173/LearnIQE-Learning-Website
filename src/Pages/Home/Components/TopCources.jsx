@@ -141,15 +141,19 @@ const TopCources = () => {
                 <div className="flex justify-center gap-8 mt-10">
                     <button
                         ref={prevRef}
-                        className="cursor-pointer border-4 bg-[#d4f3ed] border-[#937f94] border-dashed hover:bg-[#1e8a78] p-6 rounded-full"
+                        className="group relative cursor-pointer bg-gradient-to-br from-purple-100 to-pink-100 hover:from-[#6c4370] hover:to-[#8a5a8e] p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#937f94]/30 hover:border-transparent overflow-hidden"
                     >
-                        <IoIosArrowBack className="md:w-10 w-5 h-5 md:h-10 text-[#937f94]" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                        <IoIosArrowBack className="md:w-10 w-5 h-5 md:h-10 text-[#6c4370] group-hover:text-white transition-colors duration-300 relative z-10 group-hover:-translate-x-1 transition-transform" />
+                        <div className="absolute -top-1 -left-1 w-4 h-4 bg-[#1e8a78] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </button>
                     <button
                         ref={nextRef}
-                        className="cursor-pointer border-4 bg-[#d4f3ed] border-[#937f94] hover:bg-[#1e8a78] border-dashed p-6 rounded-full"
+                        className="group relative cursor-pointer bg-gradient-to-br from-teal-100 to-cyan-100 hover:from-[#1e8a78] hover:to-[#2a9d88] p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#1e8a78]/30 hover:border-transparent overflow-hidden"
                     >
-                        <IoIosArrowForward className="md:w-10 w-5 h-5 md:h-10 text-[#937f94]" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                        <IoIosArrowForward className="md:w-10 w-5 h-5 md:h-10 text-[#1e8a78] group-hover:text-white transition-colors duration-300 relative z-10 group-hover:translate-x-1 transition-transform" />
+                        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#6c4370] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </button>
                 </div>
             </div>
