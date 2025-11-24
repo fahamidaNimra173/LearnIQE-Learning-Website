@@ -54,7 +54,7 @@ const NavigationBar = () => {
       </div>
 
       {/* Center - Links */}
-      <div className="navbar-center habibi hidden dark:text-[#e7efee] lg:flex gap-6">
+      <div className="navbar-center habibi hidden dark:text-[#000000] lg:flex gap-6">
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-bold text-[18px] hover:text-[#0A97B0]`}>
           Home
         </NavLink>
@@ -118,11 +118,11 @@ const NavigationBar = () => {
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
         <div className="absolute top-full right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 w-48 lg:hidden">
-          <NavLink to="/" className="block text-white py-1 hover:text-[#FFCFEF]">Home</NavLink>
-          <NavLink to="/allapprovedclasses" className="block text-white py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
-          <NavLink to="/teacherform" className="block text-white py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
-          <NavLink to="/allTeacher" className="block text-white py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
-          <NavLink to="/aboutUs" className="block text-white py-1 hover:text-[#FFCFEF]">About Us</NavLink>
+          <NavLink to="/" className="block text-black py-1 hover:text-[#FFCFEF]">Home</NavLink>
+          <NavLink to="/allapprovedclasses" className="block text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
+          <NavLink to="/teacherform" className="block text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
+          <NavLink to="/allTeacher" className="block text-black py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
+          <NavLink to="/aboutUs" className="block text-black py-1 hover:text-[#FFCFEF]">About Us</NavLink>
         </div>
       )}
     </div>
