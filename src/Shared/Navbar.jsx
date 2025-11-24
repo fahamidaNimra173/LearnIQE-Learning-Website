@@ -27,7 +27,7 @@ const NavigationBar = () => {
   // Determine text color class
   const getTextColorClass = () => {
     if (isHomePage && !isScrolled) return 'text-white';
-    return 'text-[#e7efee] dark:text-[#e7efee]';
+    return 'text-black dark:text-black';
   };
 
   return (

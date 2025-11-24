@@ -33,7 +33,7 @@ const Home = () => {
     const enrollments = counts.enrollments
     console.log(users, courses, enrollments)
     return (
-        <div className='bg-[#ffffff] dark:bg-[#ffffff]'>
+        <div className='bg-[#000000] dark:bg-[#000000]'>
             <Banner></Banner>
           
                      <TotalDataCollections
