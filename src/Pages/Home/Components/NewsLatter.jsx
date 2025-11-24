@@ -23,7 +23,7 @@ const NewsLatter = () => {
                 </div>
 
                 <div className="flex flex-1 flex-col items-center border-1 backdrop-blur-sm p-4 rounded-2xl   gap-3 justify-center">
-                    <label className="lg:text-[#6c4370] text-[#6c4370] lg:text-5xl text-2xl font-bold habibi uppercase mt-2 mb-4 ">Your Email</label>
+                    <label className="lg:text-[#fbbc2c] text-[#fbbc2c] lg:text-5xl text-2xl font-bold habibi uppercase mt-2 mb-4 ">Your Email</label>
                     <input
                         type="email"
                         placeholder="Write your email"

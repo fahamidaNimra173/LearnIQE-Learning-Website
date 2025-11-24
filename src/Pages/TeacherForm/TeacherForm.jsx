@@ -152,11 +152,11 @@ const TeacherForm = () => {
           {/* Success Card */}
           <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
             {/* Decorative Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#6c4370]/10 via-[#1e8a78]/10 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#fbbc2c]/10 via-[#1e8a78]/10 to-transparent"></div>
             
             {/* Animated Circles */}
             <div className="absolute top-10 right-10 w-32 h-32 bg-[#1e8a78] rounded-full opacity-10 animate-pulse"></div>
-            <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#6c4370] rounded-full opacity-10 animate-pulse delay-75"></div>
+            <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#fbbc2c] rounded-full opacity-10 animate-pulse delay-75"></div>
 
             <div className="relative z-10 p-12 text-center">
               {/* Lottie Animation */}
@@ -172,8 +172,8 @@ const TeacherForm = () => {
               {/* Icon with Badge */}
               <div className="flex justify-center items-center mb-8">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#6c4370] to-[#1e8a78] rounded-full blur-xl opacity-50 animate-pulse"></div>
-                  <div className="relative bg-gradient-to-br from-[#6c4370] to-[#1e8a78] p-6 rounded-full">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] rounded-full blur-xl opacity-50 animate-pulse"></div>
+                  <div className="relative bg-gradient-to-br from-[#fbbc2c] to-[#1e8a78] p-6 rounded-full">
                     <FaUserGraduate className="text-white text-6xl" />
                   </div>
                 </div>
@@ -186,28 +186,28 @@ const TeacherForm = () => {
               </div>
 
               {/* Success Message */}
-              <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[#6c4370] to-[#1e8a78] bg-clip-text text-transparent">
+              <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] bg-clip-text text-transparent">
                 Congratulations!
               </h2>
               
               <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                You are now a <span className="font-bold text-[#6c4370]">verified teacher</span> on{' '}
+                You are now a <span className="font-bold text-[#fbbc2c]">verified teacher</span> on{' '}
                 <span className="font-black text-[#1e8a78]">LearnIQ</span>.
                 Start inspiring minds and shaping futures today!
               </p>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto">
-                <div className="bg-gradient-to-br from-[#6c4370]/10 to-transparent p-6 rounded-2xl">
-                  <FaChalkboardTeacher className="text-3xl text-[#6c4370] mx-auto mb-2" />
+                <div className="bg-gradient-to-br from-[#fbbc2c]/10 to-transparent p-6 rounded-2xl">
+                  <FaChalkboardTeacher className="text-3xl text-[#fbbc2c] mx-auto mb-2" />
                   <p className="text-sm text-gray-600 font-semibold">Start Teaching</p>
                 </div>
                 <div className="bg-gradient-to-br from-[#1e8a78]/10 to-transparent p-6 rounded-2xl">
                   <FaBookOpen className="text-3xl text-[#1e8a78] mx-auto mb-2" />
                   <p className="text-sm text-gray-600 font-semibold">Create Courses</p>
                 </div>
-                <div className="bg-gradient-to-br from-[#6c4370]/10 to-transparent p-6 rounded-2xl">
-                  <FaAward className="text-3xl text-[#6c4370] mx-auto mb-2" />
+                <div className="bg-gradient-to-br from-[#fbbc2c]/10 to-transparent p-6 rounded-2xl">
+                  <FaAward className="text-3xl text-[#fbbc2c] mx-auto mb-2" />
                   <p className="text-sm text-gray-600 font-semibold">Earn Recognition</p>
                 </div>
               </div>
@@ -232,11 +232,11 @@ const TeacherForm = () => {
               ></div>
               <div className="relative z-10 p-8">
                 <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-br from-[#6c4370] to-[#1e8a78] p-4 rounded-2xl">
+                  <div className="bg-gradient-to-br from-[#fbbc2c] to-[#1e8a78] p-4 rounded-2xl">
                     <FaChalkboardTeacher className="text-4xl text-white" />
                   </div>
                   <div className="ml-4">
-                    <h1 className="text-3xl font-black bg-gradient-to-r from-[#6c4370] to-[#1e8a78] bg-clip-text text-transparent">
+                    <h1 className="text-3xl font-black bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] bg-clip-text text-transparent">
                       Become a Teacher
                     </h1>
                     <p className="text-gray-600">Share your expertise with the world</p>
@@ -270,7 +270,7 @@ const TeacherForm = () => {
                 alt="Teaching Platform"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#6c4370] to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#fbbc2c] to-transparent opacity-60"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-white text-xl font-bold">Join 1000+ expert instructors</p>
               </div>
@@ -282,11 +282,11 @@ const TeacherForm = () => {
             <h2 className="text-2xl font-black text-gray-900 mb-6 flex items-center">
               {isRejected ? (
                 <>
-                  <span className="text-[#6c4370]">Resubmit Application</span>
+                  <span className="text-[#fbbc2c]">Resubmit Application</span>
                   <span className="ml-2 text-sm bg-red-100 text-red-600 px-3 py-1 rounded-full">Rejected</span>
                 </>
               ) : (
-                <span className="bg-gradient-to-r from-[#6c4370] to-[#1e8a78] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] bg-clip-text text-transparent">
                   Application Form
                 </span>
               )}
@@ -370,7 +370,7 @@ const TeacherForm = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-[#6c4370] to-[#1e8a78] text-white font-bold rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-4 bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] text-white font-bold rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={createMutation.isPending || updateMutation.isPending}
               >
                 {(createMutation.isPending || updateMutation.isPending)
@@ -397,7 +397,7 @@ const TeacherForm = () => {
 
 const BenefitItem = ({ icon: Icon, title, description }) => (
   <div className="flex items-start space-x-4 group">
-    <div className="bg-gradient-to-br from-[#6c4370]/10 to-[#1e8a78]/10 p-3 rounded-xl group-hover:scale-110 transition-transform">
+    <div className="bg-gradient-to-br from-[#fbbc2c]/10 to-[#1e8a78]/10 p-3 rounded-xl group-hover:scale-110 transition-transform">
       <Icon className="text-xl text-[#1e8a78]" />
     </div>
     <div>

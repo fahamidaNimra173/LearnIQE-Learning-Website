@@ -5,7 +5,7 @@ const PlatformFacilities = () => {
   return (
     <div className="relative w-full py-10  overflow-hidden">
       <div className="max-w-4xl mx-auto text-center md:py-12 px-4">
-        <h1 className="text-[#6c4370] md:leading-15 md:text-5xl text-2xl habibi font-extrabold uppercase  text-center">
+        <h1 className="text-[#fbbc2c] md:leading-15 md:text-5xl text-2xl habibi font-extrabold uppercase  text-center">
           Explore What Our Platform Offers
         </h1>
         <p className="text-black font-semibold text-lg max-w-xl mx-auto mb-15 mt-7">
@@ -24,10 +24,10 @@ const PlatformFacilities = () => {
         <div className="w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-xl py-8 px-3 my-3">
           {/* Heading */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#6c4370] drop-shadow">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#fbbc2c] drop-shadow">
               Why Students Love Our Platform
             </h2>
-            <p className="text-[#6c4370] text-[18px] font-medium text-shadow-2xs text-shadow-black mt-3 max-w-xl mx-auto">
+            <p className="text-[#fbbc2c] text-[18px] font-medium text-shadow-2xs text-shadow-black mt-3 max-w-xl mx-auto">
               Learn faster, smarter, and better with features designed just for you.
             </p>
           </div>
@@ -43,7 +43,7 @@ const PlatformFacilities = () => {
               {
                 title: "Hands-on Projects",
                 description: "Practice what you learn through real assignments and feedback.",
-                icon: <FaLaptopCode size={40} className="text-[#6c4370]" />,
+                icon: <FaLaptopCode size={40} className="text-[#fbbc2c]" />,
               },
               {
                 title: "Evaluate Teachers",
@@ -56,7 +56,7 @@ const PlatformFacilities = () => {
                 className="bg-white/40 backdrop-blur-md text-center py-6 px-1 rounded-xl shadow-md border border-white/30 hover:shadow-xl transition"
               >
                 <div className="mb-3 flex justify-center">{item.icon}</div>
-                <h3 className="text-xl font-bold text-[#6c4370] flex items-center justify-center gap-2">
+                <h3 className="text-xl font-bold text-[#fbbc2c] flex items-center justify-center gap-2">
                   {item.icon}
                   {item.title}
                 </h3>

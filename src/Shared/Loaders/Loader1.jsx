@@ -13,7 +13,7 @@ const Loader1 = () => {
                     >
                         Almost There...
                     </div>
-                    <div class="dark:text-[#6c4370] text-[#6c4370]  text-[18px] opacity-80 animate-fadeIn">
+                    <div class="dark:text-[#fbbc2c] text-[#fbbc2c]  text-[18px] opacity-80 animate-fadeIn">
                         <p className='text[20px] font-medium'>We're getting everything ready for you...</p>
                         <p className='text[20px] font-medium'>Sit tight for just a moment.</p>
                     </div>

@@ -67,7 +67,7 @@ const Register = () => {
     return (
         <div className="min-h-screen py-30 mt-20  flex items-center justify-center bg-gray-100">
             <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
-                <h2 className="text-2xl font-bold text-center mt-8 uppercase mb-15 text-[#6c4370] dark:text-[#6c4370] habibi ">Register</h2>
+                <h2 className="text-2xl font-bold text-center mt-8 uppercase mb-15 text-[#fbbc2c] dark:text-[#fbbc2c] habibi ">Register</h2>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
                     <input
@@ -102,14 +102,14 @@ const Register = () => {
                     />
                     {errors.photoURL && <p className="text-red-500 text-sm">Photo URL is required</p>}
 
-                    <button type="submit" className="btn btn-primary bg-[#6c4370] dark:bg-[#6c4370] border-white w-full">Register</button>
+                    <button type="submit" className="btn btn-primary bg-[#fbbc2c] dark:bg-[#fbbc2c] border-white w-full">Register</button>
                 </form>
 
                 <div className="divider">OR</div>
 
                 <GoogleSignIn />
 
-                <p className="text-sm text-center text-[#6c4370] dark:text-[#6c4370] mt-4">
+                <p className="text-sm text-center text-[#fbbc2c] dark:text-[#fbbc2c] mt-4">
                     Already have an account?{" "}
                     <a href="/login" className="text-blue-600 font-semibold">Login here</a>
                 </p>

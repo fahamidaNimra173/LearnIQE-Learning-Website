@@ -51,7 +51,7 @@ const InstructorsPage = () => {
   // ✅ only ONE return for the component
   return (
     <section className="py-12 lg:mt-30 mt-20 max-w-7xl mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-15 text-[#6c4370] dark:text-[#6c4370] habibi">
+      <h2 className="text-4xl font-bold text-center mb-15 text-[#fbbc2c] dark:text-[#fbbc2c] habibi">
         Meet Our Expert Instructors
       </h2>
 
@@ -65,7 +65,7 @@ const InstructorsPage = () => {
           return (
             <div
               key={teacher._id}
-              className="relative flex flex-col md:flex-row shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-[#6c4370]"
+              className="relative flex flex-col md:flex-row shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-[#fbbc2c]"
             >
               {/* Background Image */}
               <div
@@ -81,7 +81,7 @@ const InstructorsPage = () => {
                   className="w-3/4 md:w-full h-36 md:h-72 object-cover rounded-t-lg mt-4 md:mt-0"
                 />
                 <h3 className="text-2xl font-bold text-[#fcfafd] dark:text-[#fafafa] righteous mt-2">{teacher.name}</h3>
-                <p className="text-lg font-bold habibi text-[#5b375e] dark:text-[#6c4370]">{teacher.email}</p>
+                <p className="text-lg font-bold habibi text-[#5b375e] dark:text-[#fbbc2c]">{teacher.email}</p>
               </div>
 
               {/* Right Content Section */}

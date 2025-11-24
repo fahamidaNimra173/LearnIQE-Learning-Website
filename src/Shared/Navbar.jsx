@@ -34,9 +34,9 @@ const NavigationBar = () => {
     <div
       className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${ isHomePage
         ? isScrolled
-          ? 'bg-[#6c4370] dark:bg-[#6c4370] shadow-md'
+          ? 'bg-[#fbbc2c] dark:bg-[#fbbc2c] shadow-md'
           : 'bg-transparent'
-        : 'bg-[#6c4370] dark:bg-[#6c4370] shadow-md'}`}
+        : 'bg-[#fbbc2c] dark:bg-[#fbbc2c] shadow-md'}`}
     >
       {/* Left - Brand */}
       <div className="navbar-start">
@@ -117,7 +117,7 @@ const NavigationBar = () => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-[#6c4370]  rounded shadow-lg p-4 w-48 lg:hidden">
+        <div className="absolute top-full right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 w-48 lg:hidden">
           <NavLink to="/" className="block text-white py-1 hover:text-[#FFCFEF]">Home</NavLink>
           <NavLink to="/allapprovedclasses" className="block text-white py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
           <NavLink to="/teacherform" className="block text-white py-1 hover:text-[#FFCFEF]">Teach On</NavLink>

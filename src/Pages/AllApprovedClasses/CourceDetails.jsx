@@ -48,8 +48,8 @@ const CourseDetails = () => {
           <div className='flex lg:flex-row-reverse flex-col-reverse gap-10 lg:px-25 items-center justify-center'>
             <img src={course.image} alt={course.title} className="w-full h-80   rounded-2xl object-cover" />
             <div>
-              <h2 className="text-3xl lg:text-5xl font-bold text-[#6c4370] text-center lg:text-left habibi dark:text-[#6c4370] mb-4">{course.title}</h2>
-              <p className="text-md text-[#6c4370] font-medium text-[20px] text-center lg:text-left dark:text-[#6c4370] mb-2">
+              <h2 className="text-3xl lg:text-5xl font-bold text-[#fbbc2c] text-center lg:text-left habibi dark:text-[#fbbc2c] mb-4">{course.title}</h2>
+              <p className="text-md text-[#fbbc2c] font-medium text-[20px] text-center lg:text-left dark:text-[#fbbc2c] mb-2">
                 <strong className='text-[#1e8a78] uppercase'>Category:</strong> {course.category}
               </p>
             </div>
@@ -58,14 +58,14 @@ const CourseDetails = () => {
 
           <div className=" lg:px-25">
 
-            <p className="lg:text-3xl text-2xl mt-10 mb-10 font-bold habibi text-center text-[#6c4370] dark:text-[#6c4370] ">
+            <p className="lg:text-3xl text-2xl mt-10 mb-10 font-bold habibi text-center text-[#fbbc2c] dark:text-[#fbbc2c] ">
               Join the crowd! <span className='text-[#1e8a78]'>{course.totalEnroll || 0} </span> eager learners have already signed up for this course with <span className='text-[#1e8a78]'>{course.name}</span>.
               {/* <strong>Instructor:</strong> {course.name} ({course.email}) */}
             </p>
 
 
 
-            <p className="lg:text-2xl text-[20px] my-10 text-[#6c4370] dark:text-[#6c4370] ">
+            <p className="lg:text-2xl text-[20px] my-10 text-[#fbbc2c] dark:text-[#fbbc2c] ">
               <strong className='text-[#1e8a78] lg:text-6xl text-3xl'>Description :</strong><span className='habibi'> {course.description}</span>
             </p>
             <div className='flex my-20 flex-col gap-5 lg:flex-row items-center justify-around'>
@@ -100,7 +100,7 @@ const CourseDetails = () => {
                   </svg>
                 </span>
                 Enroll Now</button>
-              <button className="text-[20px] w-full text-white rounded-4xl  bg-[#6c4370] dark:bg-[#6c4370] px-10 py-2">
+              <button className="text-[20px] w-full text-white rounded-4xl  bg-[#fbbc2c] dark:bg-[#fbbc2c] px-10 py-2">
                 <strong>Price:</strong> ৳{course.price}
               </button>
             </div>

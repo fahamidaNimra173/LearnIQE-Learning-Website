@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const BecomeInstructor = () => {
   return (
-    <div className="w-full px-6 md:px-25 bg-[#6c4370] py-12 mt-32 mb-15 flex flex-col lg:flex-row items-center justify-center gap-10 md:gap-5">
+    <div className="w-full px-6 md:px-25 bg-[#fbbc2c] py-12 mt-32 mb-15 flex flex-col lg:flex-row items-center justify-center gap-10 md:gap-5">
       {/* Image Side */}
       <motion.div
         className="w-full lg:w-1/2 flex mb-3 justify-center"

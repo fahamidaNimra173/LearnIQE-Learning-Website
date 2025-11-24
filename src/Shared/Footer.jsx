@@ -19,7 +19,7 @@ import {
 
 const FooteR = () => {
   return (
-    <Footer container className="bg-[#6c4370] text-[#e7efee] dark:text-[#f9fdfc] dark:bg-[#6c4370]  rounded-none shadow-none">
+    <Footer container className="bg-[#fbbc2c] text-[#e7efee] dark:text-[#f9fdfc] dark:bg-[#fbbc2c]  rounded-none shadow-none">
       <div className="w-full lg:px-25 ">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           {/* Custom Brand */}

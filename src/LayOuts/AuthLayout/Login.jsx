@@ -53,13 +53,13 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center my-30  px-4">
       <div className="w-full max-w-md bg-white dark:bg-white shadow-xl p-8 rounded-xl border border-blue-100">
-        <h2 className="text-3xl font-bold text-center habibi uppercase text-[#6c4370] dark:text-[#6c4370] mb-6">Login to  LearnIQ</h2>
+        <h2 className="text-3xl font-bold text-center habibi uppercase text-[#fbbc2c] dark:text-[#fbbc2c] mb-6">Login to  LearnIQ</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
           {/* Email */}
           <div>
-            <label className="label font-semibold text-[#6c4370] dark:text-[#6c4370]">Email</label>
+            <label className="label font-semibold text-[#fbbc2c] dark:text-[#fbbc2c]">Email</label>
             <input
               type="email"
               placeholder="Your Email"
@@ -79,7 +79,7 @@ const Login = () => {
 
           {/* Password */}
           <div>
-            <label className="label font-semibold text-[#6c4370] dark:text-[#6c4370]">Password</label>
+            <label className="label font-semibold text-[#fbbc2c] dark:text-[#fbbc2c]">Password</label>
             <input
               type="password"
               placeholder="Enter password"
@@ -106,7 +106,7 @@ const Login = () => {
           {/* Login Button */}
           <button
             type="submit"
-            className="btn bg-[#6c4370] dark:bg-[#6c4370] w-full text-white dark:text-white font-bold tracking-wide"
+            className="btn bg-[#fbbc2c] dark:bg-[#fbbc2c] w-full text-white dark:text-white font-bold tracking-wide"
           >
             Login
           </button>
@@ -120,7 +120,7 @@ const Login = () => {
         </form>
 
         {/* Register Redirect */}
-        <p className="text-center text-sm text-[#6c4370] dark:text-[#6c4370] mt-6">
+        <p className="text-center text-sm text-[#fbbc2c] dark:text-[#fbbc2c] mt-6">
           Don't have an account?{" "}
           <Link to="/register" className="text-[#0A5EB0] font-semibold hover:underline">
             Register here

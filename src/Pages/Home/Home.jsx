@@ -59,4 +59,4 @@ const Home = () => {
 
 export default Home;
 
-// #e7efee,#272a2d,#6c4370,#1e8a78
+// #e7efee,#272a2d,#fbbc2c,#1e8a78
