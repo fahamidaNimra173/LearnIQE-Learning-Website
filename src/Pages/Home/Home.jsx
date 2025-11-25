@@ -35,18 +35,21 @@ const Home = () => {
     return (
         <div className='bg-[#000000] dark:bg-[#000000]'>
             <Banner></Banner>
-          
-                     <TotalDataCollections
-             totalUsers={counts.users}
-        totalClasses={counts.courses}
-        totalEnrollments={counts.enrollments}
-            
+
+            <TotalDataCollections
+                totalUsers={counts.users}
+                totalClasses={counts.courses}
+                totalEnrollments={counts.enrollments}
+
             />
-           
-           <TopCources></TopCources>
-            <TotalUsersTEachers></TotalUsersTEachers>
+
+            <TopCources></TopCources>
+            <section id='#studentLove'>
+                <TotalUsersTEachers></TotalUsersTEachers>
+            </section>
+
             <FeedBack></FeedBack>
-           
+
             <BecomeAnInstructor></BecomeAnInstructor>
 
             <Motivation></Motivation>

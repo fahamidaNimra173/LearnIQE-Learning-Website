@@ -28,7 +28,7 @@ const NavigationBar = () => {
   // Determine text color class
   const getTextColorClass = () => {
     if (isHomePage && !isScrolled) return 'text-white';
-    return 'text-black dark:text-black';
+    return 'text-white dark:text-white';
   };
 
   return (
@@ -38,7 +38,7 @@ const NavigationBar = () => {
       {/* Left - Brand */}
       <div className="navbar-start">
         <div className="flex items-center pt-1.5">
-          <span className={`text-2xl sm:text-3xl font-extrabold text-[#22b7f9] dark:text-[#22b7f9] ${getTextColorClass()} righteous`}>
+          <span className={`text-2xl sm:text-3xl font-extrabold text-[#fbbc2c] dark:text-[#fbbc2c] ${getTextColorClass()} righteous`}>
             Learn
             <span className="text-[#f1620b] text-shadow-xs text-shadow-gray-950">IQ</span>
           </span>
@@ -51,23 +51,23 @@ const NavigationBar = () => {
       </div>
 
       {/* Center - Links */}
-      <div className="navbar-center habibi hidden dark:text-[#000000] lg:flex gap-6">
-        <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-bold text-[18px] hover:text-[#0A97B0]`}>
+      <div className={`navbar-center ${isScrolled? "border-1 rounded-3xl bg-white/20 border-gray-400 px-10 py-5":"border-0"}     habibi hidden dark:text-[#000000] lg:flex gap-6`}>
+        <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-medium text-[18px] hover:text-[#0A97B0]`}>
           Home
         </NavLink>
-        <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-bold flex items-end text-[18px] hover:text-[#0A97B0]`}>
+        <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-medium flex items-end text-[18px] hover:text-[#0A97B0]`}>
           Explore <IoMdArrowDropdown />
         </NavLink>
-        <NavLink to="/allapprovedclasses" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
+        <NavLink to="/allapprovedclasses" className={`${getTextColorClass()} font-medium text-[18px] hover:text-[#0A97B0]`}>
           Free Cources
         </NavLink>
-        <NavLink to="/teacherform" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
+        <NavLink to="/teacherform" className={`${getTextColorClass()} font-medium text-[18px] hover:text-[#0A97B0]`}>
           Teach On
         </NavLink>
-        <NavLink to="/allTeacher" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
+        <NavLink to="/allTeacher" className={`${getTextColorClass()} font-medium text-[18px] hover:text-[#0A97B0]`}>
           Instructors
         </NavLink>
-        <NavLink to="/aboutUs" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>About Us</NavLink>
+        <NavLink to="/aboutUs" className={`${getTextColorClass()} font-medium text-[18px] hover:text-[#0A97B0]`}>About Us</NavLink>
       </div>
 
       {/* Right - Avatar or Login */}
