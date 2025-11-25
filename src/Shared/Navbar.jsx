@@ -75,15 +75,17 @@ const NavigationBar = ({activeSection}) => {
       <div className="navbar-end flex items-center gap-3">
         {user ? (
           <>
-            <div className="dropdown dropdown-end">
+            <div className="dropdown flex gap-2 dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-15 rounded-full">
                   <img src={user.photoURL} alt="User" />
                 </div>
+               
               </label>
+               {/* <Menu className="hidden lg:block"></Menu> */}
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#e7efee] text-[#2A3335] rounded-box w-52"
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#e7efee] text-[#2A3335] rounded-box w-72"
               >
                 <li><span className="text-sm font-bold">{user.displayName}</span></li>
                 <li><span className="text-xs">{user.email}</span></li>
@@ -109,7 +111,7 @@ const NavigationBar = ({activeSection}) => {
             </NavLink>
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <HiMenu className={`${getTextColorClass()} text-3xl`} />
+                <Menu className={`${getTextColorClass()} text-3xl`} />
               </button>
             </div>
           </>
@@ -118,7 +120,7 @@ const NavigationBar = ({activeSection}) => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 w-48 lg:hidden">
+        <div className="absolute top-15 right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 w-72 min-h-screen lg:hidden">
           <NavLink to="/" className="block text-black py-1 hover:text-[#FFCFEF]">Home</NavLink>
           <NavLink to="/allapprovedclasses" className="block text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
           <NavLink to="/teacherform" className="block text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
