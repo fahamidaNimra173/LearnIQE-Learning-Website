@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from "motion/react"
 import Banner from './Components/Banner';
 import AxiosSecure from '../../Axios/AxiosSecure';
@@ -12,12 +12,14 @@ import TopCources from './Components/TopCources';
 import BecomeAnInstructor from './Components/BecomeAnInstructor';
 import Motivation from './Components/Motivation';
 import NewsLatter from './Components/NewsLatter';
+import ScrollTracker from '../../utility/sectionTracker';
+import { useOutletContext } from 'react-router';
 
 
 
 const Home = () => {
     const axiosSecure = AxiosSecure();
-
+    const setActiveSection=useOutletContext()
     const { data: counts, isLoading, isError } = useQuery({
         queryKey: ["homepageCounts"],
         queryFn: async () => {
@@ -34,6 +36,7 @@ const Home = () => {
     console.log(users, courses, enrollments)
     return (
         <div className='bg-[#000000] dark:bg-[#000000]'>
+            <ScrollTracker setActiveSection={setActiveSection} ></ScrollTracker>
             <Banner></Banner>
 
             <TotalDataCollections
@@ -44,7 +47,7 @@ const Home = () => {
             />
 
             <TopCources></TopCources>
-            <section id='#studentLove'>
+            <section id='studentLove'>
                 <TotalUsersTEachers></TotalUsersTEachers>
             </section>
 

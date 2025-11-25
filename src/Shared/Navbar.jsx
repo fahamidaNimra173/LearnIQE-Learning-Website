@@ -5,7 +5,7 @@ import { HiMenu } from 'react-icons/hi';
 import { IoMdArrowDropdown } from "react-icons/io";
 import '../App.css';
 
-const NavigationBar = () => {
+const NavigationBar = ({activeSection}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, LogOut } = useContext(AuthContext);
@@ -51,7 +51,7 @@ const NavigationBar = () => {
       </div>
 
       {/* Center - Links */}
-      <div className={`navbar-center ${isScrolled? "border-1 rounded-3xl bg-white/20 border-gray-400 px-10 py-5":"border-0"}     habibi hidden dark:text-[#000000] lg:flex gap-6`}>
+      <div className={`navbar-center ${isScrolled? "border-1 rounded-3xl border-gray-400 bg-black/70  px-15 py-2":"border-0"}     habibi hidden dark:text-[#000000] lg:flex gap-6`}>
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-medium text-[18px] hover:text-[#0A97B0]`}>
           Home
         </NavLink>
