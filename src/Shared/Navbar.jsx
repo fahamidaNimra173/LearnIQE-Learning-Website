@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import { HiMenu } from 'react-icons/hi';
+import { IoMdArrowDropdown } from "react-icons/io";
 import '../App.css';
 
 const NavigationBar = () => {
@@ -32,18 +33,14 @@ const NavigationBar = () => {
 
   return (
     <div
-      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4 ${ isHomePage
-        ? isScrolled
-          ? 'bg-[#fbbc2c] dark:bg-[#fbbc2c] shadow-md'
-          : 'bg-transparent'
-        : 'bg-[#fbbc2c] dark:bg-[#fbbc2c] shadow-md'}`}
+      className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4`}
     >
       {/* Left - Brand */}
       <div className="navbar-start">
         <div className="flex items-center pt-1.5">
-          <span className={`text-2xl sm:text-3xl font-extrabold text-[#e7efee] dark:text-[#e7efee] ${getTextColorClass()} righteous`}>
+          <span className={`text-2xl sm:text-3xl font-extrabold text-[#22b7f9] dark:text-[#22b7f9] ${getTextColorClass()} righteous`}>
             Learn
-            <span className="text-[#FFCFEF] text-shadow-xs text-shadow-gray-950">IQ</span>
+            <span className="text-[#f1620b] text-shadow-xs text-shadow-gray-950">IQ</span>
           </span>
           <img
             src="https://i.ibb.co/8ndphk5P/Screenshot-2025-07-28-152838.png"
@@ -58,8 +55,11 @@ const NavigationBar = () => {
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-bold text-[18px] hover:text-[#0A97B0]`}>
           Home
         </NavLink>
+        <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-bold flex items-end text-[18px] hover:text-[#0A97B0]`}>
+          Explore <IoMdArrowDropdown />
+        </NavLink>
         <NavLink to="/allapprovedclasses" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
-          All Classes
+          Free Cources
         </NavLink>
         <NavLink to="/teacherform" className={`${getTextColorClass()} font-bold text-[18px] hover:text-[#0A97B0]`}>
           Teach On
