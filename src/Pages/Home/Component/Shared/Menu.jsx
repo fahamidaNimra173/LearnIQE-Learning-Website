@@ -4,11 +4,12 @@ import { RxDotFilled } from "react-icons/rx";
 export default function Menu(){
     return(
 
-        <div className="grid grid-cols-2 gap-2 ">
-           <RxDotFilled className=" w-5 text-white" /> 
-           <RxDotFilled className=" w-5 text-[#fbbc2c]" />
-           <RxDotFilled className=" w-5 text-white" />
-           <RxDotFilled className=" w-5 text-white" />
+        <div className="grid grid-cols-2 gap-1 ">
+           <div className=" w-3 h-5 rounded-full bg-white" ></div> 
+
+           <div className=" w-3 h-5 rounded-full bg-[#fbbc2c]" ></div> 
+           <div className=" w-3 h-5 rounded-full bg-white" ></div> 
+<div className=" w-3 h-5 rounded-full bg-white" ></div> 
         </div> 
     )
 }

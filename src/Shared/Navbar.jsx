@@ -4,6 +4,7 @@ import { AuthContext } from '../Context/AuthContext';
 import { HiMenu } from 'react-icons/hi';
 import { IoMdArrowDropdown } from "react-icons/io";
 import '../App.css';
+import Menu from '../Pages/Home/Component/Shared/Menu';
 
 const NavigationBar = ({activeSection}) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -94,7 +95,7 @@ const NavigationBar = ({activeSection}) => {
             </div>
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <HiMenu className={`${getTextColorClass()} text-3xl dark:text-[#e7efee]`} />
+                <Menu className={`${getTextColorClass()} text-3xl dark:text-[#e7efee]`} />
               </button>
             </div>
           </>
