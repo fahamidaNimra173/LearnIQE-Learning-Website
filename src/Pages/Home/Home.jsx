@@ -1,17 +1,17 @@
 
 import { motion } from "motion/react"
-import Banner from './Components/Banner';
+import Banner from './Component/Banner';
 import AxiosSecure from '../../Axios/AxiosSecure';
-import TotalUsersTEachers from './Components/TotalUsersTEachers';
+import TotalUsersTEachers from './Component/TotalUsersTEachers';
 import { useQuery } from '@tanstack/react-query';
 import Loader1 from '../../Shared/Loaders/Loader1'
-import TotalDataCollections from './Components/TotalDataCollections';
-import PartnerMarquee from './Components/Marque';
-import FeedBack from './Components/FeedBack';
-import TopCources from './Components/TopCources';
-import BecomeAnInstructor from './Components/BecomeAnInstructor';
-import Motivation from './Components/Motivation';
-import NewsLatter from './Components/NewsLatter';
+import TotalDataCollections from './Component/TotalDataCollections';
+import PartnerMarquee from './Component/Marque';
+import FeedBack from './Component/FeedBack';
+import TopCources from './Component/TopCources';
+import BecomeAnInstructor from './Component/BecomeAnInstructor';
+import Motivation from './Component/Motivation';
+import NewsLatter from './Component/NewsLatter';
 import ScrollTracker from '../../utility/sectionTracker';
 import { useOutletContext } from 'react-router';
 
