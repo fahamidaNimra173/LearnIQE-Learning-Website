@@ -9,12 +9,7 @@
 
 /* This is the rimary color: #fbbc2c */
 
-.righteous {
-  font-family: "Righteous", sans-serif;
- 
-  
-  font-style: normal;
-}
+
 .merienda {
   font-family: "Merienda", cursive;
  
@@ -48,8 +43,19 @@
 }
 .righteous {
   font-family: "Righteous", sans-serif;
-  font-weight: 400;
+
   font-style: normal;
+}
+
+/* menubar animation- menu will come from top right circle */
+/* Circle reveal animation */
+.clip-open {
+  clip-path: circle(0% at 100% 0);
+  transition: clip-path 0.6s ease-in-out;
+}
+
+.clip-open.show {
+  clip-path: circle(150% at 100% 0);
 }
 
 
