@@ -121,33 +121,84 @@ const NavigationBar = ({ activeSection }) => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-0 right-0 mt-2 bg-[#fbbc2c] rounded shadow-lg p-4 min-w-11/12 min-h-screen lg:hidden">
-          <div className='relative top-0'>
+        <div className="absolute top-0 right-0 mt-2 bg-gradient-to-br from-[#fbbc2c] via-[#ffc940] to-[#fbbc2c] rounded-l-3xl shadow-2xl p-6 min-w-11/12 min-h-screen lg:hidden overflow-hidden">
+          {/* Animated background shapes */}
+          <div className="absolute top-20 right-10 w-32 h-32 bg-yellow-300/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-40 left-10 w-40 h-40 bg-orange-300/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+
+          {/* Decorative top bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+
+          {/* Close button */}
+          <div className='relative top-0 mb-8'>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className='absolute top-0 right-0 group'
+              className='absolute top-2 right-2 group'
             >
-              {/* Glow effect layers */}
-              <div className="absolute inset-0 bg-yellow-400 rounded-full blur-lg opacity-60 group-hover:opacity-80 animate-pulse"></div>
-              <div className="absolute inset-0 bg-amber-300 rounded-full blur-md opacity-40 group-hover:opacity-60"></div>
+              {/* Outer glow rings */}
+              <div className="absolute inset-0 bg-yellow-400 rounded-full blur-xl opacity-50 group-hover:opacity-70 animate-pulse"></div>
+              <div className="absolute inset-0 bg-amber-300 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
 
-              {/* 3D button effect */}
-              <div className="relative">
-                <RxCrossCircled className='w-8 h-8 text-black relative z-10 drop-shadow-[0_2px_4px_rgba(255,255,255,0.5)] group-hover:drop-shadow-[0_4px_8px_rgba(255,255,255,0.7)] transition-all duration-300 group-hover:scale-110' />
+              {/* Button container with 3D effect */}
+              <div className="relative w-10 h-10 flex items-center justify-center">
+                {/* 3D layered effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-yellow-50 to-amber-100 rounded-full transform translate-y-0.5 opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-100 via-amber-200 to-orange-200 rounded-full shadow-lg"></div>
 
-                {/* Shine overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-transparent rounded-full pointer-events-none"></div>
+                {/* Top shine */}
+                <div className="absolute top-1 left-2 w-4 h-4 bg-white/70 rounded-full blur-sm"></div>
+
+                {/* Icon */}
+                <RxCrossCircled className='w-8 h-8 text-gray-800 relative z-10 drop-shadow-[0_2px_6px_rgba(255,255,255,0.8)] group-hover:drop-shadow-[0_4px_12px_rgba(255,255,255,0.9)] group-hover:rotate-90 transition-all duration-500 group-hover:scale-110' />
               </div>
             </button>
           </div>
 
-          <div className='flex flex-col justify-center'>
-            <NavLink to="/" className="block text-black pt-20 my-5 font-semibold text-3xl py-1 hover:text-[#FFCFEF]">Home</NavLink>
-            <NavLink to="/allapprovedclasses" className="block text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
-            <NavLink to="/teacherform" className="block text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
-            <NavLink to="/allTeacher" className="block text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
-            <NavLink to="/aboutUs" className="block text-3xl my-5 righteous text-black py-1 hover:text-[#FFCFEF]">About Us</NavLink>
+          {/* Navigation container */}
+          <div className='flex flex-col justify-center h-full relative z-10 space-y-2 pt-16'>
+            <NavLink
+              to="/"
+              className="group relative block text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20 transition-all duration-300 overflow-hidden"
+            >
+              <span className="relative z-10 group-hover:text-[#FFCFEF] transition-colors duration-300">Home</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </NavLink>
+
+            <NavLink
+              to="/allapprovedclasses"
+              className="group relative block text-3xl font-medium righteous text-black py-4 px-6 rounded-2xl hover:bg-white/20 transition-all duration-300 overflow-hidden"
+            >
+              <span className="relative z-10 group-hover:text-[#FFCFEF] transition-colors duration-300">All Classes</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </NavLink>
+
+            <NavLink
+              to="/teacherform"
+              className="group relative block text-3xl font-medium righteous text-black py-4 px-6 rounded-2xl hover:bg-white/20 transition-all duration-300 overflow-hidden"
+            >
+              <span className="relative z-10 group-hover:text-[#FFCFEF] transition-colors duration-300">Teach On</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </NavLink>
+
+            <NavLink
+              to="/allTeacher"
+              className="group relative block text-3xl font-medium righteous text-black py-4 px-6 rounded-2xl hover:bg-white/20 transition-all duration-300 overflow-hidden"
+            >
+              <span className="relative z-10 group-hover:text-[#FFCFEF] transition-colors duration-300">Instructors</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </NavLink>
+
+            <NavLink
+              to="/aboutUs"
+              className="group relative block text-3xl righteous text-black py-4 px-6 rounded-2xl hover:bg-white/20 transition-all duration-300 overflow-hidden"
+            >
+              <span className="relative z-10 group-hover:text-[#FFCFEF] transition-colors duration-300">About Us</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </NavLink>
           </div>
+
+          {/* Bottom decorative element */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-full"></div>
         </div>
       )}
     </div>
