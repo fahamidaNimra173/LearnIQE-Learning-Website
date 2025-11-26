@@ -7,7 +7,7 @@ import '../App.css';
 import Menu from '../Pages/Home/Component/Shared/Menu';
 import { RxCrossCircled } from 'react-icons/rx';
 
-const NavigationBar = ({activeSection}) => {
+const NavigationBar = ({ activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, LogOut } = useContext(AuthContext);
@@ -53,7 +53,7 @@ const NavigationBar = ({activeSection}) => {
       </div>
 
       {/* Center - Links */}
-      <div className={`navbar-center ${isScrolled? "border-1 rounded-3xl border-gray-400 bg-black/70  px-15 py-2":"border-0"}     habibi hidden dark:text-[#000000] lg:flex gap-6`}>
+      <div className={`navbar-center ${isScrolled ? "border-1 rounded-3xl border-gray-400 bg-black/70  px-15 py-2" : "border-0"}     habibi hidden dark:text-[#000000] lg:flex gap-6`}>
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] font-medium text-[18px] hover:text-[#0A97B0]`}>
           Home
         </NavLink>
@@ -81,9 +81,9 @@ const NavigationBar = ({activeSection}) => {
                 <div className="w-15 rounded-full">
                   <img src={user.photoURL} alt="User" />
                 </div>
-               
+
               </label>
-               {/* <Menu className="hidden lg:block"></Menu> */}
+              {/* <Menu className="hidden lg:block"></Menu> */}
               <ul
                 tabIndex={0}
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#e7efee] text-[#2A3335] rounded-box w-72"
@@ -122,15 +122,17 @@ const NavigationBar = ({activeSection}) => {
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
         <div className="absolute top-0 right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 w-72 min-h-screen lg:hidden">
-          <div className='relative'>
-              <button onClick={() => setIsMenuOpen(false)} className='absolute right-0'><RxCrossCircled className='w-8  text-black h-8'></RxCrossCircled></button>
+          <div className='relative top-0'>
+            <button onClick={() => setIsMenuOpen(false)} className='absolute top-0 right-0'><RxCrossCircled className='w-8  text-black h-8'></RxCrossCircled></button>
           </div>
-          
-          <NavLink to="/" className="block text-black py-1 hover:text-[#FFCFEF]">Home</NavLink>
-          <NavLink to="/allapprovedclasses" className="block text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
-          <NavLink to="/teacherform" className="block text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
-          <NavLink to="/allTeacher" className="block text-black py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
-          <NavLink to="/aboutUs" className="block text-black py-1 hover:text-[#FFCFEF]">About Us</NavLink>
+          <div className='flex flex-col justify-center'>
+            <NavLink to="/" className="block text-black     pt-20     my-5 font-semibold text-3xl   py-1 hover:text-[#FFCFEF]">Home</NavLink>
+            <NavLink to="/allapprovedclasses" className="block text-3xl my-5 font-medium righteous  text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
+            <NavLink to="/teacherform" className="block        text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
+            <NavLink to="/allTeacher" className="block         text-3xl my-5 font-medium righteous  text-black py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
+            <NavLink to="/aboutUs" className="block            text-3xl my-5  righteous  text-black py-1 hover:text-[#FFCFEF]">About Us</NavLink>
+          </div>
+
         </div>
       )}
     </div>
