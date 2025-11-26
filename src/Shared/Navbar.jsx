@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
-import { HiMenu } from 'react-icons/hi';
+
 import { IoMdArrowDropdown } from "react-icons/io";
 import '../App.css';
 import Menu from '../Pages/Home/Component/Shared/Menu';
 import { RxCrossCircled } from 'react-icons/rx';
+import { X } from 'lucide-react';
 
 const NavigationBar = ({ activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -121,18 +122,76 @@ const NavigationBar = ({ activeSection }) => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-0 right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 w-72 min-h-screen lg:hidden">
-          <div className='relative top-0'>
-            <button onClick={() => setIsMenuOpen(false)} className='absolute top-0 right-0'><RxCrossCircled className='w-8  text-black h-8'></RxCrossCircled></button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <NavLink to="/" className="block text-black     pt-20     my-5 font-semibold text-3xl   py-1 hover:text-[#FFCFEF]">Home</NavLink>
-            <NavLink to="/allapprovedclasses" className="block text-3xl my-5 font-medium righteous  text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
-            <NavLink to="/teacherform" className="block        text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
-            <NavLink to="/allTeacher" className="block         text-3xl my-5 font-medium righteous  text-black py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
-            <NavLink to="/aboutUs" className="block            text-3xl my-5  righteous  text-black py-1 hover:text-[#FFCFEF]">About Us</NavLink>
-          </div>
+        <div className="fixed inset-0 z-50 lg:hidden">
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setIsMenuOpen(false)}/>
 
+          {/* Sidebar */}
+          <div className="absolute top-0 right-0 w-5/6 h-full bg-[#fbbc2c] shadow-2xl">
+            {/* Close Button Container */}
+            <div className="absolute top-6 right-6 z-10">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="relative group"
+                aria-label="Close menu"
+              >
+                {/* Glow layers */}
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 via-amber-300 to-orange-400 rounded-full blur-xl opacity-75 group-hover:opacity-100 animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 via-amber-300 to-orange-300 rounded-full blur-md opacity-60 group-hover:opacity-90" />
+
+                {/* Button container with 3D effect */}
+                <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-white via-yellow-100 to-amber-200 shadow-lg group-hover:shadow-2xl transform group-hover:scale-110 transition-all duration-300">
+                  {/* Inner shadow for depth */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-transparent to-black opacity-20" />
+
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white via-transparent to-transparent opacity-40" />
+
+                  {/* Icon */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <X className="w-6 h-6 text-gray-800 group-hover:text-black transition-colors drop-shadow-sm" strokeWidth={2.5} />
+                  </div>
+
+                  {/* Highlight */}
+                  <div className="absolute top-1 left-1 w-4 h-4 bg-white rounded-full opacity-60 blur-sm" />
+                </div>
+              </button>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="flex flex-col justify-center h-full px-8">
+              <a
+                href="#home"
+                className="block text-black text-3xl my-5 font-semibold hover:text-[#FFCFEF] transition-colors duration-200"
+              >
+                Home
+              </a>
+              <a
+                href="#classes"
+                className="block text-black text-3xl my-5 font-medium hover:text-[#FFCFEF] transition-colors duration-200"
+              >
+                All Classes
+              </a>
+              <a
+                href="#teach"
+                className="block text-black text-3xl my-5 font-medium hover:text-[#FFCFEF] transition-colors duration-200"
+              >
+                Teach On
+              </a>
+              <a
+                href="#instructors"
+                className="block text-black text-3xl my-5 font-medium hover:text-[#FFCFEF] transition-colors duration-200"
+              >
+                Instructors
+              </a>
+              <a
+                href="#about"
+                className="block text-black text-3xl my-5 font-medium hover:text-[#FFCFEF] transition-colors duration-200"
+              >
+                About Us
+              </a>
+            </nav>
+          </div>
         </div>
       )}
     </div>
