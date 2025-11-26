@@ -121,18 +121,33 @@ const NavigationBar = ({ activeSection }) => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-0 right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 min-w-11/12 min-h-screen lg:hidden">
+        <div className="absolute top-0 right-0 mt-2 bg-[#fbbc2c] rounded shadow-lg p-4 min-w-11/12 min-h-screen lg:hidden">
           <div className='relative top-0'>
-            <button onClick={() => setIsMenuOpen(false)} className='absolute top-0 right-0'><RxCrossCircled className='w-8  text-black h-8'></RxCrossCircled></button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <NavLink to="/" className="block text-black     pt-20     my-5 font-semibold text-3xl   py-1 hover:text-[#FFCFEF]">Home</NavLink>
-            <NavLink to="/allapprovedclasses" className="block text-3xl my-5 font-medium righteous  text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
-            <NavLink to="/teacherform" className="block        text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
-            <NavLink to="/allTeacher" className="block         text-3xl my-5 font-medium righteous  text-black py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
-            <NavLink to="/aboutUs" className="block            text-3xl my-5  righteous  text-black py-1 hover:text-[#FFCFEF]">About Us</NavLink>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className='absolute top-0 right-0 group'
+            >
+              {/* Glow effect layers */}
+              <div className="absolute inset-0 bg-yellow-400 rounded-full blur-lg opacity-60 group-hover:opacity-80 animate-pulse"></div>
+              <div className="absolute inset-0 bg-amber-300 rounded-full blur-md opacity-40 group-hover:opacity-60"></div>
+
+              {/* 3D button effect */}
+              <div className="relative">
+                <RxCrossCircled className='w-8 h-8 text-black relative z-10 drop-shadow-[0_2px_4px_rgba(255,255,255,0.5)] group-hover:drop-shadow-[0_4px_8px_rgba(255,255,255,0.7)] transition-all duration-300 group-hover:scale-110' />
+
+                {/* Shine overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-transparent rounded-full pointer-events-none"></div>
+              </div>
+            </button>
           </div>
 
+          <div className='flex flex-col justify-center'>
+            <NavLink to="/" className="block text-black pt-20 my-5 font-semibold text-3xl py-1 hover:text-[#FFCFEF]">Home</NavLink>
+            <NavLink to="/allapprovedclasses" className="block text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
+            <NavLink to="/teacherform" className="block text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
+            <NavLink to="/allTeacher" className="block text-3xl my-5 font-medium righteous text-black py-1 hover:text-[#FFCFEF]">Instructors</NavLink>
+            <NavLink to="/aboutUs" className="block text-3xl my-5 righteous text-black py-1 hover:text-[#FFCFEF]">About Us</NavLink>
+          </div>
         </div>
       )}
     </div>
