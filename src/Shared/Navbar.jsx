@@ -5,6 +5,7 @@ import { HiMenu } from 'react-icons/hi';
 import { IoMdArrowDropdown } from "react-icons/io";
 import '../App.css';
 import Menu from '../Pages/Home/Component/Shared/Menu';
+import { RxCrossCircled } from 'react-icons/rx';
 
 const NavigationBar = ({activeSection}) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +40,7 @@ const NavigationBar = ({activeSection}) => {
       {/* Left - Brand */}
       <div className="navbar-start">
         <div className="flex items-center pt-1.5">
-          <span className={`text-2xl sm:text-3xl font-extrabold text-[#fbbc2c] dark:text-[#fbbc2c] ${getTextColorClass()} righteous`}>
+          <span className={`text-2xl sm:text-3xl font-extrabold  ${getTextColorClass()} righteous`}>
             Learn
             <span className="text-[#f1620b] text-shadow-xs text-shadow-gray-950">IQ</span>
           </span>
@@ -96,7 +97,7 @@ const NavigationBar = ({activeSection}) => {
               </ul>
             </div>
             <div className="lg:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <button onClick={() => setIsMenuOpen(true)}>
                 <Menu className={`${getTextColorClass()} text-3xl dark:text-[#e7efee]`} />
               </button>
             </div>
@@ -120,7 +121,11 @@ const NavigationBar = ({activeSection}) => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-15 right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 w-72 min-h-screen lg:hidden">
+        <div className="absolute top-0 right-0 mt-2 bg-[#fbbc2c]  rounded shadow-lg p-4 w-72 min-h-screen lg:hidden">
+          <div className='relative'>
+              <button onClick={() => setIsMenuOpen(false)} className='absolute right-0'><RxCrossCircled className='w-8  text-black h-8'></RxCrossCircled></button>
+          </div>
+          
           <NavLink to="/" className="block text-black py-1 hover:text-[#FFCFEF]">Home</NavLink>
           <NavLink to="/allapprovedclasses" className="block text-black py-1 hover:text-[#FFCFEF]">All Classes</NavLink>
           <NavLink to="/teacherform" className="block text-black py-1 hover:text-[#FFCFEF]">Teach On</NavLink>
