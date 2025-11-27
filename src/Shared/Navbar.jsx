@@ -55,32 +55,32 @@ const NavigationBar = ({ activeSection }) => {
         habibi hidden dark:text-[#000000] lg:flex gap-6`}>
         
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] 
-          font-medium text-[18px] hover:text-[#0A97B0]`}>
+          font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
           Home
         </NavLink>
 
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] 
-          font-medium flex items-end text-[18px] hover:text-[#0A97B0]`}>
+          font-medium flex items-end outfit text-[18px] hover:text-[#0A97B0]`}>
           Explore <IoMdArrowDropdown />
         </NavLink>
 
         <NavLink to="/allapprovedclasses" className={`${getTextColorClass()} 
-          font-medium text-[18px] hover:text-[#0A97B0]`}>
+          font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
           Free Cources
         </NavLink>
 
         <NavLink to="/teacherform" className={`${getTextColorClass()} 
-          font-medium text-[18px] hover:text-[#0A97B0]`}>
+          font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
           Teach On
         </NavLink>
 
         <NavLink to="/allTeacher" className={`${getTextColorClass()} 
-          font-medium text-[18px] hover:text-[#0A97B0]`}>
+          font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
           Instructors
         </NavLink>
 
         <NavLink to="/aboutUs" className={`${getTextColorClass()} 
-          font-medium text-[18px] hover:text-[#0A97B0]`}>
+          font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
           About Us
         </NavLink>
       </div>
@@ -102,7 +102,7 @@ const NavigationBar = ({ activeSection }) => {
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content 
                 bg-[#e7efee] text-[#2A3335] rounded-box w-72">
 
-                <li><span className="text-sm font-bold">{user.displayName}</span></li>
+                <li><span className="text-sm outfit font-bold">{user.displayName}</span></li>
                 <li><span className="text-xs">{user.email}</span></li>
                 <div className="divider my-1" />
                 <li><NavLink to="/dashboard">Dashboard</NavLink></li>
@@ -112,13 +112,13 @@ const NavigationBar = ({ activeSection }) => {
 
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(true)}>
-                <Menu className={`${getTextColorClass()} text-3xl dark:text-[#e7efee]`} />
+                <Menu className={`${getTextColorClass()} text-3xl outfit dark:text-[#e7efee]`} />
               </button>
             </div>
           </>
         ) : (
           <>
-            <NavLink to="/login" className="btnUI">Log In</NavLink>
+            <NavLink to="/login" className="btnUI outfit">Log In</NavLink>
 
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -160,23 +160,23 @@ const NavigationBar = ({ activeSection }) => {
           <div className='flex flex-col justify-center h-full relative z-10 space-y-2 pt-16'>
 
             <NavLink to="/" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative z-10 group-hover:text-[#FFCFEF]">Home</span>
+              <span className="relative z-10 outfit group-hover:text-[#FFCFEF]">Home</span>
             </NavLink>
 
             <NavLink to="/allapprovedclasses" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative z-10 group-hover:text-[#FFCFEF]">All Classes</span>
+              <span className="relative z-10 outfit group-hover:text-[#FFCFEF]">All Classes</span>
             </NavLink>
 
             <NavLink to="/teacherform" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative z-10 group-hover:text-[#FFCFEF]">Teach On</span>
+              <span className="relative outfit z-10 group-hover:text-[#FFCFEF]">Teach On</span>
             </NavLink>
 
             <NavLink to="/allTeacher" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative z-10 group-hover:text-[#FFCFEF]">Instructors</span>
+              <span className="relative outfit z-10 group-hover:text-[#FFCFEF]">Instructors</span>
             </NavLink>
 
             <NavLink to="/aboutUs" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative z-10 group-hover:text-[#FFCFEF]">About Us</span>
+              <span className="relative outfit z-10 group-hover:text-[#FFCFEF]">About Us</span>
             </NavLink>
 
           </div>
