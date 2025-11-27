@@ -58,7 +58,7 @@ export function Component({
             const updateInterval = 1000 / 30; // Throttle to 30fps instead of 60fps
             
             hueRotateAnimation.current = animate(hueRotateMotionValue, 360, {
-                duration: animationDuration / 25,
+                duration: animationDuration / 30,
                 repeat: Infinity,
                 repeatType: "loop",
                 repeatDelay: 0,
@@ -113,7 +113,7 @@ export function Component({
                 style={{
                     position: "absolute",
                     inset: -displacementScale,
-                    filter: animationEnabled ? `url(#${id}) blur(4px)` : "none",
+                    filter: animationEnabled ? `url(#${id}) blur(3px)` : "none",
                     willChange: animationEnabled ? 'filter' : 'auto',
                     transform: 'translateZ(0)', // Force GPU acceleration
                 }}>
@@ -177,10 +177,11 @@ export function Component({
                     textAlign: "center",
                     zIndex: 10
                 }}>
-                <h1
-                    className="md:text-7xl text-6xl lg:text-8xl font-bold text-center text-white relative z-20">
+                <h1 className="md:text-7xl text-6xl lg:text-8xl font-bold text-center bg-gradient-to-r from-blue-400 via-white to-white text-transparent bg-clip-text outfit w-full relative z-20">
                     Empowering Your Learning Journey
                 </h1>
+
+                <h1 className='text-white lg:text-2xl z-10 outfit my-10'>Learn with free courses, smart resources, and the skills you’ve always wanted to master.</h1>
             </div>
             {noise && noise.opacity > 0 && (
                 <div

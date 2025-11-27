@@ -14,6 +14,7 @@ import Motivation from './Component/Motivation';
 import NewsLatter from './Component/NewsLatter';
 import ScrollTracker from '../../utility/sectionTracker';
 import { useOutletContext } from 'react-router';
+import LogoMarquee from "./Component/intitutionsMarque";
 
 
 
@@ -38,7 +39,9 @@ const Home = () => {
         <div className='bg-[#000000] dark:bg-[#000000]'>
             <ScrollTracker setActiveSection={setActiveSection} ></ScrollTracker>
             <Banner></Banner>
-
+            <div>
+                <LogoMarquee></LogoMarquee>
+            </div>
             <TotalDataCollections
                 totalUsers={counts.users}
                 totalClasses={counts.courses}
