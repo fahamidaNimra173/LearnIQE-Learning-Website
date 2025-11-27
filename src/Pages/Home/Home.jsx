@@ -20,7 +20,7 @@ import LogoMarquee from "./Component/intitutionsMarque";
 
 const Home = () => {
     const axiosSecure = AxiosSecure();
-    const setActiveSection=useOutletContext()
+    const setActiveSection = useOutletContext()
     const { data: counts, isLoading, isError } = useQuery({
         queryKey: ["homepageCounts"],
         queryFn: async () => {
@@ -38,10 +38,14 @@ const Home = () => {
     return (
         <div className='bg-[#000000] dark:bg-[#000000]'>
             <ScrollTracker setActiveSection={setActiveSection} ></ScrollTracker>
-            <Banner></Banner>
-            <div>
-                <LogoMarquee></LogoMarquee>
+            <div className="relative">
+                <Banner></Banner>
+
+                <div className="absolute -bottom-10">
+                    <LogoMarquee></LogoMarquee>
+                </div>
             </div>
+
             <TotalDataCollections
                 totalUsers={counts.users}
                 totalClasses={counts.courses}
