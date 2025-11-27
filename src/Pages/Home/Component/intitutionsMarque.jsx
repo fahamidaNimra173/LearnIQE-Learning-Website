@@ -92,7 +92,7 @@ export default function LogoMarquee() {
   const looped = [...logos, ...logos];
 
   return (
-    <div className="w-full  bg-black/70 shadow-2xl shadow-black/40 overflow-hidden relative py-2 ">
+    <div className="w-full over  bg-black/70 shadow-2xl shadow-black/40  relative py-2 ">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
@@ -106,7 +106,7 @@ export default function LogoMarquee() {
         }
       `}</style>
 
-      <div className="marquee-wrap w-full">
+      <div className="marquee-wrap  w-full">
         <div
           className="animate-marquee whitespace-nowrap flex items-center gap-0"
           style={{ width: "200%" }}

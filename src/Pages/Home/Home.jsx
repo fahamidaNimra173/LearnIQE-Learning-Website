@@ -38,10 +38,10 @@ const Home = () => {
     return (
         <div className='bg-[#000000] dark:bg-[#000000]'>
             <ScrollTracker setActiveSection={setActiveSection} ></ScrollTracker>
-            <div className="relative">
+            <div className="relative overflow-x-hidden">
                 <Banner></Banner>
 
-                <div className="absolute -bottom-10">
+                <div className="absolute -bottom-5 z-20 overflow-x-hidden">
                     <LogoMarquee></LogoMarquee>
                 </div>
             </div>
