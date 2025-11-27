@@ -1,46 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Overlock+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Habibi&display=swap');
 
 /* This is the rimary color: #fbbc2c */
 
 
-.merienda {
-  font-family: "Merienda", cursive;
- 
+.outfit {
+  font-family: "Outfit", sans-serif;
+
   font-style: normal;
 }
-.londrina-outline-regular {
-  font-family: "Londrina Outline", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.overlock {
-  font-family: "Overlock SC", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 .habibi {
   font-family: "Habibi", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.metal {
-  font-family: "Metal Mania", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-.abril {
-  font-family: "Abril Fatface", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 .righteous {
   font-family: "Righteous", sans-serif;
 
