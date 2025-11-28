@@ -40,6 +40,8 @@ const Home = () => {
             <ScrollTracker setActiveSection={setActiveSection} ></ScrollTracker>
             <div className="relative overflow-x-hidden">
                 <Banner></Banner>
+                
+            
 
                 <div className="absolute -bottom-5 z-20 overflow-x-hidden">
                     <LogoMarquee></LogoMarquee>

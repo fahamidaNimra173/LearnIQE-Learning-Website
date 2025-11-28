@@ -109,6 +109,10 @@ export function Component({
                 height: "100%",
                 ...style
             }}>
+                
+                          {/* Dark overlay (removed on hover) */}
+              <div className="absolute md:top-1/4 lg:bottom-1/3   md:left-2/7 lg:left-2/5  bg-blue-100/40 blur-3xl md:w-96 lg:w-[500px] h-56 rounded-full   z-10"></div>
+
             <div
                 style={{
                     position: "absolute",
@@ -168,7 +172,7 @@ export function Component({
                         willChange: animationEnabled ? 'transform' : 'auto',
                     }} />
             </div>
-            <div
+            <div className='w-full max-w-screen'
                 style={{
                     position: "absolute",
                     top: "50%",
@@ -177,11 +181,11 @@ export function Component({
                     textAlign: "center",
                     zIndex: 10
                 }}>
-                <h1 className="md:text-7xl text-6xl lg:text-8xl font-bold text-center bg-gradient-to-r from-blue-400 via-white to-white text-transparent bg-clip-text outfit w-full relative z-20">
-                    Empowering Your Learning Journey
+                <h1 className="md:text-7xl text-4xl sm:text-5xl  font-bold  bg-gradient-to-r from-blue-600 via-blue-100 to-white text-transparent bg-clip-text outfit w-full relative z-20">
+                    Empowering <br /> Your Learning Journey
                 </h1>
 
-                <h1 className='text-white lg:text-2xl z-10 outfit my-10'>Learn with free courses, smart resources, and the skills you’ve always wanted to master.</h1>
+                <h1 className='text-white lg:text-2xl z-10 outfit sm:my-10 my-5'>Learn with free courses, smart resources, and the skills you’ve always wanted to master.</h1>
             </div>
             {noise && noise.opacity > 0 && (
                 <div
