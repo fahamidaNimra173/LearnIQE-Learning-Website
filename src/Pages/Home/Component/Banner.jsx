@@ -2,19 +2,29 @@
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import Circle from "./Shared/circles";
 import { Boxes } from "lucide-react";
+import { AvatarCirclesDemo } from "./UserAvatar";
 
 const Banner = () => {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden">
       <BackgroundRippleEffect />
       <Circle></Circle>
-      <Boxes className="text-blue-500 opacity-70    blur-sm bottom-39 left-0  w-[200px] h-[200px] absolute  z-50 "
-       style={{
-        animation:"spin 8s linear infinite",
-         }}
-       ></Boxes>
-      <div className="mt-60 flex flex-col gap-5 w-full">
-        <h2 className="relative z-10 mx-auto max-w-4xl text-center text-3xl sm:text-4xl font-bold text-white md:text-6xl lg:text-7xl">
+      <Boxes className="text-blue-500 rounded-2xl shadow-2xl shadow-blue-700 opacity-70    blur-sm bottom-39 left-0  w-[200px] h-[200px] absolute  z-10 "
+        style={{
+          animation: "spin 8s linear infinite",
+        }}
+      ></Boxes>
+
+      <div className="sm:mt-50 mt-35 flex items-center flex-col gap-5 w-full">
+        <div className="flex items-center justify-center sm:flex-row flex-col mx-2 gap-2">
+          <AvatarCirclesDemo></AvatarCirclesDemo>
+          <p className="text-yellow-300 uppercase underline font-medium text-sm">
+            Join a community of learners and start exploring new skills today!
+          </p>
+
+        </div>
+
+        <h2 className="relative uppercase z-10 mx-auto max-w-5xl text-center text-3xl sm:text-4xl font-bold text-white md:text-6xl lg:text-7xl">
           Empowering <br /> Your Learning Journey
         </h2>
         <p className="relative z-10 mx-auto mt-4 max-w-xl text-center text-white">

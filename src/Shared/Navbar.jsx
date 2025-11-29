@@ -38,9 +38,9 @@ const NavigationBar = ({ activeSection }) => {
       {/* Left Brand */}
       <div className="navbar-start">
         <div className="flex items-center pt-1.5">
-          <span className={`text-2xl sm:text-3xl font-extrabold  ${getTextColorClass()} righteous`}>
+          <span className={`text-2xl sm:text-3xl   ${getTextColorClass()} righteous`}>
             Learn
-            <span className="text-[#f1620b] text-shadow-xs text-shadow-gray-950">IQ</span>
+            <span className="text-[#2a8aff] text-shadow-xs text-shadow-gray-950">IQ</span>
           </span>
           <img
             src="https://i.ibb.co/8ndphk5P/Screenshot-2025-07-28-152838.png"
