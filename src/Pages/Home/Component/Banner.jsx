@@ -1,14 +1,18 @@
-import { Component } from "@/components/etheral-shadow";
+// import { Component } from "@/components/etheral-shadow";
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 
 const Banner = () => {
   return (
-    <div className="flex w-full h-screen justify-center items-center">
-      <Component
-      color="rgba(128, 128, 128, 1)"
-        animation={{ scale: 100, speed: 90 }}
-        noise={{ opacity: 1, scale: 1.2 }}
-        sizing="fill"
-         />
+    <div className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden">
+      <BackgroundRippleEffect/>
+      <div className="mt-60 w-full">
+        <h2 className="relative z-10 mx-auto max-w-4xl text-center text-3xl sm:text-4xl font-bold text-white md:text-6xl lg:text-7xl">
+          Empowering <br /> Your Learning Journey
+        </h2>
+        <p className="relative z-10 mx-auto mt-4 max-w-xl text-center text-white">
+          Learn with free courses, smart resources, and the skills you’ve always wanted to master.
+        </p>
+      </div>
     </div>
   );
 };
