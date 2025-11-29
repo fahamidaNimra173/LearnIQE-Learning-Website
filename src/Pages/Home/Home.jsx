@@ -42,10 +42,10 @@ const Home = () => {
                 <Banner></Banner>
                 
             
-
+{/* 
                 <div className="absolute -bottom-5 z-20 overflow-x-hidden">
                     <LogoMarquee></LogoMarquee>
-                </div>
+                </div> */}
             </div>
 
             <TotalDataCollections
