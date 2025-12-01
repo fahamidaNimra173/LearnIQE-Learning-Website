@@ -36,13 +36,19 @@ const Home = () => {
     const enrollments = counts.enrollments
     console.log(users, courses, enrollments)
     return (
-        <div className='bg-[#000000] dark:bg-[#000000]'>
+        <div className='bg-[#000000] relative dark:bg-[#000000]'>
+            <div className="w-[400px] h-[400px] absolute fixed -left-50 top-130  opacity-60  z-8 bg-blue-800 blur-3xl -rotate-12 rounded-full ">
+            </div>
+            <div className="w-[550px] h-[500px] absolute fixed -left-45 top-90  opacity-50  z-7 bg-blue-900 blur-3xl -rotate-12 rounded-full ">
+            </div>
+            <div className="w-72 h-72 absolute fixed -left-40 top-170  opacity-60  z-9 bg-yellow-500 blur-3xl rounded-full ">
+            </div>
             <ScrollTracker setActiveSection={setActiveSection} ></ScrollTracker>
             <div className="relative overflow-x-hidden">
                 <Banner></Banner>
-                
-            
-{/* 
+
+
+                {/* 
                 <div className="absolute -bottom-5 z-20 overflow-x-hidden">
                     <LogoMarquee></LogoMarquee>
                 </div> */}
