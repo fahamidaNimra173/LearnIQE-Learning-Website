@@ -6,7 +6,7 @@ import { AvatarCirclesDemo } from "./UserAvatar";
 
 const Banner = () => {
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden">
+    <div className="relative px-2 flex min-h-screen w-full flex-col items-start justify-start overflow-hidden">
       <BackgroundRippleEffect />
       <Circle></Circle>
       <Boxes className="text-blue-500 rounded-2xl lg:shadow-none  shadow-2xl shadow-blue-700 opacity-50    blur-sm bottom-39 right-0 lg:top-15  w-[200px] h-[200px] absolute  z-10 "
@@ -18,7 +18,7 @@ const Banner = () => {
       <div className="sm:mt-50 mt-35 flex items-center flex-col gap-5 w-full">
         <div className="flex items-center justify-center sm:flex-row flex-col mx-2 gap-2">
           <AvatarCirclesDemo></AvatarCirclesDemo>
-          <p className="text-yellow-300 uppercase underline font-medium text-sm">
+          <p className="text-yellow-300 text-center z-10 sm:uppercase underline font-medium text-sm">
             Join a community of learners and start exploring new skills today!
           </p>
 

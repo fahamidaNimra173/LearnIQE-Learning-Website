@@ -30,8 +30,8 @@ export default function TotalDataCollections({
 
     return (
         <section>
-            <h1 className="md:text-4xl leading-10 text-2xl font-bold text-[#fbbc2c] habibi text-center md:mt-40 mt-20 uppercase ">
-                <span className="text-[#1e8a78] md:text-5xl habibi font-extrabold "> Join</span> the Movement to Learn & Grow
+            <h1 className="md:text-4xl leading-10 text-2xl font-bold text-[#ffd062] habibi text-center md:mt-40 mt-20 uppercase ">
+                <span className="text-blue-400 md:text-5xl  font-extrabold "> Join</span> the Movement to Learn & Grow
             </h1>
             <div
                 className="relative w-full h-[70vh] md:mt-15 mt-10 flex items-center justify-center bg-cover bg-center"
