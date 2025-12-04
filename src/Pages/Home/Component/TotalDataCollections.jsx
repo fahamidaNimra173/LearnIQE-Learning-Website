@@ -38,10 +38,10 @@ export default function TotalDataCollections({
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
                 {/* Custom overlay with #1e8a78 and 50% opacity */}
-                <div className="absolute inset-0 bg-[#1e8a78]/95" />
+                <div className="absolute inset-0 bg-[#fcff41]/90" />
 
                 {/* Counter content */}
-                <div className="relative z-10 flex flex-row flex-wrap items-center justify-center gap-10 md:gap-20 text-white text-center">
+                <div className="relative z-10 flex flex-row flex-wrap items-center justify-center gap-10 md:gap-20 text-black text-center">
                     <Stat c value={counts.users} label="Users" />
                     <Stat value={counts.classes} label="Classes" />
                     <Stat value={counts.enrollments} label="Enrollments" />
