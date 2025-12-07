@@ -42,7 +42,7 @@ export default function TotalDataCollections({
 
                 {/* Counter content */}
                 <div className="relative z-10 flex flex-row flex-wrap items-center justify-center gap-10 md:gap-20 text-black text-center">
-                    <Stat c value={counts.users} label="Users" />
+                    <Stat  value={counts.users} label="Users" />
                     <Stat value={counts.classes} label="Classes" />
                     <Stat value={counts.enrollments} label="Enrollments" />
                 </div>

@@ -37,11 +37,11 @@ const Home = () => {
     console.log(users, courses, enrollments)
     return (
         <div className='bg-[#000000] relative dark:bg-[#000000]'>
-            <div className="w-[400px] h-[400px] absolute fixed -left-50 top-130  opacity-60  z-8 bg-blue-800 blur-3xl -rotate-12 rounded-full ">
+            <div className="w-[400px] h-[400px] fixed -left-50 top-130  opacity-60  z-8 bg-blue-800 blur-3xl -rotate-12 rounded-full ">
             </div>
-            <div className="w-[550px] h-[500px] absolute fixed -left-45 top-90  opacity-50  z-7 bg-blue-900 blur-3xl -rotate-12 rounded-full ">
+            <div className="w-[550px] h-[500px]  fixed -left-45 top-95  opacity-50  z-7 bg-blue-900 blur-3xl -rotate-12 rounded-full ">
             </div>
-            <div className="w-72 h-72 absolute fixed -left-40 top-170  opacity-60  z-9 bg-yellow-500 blur-3xl rounded-full ">
+            <div className="w-72 h-72  fixed -left-40 top-170  opacity-70 border-8 border-white z-9 bg-yellow-400 blur-3xl rounded-full ">
             </div>
             <ScrollTracker setActiveSection={setActiveSection} ></ScrollTracker>
             <div className="relative overflow-x-hidden">
@@ -53,27 +53,27 @@ const Home = () => {
                     <LogoMarquee></LogoMarquee>
                 </div> */}
             </div>
+            <div className="z-10 relative">
+                <TotalDataCollections
+                    totalUsers={counts.users}
+                    totalClasses={counts.courses}
+                    totalEnrollments={counts.enrollments} />
 
-            <TotalDataCollections
-                totalUsers={counts.users}
-                totalClasses={counts.courses}
-                totalEnrollments={counts.enrollments}
+                <TopCources></TopCources>
+                <section id='studentLove'>
+                    <TotalUsersTEachers></TotalUsersTEachers>
+                </section>
 
-            />
+                <FeedBack></FeedBack>
 
-            <TopCources></TopCources>
-            <section id='studentLove'>
-                <TotalUsersTEachers></TotalUsersTEachers>
-            </section>
+                <BecomeAnInstructor></BecomeAnInstructor>
 
-            <FeedBack></FeedBack>
+                <Motivation></Motivation>
 
-            <BecomeAnInstructor></BecomeAnInstructor>
+                <PartnerMarquee></PartnerMarquee>
+                <NewsLatter></NewsLatter>
+            </div>
 
-            <Motivation></Motivation>
-
-            <PartnerMarquee></PartnerMarquee>
-            <NewsLatter></NewsLatter>
         </div>
     );
 };
