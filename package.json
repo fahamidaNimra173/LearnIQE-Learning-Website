@@ -12,6 +12,8 @@
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.14.4",
     "@react-icons/all-files": "^4.1.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.2",
     "@stripe/react-stripe-js": "^3.7.0",
     "@stripe/stripe-js": "^7.5.0",
     "@tailwindcss/vite": "^4.1.11",
@@ -38,7 +40,9 @@
     "sweetalert2": "^11.22.2",
     "swiper": "^11.2.10",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "three": "^0.181.2",
+    "three-globe": "^2.45.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

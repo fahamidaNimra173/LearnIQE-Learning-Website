@@ -16,6 +16,9 @@ import ScrollTracker from '../../utility/sectionTracker';
 import { useOutletContext } from 'react-router';
 import LogoMarquee from "./Component/intitutionsMarque";
 
+import LightweightGlobe from "./Component/Globe";
+
+
 
 
 const Home = () => {
@@ -53,6 +56,7 @@ const Home = () => {
                     <LogoMarquee></LogoMarquee>
                 </div> */}
             </div>
+            <LightweightGlobe></LightweightGlobe>
             <div className="z-10 relative">
                 <TotalDataCollections
                     totalUsers={counts.users}
