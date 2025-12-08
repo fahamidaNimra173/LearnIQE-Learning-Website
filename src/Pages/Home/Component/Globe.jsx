@@ -217,7 +217,7 @@ export default function LightweightGlobe() {
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden mt-20 py-20">
-      <div className="text-center mb-8 relative z-40">
+      <div className="text-center mb-8 bg-black/10 py-10 relative z-40">
         <h1 className="md:text-4xl leading-10 text-2xl font-bold text-[#ffff09] habibi uppercase">
           <span className="text-blue-400  font-extrabold">Join</span> the Movement to Learn & Grow
         </h1>
