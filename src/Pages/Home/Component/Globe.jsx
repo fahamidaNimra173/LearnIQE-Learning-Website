@@ -59,22 +59,7 @@ export default function OptimizedGlobe() {
           {/* Main Globe Sphere */}
           <div className="absolute inset-0 rounded-full z-20 bg-gradient-to-br from-[#d416de] via-[#ffffff] to-[#020b2e] shadow-2xl overflow-hidden">
             {/* Globe grid pattern */}
-            <div className="absolute inset-0 opacity-50">
-              {[...Array(8)].map((_, i) => (
-                <div
-                  key={`lat-${i}`}
-                  className="absolute w-full border-1 z-20 border-blue-400"
-                  style={{ top: `${(i + 1) * 12.5}%` }}
-                />
-              ))}
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={`lng-${i}`}
-                  className="absolute h-full z-20 border-1 border-blue-200/90"
-                  style={{ left: `${(i + 1) * 8.33}%` }}
-                />
-              ))}
-            </div>
+
 
             {/* Animated overlay for depth */}
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/90 to-transparent " />
