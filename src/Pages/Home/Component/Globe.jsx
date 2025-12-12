@@ -57,13 +57,13 @@ export default function OptimizedGlobe() {
       <div className="absolute inset-0 w-full h-full z-10 flex items-center justify-center">
         <div className="relative w-[500px] h-[500px]">
           {/* Main Globe Sphere */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#547ad9] via-[#031f66] to-[#020b2e] shadow-2xl overflow-hidden">
+          <div className="absolute inset-0 rounded-full z-20 bg-gradient-to-br from-[#d416de] via-[#ffffff] to-[#020b2e] shadow-2xl overflow-hidden">
             {/* Globe grid pattern */}
-            <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 opacity-50">
               {[...Array(8)].map((_, i) => (
                 <div
                   key={`lat-${i}`}
-                  className="absolute w-full border-1 z-20 border-blue-200/90"
+                  className="absolute w-full border-1 z-20 border-blue-400"
                   style={{ top: `${(i + 1) * 12.5}%` }}
                 />
               ))}
@@ -77,7 +77,7 @@ export default function OptimizedGlobe() {
             </div>
 
             {/* Animated overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/90 to-transparent animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/90 to-transparent " />
 
             {/* Connection lines */}
             {connections.map((conn) => (
@@ -103,7 +103,7 @@ export default function OptimizedGlobe() {
                 <circle
                   cx={`${conn.startX}%`}
                   cy={`${conn.startY}%`}
-                  r="4"
+                  r="3"
                   fill="#06b6d4"
                   className="animate-pulse"
                 />
@@ -112,7 +112,7 @@ export default function OptimizedGlobe() {
                   cx={`${conn.endX}%`}
                   cy={`${conn.endY}%`}
                   r="4"
-                  fill="#3b82f6"
+                  fill="#ffff55"
                   className="animate-pulse"
                 />
               </svg>
@@ -128,9 +128,9 @@ export default function OptimizedGlobe() {
           {/* Rotation animation */}
           <div className="absolute inset-0 rounded-full overflow-hidden">
             <div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"
+              className="absolute rounded-t-full z-20 inset-0 bg-gradient-to-r from-blue-100/15 via-purple-600/35 blur-xs to-transparent"
               style={{
-                animation: "rotate 20s linear infinite",
+                animation: "rotate 10s linear infinite",
               }}
             />
           </div>
