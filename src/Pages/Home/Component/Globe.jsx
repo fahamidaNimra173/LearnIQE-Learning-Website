@@ -1,7 +1,19 @@
 import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function OptimizedGlobe() {
   const [connections, setConnections] = useState([]);
+  const { scrollYProgress } = useScroll();
+  
+  // Make the initial scale smaller (0.6) and reduce max scale to 2.5 for smoother animation
+  const scaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.6, 2.5]);
+  
+  // Add spring physics for smoother, more natural animation
+  const scale = useSpring(scaleRaw, {
+    stiffness: 100,
+    damping: 30,
+    mass: 0.5
+  });
 
   // Generate random connections on mount
   useEffect(() => {
@@ -53,16 +65,22 @@ export default function OptimizedGlobe() {
       {/* Gradient overlay */}
       <div className="absolute w-full bottom-0 inset-x-0 h-80 bg-gradient-to-b pointer-events-none select-none from-transparent via-black to-black z-40" />
 
-      {/* CSS Globe - Lightweight alternative */}
-      <div className="absolute inset-0 w-full h-full z-10 flex items-center justify-center">
+      {/* CSS Globe - Lightweight alternative with smooth scaling */}
+      <motion.div 
+        className="absolute inset-0 w-full h-full z-10 flex items-center justify-center"
+        style={{ 
+          scale,
+          willChange: 'transform' // Performance hint for browser
+        }}
+      >
         <div className="relative w-[500px] h-[500px]">
           {/* Main Globe Sphere */}
-          <div className="absolute inset-0 rounded-full z-20 bg-gradient-to-br from-[#d416de] via-[#ffffff] to-[#020b2e] shadow-2xl overflow-hidden">
-            {/* Globe grid pattern */}
-
-
+          <motion.div 
+            className="absolute inset-0 rounded-full z-20 bg-gradient-to-br from-[#d416de] via-[#ffffff] to-[#020b2e] shadow-2xl overflow-hidden"
+            style={{ willChange: 'transform' }}
+          >
             {/* Animated overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/90 to-transparent " />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/90 to-transparent" />
 
             {/* Connection lines */}
             {connections.map((conn) => (
@@ -105,10 +123,10 @@ export default function OptimizedGlobe() {
 
             {/* Glow effect */}
             <div className="absolute z-10 -inset-1 rounded-full bg-[#060269] blur-2xl" />
-          </div>
+          </motion.div>
 
           {/* Outer atmosphere glow */}
-          <div className="absolute -z-5 -inset-8 rounded-full bg-[#6a65fa] blur-3xl " />
+          <div className="absolute -z-5 -inset-8 rounded-full bg-[#6a65fa] blur-3xl" />
 
           {/* Rotation animation */}
           <div className="absolute inset-0 rounded-full overflow-hidden">
@@ -116,11 +134,12 @@ export default function OptimizedGlobe() {
               className="absolute rounded-t-full z-20 inset-0 bg-gradient-to-r from-blue-100/15 via-purple-600/35 blur-xs to-transparent"
               style={{
                 animation: "rotate 10s linear infinite",
+                willChange: 'transform' // Performance optimization
               }}
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* CSS Animations */}
       <style jsx>{`
