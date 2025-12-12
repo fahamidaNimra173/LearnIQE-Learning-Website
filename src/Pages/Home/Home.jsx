@@ -58,10 +58,10 @@ const Home = () => {
             </div>
             <LightweightGlobe></LightweightGlobe>
             <div className="z-10 relative">
-                <TotalDataCollections
+                {/* <TotalDataCollections
                     totalUsers={counts.users}
                     totalClasses={counts.courses}
-                    totalEnrollments={counts.enrollments} />
+                    totalEnrollments={counts.enrollments} /> */}
 
                 <TopCources></TopCources>
                 <section id='studentLove'>
