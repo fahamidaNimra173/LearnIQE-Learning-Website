@@ -77,22 +77,22 @@ const TopCources = () => {
                                     </h3>
 
                                     {/* Info Grid */}
-                                    <div className="flex  gap-3">
+                                    <div className="flex items-center justify-center  gap-3">
                                         {/* Enrollments Box */}
-                                        <div className="relative bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-[#fbbc2c]">
+                                        <div className="  ">
                                             <div className="flex  items-center text-center">
                                                 {/* <FiUsers className="text-[#fbbc2c] w-7 h-7 mb-2" /> */}
-                                                <span className="text-xs text-gray-500 habibi mb-1">Enrollments</span>
-                                                <span className="text-lg font-bold text-[#fbbc2c]">{course.totalEnroll}</span>
+                                                <span className="text-xs text-gray-500 habibi mb-1">Enrollments : <span className=" font-bold text-[#fbbc2c]">{course.totalEnroll}</span></span>
+                                                
                                             </div>
                                         </div>
 
                                         {/* Price Box */}
-                                        <div className="relative bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-[#1e8a78]">
+                                        <div className="">
                                             <div className="flex  items-center text-center">
                                                 {/* <FiDollarSign className="text-[#1e8a78] w-7 h-7 mb-2" /> */}
-                                                <span className="text-xs text-gray-500 habibi mb-1">Price</span>
-                                                <span className="text-lg font-bold text-[#1e8a78]">৳{course.price}</span>
+                                                <span className="text-xs text-gray-500 habibi mb-1">Price :  <span className=" font-bold text-[#1e8a78]">৳{course.price}</span></span>
+                                               
                                             </div>
                                         </div>
                                     </div>
