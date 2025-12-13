@@ -77,7 +77,7 @@ const TopCources = () => {
                                     </h3>
 
                                     {/* Info Grid */}
-                                    <div className="grid grid-cols-2 gap-3">
+                                    <div className="flex  gap-3">
                                         {/* Enrollments Box */}
                                         <div className="relative bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-[#fbbc2c]">
                                             <div className="flex flex-col items-center text-center">
@@ -137,7 +137,7 @@ const TopCources = () => {
                     ))}
                 </Swiper>
 
-                {/* ✅ Custom Navigation Arrows */}
+                {/*  Custom Navigation Arrows */}
                 <div className="flex justify-center gap-8 mt-10">
                     <button
                         ref={prevRef}
