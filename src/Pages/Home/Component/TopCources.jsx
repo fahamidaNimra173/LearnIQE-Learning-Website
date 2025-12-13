@@ -54,7 +54,7 @@ const TopCources = () => {
                 >
                     {courses.map((course) => (
                         <SwiperSlide key={course._id}>
-                            <div className="relative  rounded-2xl overflow-hidden  bg-gradient-to-br from-purple-50 via-pink-50 to-teal-50 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white">
+                            <div className="relative  rounded-2xl  overflow-hidden  bg-gradient-to-br from-purple-50 via-pink-50 to-teal-50 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white">
                                 {/* Decorative Corner Shape */}
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#fbbc2c] opacity-10 rounded-bl-full"></div>
                                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1e8a78] opacity-10 rounded-tr-full"></div>
@@ -62,11 +62,11 @@ const TopCources = () => {
 
 
                                 {/* Content Area */}
-                                <div className="flex flex-col justify-between ">
-                                    <div className='px-6 pt-5 flex flex-col gap-5 pb-6'>
+                                <div className="flex flex-col h-full items-stretch  ">
+                                    <div className='px-6 pt-5 flex flex-col h-full gap-5 pb-6'>
 
                                         {/* Title */}
-                                        <h3 className="text-xl md:text-2xl lg:text-4xl font-bold text-[#fbbc2c] merienda  min-h-[4rem] flex items-center justify-center leading-tight">
+                                        <h3 className="text-xl md:text-2xl lg:text-4xl font-bold text-[#6a6301] merienda  min-h-[4rem] flex items-center justify-center leading-tight">
                                             {course.title}
                                         </h3>
 
