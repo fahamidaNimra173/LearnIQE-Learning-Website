@@ -54,83 +54,89 @@ const TopCources = () => {
                 >
                     {courses.map((course) => (
                         <SwiperSlide key={course._id}>
-                            <div className="relative rounded-2xl overflow-hidden h-full bg-gradient-to-br from-purple-50 via-pink-50 to-teal-50 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white">
+                            <div className="relative  rounded-2xl overflow-hidden h-full bg-gradient-to-br from-purple-50 via-pink-50 to-teal-50 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white">
                                 {/* Decorative Corner Shape */}
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#fbbc2c] opacity-10 rounded-bl-full"></div>
                                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1e8a78] opacity-10 rounded-tr-full"></div>
 
-                                {/* Image Section */}
-                                <div className="relative m-4 rounded-xl overflow-hidden shadow-md h-48">
-                                    <img
-                                        src={course.image}
-                                        alt={course.title}
-                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#fbbc2c]/80 via-transparent to-transparent"></div>
-                                </div>
+
 
                                 {/* Content Area */}
-                                <div className="px-6 pb-6 space-y-4">
-                                    {/* Title */}
-                                    <h3 className="text-xl font-extrabold text-[#fbbc2c] merienda text-center min-h-[4rem] flex items-center justify-center leading-tight">
-                                        {course.title}
-                                    </h3>
+                                <div className=" space-y-4">
+                                    <div className='px-6 pt-5 flex flex-col gap-5 pb-6'>
 
-                                    {/* Info Grid */}
-                                    <div className="flex items-center justify-center  gap-3">
-                                        {/* Enrollments Box */}
-                                        <div className="  ">
-                                            <div className="flex  items-center text-center">
-                                                {/* <FiUsers className="text-[#fbbc2c] w-7 h-7 mb-2" /> */}
-                                                <span className="text-xs text-gray-500 habibi mb-1">Enrollments : <span className=" font-bold text-[#fbbc2c]">{course.totalEnroll}</span></span>
-                                                
+                                        {/* Title */}
+                                        <h3 className="text-xl font-extrabold text-[#fbbc2c] merienda  min-h-[4rem] flex items-center justify-center leading-tight">
+                                            {course.title}
+                                        </h3>
+
+                                        {/* Info Grid */}
+                                        <div className="flex items-center justify-between  gap-3">
+                                            {/* Enrollments Box */}
+                                            <div className="  ">
+                                                <div className="flex  items-center text-center">
+                                                    {/* <FiUsers className="text-[#fbbc2c] w-7 h-7 mb-2" /> */}
+                                                    <span className="text-xs text-gray-500 habibi mb-1">Enrollments : <span className=" font-bold text-[#fbbc2c]">{course.totalEnroll}</span></span>
+
+                                                </div>
+                                            </div>
+
+                                            {/* Price Box */}
+                                            <div className="">
+                                                <div className="flex  items-center text-center">
+                                                    {/* <FiDollarSign className="text-[#1e8a78] w-7 h-7 mb-2" /> */}
+                                                    <span className="text-xs text-gray-500 habibi mb-1">Price :  <span className=" font-bold text-[#1e8a78]">৳{course.price}</span></span>
+
+                                                </div>
                                             </div>
                                         </div>
 
-                                        {/* Price Box */}
-                                        <div className="">
-                                            <div className="flex  items-center text-center">
-                                                {/* <FiDollarSign className="text-[#1e8a78] w-7 h-7 mb-2" /> */}
-                                                <span className="text-xs text-gray-500 habibi mb-1">Price :  <span className=" font-bold text-[#1e8a78]">৳{course.price}</span></span>
-                                               
-                                            </div>
-                                        </div>
+                                        {/* Button */}
+                                        <button
+                                            onClick={() => navigate(`/classdetails/${course._id}`)}
+                                            className="w-full buttonMore"
+                                        >
+                                            <span className="buttonMore__icon-wrapper">
+                                                <svg
+                                                    viewBox="0 0 14 15"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    class="buttonMore__icon-svg"
+                                                    width="10"
+                                                >
+                                                    <path
+                                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                                        fill="black"
+                                                    ></path>
+                                                </svg>
+
+                                                <svg
+                                                    viewBox="0 0 14 15"
+                                                    fill="none"
+                                                    width="10"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    class="buttonMore__icon-svg buttonMore__icon-svg--copy"
+                                                >
+                                                    <path
+                                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                            Explore More
+                                        </button>
+
                                     </div>
 
-                                    {/* Button */}
-                                    <button
-                                        onClick={() => navigate(`/classdetails/${course._id}`)}
-                                        className="w-full buttonMore"
-                                    >
-                                        <span className="buttonMore__icon-wrapper">
-                                            <svg
-                                                viewBox="0 0 14 15"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="buttonMore__icon-svg"
-                                                width="10"
-                                            >
-                                                <path
-                                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                                    fill="black"
-                                                ></path>
-                                            </svg>
-
-                                            <svg
-                                                viewBox="0 0 14 15"
-                                                fill="none"
-                                                width="10"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="buttonMore__icon-svg buttonMore__icon-svg--copy"
-                                            >
-                                                <path
-                                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                                    fill="currentColor"
-                                                ></path>
-                                            </svg>
-                                        </span>
-                                        Explore More
-                                    </button>
+                                    {/* Image Section */}
+                                    <div className="relative  rounded-xl overflow-hidden shadow-md h-48">
+                                        <img
+                                            src={course.image}
+                                            alt={course.title}
+                                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#fbbc2c]/80 via-transparent to-transparent"></div>
+                                    </div>
                                 </div>
                             </div>
                         </SwiperSlide>
