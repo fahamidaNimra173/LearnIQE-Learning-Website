@@ -36,14 +36,14 @@ const ScrollSteps = () => {
         </p>
 
       </div>
-     <div>
-       <div className='w-96 h-[600px]  hidden lg:block rounded-4xl -rotate-45 bg-blue-500 blur-xl sticky z-10 opacity-90 top-2/7 left-2/6'>
+      <div>
+        <div className='w-96 h-[600px]  hidden lg:block rounded-4xl -rotate-45 bg-blue-500 blur-xl sticky z-10 opacity-90 top-2/7 left-2/6'>
 
-      </div>
-      <div className='w-96 overflow-hidden hidden lg:block h-[550px] rounded-4xl -rotate-45 bg-yellow-500 blur-3xl sticky z-10 opacity-90 top-2/7 left-1/2'>
+        </div>
+        <div className='w-96 overflow-hidden hidden lg:block h-[550px] rounded-4xl -rotate-45 bg-yellow-500 blur-3xl sticky z-10 opacity-90 top-2/7 left-1/2'>
 
+        </div>
       </div>
-     </div>
       {/* Tall container to enable scrolling - 300vh = 3x screen height */}
       <div ref={containerRef} className="scroll-container pt-20 z-20 lg:px-20">
 
@@ -52,7 +52,12 @@ const ScrollSteps = () => {
 
         {/* Sticky container keeps steps visible while scrolling */}
         <div className="steps-sticky-container overflow-hidden">
+          <div className='w-5/6 h-[600px] sm:hidden  rounded-4xl -rotate-45 bg-blue-500 blur-xl sticky -z-10 opacity-90 top-2/7 left-2/6'>
 
+          </div>
+          <div className='w-5/6 overflow-hidden sm:hidden  h-[550px] rounded-4xl -rotate-45 bg-yellow-500 blur-3xl sticky -z-10 opacity-90 top-2/7 left-1/2'>
+
+          </div>
           {/* STEP 1 */}
           <motion.div
             className="absolute text-center w-full flex-col md:flex-row flex items-center justify-between"
@@ -87,11 +92,11 @@ const ScrollSteps = () => {
 
           {/* STEP 3 */}
           <motion.div
-            className="w-full flex flex-col md:flex-row items-center gap-x-24 justify-between"
+            className="absolute text-center w-full flex flex-col md:flex-row gap-x-24 items-center justify-between"
             style={{ opacity: step3Opacity, scale: step3Scale }}
           >
-                        <div className="  text-blue-400 text-[40vh]">3.</div>
-            <div className='border-1 rounded-2xl mx-2 mb-15 p-5 bg-black/5'>
+            <div className="  text-blue-400 text-[40vh]">3.</div>
+            <div className='border-1 border-blue-400 mx-2 rounded-2xl  p-5 bg-black/15'>
               <h3 className="text-3xl md:text-7xl lg:text-9xl text-right text-white font-bold font-mono">
                 Start <br /> Learning
               </h3>
