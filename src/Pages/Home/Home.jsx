@@ -17,6 +17,7 @@ import { useOutletContext } from 'react-router';
 import LogoMarquee from "./Component/intitutionsMarque";
 
 import LightweightGlobe from "./Component/Globe";
+import ScrollSteps from "./Component/Steps";
 
 
 
@@ -64,6 +65,7 @@ const Home = () => {
                     totalEnrollments={counts.enrollments} /> */}
 
                 <TopCources></TopCources>
+                <ScrollSteps></ScrollSteps>
                 <section id='studentLove'>
                     <TotalUsersTEachers></TotalUsersTEachers>
                 </section>

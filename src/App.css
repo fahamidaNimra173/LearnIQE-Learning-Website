@@ -21,8 +21,153 @@
     }
   }
 }
+/* steps animation */
 
+/* ScrollSteps Component Styles for LearnIQ */
 
+/* Main wrapper */
+.scroll-steps-wrapper {
+  width: 100%;
+  background: #000000;
+}
+
+/* Scroll container - needs height for scroll distance */
+.scroll-container {
+  height: 300vh; /* 3x screen height = smooth scrolling for 3 steps */
+  position: relative;
+}
+
+/* Section header */
+.section-header {
+  padding: 80px 20px 40px;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fffdfd;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #fbfcfc;
+}
+
+/* Sticky container - keeps steps in view while scrolling */
+.steps-sticky-container {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Step cards - all occupy same space, opacity controls visibility */
+.step-card {
+  position: absolute;
+ 
+  border-radius: 24px;
+  padding: 60px 80px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+}
+
+/* Step number badge */
+.step-number {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto 32px;
+}
+
+/* Step text */
+.step-card h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.step-card p {
+  font-size: 18px;
+  color: #fafafa;
+  line-height: 1.6;
+}
+
+/* Responsive - Tablets */
+@media (max-width: 768px) {
+  .scroll-container {
+    height: 250vh;
+  }
+  
+  .section-header h2 {
+    font-size: 36px;
+  }
+  
+  /* .step-card {
+    padding: 40px;
+    padding-top: 60px;
+  } */
+  
+  .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+  
+  .step-card h3 {
+    font-size: 78px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .scroll-container {
+    height: 200vh;
+  }
+  
+  .section-header {
+    padding: 40px 20px 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 28px;
+    color: #764ba2;
+  }
+  
+  .step-card {
+    padding: 30px 24px;
+    
+  }
+  
+  .step-number {
+    width: 80px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .step-card h3 {
+    font-size: 24px;
+  }
+  
+  .step-card p {
+    font-size: 16px;
+  }
+}
 
 /* This is the rimary color: #fbbc2c */
 
