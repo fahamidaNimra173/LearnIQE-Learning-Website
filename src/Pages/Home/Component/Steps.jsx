@@ -47,29 +47,35 @@ const ScrollSteps = () => {
             style={{ opacity: step1Opacity, scale: step1Scale }}
           >
             <div className="step-number text-9xl">1</div>
-            <div>            
-              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold'>Choose Your Course</h3>
-              <p className='text-white text-right text-2xl font-medium my-10'>Browse through free and paid courses</p></div>
+            <div>
+              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Choose Your Course</h3>
+              <p className='text-white text-right text-2xl font-medium my-10 font-mono'>Browse through free and paid courses</p></div>
           </motion.div>
 
           {/* STEP 2 */}
           <motion.div
-            className="step-card"
+            className="step-card flex items-center justify-around "
             style={{ opacity: step2Opacity, scale: step2Scale }}
           >
-            <div className="step-number">2</div>
-            <h3>Login to Platform</h3>
-            <p>Access the course on the learning platform</p>
+            <div className="step-number text-9xl">2</div>
+            <div>
+              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Login to Platform</h3>
+              <p className='text-white text-right text-2xl font-medium my-10 font-mono'>Access the course on the learning platform</p></div>
           </motion.div>
 
           {/* STEP 3 */}
           <motion.div
-            className="step-card"
+            className=" w-full flex items-center gap-x-24 justify-between "
             style={{ opacity: step3Opacity, scale: step3Scale }}
           >
-            <div className="step-number ">3</div>
-            <h3>Enjoy the Course</h3>
-            <p>Start learning and achieve your goals</p>
+            <div className="step-number text-9xl">
+              3
+
+            </div>
+            <div>
+              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Enjoy the Course</h3>
+              <p className='text-white text-right text-2xl font-medium my-10 font-mono'> Start learning and achieve your goals</p>
+            </div>
           </motion.div>
 
         </div>
