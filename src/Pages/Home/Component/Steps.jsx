@@ -28,9 +28,12 @@ const ScrollSteps = () => {
 
   return (
     <div className="scroll-steps-wrapper px-5">
-      <div className="text-9xl text-center pt-20 pb-40 text-white font-extrabold w-full">
-        <h2>How It Works?</h2>
-        <p>Your learning journey in three easy steps</p>
+      <div className="lg:text-9xl text-7xl text-wrap  text-center pt-20 pb-40 text-white font-extrabold w-full">
+        <h2>How It <span className='text-blue-400'>Works?</span></h2>
+        <p className="bg-gradient-to-r from-white via-blue-400 to-yellow-300 bg-clip-text text-transparent">
+          Your learning journey in <span className='text-blue-500  border-2 p-1 rounded-b-2xl '> 3</span> easy steps
+        </p>
+
       </div>
       <div className='w-96 h-[600px] rounded-4xl -rotate-45 bg-blue-500 blur-xl sticky z-10 opacity-90 top-2/7 left-2/6'>
 
@@ -54,35 +57,47 @@ const ScrollSteps = () => {
           >
             <div className="step-number text-9xl">1</div>
             <div>
-              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Choose Your <br /> Course</h3>
-              <p className='text-white text-right text-2xl font-medium my-10 font-mono'>Browse through free and paid courses</p></div>
+              <h3 className="text-7xl lg:text-9xl text-right text-white font-bold font-mono">
+                Select a <br /> Course
+              </h3>
+              <p className="text-white text-right text-2xl font-medium my-10 font-mono">
+                Explore free and paid courses from trusted platforms
+              </p>
+            </div>
           </motion.div>
 
           {/* STEP 2 */}
           <motion.div
-            className="absolute text-center w-full flex gap-x-24 items-center justify-between "
+            className="absolute text-center w-full flex gap-x-24 items-center justify-between"
             style={{ opacity: step2Opacity, scale: step2Scale }}
           >
             <div className="step-number text-9xl">2</div>
             <div>
-              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Login to <br /> Platform</h3>
-              <p className='text-white text-right text-2xl font-medium my-10 font-mono'>Access the course on the learning platform</p></div>
+              <h3 className="text-7xl lg:text-9xl text-right text-white font-bold font-mono">
+                Access the <br /> Platform
+              </h3>
+              <p className="text-white text-right text-2xl font-medium my-10 font-mono">
+                Sign in or create an account on the course provider
+              </p>
+            </div>
           </motion.div>
 
           {/* STEP 3 */}
           <motion.div
-            className=" w-full flex items-center gap-x-24 justify-between "
+            className="w-full flex items-center gap-x-24 justify-between"
             style={{ opacity: step3Opacity, scale: step3Scale }}
           >
-            <div className="step-number text-9xl">
-              3
-
-            </div>
+            <div className="step-number text-9xl">3</div>
             <div>
-              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Enjoy <br /> the Course</h3>
-              <p className='text-white text-right text-2xl font-medium my-10 font-mono'> Start learning and achieve your goals</p>
+              <h3 className="text-7xl lg:text-9xl text-right text-white font-bold font-mono">
+                Start <br /> Learning
+              </h3>
+              <p className="text-white text-right text-2xl font-medium my-10 font-mono">
+                Enroll and learn at your own pace
+              </p>
             </div>
           </motion.div>
+
 
         </div>
       </div>
