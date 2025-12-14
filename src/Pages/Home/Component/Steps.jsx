@@ -28,21 +28,19 @@ const ScrollSteps = () => {
   const step3Scale = useTransform(scrollYProgress, [0.63, 0.66, 1], [0.8, 1, 1]);
 
   return (
-    <div className="scroll-steps-wrapper  px-5">
-      <div className="lg:text-9xl text-4xl  sm:text-7xl text-wrap overflow-x-hidden  text-center pt-20 pb-40 text-white font-extrabold w-full">
+    <div className="scroll-steps-wrapper  ">
+      <div className="lg:text-9xl px-5 text-4xl  sm:text-7xl text-wrap overflow-x-hidden  text-center pt-20 pb-40 text-white font-extrabold w-full">
         <h2>How It <span className='text-blue-400'>Works?</span></h2>
         <p className="bg-gradient-to-r from-white via-blue-400 to-yellow-300 bg-clip-text text-transparent">
           Your Learning Journey In <span className='text-blue-500  border-2 p-1 rounded-b-2xl '> 3</span> Easy Steps
         </p>
 
       </div>
-      <div>
-        <div className='w-96 h-[600px]  hidden lg:block rounded-4xl -rotate-45 bg-blue-500 blur-xl sticky z-10 opacity-90 top-2/7 left-2/6'>
+      <div className='w-96 h-[600px]  hidden lg:block rounded-4xl -rotate-45 bg-blue-500 blur-xl sticky z-10 opacity-90 top-2/7 left-2/6'>
 
-        </div>
-        <div className='w-96 overflow-hidden hidden lg:block h-[550px] rounded-4xl -rotate-45 bg-yellow-500 blur-3xl sticky z-10 opacity-90 top-2/7 left-1/2'>
+      </div>
+      <div className='w-96 overflow-hidden hidden lg:block h-[550px] rounded-4xl -rotate-45 bg-yellow-500 blur-3xl sticky z-10 opacity-90 top-2/7 left-1/2'>
 
-        </div>
       </div>
       {/* Tall container to enable scrolling - 300vh = 3x screen height */}
       <div ref={containerRef} className="scroll-container pt-20 z-20 lg:px-20">
@@ -55,12 +53,12 @@ const ScrollSteps = () => {
           <div className='w-5/6 h-[600px] sm:hidden  rounded-4xl -rotate-45 bg-blue-500 blur-xl sticky -z-10 opacity-90 top-2/7 left-2/6'>
 
           </div>
-          <div className='w-5/6 overflow-hidden sm:hidden  h-[550px] rounded-4xl -rotate-45 bg-yellow-500 blur-3xl sticky -z-10 opacity-90 top-2/7 left-1/2'>
+          <div className='w-5/6 overflow-hidden block sm:hidden  h-[550px] rounded-4xl -rotate-45 bg-yellow-500 blur-3xl sticky -z-10 opacity-90 top-2/7 left-1/2'>
 
           </div>
           {/* STEP 1 */}
           <motion.div
-            className="absolute text-center w-full flex-col md:flex-row flex items-center justify-between"
+            className="absolute px-5 text-center w-full flex-col md:flex-row flex items-center justify-between"
             style={{ opacity: step1Opacity, scale: step1Scale }}
           >
             <div className="  text-white text-[40vh]">1.</div>
@@ -76,7 +74,7 @@ const ScrollSteps = () => {
 
           {/* STEP 2 */}
           <motion.div
-            className="absolute text-center w-full flex flex-col md:flex-row gap-x-24 items-center justify-between"
+            className="absolute px-5 text-center w-full flex flex-col md:flex-row gap-x-24 items-center justify-between"
             style={{ opacity: step2Opacity, scale: step2Scale }}
           >
             <div className="  text-white text-[40vh]">2.</div>
@@ -92,7 +90,7 @@ const ScrollSteps = () => {
 
           {/* STEP 3 */}
           <motion.div
-            className="absolute text-center w-full flex flex-col md:flex-row gap-x-24 items-center justify-between"
+            className="absolute px-5 mb-15 text-center w-full flex flex-col md:flex-row gap-x-24 items-center justify-between"
             style={{ opacity: step3Opacity, scale: step3Scale }}
           >
             <div className="  text-blue-400 text-[40vh]">3.</div>
