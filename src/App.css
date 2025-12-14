@@ -29,6 +29,7 @@
 .scroll-steps-wrapper {
   width: 100%;
   background: #000000;
+  
 }
 
 /* Scroll container - needs height for scroll distance */
@@ -85,7 +86,11 @@
   .scroll-container {
     height: 200vh;
   }
-  
+  .steps-sticky-container {
+  position: sticky;
+  top: 40%;
+
+}
 
   
 }

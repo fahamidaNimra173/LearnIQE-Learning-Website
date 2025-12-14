@@ -58,7 +58,7 @@ const Home = () => {
                 </div> */}
             </div>
             <LightweightGlobe></LightweightGlobe>
-            <div className="z-10 relative">
+            <div className="z-10 relative ">
                 {/* <TotalDataCollections
                     totalUsers={counts.users}
                     totalClasses={counts.courses}
