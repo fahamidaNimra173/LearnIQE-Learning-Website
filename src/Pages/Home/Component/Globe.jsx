@@ -37,16 +37,16 @@ export default function OptimizedGlobe() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden mt-20 py-20 bg-black">
+    <div className="relative w-full min-h-screen overflow-hidden mt-20 pt-10 md:py-20 bg-black">
       {/* Header Content */}
-      <div className="text-center mb-8 bg-black/10 py-10 relative z-40">
+      <div className="text-center mb-8 bg-black/10 py-13 relative z-40">
         <h1 className="md:text-4xl lg:text-6xl leading-10 text-2xl font-bold text-[#ffff09] uppercase">
           <span className="text-blue-400">Join</span> the Movement to Learn & Grow
         </h1>
         <p className="text-base md:text-lg font-normal text-neutral-200 font-mono max-w-md mt-2 mx-auto">
           This globe is interactive and customizable. Enjoy exploring!
         </p>
-        <div className="flex flex-wrap gap-10 text-white items-center justify-center my-20 z-40">
+        <div className="flex flex-wrap gap-5 sm:gap-10 text-white items-center justify-center my-20 z-40">
           <div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">150+</h1>
             <h1 className="uppercase text-lg font-medium my-5">Free Courses</h1>
