@@ -46,7 +46,7 @@ export default function OptimizedGlobe() {
         <p className="text-base md:text-lg font-normal text-neutral-200 font-mono max-w-md mt-2 mx-auto">
           This globe is interactive and customizable. Enjoy exploring!
         </p>
-        <div className="flex gap-10 text-white items-center justify-center my-20 z-40">
+        <div className="flex flex-wrap gap-10 text-white items-center justify-center my-20 z-40">
           <div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">150+</h1>
             <h1 className="uppercase text-lg font-medium my-5">Free Courses</h1>
@@ -73,7 +73,7 @@ export default function OptimizedGlobe() {
           willChange: 'transform' // Performance hint for browser
         }}
       >
-        <div className="relative w-[500px] h-[500px]">
+        <div className="relative w-[500px] h-[300px] sm:h-[500px]">
           {/* Main Globe Sphere */}
           <motion.div 
             className="absolute inset-0 rounded-full z-20 bg-gradient-to-br from-[#d416de] via-[#ffffff] to-[#020b2e] shadow-2xl overflow-hidden"
