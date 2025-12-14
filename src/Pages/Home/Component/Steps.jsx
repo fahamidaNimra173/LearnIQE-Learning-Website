@@ -28,26 +28,28 @@ const ScrollSteps = () => {
 
   return (
     <div className="scroll-steps-wrapper">
+      <div className="text-9xl text-center mb-20 text-white font-extrabold w-full">
+        <h2>How It Works?</h2>
+        <p>Three simple steps to start learning</p>
+      </div>
       {/* Tall container to enable scrolling - 300vh = 3x screen height */}
-      <div ref={containerRef} className="scroll-container">
-        
+      <div ref={containerRef} className="scroll-container pt-20 ">
+
         {/* Section heading */}
-        <div className="section-header">
-          <h2>How It Works</h2>
-          <p>Three simple steps to start learning</p>
-        </div>
+
 
         {/* Sticky container keeps steps visible while scrolling */}
-        <div className="steps-sticky-container">
-          
+        <div className="steps-sticky-container ">
+
           {/* STEP 1 */}
           <motion.div
-            className="step-card"
+            className="step-card flex items-center justify-around "
             style={{ opacity: step1Opacity, scale: step1Scale }}
           >
-            <div className="step-number">1</div>
-            <h3>Choose Your Course</h3>
-            <p>Browse through free and paid courses</p>
+            <div className="step-number text-9xl">1</div>
+            <div>            
+              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold'>Choose Your Course</h3>
+              <p className='text-white text-right text-2xl font-medium my-10'>Browse through free and paid courses</p></div>
           </motion.div>
 
           {/* STEP 2 */}
@@ -65,7 +67,7 @@ const ScrollSteps = () => {
             className="step-card"
             style={{ opacity: step3Opacity, scale: step3Scale }}
           >
-            <div className="step-number">3</div>
+            <div className="step-number ">3</div>
             <h3>Enjoy the Course</h3>
             <p>Start learning and achieve your goals</p>
           </motion.div>
