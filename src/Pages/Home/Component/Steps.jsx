@@ -52,11 +52,11 @@ const ScrollSteps = () => {
 
           {/* STEP 1 */}
           <motion.div
-            className="absolute text-center w-full flex gap-x-24 items-center justify-between"
+            className="absolute text-center w-full flex items-center justify-between"
             style={{ opacity: step1Opacity, scale: step1Scale }}
           >
-            <div className="step-number text-9xl">1</div>
-            <div>
+            <div className="  text-white text-[40vh]">1.</div>
+            <div className='border-1 border-blue-400 rounded-2xl -rotate-6 p-5 bg-black/15'>
               <h3 className="text-7xl lg:text-9xl text-right text-white font-bold font-mono">
                 Select a <br /> Course
               </h3>
@@ -71,12 +71,12 @@ const ScrollSteps = () => {
             className="absolute text-center w-full flex gap-x-24 items-center justify-between"
             style={{ opacity: step2Opacity, scale: step2Scale }}
           >
-            <div className="step-number text-9xl">2</div>
-            <div>
+            <div className="  text-white text-[40vh]">2.</div>
+            <div className='border-1 rounded-2xl rotate-6 p-5 bg-black/5'>
               <h3 className="text-7xl lg:text-9xl text-right text-white font-bold font-mono">
                 Access the <br /> Platform
               </h3>
-              <p className="text-white text-right text-2xl font-medium my-10 font-mono">
+              <p className="text-white text-right  text-2xl font-medium my-10 font-mono">
                 Sign in or create an account on the course provider
               </p>
             </div>
@@ -87,8 +87,8 @@ const ScrollSteps = () => {
             className="w-full flex items-center gap-x-24 justify-between"
             style={{ opacity: step3Opacity, scale: step3Scale }}
           >
-            <div className="step-number text-9xl">3</div>
-            <div>
+                        <div className="  text-blue-400 text-[40vh]">3.</div>
+            <div className='border-1 rounded-2xl  p-5 bg-black/5'>
               <h3 className="text-7xl lg:text-9xl text-right text-white font-bold font-mono">
                 Start <br /> Learning
               </h3>
