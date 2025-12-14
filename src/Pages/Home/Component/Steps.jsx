@@ -30,10 +30,13 @@ const ScrollSteps = () => {
     <div className="scroll-steps-wrapper px-5">
       <div className="text-9xl text-center pt-20 pb-40 text-white font-extrabold w-full">
         <h2>How It Works?</h2>
-        <p>Three simple steps to start learning</p>
+        <p>Your learning journey in three easy steps</p>
       </div>
-      <div className='w-96 h-[500px] rounded-2xl -rotate-45 bg-blue-500 blur-2xl sticky z-10 opacity-90 top-2/7 left-2/6'>
-        
+      <div className='w-96 h-[600px] rounded-4xl -rotate-45 bg-blue-500 blur-xl sticky z-10 opacity-90 top-2/7 left-2/6'>
+
+      </div>
+      <div className='w-96 h-[550px] rounded-4xl -rotate-45 bg-yellow-500 blur-3xl sticky z-10 opacity-90 top-2/7 left-1/2'>
+
       </div>
       {/* Tall container to enable scrolling - 300vh = 3x screen height */}
       <div ref={containerRef} className="scroll-container pt-20 z-20 lg:px-20">
