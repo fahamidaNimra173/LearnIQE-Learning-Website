@@ -32,8 +32,11 @@ const ScrollSteps = () => {
         <h2>How It Works?</h2>
         <p>Three simple steps to start learning</p>
       </div>
+      <div className='w-96 h-[500px] rounded-2xl -rotate-45 bg-blue-500 blur-2xl sticky z-10 opacity-90 top-2/7 left-2/6'>
+        
+      </div>
       {/* Tall container to enable scrolling - 300vh = 3x screen height */}
-      <div ref={containerRef} className="scroll-container pt-20  lg:px-20">
+      <div ref={containerRef} className="scroll-container pt-20 z-20 lg:px-20">
 
         {/* Section heading */}
 
