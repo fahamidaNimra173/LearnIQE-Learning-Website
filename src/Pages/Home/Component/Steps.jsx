@@ -15,25 +15,25 @@ const ScrollSteps = () => {
   });
 
   // STEP 1: Visible from 0% to 33% scroll
-  const step1Opacity = useTransform(scrollYProgress, [0, 0.3, 0.33], [1, 1, 0]);
-  const step1Scale = useTransform(scrollYProgress, [0, 0.3, 0.33], [1, 1, 0.8]);
+  const step1Opacity = useTransform(scrollYProgress, [0, 0.4, 0.40], [1, 1, 0]);
+  const step1Scale = useTransform(scrollYProgress, [0, 0.4, 0.40], [1, 1, 0.5]);
 
   // STEP 2: Visible from 33% to 66% scroll
-  const step2Opacity = useTransform(scrollYProgress, [0.3, 0.33, 0.63, 0.66], [0, 1, 1, 0]);
-  const step2Scale = useTransform(scrollYProgress, [0.3, 0.33, 0.63, 0.66], [0.8, 1, 1, 0.8]);
+  const step2Opacity = useTransform(scrollYProgress, [0.4, 0.44, 0.60, 0.66], [0, 1, 1, 0]);
+  const step2Scale = useTransform(scrollYProgress, [0.4, 0.44, 0.60, 0.66], [0.8, 1, 1, 0.8]);
 
   // STEP 3: Visible from 66% to 100% scroll
   const step3Opacity = useTransform(scrollYProgress, [0.63, 0.66, 1], [0, 1, 1]);
   const step3Scale = useTransform(scrollYProgress, [0.63, 0.66, 1], [0.8, 1, 1]);
 
   return (
-    <div className="scroll-steps-wrapper">
-      <div className="text-9xl text-center mb-20 text-white font-extrabold w-full">
+    <div className="scroll-steps-wrapper px-5">
+      <div className="text-9xl text-center pt-20 pb-40 text-white font-extrabold w-full">
         <h2>How It Works?</h2>
         <p>Three simple steps to start learning</p>
       </div>
       {/* Tall container to enable scrolling - 300vh = 3x screen height */}
-      <div ref={containerRef} className="scroll-container pt-20 ">
+      <div ref={containerRef} className="scroll-container pt-20  lg:px-20">
 
         {/* Section heading */}
 
@@ -43,23 +43,23 @@ const ScrollSteps = () => {
 
           {/* STEP 1 */}
           <motion.div
-            className="step-card flex items-center justify-around "
+            className="absolute text-center w-full flex gap-x-24 items-center justify-between"
             style={{ opacity: step1Opacity, scale: step1Scale }}
           >
             <div className="step-number text-9xl">1</div>
             <div>
-              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Choose Your Course</h3>
+              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Choose Your <br /> Course</h3>
               <p className='text-white text-right text-2xl font-medium my-10 font-mono'>Browse through free and paid courses</p></div>
           </motion.div>
 
           {/* STEP 2 */}
           <motion.div
-            className="step-card flex items-center justify-around "
+            className="absolute text-center w-full flex gap-x-24 items-center justify-between "
             style={{ opacity: step2Opacity, scale: step2Scale }}
           >
             <div className="step-number text-9xl">2</div>
             <div>
-              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Login to Platform</h3>
+              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Login to <br /> Platform</h3>
               <p className='text-white text-right text-2xl font-medium my-10 font-mono'>Access the course on the learning platform</p></div>
           </motion.div>
 
@@ -73,7 +73,7 @@ const ScrollSteps = () => {
 
             </div>
             <div>
-              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Enjoy the Course</h3>
+              <h3 className='text-7xl lg:text-9xl text-right text-white font-bold font-mono'>Enjoy <br /> the Course</h3>
               <p className='text-white text-right text-2xl font-medium my-10 font-mono'> Start learning and achieve your goals</p>
             </div>
           </motion.div>
