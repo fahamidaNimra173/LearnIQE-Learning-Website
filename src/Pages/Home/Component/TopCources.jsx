@@ -29,8 +29,8 @@ const TopCources = () => {
     return (
         <div className="relative md:py-1o px-6 md:px-25">
             <div className="relative z-10 mx-auto">
-                <h1 className="text-[#fbbc2c] md:text-5xl text-2xl habibi font-extrabold uppercase  md:mt-40 mb-15 text-center">
-                    Popular <span className="text-[#1e8a78]">Courses</span> to Boost Your Skills
+                <h1 className="text-[#ffffff] md:text-5xl lg:text-7xl text-2xl font-mono font-extrabold uppercase  md:mt-40 mb-15 text-center">
+                    Popular <span className="text-[#ddff00]">Courses</span> to Boost Your Skills
                 </h1>
 
                 <Swiper

@@ -26,15 +26,15 @@
 /* ScrollSteps Component Styles for LearnIQ */
 
 /* Main wrapper */
-.scroll-steps-wrapper {
+/* .scroll-steps-wrapper {
   width: 100%;
   background: #000000;
   
-}
+} */
 
 /* Scroll container - needs height for scroll distance */
 .scroll-container {
-  height: 400vh; /* 3x screen height = smooth scrolling for 3 steps */
+  height: 600vh; /* 3x screen height = smooth scrolling for 3 steps */
   position: relative;
 }
 
@@ -84,7 +84,7 @@
 /* Responsive - Mobile */
 @media (max-width: 480px) {
   .scroll-container {
-    height: 200vh;
+    height: 300vh;
   }
   .steps-sticky-container {
   position: sticky;
