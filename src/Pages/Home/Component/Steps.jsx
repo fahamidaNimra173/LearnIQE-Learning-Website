@@ -16,16 +16,16 @@ const ScrollSteps = () => {
   });
 
   // STEP 1: Visible from 0% to 33% scroll
-  const step1Opacity = useTransform(scrollYProgress, [0, 0.4, 0.40], [1, 1, 0]);
-  const step1Scale = useTransform(scrollYProgress, [0, 0.4, 0.40], [1, 1, 0.5]);
+  const step1Opacity = useTransform(scrollYProgress, [0, 0.4, 0.40], [1, 0.1, 0]);
+  const step1Scale = useTransform(scrollYProgress, [0, 0.4, 0.40], [1, 4, 0.9]);
 
   // STEP 2: Visible from 33% to 66% scroll
   const step2Opacity = useTransform(scrollYProgress, [0.4, 0.44, 0.60, 0.66], [0, 1, 1, 0]);
-  const step2Scale = useTransform(scrollYProgress, [0.4, 0.44, 0.60, 0.66], [0.8, 1, 1, 0.8]);
+  const step2Scale = useTransform(scrollYProgress, [0.4, 0.44, 0.60, 0.66], [0.8, 1, 0.1, 0.8]);
 
   // STEP 3: Visible from 66% to 100% scroll
-  const step3Opacity = useTransform(scrollYProgress, [0.63, 0.66, 1], [0, 1, 1]);
-  const step3Scale = useTransform(scrollYProgress, [0.63, 0.66, 1], [0.8, 1, 1]);
+  const step3Opacity = useTransform(scrollYProgress, [0.66, 0.77, 1], [0, 1, 1]);
+  const step3Scale = useTransform(scrollYProgress, [0.66, 0.77, 1], [0.8, 0.9, 3]);
 
   return (
     <div className="scroll-steps-wrapper  ">
@@ -64,7 +64,7 @@ const ScrollSteps = () => {
             <div className="  text-white text-[40vh]">1.</div>
             <div className='border-1 border-blue-400 mx-2 rounded-2xl -rotate-6 p-5 bg-black/15'>
               <h3 className="text-3xl md:text-7xl lg:text-9xl text-right text-white font-bold font-mono">
-                Select a <br /> Course
+                Select A <br /> Course
               </h3>
               <p className="text-white text-right text-xl md:text-2xl font-medium my-10 font-mono">
                 Explore free and paid courses from trusted platforms
