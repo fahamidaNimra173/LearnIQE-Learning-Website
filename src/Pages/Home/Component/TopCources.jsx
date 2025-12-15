@@ -38,10 +38,10 @@ const TopCources = () => {
                     spaceBetween={20}
                     slidesPerView={1}
                     breakpoints={{
-                        768: { slidesPerView: 2 },
-                        1000: { slidesPerView: 3 },
+                        768: { slidesPerView: 3 },
+                        1000: { slidesPerView: 5 },
                     }}
-                    // ✅ Initialize navigation after refs are set
+                    // Initialize navigation after refs are set
                     onSwiper={(swiper) => {
                         setTimeout(() => {
                             swiper.params.navigation.prevEl = prevRef.current;
@@ -54,19 +54,19 @@ const TopCources = () => {
                 >
                     {courses.map((course) => (
                         <SwiperSlide key={course._id}>
-                            <div className="relative  rounded-2xl  overflow-hidden  bg-gradient-to-br from-purple-50 via-pink-50 to-teal-50 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white">
+                            <div className="relative h-full rounded-b-xl  overflow-hidden  bg-[#ffffff]  shadow-black hover:shadow-2xl transition-all duration-500 ">
                                 {/* Decorative Corner Shape */}
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#fbbc2c] opacity-10 rounded-bl-full"></div>
-                                <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1e8a78] opacity-10 rounded-tr-full"></div>
+                                {/* <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffff02] opacity-40 z-10  rounded-bl-full"></div> */}
+                                
 
 
 
                                 {/* Content Area */}
                                 <div className="flex flex-col h-full items-stretch  ">
-                                    <div className='px-6 pt-5 flex flex-col h-full gap-5 pb-6'>
+                                    <div className='p-2 flex flex-col h-full gap-5 '>
 
                                         {/* Title */}
-                                        <h3 className="text-xl md:text-2xl lg:text-4xl font-bold text-[#6a6301] merienda  min-h-[4rem] flex items-center justify-center leading-tight">
+                                        <h3 className="text-[15px]  md:text-xl  font-semibold text-[#0f1119]   h-[5rem] lg:h-[5rem]  leading-tight">
                                             {course.title}
                                         </h3>
 
@@ -76,7 +76,7 @@ const TopCources = () => {
                                             <div className="  ">
                                                 <div className="flex  items-center text-center">
                                                     {/* <FiUsers className="text-[#fbbc2c] w-7 h-7 mb-2" /> */}
-                                                    <span className="text-lg text-gray-500 habibi mb-1">Enrollments : <span className=" font-bold text-[#fbbc2c]">{course.totalEnroll}</span></span>
+                                                    <span className="text-[13px] lg:text-md text-[#010101] habibi mb-1">Enrollments : <span className=" font-bold text-[#fbbc2c]">{course.totalEnroll}</span></span>
 
                                                 </div>
                                             </div>
@@ -85,7 +85,7 @@ const TopCources = () => {
                                             <div className="">
                                                 <div className="flex  items-center text-center">
                                                     {/* <FiDollarSign className="text-[#1e8a78] w-7 h-7 mb-2" /> */}
-                                                    <span className="md:text-lg text-xs  text-gray-500 habibi mb-1">Price :  <span className=" font-bold text-[#1e8a78]">৳{course.price}</span></span>
+                                                    <span className="text-[13px] lg:text-md  text-[#e9dc2f] habibi mb-1"> <span className=" font-bold text-[#000000]">৳{course.price}</span></span>
 
                                                 </div>
                                             </div>
@@ -128,13 +128,13 @@ const TopCources = () => {
 
                                     </div>
                                     {/* Image Section */}
-                                    <div className="relative  rounded-xl overflow-hidden shadow-md h-48">
+                                    <div className="relative  rounded-b-xl overflow-hidden shadow-md h-42">
                                         <img
                                             src={course.image}
                                             alt={course.title}
                                             className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#fbbc2c]/80 via-transparent to-transparent"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
                                     </div>
 
                                 </div>
