@@ -11,9 +11,11 @@ import {
   FaTimes
 } from "react-icons/fa";
 
+
+
 const ExploreCategories = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
-
+  
   const categories = [
     {
       id: 1,
@@ -202,17 +204,26 @@ const ExploreCategories = () => {
   ];
 
   return (
-    <div className="relative w-full py-20 overflow-hidden">
-      {/* Header Section */}
-      <div className="max-w-4xl mx-auto text-center  px-4">
-        <h1 className="text-[#fbbc2c] md:leading-15 md:text-5xl text-2xl habibi font-extrabold uppercase text-center">
-          Explore What Our Platform Offers
-        </h1>
-        <p className="text-white font-semibold text-lg max-w-xl mx-auto mb-15 mt-7">
-          Empowering students with easy access to learning tools and resources that foster success.
-        </p>
-      </div>
+    <div className="relative w-full py-20  overflow-hidden">
+      {/* Section Title */}
+      <div className="relative text-center mb-12 py-3 z-30">
+        {/* TEXT CONTENT */}
+        <div className="lg:pb-20">
+          <h2 className="relative z-30 text-3xl md:text-7xl lg:text-7xl font-bold text-white drop-shadow-lg">
+            Choose Your <span className="">Learning</span> Path
+          </h2>
 
+          <p className="relative z-30 text-white text-lg font-normal mt-3 drop-shadow font-mono">
+            Click on any category to learn more and start your journey
+          </p>
+        </div>
+
+
+        {/* BACKGROUND SHAPE */}
+        <div className="absolute top-0 lg:ml-50 inset-0 -z-10 flex justify-end lg:justify-center">
+          <div className="bg-blue-700  w-90 h-40 blur-3xl rounded-full"></div>
+        </div>
+      </div>
       {/* Fixed Background Section with Category Cards */}
       <div
         className="w-full  min-h-[600px] bg-fixed bg-center bg-cover flex items-center justify-center "
@@ -220,23 +231,38 @@ const ExploreCategories = () => {
           backgroundImage: "url('https://i.ibb.co/3msWj593/book-5336298-1280.jpg')",
         }}
       >
+        <div className="absolute top-0 lg:ml-50 inset-0 -z-10 flex justify-end lg:justify-center">
+          <motion.div
+            className="hidden lg:block border-4 border-dashed bg-gradient-to-r from-transparent via-transparent to-yellow-700 w-90 h-90 rounded-full"
+            whileInView={{
+              rotate: 360,
+              x: [-120,  320], // left → right → left
+            }}
+            transition={{
+              rotate: {
+                repeat: Infinity,
+                duration: 8,
+                ease: "linear",
+              },
+              x: {
+                
+                duration: 6,
+                ease: "easeInOut",
+              },
+            }}
+            viewport={{ once: false }}
+          />
+
+
+        </div>
+
+        {/* <div className="absolute top-0 lg:ml-50 inset-0 -z-10 flex justify-end lg:justify-center">
+          <div className="border-4 border-dashed  w-90 h-90 bg-gradient-to-b from-transparent via-transparent to-yellow-600 rounded-full animate-spin [animation-duration:6s] delay-75 blur-in-xs"></div>
+        </div> */}
+
+
         <div className="w-full bg-black/50 py-10 px-3">
-          {/* Section Title */}
-          <div className="relative text-center mb-12 py-3 z-30">
-            {/* TEXT CONTENT */}
-            <h2 className="relative z-30 text-3xl md:text-7xl lg:text-7xl font-bold text-white drop-shadow-lg">
-              Choose Your <span className="">Learning</span> Path
-            </h2>
 
-            <p className="relative z-30 text-white text-lg font-medium mt-3 drop-shadow">
-              Click on any category to learn more and start your journey
-            </p>
-
-            {/* BACKGROUND SHAPE */}
-            <div className="absolute top-0 lg:ml-50 inset-0 -z-10 flex justify-end lg:justify-center">
-              <div className="bg-blue-700  w-90 h-40 blur-3xl rounded-full"></div>
-            </div>
-          </div>
 
 
 
@@ -254,24 +280,22 @@ const ExploreCategories = () => {
                   ease: "easeOut"
                 }}
                 onClick={() => setSelectedCategory(category)}
-                className="bg-white  p-3 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
-                style={{
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
-                }}
+                className="bg-white border-r-4 overflow-visible flex flex-col items-start justify-between border-amber-100 p-3 cursor-pointer hover:shadow-xl shadow-black group"
+
               >
                 <div
-                  className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
-                  style={{ backgroundColor: `${category.color}15`, color: category.color }}
+                  className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:-mt-10 group-hover:-rotate-12  transition-transform duration-300"
+                  style={{ backgroundColor: `${category.color}45`, color: category.color }}
                 >
                   {category.icon}
                 </div>
                 <h3
-                  className="text-xl font-bold mb-2 group-hover:translate-x-1 transition-transform"
+                  className="text-xl group-hover:mt-10 font-bold mb-2 group-hover:translate-x-1 transition-transform"
                   style={{ color: category.color }}
                 >
                   {category.title}
                 </h3>
-               
+
                 <div className="mt-4 flex items-center text-sm font-semibold group-hover:translate-x-2 transition-transform" style={{ color: category.color }}>
                   Learn More →
                 </div>
