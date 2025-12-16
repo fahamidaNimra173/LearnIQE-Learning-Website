@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  FaCode, 
-  FaPalette, 
-  FaShieldAlt, 
-  FaLaptop, 
-  FaBullhorn, 
+import {
+  FaCode,
+  FaPalette,
+  FaShieldAlt,
+  FaLaptop,
+  FaBullhorn,
   FaBrain,
   FaCube,
   FaTimes
@@ -215,21 +215,30 @@ const ExploreCategories = () => {
 
       {/* Fixed Background Section with Category Cards */}
       <div
-        className="w-full  min-h-[600px] bg-fixed bg-center bg-cover flex items-center justify-center px-4"
+        className="w-full  min-h-[600px] bg-fixed bg-center bg-cover flex items-center justify-center "
         style={{
           backgroundImage: "url('https://i.ibb.co/3msWj593/book-5336298-1280.jpg')",
         }}
       >
-        <div className="w-full bg-black/50 ">
+        <div className="w-full bg-black/50 py-10 px-3">
           {/* Section Title */}
-          <div className="text-center mb-12 py-3 ">
-            <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold text-[#ffffff] drop-shadow-lg">
-              Choose Your Learning Path
+          <div className="relative text-center mb-12 py-3 z-30">
+            {/* TEXT CONTENT */}
+            <h2 className="relative z-30 text-3xl md:text-7xl lg:text-7xl font-bold text-white drop-shadow-lg">
+              Choose Your <span className="">Learning</span> Path
             </h2>
-            <p className="text-white text-lg font-medium mt-3 drop-shadow">
+
+            <p className="relative z-30 text-white text-lg font-medium mt-3 drop-shadow">
               Click on any category to learn more and start your journey
             </p>
+
+            {/* BACKGROUND SHAPE */}
+            <div className="absolute top-0 lg:ml-50 inset-0 -z-10 flex justify-end lg:justify-center">
+              <div className="bg-blue-700  w-90 h-40 blur-3xl rounded-full"></div>
+            </div>
           </div>
+
+
 
           {/* Category Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -239,24 +248,24 @@ const ExploreCategories = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ 
-                  duration: 0.5, 
+                transition={{
+                  duration: 0.5,
                   delay: index * 0.1,
                   ease: "easeOut"
                 }}
                 onClick={() => setSelectedCategory(category)}
                 className="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
-                style={{ 
+                style={{
                   boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
                 }}
               >
-                <div 
+                <div
                   className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
                   style={{ backgroundColor: `${category.color}15`, color: category.color }}
                 >
                   {category.icon}
                 </div>
-                <h3 
+                <h3
                   className="text-xl font-bold mb-2 group-hover:translate-x-1 transition-transform"
                   style={{ color: category.color }}
                 >
@@ -296,7 +305,7 @@ const ExploreCategories = () => {
               className="fixed inset-4 md:inset-10 lg:inset-20 bg-white rounded-3xl shadow-2xl z-50 overflow-hidden flex flex-col"
             >
               {/* Modal Header */}
-              <div 
+              <div
                 className="p-6 md:p-8 text-white relative"
                 style={{ backgroundColor: selectedCategory.color }}
               >
@@ -346,12 +355,12 @@ const ExploreCategories = () => {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {selectedCategory.techStack.map((tech, idx) => (
-                        <div 
+                        <div
                           key={idx}
                           className="flex items-start gap-3 p-3 rounded-lg"
                           style={{ backgroundColor: `${selectedCategory.color}10` }}
                         >
-                          <div 
+                          <div
                             className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
                             style={{ backgroundColor: selectedCategory.color }}
                           />
@@ -366,7 +375,7 @@ const ExploreCategories = () => {
                     <h3 className="text-2xl font-bold mb-3" style={{ color: selectedCategory.color }}>
                       How Long Does it Take?
                     </h3>
-                    <div 
+                    <div
                       className="p-5 rounded-xl text-lg"
                       style={{ backgroundColor: `${selectedCategory.color}15` }}
                     >
@@ -399,7 +408,7 @@ const ExploreCategories = () => {
                     <h3 className="text-2xl font-bold mb-3" style={{ color: selectedCategory.color }}>
                       Future Demand
                     </h3>
-                    <div 
+                    <div
                       className="p-5 rounded-xl"
                       style={{ backgroundColor: `${selectedCategory.color}15` }}
                     >
@@ -414,9 +423,9 @@ const ExploreCategories = () => {
                     <h3 className="text-2xl font-bold mb-3" style={{ color: selectedCategory.color }}>
                       Why Should You Learn This?
                     </h3>
-                    <div 
+                    <div
                       className="p-6 rounded-xl border-l-4"
-                      style={{ 
+                      style={{
                         backgroundColor: `${selectedCategory.color}10`,
                         borderColor: selectedCategory.color
                       }}
