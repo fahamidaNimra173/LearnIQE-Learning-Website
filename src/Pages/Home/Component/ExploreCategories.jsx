@@ -202,28 +202,28 @@ const ExploreCategories = () => {
   ];
 
   return (
-    <div className="relative w-full py-10 overflow-hidden">
+    <div className="relative w-full py-20 overflow-hidden">
       {/* Header Section */}
-      <div className="max-w-4xl mx-auto text-center md:py-12 px-4">
+      <div className="max-w-4xl mx-auto text-center  px-4">
         <h1 className="text-[#fbbc2c] md:leading-15 md:text-5xl text-2xl habibi font-extrabold uppercase text-center">
           Explore What Our Platform Offers
         </h1>
-        <p className="text-black font-semibold text-lg max-w-xl mx-auto mb-15 mt-7">
+        <p className="text-white font-semibold text-lg max-w-xl mx-auto mb-15 mt-7">
           Empowering students with easy access to learning tools and resources that foster success.
         </p>
       </div>
 
       {/* Fixed Background Section with Category Cards */}
       <div
-        className="w-full min-h-[600px] bg-fixed bg-center bg-cover flex items-center justify-center px-4 py-12"
+        className="w-full  min-h-[600px] bg-fixed bg-center bg-cover flex items-center justify-center px-4"
         style={{
           backgroundImage: "url('https://i.ibb.co/3msWj593/book-5336298-1280.jpg')",
         }}
       >
-        <div className="w-full max-w-7xl mx-auto">
+        <div className="w-full bg-black/50 ">
           {/* Section Title */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#fbbc2c] drop-shadow-lg">
+          <div className="text-center mb-12 py-3 ">
+            <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold text-[#ffffff] drop-shadow-lg">
               Choose Your Learning Path
             </h2>
             <p className="text-white text-lg font-medium mt-3 drop-shadow">
