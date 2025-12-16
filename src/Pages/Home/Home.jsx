@@ -2,10 +2,10 @@
 import { motion } from "motion/react"
 import Banner from './Component/Banner';
 import AxiosSecure from '../../Axios/AxiosSecure';
-import TotalUsersTEachers from './Component/TotalUsersTEachers';
+
 import { useQuery } from '@tanstack/react-query';
 import Loader1 from '../../Shared/Loaders/Loader1'
-import TotalDataCollections from './Component/TotalDataCollections';
+
 import PartnerMarquee from './Component/Marque';
 import FeedBack from './Component/FeedBack';
 import TopCources from './Component/TopCources';
@@ -18,6 +18,7 @@ import LogoMarquee from "./Component/intitutionsMarque";
 
 import LightweightGlobe from "./Component/Globe";
 import ScrollSteps from "./Component/Steps";
+import ExploreCategories from "./Component/ExploreCategories";
 
 
 
@@ -67,7 +68,7 @@ const Home = () => {
                 <TopCources></TopCources>
                 <ScrollSteps></ScrollSteps>
                 <section id='studentLove'>
-                    <TotalUsersTEachers></TotalUsersTEachers>
+                        <ExploreCategories></ExploreCategories>
                 </section>
 
                 <FeedBack></FeedBack>

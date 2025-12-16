@@ -32,7 +32,7 @@ const ScrollSteps = () => {
       <div className="lg:text-9xl px-5 text-4xl  sm:text-7xl text-wrap overflow-x-hidden  text-center pt-20 pb-40 text-white font-extrabold w-full">
         <h2>How It <span className='text-blue-400'>Works?</span></h2>
         <p className="bg-gradient-to-r from-white via-blue-400 to-yellow-300 bg-clip-text text-transparent">
-          Your Learning Journey In <span className='text-blue-500  border-2 p-1 rounded-b-2xl '> 3</span> Easy Steps
+          Your Learning Journey In <span className='text-blue-500  border-2 p-1 rounded-b-2xl outfit'> 3</span> Easy Steps
         </p>
 
       </div>
