@@ -241,7 +241,7 @@ const ExploreCategories = () => {
 
 
           {/* Category Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 gap-3">
             {categories.map((category, index) => (
               <motion.div
                 key={category.id}
@@ -254,7 +254,7 @@ const ExploreCategories = () => {
                   ease: "easeOut"
                 }}
                 onClick={() => setSelectedCategory(category)}
-                className="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="bg-white  p-3 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
                 style={{
                   boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
                 }}
@@ -271,9 +271,7 @@ const ExploreCategories = () => {
                 >
                   {category.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Click to explore opportunities, skills, and why this path might be perfect for you
-                </p>
+               
                 <div className="mt-4 flex items-center text-sm font-semibold group-hover:translate-x-2 transition-transform" style={{ color: category.color }}>
                   Learn More →
                 </div>
@@ -293,7 +291,7 @@ const ExploreCategories = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedCategory(null)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+              className="fixed inset-0  bg-black/60 backdrop-blur-sm z-50"
             />
 
             {/* Modal Content */}
@@ -302,11 +300,11 @@ const ExploreCategories = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="fixed inset-4 md:inset-10 lg:inset-20 bg-white rounded-3xl shadow-2xl z-50 overflow-hidden flex flex-col"
+              className="fixed mt-15 lg:mt-0 inset-4 md:inset-10 lg:inset-20 bg-white rounded-3xl shadow-2xl z-50 overflow-hidden flex flex-col"
             >
               {/* Modal Header */}
               <div
-                className="p-6 md:p-8 text-white relative"
+                className="p-6  md:p-8 text-white relative"
                 style={{ backgroundColor: selectedCategory.color }}
               >
                 <button
