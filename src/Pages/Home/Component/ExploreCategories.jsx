@@ -15,193 +15,292 @@ import {
 
 const ExploreCategories = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  
+
   const categories = [
     {
       id: 1,
       title: "Web Development",
       icon: <FaCode size={40} />,
       color: "#3b82f6",
-      description: "Web development is the process of building and maintaining websites and web applications that run on the internet.",
-      usage: "Used to create everything from simple personal blogs to complex platforms like Amazon, Facebook, YouTube, and Netflix. Every website you visit was built using web development skills.",
+
+      description:
+        "Web development is the skill of creating websites and web applications that people use through a browser. It includes building how a website looks, how it works, and how users interact with it. For example, when you open a website, click buttons, submit forms, or watch videos — all of that is made possible through web development.",
+
+      usage:
+        "Web development is used to create personal websites, business websites, online stores, learning platforms, and social media sites. For example, websites like Google, Facebook, YouTube, Amazon, and Netflix are all built using web development technologies.",
+
       techStack: [
-        "HTML, CSS, JavaScript (basics)",
-        "React, Vue, or Angular (frontend)",
-        "Node.js, Python, or PHP (backend)",
-        "Databases like MongoDB or MySQL",
-        "Git for version control"
+        "HTML – structure of a website",
+        "CSS – design, layout, and colors",
+        "JavaScript – interactions and logic",
+        "React, Vue, or Angular – frontend frameworks",
+        "Node.js, Python, or PHP – backend development",
+        "MongoDB or MySQL – databases",
+        "Git & GitHub – version control"
       ],
-      timeline: "6-12 months to become job-ready with consistent practice (3-4 hours daily)",
+
+      timeline:
+        "6–12 months to become job-ready with regular practice (3–4 hours daily)",
+
       opportunities: [
         "Frontend Developer",
         "Backend Developer",
         "Full-Stack Developer",
-        "Freelance web developer",
-        "Start your own web agency",
-        "Remote work opportunities worldwide"
+        "Freelance Web Developer",
+        "Remote Developer",
+        "Startup Founder"
       ],
-      futureDemand: "Very High - Every business needs a website. With more companies going online, the demand for web developers continues to grow rapidly. Expected to grow 23% by 2031.",
-      whyLearn: "By learning web development, you can build professional websites like Amazon, Netflix, and Airbnb. You'll have the power to bring any idea to life on the internet, work from anywhere in the world, and earn a great income while doing creative work."
+
+      futureDemand:
+        "Very High – Every business needs a website. Demand for web developers is growing rapidly worldwide.",
+
+      whyLearn:
+        "Learning web development allows you to build real-world websites and applications, work from anywhere, earn a good income, and turn your ideas into live products on the internet.",
+
+      bangla:
+        "ওয়েব ডেভেলপমেন্ট মানে হলো ওয়েবসাইট ও ওয়েব অ্যাপ তৈরি করা। যেমন—ফেসবুক, ইউটিউব, আমাজন। এই স্কিল শিখলে আপনি নিজে ওয়েবসাইট বানাতে পারবেন, ফ্রিল্যান্সিং বা রিমোট জব করতে পারবেন এবং ভালো আয় করতে পারবেন।"
     },
+
     {
       id: 2,
       title: "Design",
       icon: <FaPalette size={40} />,
       color: "#ec4899",
-      description: "Design involves creating visual content and user experiences that are both beautiful and easy to use. It includes UI/UX design, graphic design, and product design.",
-      usage: "Used to design mobile apps, websites, logos, marketing materials, and product interfaces. Every app you use and every ad you see was designed by someone with these skills.",
+
+      description:
+        "Design is the skill of making digital products look beautiful and easy to use. It focuses on colors, layout, typography, and user experience. For example, how buttons are placed in an app or how a website feels when you use it is the result of good design.",
+
+      usage:
+        "Design is used to create website layouts, mobile app screens, logos, banners, posters, and social media graphics. Apps like Instagram, YouTube, and websites like Apple are designed by professional designers.",
+
       techStack: [
-        "Figma or Adobe XD (UI design)",
-        "Adobe Photoshop & Illustrator (graphics)",
-        "Sketch (Mac design tool)",
-        "Basic HTML/CSS knowledge",
-        "Prototyping tools like InVision"
+        "Figma or Adobe XD – UI/UX design",
+        "Adobe Photoshop – image editing",
+        "Adobe Illustrator – logo & vector design",
+        "Prototyping tools – wireframes & previews",
+        "Basic HTML & CSS understanding"
       ],
-      timeline: "4-8 months to build a strong portfolio and start freelancing or getting hired",
+
+      timeline:
+        "4–8 months to build a strong portfolio and start freelancing",
+
       opportunities: [
         "UI/UX Designer",
         "Graphic Designer",
         "Product Designer",
         "Brand Designer",
-        "Freelance designer",
-        "Design agency work"
+        "Freelance Designer"
       ],
-      futureDemand: "High - As digital products grow, companies need designers to make them look good and work smoothly. Good designers are always in demand.",
-      whyLearn: "By learning design, you can create stunning visual experiences that millions of people will use. You'll shape how products look and feel, from apps like Instagram to websites like Apple. Design skills open doors to creative careers with excellent pay and flexibility."
+
+      futureDemand:
+        "High – Every digital product needs good design to attract users.",
+
+      whyLearn:
+        "Design skills let you turn ideas into beautiful visuals, work creatively, and earn through freelancing or agency jobs.",
+
+      bangla:
+        "ডিজাইন মানে হলো ওয়েবসাইট বা অ্যাপ দেখতে সুন্দর ও ব্যবহার সহজ করা। যেমন—ইনস্টাগ্রামের ডিজাইন। এই স্কিল শিখলে আপনি লোগো, ওয়েব ডিজাইন, অ্যাপ ডিজাইন করে ইনকাম করতে পারবেন।"
     },
+
     {
       id: 3,
       title: "Cyber Security & Networking",
       icon: <FaShieldAlt size={40} />,
       color: "#10b981",
-      description: "Cyber security protects computer systems and networks from hackers and digital threats. Networking involves connecting computers and devices to share information safely.",
-      usage: "Used by banks, hospitals, governments, and all major companies to protect sensitive data from hackers. Every online transaction you make is secured by cyber security professionals.",
+
+      description:
+        "Cyber security is the practice of protecting computers, networks, and data from hackers and cyber attacks. Networking focuses on how computers connect and communicate with each other safely.",
+
+      usage:
+        "Cyber security is used by banks, hospitals, government systems, and online platforms to protect user data. For example, when you log into your bank app securely, cyber security is working behind the scenes.",
+
       techStack: [
         "Linux operating system",
-        "Network protocols (TCP/IP, DNS)",
+        "Networking basics (TCP/IP, DNS)",
         "Security tools (Wireshark, Nmap)",
-        "Python for security scripts",
-        "Firewalls and encryption methods"
+        "Firewalls & encryption",
+        "Python for automation"
       ],
-      timeline: "8-12 months to gain foundational skills and certifications for entry-level positions",
+
+      timeline:
+        "8–12 months to gain entry-level security skills",
+
       opportunities: [
         "Cyber Security Analyst",
         "Network Administrator",
         "Ethical Hacker",
-        "Security Consultant",
-        "Information Security Officer",
-        "Penetration Tester"
+        "Penetration Tester",
+        "Security Consultant"
       ],
-      futureDemand: "Extremely High - Cyber attacks are increasing every day. Companies desperately need security experts to protect their data. Expected to grow 35% by 2031.",
-      whyLearn: "By learning cyber security, you become a digital guardian protecting businesses and people from hackers. You'll solve puzzles, think like a hacker to stop hackers, and earn top salaries while working in one of the most exciting and important tech fields."
+
+      futureDemand:
+        "Extremely High – Cyber attacks are increasing worldwide.",
+
+      whyLearn:
+        "Cyber security lets you protect systems, fight hackers, and earn high salaries in a critical field.",
+
+      bangla:
+        "সাইবার সিকিউরিটি মানে হলো হ্যাকার থেকে ডেটা ও সিস্টেম রক্ষা করা। ব্যাংক, হাসপাতাল, সব জায়গায় এই স্কিল দরকার। এই স্কিল শিখলে আপনি নিরাপত্তা বিশেষজ্ঞ হিসেবে কাজ করতে পারবেন।"
     },
+
     {
       id: 4,
       title: "IT & Software",
       icon: <FaLaptop size={40} />,
       color: "#8b5cf6",
-      description: "IT (Information Technology) involves managing computer systems, software, and technical support. It includes everything from fixing computers to managing cloud systems.",
-      usage: "Used in every company to keep computers, networks, and software running smoothly. IT professionals help businesses work efficiently and solve technical problems.",
+
+      description:
+        "IT & Software focuses on managing computers, systems, software, and technical support in organizations.",
+
+      usage:
+        "IT professionals keep company systems running, fix technical problems, and manage servers and cloud platforms.",
+
       techStack: [
         "Windows & Linux systems",
-        "Cloud platforms (AWS, Azure, Google Cloud)",
-        "Database management",
-        "Microsoft Office & productivity tools",
-        "Troubleshooting and support skills"
+        "Cloud platforms (AWS, Azure)",
+        "Database basics",
+        "System troubleshooting",
+        "Office & productivity tools"
       ],
-      timeline: "6-10 months to gain practical skills and certifications like CompTIA A+ or AWS",
+
+      timeline:
+        "6–10 months to get job-ready",
+
       opportunities: [
-        "IT Support Specialist",
+        "IT Support",
         "System Administrator",
         "Cloud Engineer",
-        "Database Administrator",
-        "IT Manager",
-        "Technical Support"
+        "IT Manager"
       ],
-      futureDemand: "High - Every business needs IT professionals to manage their technology. As companies move to the cloud, demand for IT skills keeps growing.",
-      whyLearn: "By learning IT and software skills, you become the problem-solver every company needs. You'll keep businesses running, work with cutting-edge technology like cloud computing, and build a stable career with excellent job security."
+
+      futureDemand:
+        "High – Every company depends on IT systems.",
+
+      whyLearn:
+        "IT skills provide stable jobs, strong career growth, and global demand.",
+
+      bangla:
+        "আইটি মানে হলো কম্পিউটার, সফটওয়্যার ও সিস্টেম ম্যানেজ করা। সব কোম্পানিতে আইটি এক্সপার্ট দরকার।"
     },
+
     {
       id: 5,
       title: "Marketing",
       icon: <FaBullhorn size={40} />,
       color: "#f59e0b",
-      description: "Digital marketing promotes products and services online using websites, social media, emails, and advertisements to reach customers and grow businesses.",
-      usage: "Used by every company to sell products, build brands, and reach customers online. Every ad you see on Facebook, Instagram, or Google was created by a digital marketer.",
+
+      description:
+        "Digital marketing is the skill of promoting products and services online using ads, content, and social media.",
+
+      usage:
+        "Used to grow businesses online through Facebook ads, Google ads, emails, and SEO.",
+
       techStack: [
-        "Google Analytics & Ads",
+        "Google Ads & Analytics",
         "Facebook Ads Manager",
-        "Email marketing tools (Mailchimp)",
-        "SEO tools (SEMrush, Ahrefs)",
-        "Social media platforms",
-        "Content management systems"
+        "SEO tools",
+        "Email marketing tools",
+        "Content strategy"
       ],
-      timeline: "4-6 months to learn basics and start running campaigns independently",
+
+      timeline:
+        "4–6 months to start working independently",
+
       opportunities: [
-        "Digital Marketing Specialist",
-        "Social Media Manager",
+        "Digital Marketer",
         "SEO Specialist",
-        "Content Marketer",
-        "Email Marketing Manager",
-        "Freelance marketer"
+        "Social Media Manager",
+        "Freelancer"
       ],
-      futureDemand: "Very High - Businesses are spending billions on digital marketing. As online shopping grows, marketing professionals are more valuable than ever.",
-      whyLearn: "By learning digital marketing, you can help businesses grow and reach millions of people online. You'll master the art of selling, work creatively with data, and have the freedom to work remotely or start your own marketing agency."
+
+      futureDemand:
+        "Very High – Online business is growing rapidly.",
+
+      whyLearn:
+        "Marketing skills help businesses grow and offer flexible remote work.",
+
+      bangla:
+        "ডিজিটাল মার্কেটিং মানে অনলাইনে পণ্য বা সার্ভিস বিক্রি করা। ফেসবুক ও গুগল বিজ্ঞাপন এর উদাহরণ।"
     },
+
     {
       id: 6,
       title: "Self Development",
       icon: <FaBrain size={40} />,
       color: "#ef4444",
-      description: "Self development focuses on improving yourself through learning new skills, building better habits, managing time effectively, and becoming the best version of yourself.",
-      usage: "Used to achieve personal goals, advance your career, improve relationships, boost confidence, and create a successful and fulfilling life.",
+
+      description:
+        "Self development is about improving mindset, habits, communication, and productivity.",
+
+      usage:
+        "Used to improve career growth, confidence, leadership, and personal life.",
+
       techStack: [
-        "Time management techniques",
-        "Goal setting frameworks",
+        "Time management",
+        "Goal setting",
         "Communication skills",
-        "Emotional intelligence",
-        "Productivity tools & apps",
-        "Learning strategies"
+        "Emotional intelligence"
       ],
-      timeline: "Ongoing journey - Start seeing results in 1-3 months with consistent daily practice",
+
+      timeline:
+        "Lifelong journey with results in 1–3 months",
+
       opportunities: [
-        "Better career advancement",
         "Leadership roles",
-        "Life coach or mentor",
-        "Public speaker",
-        "Productivity consultant",
-        "Personal brand building"
+        "Personal branding",
+        "Life coaching"
       ],
-      futureDemand: "Always Essential - Personal growth skills never go out of style. Strong self-development skills give you an advantage in any career or life situation.",
-      whyLearn: "By focusing on self development, you unlock your full potential in every area of life. You'll build confidence, communicate better, manage stress effectively, and achieve goals faster. These skills boost your success in any career path you choose."
+
+      futureDemand:
+        "Always essential in every career.",
+
+      whyLearn:
+        "Self development helps you succeed in any profession.",
+
+      bangla:
+        "সেল্ফ ডেভেলপমেন্ট মানে নিজের দক্ষতা, আত্মবিশ্বাস ও চিন্তা উন্নত করা।"
     },
+
     {
       id: 7,
       title: "OOP (Object-Oriented Programming)",
       icon: <FaCube size={40} />,
       color: "#06b6d4",
-      description: "OOP is a programming approach that organizes code into reusable 'objects' - like building with LEGO blocks. It makes software easier to build, understand, and maintain.",
-      usage: "Used to build complex software like video games, mobile apps, banking systems, and operating systems. Most modern programming relies on OOP principles.",
+
+      description:
+        "Object-Oriented Programming (OOP) is a core programming paradigm used to design and build real-world, large-scale software systems. It organizes code into reusable objects and classes, making applications easier to understand, extend, and maintain. OOP is essential for solving complex problems on platforms like LeetCode, Codeforces, and HackerRank, where most problems are designed around classes, objects, and data structures. It is heavily used in big tech companies such as Google, Meta, Amazon, and Microsoft to build scalable backend systems, enterprise software, mobile applications, game engines, and operating systems. Without OOP, managing large codebases and team-based development would be nearly impossible, which is why strong OOP skills are highly valued in technical interviews and professional software engineering roles.",
+
+      usage:
+        "Used in software like games, mobile apps, and enterprise systems.",
+
       techStack: [
-        "Java (popular for OOP)",
-        "Python (easy to learn OOP)",
-        "C++ or C# (powerful OOP)",
-        "Understanding classes & objects",
-        "Design patterns"
+        "Java",
+        "Python",
+        "C++ / C#",
+        "Classes & Objects",
+        "Design Patterns"
       ],
-      timeline: "3-6 months to understand OOP concepts and apply them in real projects",
+
+      timeline:
+        "3–6 months to understand and apply",
+
       opportunities: [
         "Software Developer",
         "Game Developer",
-        "Mobile App Developer",
-        "Enterprise Software Engineer",
-        "Backend Developer",
-        "Systems Architect"
+        "Backend Engineer"
       ],
-      futureDemand: "Very High - OOP is the foundation of most modern software. Companies building complex applications need developers who master these principles.",
-      whyLearn: "By learning OOP, you gain the superpower to build professional, scalable software. You'll write cleaner code, work on bigger projects like video games and enterprise systems, and become a more valuable programmer in any programming language."
+
+      futureDemand:
+        "Very High – Core of modern software.",
+
+      whyLearn:
+        "OOP helps you write professional, scalable code.",
+
+      bangla:
+        "অবজেক্ট-ওরিয়েন্টেড প্রোগ্রামিং (OOP) একটি মূল প্রোগ্রামিং পদ্ধতি যা বড় এবং জটিল সফটওয়্যার সিস্টেম তৈরি ও ডিজাইন করার জন্য ব্যবহৃত হয়। এটি কোডকে পুনঃব্যবহারযোগ্য অবজেক্ট এবং ক্লাসে ভাগ করে, ফলে অ্যাপ্লিকেশনগুলো বোঝা, বাড়ানো এবং রক্ষণাবেক্ষণ করা সহজ হয়। OOP দক্ষতা লেভেল লেভেল প্রোবলেমস সমাধান করার জন্য যেমন LeetCode, Codeforces, HackerRank-এ অপরিহার্য। বড় প্রযুক্তি কোম্পানি যেমন Google, Meta, Amazon, এবং Microsoft এ ব্যাকএন্ড সিস্টেম, এন্টারপ্রাইজ সফটওয়্যার, মোবাইল অ্যাপ, গেম ইঞ্জিন এবং অপারেটিং সিস্টেম তৈরিতে OOP অত্যন্ত গুরুত্বপূর্ণ। OOP ছাড়া বড় কোডবেস এবং টিম-ভিত্তিক ডেভেলপমেন্ট পরিচালনা করা প্রায় অসম্ভব, এজন্য এটি সফটওয়্যার ইঞ্জিনিয়ারিং ক্যারিয়ার এবং টেকনিক্যাল ইন্টারভিউতে খুবই মূল্যবান।"
     }
   ];
+
 
   return (
     <div className="relative w-full py-20  overflow-hidden">
@@ -236,7 +335,7 @@ const ExploreCategories = () => {
             className="hidden lg:block border-4 border-dashed bg-gradient-to-r from-transparent via-transparent to-yellow-700 w-90 h-90 rounded-full"
             whileInView={{
               rotate: 360,
-              x: [-120,  320], // left → right → left
+              x: [-120, 320], // left → right → left
             }}
             transition={{
               rotate: {
@@ -245,7 +344,7 @@ const ExploreCategories = () => {
                 ease: "linear",
               },
               x: {
-                
+
                 duration: 6,
                 ease: "easeInOut",
               },
