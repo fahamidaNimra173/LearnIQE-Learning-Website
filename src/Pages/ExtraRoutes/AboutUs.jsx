@@ -10,31 +10,37 @@ const AboutUs = () => {
   const navigate=useNavigate()
 
   return (
-    <div className="min-h-screen bg-[#e7efee] dark:bg-[#e7efee] text-gray-900 overflow-hidden">
+    <div className="min-h-screen bg-[#060606] dark:bg-[#000101] text-gray-900 overflow-hidden">
       {/* Hero Section with Animated Gradient */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Orbs */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#fbbc2c] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#1e8a78] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-[#fbbc2c] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute inset-0 z-10 ">
+          <div className="absolute top-1/7 -left-30 w-86 h-72  bg-[#f4d99c] rounded-t-full   opacity-15 blur-2xl border-[30px] border-black animate-blob"></div>
+          <div className="absolute bottom-1/5 -left-0 w-86  h-72 bg-[#2092f0]  mix-blend-multiply filter   opacity-25 animate-blob border-[20px] border-white blur-2xl animation-delay-2000"></div>
+          <div className="absolute bottom-0 -left-30 w-86 h-72  bg-[#a427ca] rounded-full mix-blend-multiply filter  opacity-15 blur-2xl animate-blob animation-delay-4000"></div>
+          <div className="absolute -bottom-40 right-20 w-86 h-72 uppercase  outfit text-7xl font-bold text-blue-400  opacity-65    animation-delay-4000">Udemy</div>
+           <div className="absolute bottom-50 right-20 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-500  opacity-45    animation-delay-4000">Courseera</div>
+            <div className="absolute bottom-70 right-40 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-400  opacity-45    animation-delay-4000">edx</div>
+             <div className="absolute -bottom-70 right-90 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-100  opacity-45    animation-delay-4000">Alison</div>
+              <div className="absolute -bottom-20 right-35 w-86 h-72 uppercase   text-5xl font-extrabold text-yellow-400  opacity-45    animation-delay-4000">Ostad</div>
+               <div className="absolute bottom-20 right-10 w-86 h-72 uppercase   text-5xl font-extrabold text-green-400  opacity-45    animation-delay-4000">KhanAcademy</div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+        <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-7xl md:text-9xl font-black mb-6 bg-gradient-to-r from-[#fbbc2c] via-[#1e8a78] to-[#fbbc2c] bg-clip-text text-transparent animate-pulse-slow">
-              LearnIQ
+            <h1 className="text-7xl md:text-9xl font-black mb-6 righteous bg-gradient-to-r from-[#fcf801] via-[#53c0fa] to-[#fbfb2c] bg-clip-text text-transparent animate-pulse-slow ">
+              <span className="text-yellow-100">L</span>earnIQ
             </h1>
-            <div className="h-1 w-32 bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] mx-auto mb-8"></div>
+            <div className="h-1 w-32 bg-gradient-to-r from-[#fbbc2c] to-[#2185f7] mx-auto mb-8"></div>
           </div>
           
-          <p className="text-2xl md:text-4xl font-light mb-8 text-gray-700">
+          <p className="text-2xl md:text-4xl font-light mb-8 text-gray-400">
             Where <span className="text-[#fbbc2c] font-bold">Knowledge</span> Meets{" "}
-            <span className="text-[#1e8a78] font-bold">Innovation</span>
+            <span className="text-[#6d93fc] font-bold">Innovation</span>
           </p>
           
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Bridging learners and educators in a space where skills are built, 
             opportunities thrive, and futures are shaped.
           </p>
@@ -59,7 +65,7 @@ const AboutUs = () => {
       </div>
 
       {/* Our Story Section with Image */}
-      <div className="relative py-32 px-6 bg-white">
+      <div className="relative py-32 px-6 ">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
@@ -75,7 +81,7 @@ const AboutUs = () => {
                 connect learners with passionate instructors has now become a 
                 growing community of curious minds.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed">
                 We believe that education should break barriers, not create them. 
                 Every student deserves access to world-class learning experiences.
               </p>
@@ -108,7 +114,7 @@ const AboutUs = () => {
       </div>
 
       {/* Mission & Vision */}
-      <div className="relative py-32 px-6 bg-[#e7efee]">
+      <div className="relative py-32 px-6 bg-[#020202]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission */}
@@ -190,7 +196,7 @@ const AboutUs = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="relative py-32 px-6 bg-white">
+      <div className="relative py-32 px-6 ">
         <div className="max-w-4xl mx-auto text-center">
           <div className="relative bg-gradient-to-r from-[#fbbc2c] via-[#1e8a78] to-[#fbbc2c] rounded-3xl p-16 overflow-hidden shadow-2xl">
             <div className="absolute inset-0 opacity-10">
