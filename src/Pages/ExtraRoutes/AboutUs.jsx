@@ -17,7 +17,7 @@ const AboutUs = () => {
   //   offset: ["start end", "end start"]
   // })
 
-  const scale= useTransform(scrollYProgress, [0, 0.4], [0.4, 7])
+  const scale = useTransform(scrollYProgress, [0, 0.4], [0.4, 7])
   return (
     <div className="min-h-screen bg-[#060606] dark:bg-[#000101] text-gray-900 overflow-hidden">
       {/* Hero Section with Animated Gradient */}
@@ -28,23 +28,23 @@ const AboutUs = () => {
           <div className="absolute bottom-1/5 -left-0 w-86  h-72 bg-[#2092f0]  mix-blend-multiply filter   opacity-45 animate-blob border-[20px] border-white blur-2xl animation-delay-2000"></div>
           <div className="absolute bottom-0 -left-30 w-86 h-72  bg-[#a427ca] rounded-full mix-blend-multiply filter  opacity-25 blur-2xl animate-blob animation-delay-4000"></div>
           <motion.div
-            style={{ scale}}
+            style={{ scale }}
             className="absolute bottom-0 right-20 w-86 h-72 uppercase text-5xl font-extrabold text-blue-500 opacity-65 animation-delay-4000"
           >
             Coursera
           </motion.div>
-                    <motion.div
-            style={{ scale}}
+          <motion.div
+            style={{ scale }}
             className="absolute top-0 right-20 w-86 h-72 uppercase text-5xl font-extrabold text-blue-500 opacity-65 animation-delay-4000"
           >
             udemy
           </motion.div>
 
 
-          <motion.div style={{ scale}} className="absolute bottom-70 right-40 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-400  opacity-60    animation-delay-4000">edx</motion.div>
-          <motion.div style={{ scale}} className="absolute -bottom-30 right-120 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-100  opacity-60    animation-delay-4000">Alison</motion.div>
-          <motion.div style={{ scale}} className="absolute -bottom-20 right-35 w-86 h-72 uppercase   text-5xl font-extrabold text-yellow-400  opacity-60    animation-delay-4000">Ostad</motion.div>
-          <motion.div style={{ scale}} className="absolute bottom-20 right-10 w-86 h-72 uppercase   text-5xl font-extrabold text-green-400  opacity-60    animation-delay-4000">KhanAcademy</motion.div>
+          <motion.div style={{ scale }} className="absolute bottom-70 right-40 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-400  opacity-60    animation-delay-4000">edx</motion.div>
+          <motion.div style={{ scale }} className="absolute -bottom-30 right-120 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-100  opacity-60    animation-delay-4000">Alison</motion.div>
+          <motion.div style={{ scale }} className="absolute -bottom-20 right-35 w-86 h-72 uppercase   text-5xl font-extrabold text-yellow-400  opacity-60    animation-delay-4000">Ostad</motion.div>
+          <motion.div style={{ scale }} className="absolute bottom-20 right-10 w-86 h-72 uppercase   text-5xl font-extrabold text-green-400  opacity-60    animation-delay-4000">KhanAcademy</motion.div>
         </div>
 
         {/* Hero Content */}
@@ -87,29 +87,37 @@ const AboutUs = () => {
 
       {/* Our Story Section with Image */}
       <div className="relative py-32 px-6 ">
-        <div className="absolute bg-blue-500 rounded-b-2xl rotate-90 z-10 -bottom-25 right-1/2 blur-xl w-20 h-96 ">
+        <div className="absolute bg-blue-500 rounded-b-2xl rotate-60 z-10 opacity-70 bottom-25 right-1/2 blur-3xl w-4/5 h-26 ">
 
         </div>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
+        <div className="max-w-6xl z-20 mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 overflow-hidden items-center">
+            <  motion.div
+            initial={{rotate:0}}
+            whileInView={{rotate:-7}}
+            transition={{duration:2, ease:"linear"}}
+            
+            className="space-y-6 border-1 border-blue-500 shadow-2xl shadow-blue-300  p-8">
               <h2 className="text-6xl font-black">
                 <span className=" text-white">
-                  Our <span className="text-blue-500">Story</span> 
+                  Our <span className="text-blue-500">Story</span>
                 </span>
               </h2>
               <div className="h-1 w-24 bg-gradient-to-r from-[#fbbc2c] to-[#0f98e7]"></div>
               <p className="text-xl text-gray-300 leading-relaxed">
-                LearnIQ was born from a simple idea: making quality education
-                accessible to everyone, everywhere. What started as a vision to
-                connect learners with passionate instructors has now become a
-                growing community of curious minds.
+                LearnIQ was born from a simple idea: making quality education accessible to everyone, everywhere.
+                This platform is being built to gather and share as many free learning resources as possible —
+                courses that many people are unaware of or have never discovered.
               </p>
+
               <p className="text-lg text-gray-300 leading-relaxed">
-                We believe that education should break barriers, not create them.
-                Every student deserves access to world-class learning experiences.
+                By connecting learners with trusted platforms and valuable free courses, LearnIQ helps people
+                learn new skills, explore their interests, and build meaningful careers. We believe education
+                should break barriers, not create them, and everyone deserves access to world-class learning
+                opportunities.
               </p>
-            </div>
+
+            </motion.div>
 
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-[#fbbc2c] to-[#1e8a78] rounded-3xl transform rotate-3"></div>
@@ -126,7 +134,7 @@ const AboutUs = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="relative py-20 px-6 bg-gradient-to-b from-white to-[#e7efee]">
+      {/* <div className="relative py-20 px-6 bg-gradient-to-b from-white to-[#e7efee]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCard number="50K+" label="Active Learners" />
@@ -135,7 +143,7 @@ const AboutUs = () => {
             <StatCard number="95%" label="Success Rate" />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Mission & Vision */}
       <div className="relative py-32 px-6 bg-[#020202]">
@@ -177,7 +185,7 @@ const AboutUs = () => {
         className="relative py-32 px-6 bg-cover bg-center"
         style={{ backgroundImage: "url('https://i.ibb.co/twJJ5LmD/school-work-851328-1280.jpg')" }}
       >
-        <div className="absolute inset-0 bg-[#fbbc2c]/85"></div>
+        <div className="absolute inset-0 bg-[#2c86fb]/80"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-20">
