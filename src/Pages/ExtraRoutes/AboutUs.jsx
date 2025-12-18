@@ -87,8 +87,12 @@ const AboutUs = () => {
 
       {/* Our Story Section with Image */}
       <div className="relative py-32 px-6 ">
-        <div className="absolute bg-blue-500 rounded-b-2xl rotate-60 z-10 opacity-70 bottom-25 right-1/2 blur-3xl w-4/5 h-26 ">
+         <div className="absolute  bg-transparent top-50 right-10 w-76 h-76 border-2 border-t-blue-400 border-b-blue-400 border-l-black border-r-blue-400 rotate-6  rounded-full z-10 "></div>
+         <div className="absolute  bg-transparent top-60 right-20 w-56 h-56 border-2 border-t-blue-400 border-b-blue-400 border-l-black border-r-black -rotate-20 animate-spin bg-gradient-to-b from-blue-400/40 via-transparent to-transparent rounded-full z-10 "></div>
+         <div className="absolute  bg-transparent top-53 shadow-2xl shadow-blue-400/70 right-13 w-70 h-70 border-2 border-t-blue-400 border-b-blue-400 border-l-black border-r-blue-400 rotate-180  rounded-full z-10 "></div>
 
+        <div className="absolute bg-blue-500 rounded-b-2xl rotate-60 z-10 opacity-70 bottom-25 right-1/2 blur-3xl w-4/5 h-26 ">
+         
         </div>
         <div className="max-w-6xl z-20 mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 overflow-hidden items-center">
@@ -122,7 +126,9 @@ const AboutUs = () => {
 
             </motion.div>
 
-            <div className="relative">
+            <div className="relative z-20">
+
+
               <div className="absolute inset-0 bg-gradient-to-br from-[#f7bd36] via-transparent to-[#010302] rounded-3xl transform rotate-3"></div>
               <div className="relative bg-blue-500/50 border-2 border-[#249fe6] rounded-3xl overflow-hidden transform -rotate-1 hover:rotate-0 transition-transform duration-300 shadow-2xl">
                 <img
