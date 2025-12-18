@@ -101,12 +101,12 @@ const AboutUs = () => {
               <div className="absolute bg-blue-500 rounded-full rotate-60 -z-10 opacity-50 top-0 right-0 blur-3xl w-76 h-76 ">
 
               </div>
-              <h2 className="text-6xl font-black">
+              <h2 className="text-6xl font-medium uppercase">
                 <span className=" text-white">
                   Our <span className="text-blue-500">Story</span>
                 </span>
               </h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-[#fbbc2c] to-[#0f98e7]"></div>
+              <div className="h-[3px] w-74 bg-gradient-to-r from-[#0c0a05] via-[#0f98e7] to-transparent"></div>
               <p className="text-xl z-20 text-gray-100 leading-relaxed">
                 LearnIQ was born from a simple idea: making quality education accessible to everyone, everywhere.
                 This platform is being built to gather and share as many free learning resources as possible —
@@ -123,8 +123,8 @@ const AboutUs = () => {
             </motion.div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#fbbc2c] to-[#1e8a78] rounded-3xl transform rotate-3"></div>
-              <div className="relative bg-white border-2 border-[#1e8a78] rounded-3xl overflow-hidden transform -rotate-1 hover:rotate-0 transition-transform duration-300 shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#f7bd36] via-transparent to-[#010302] rounded-3xl transform rotate-3"></div>
+              <div className="relative bg-blue-500/50 border-2 border-[#249fe6] rounded-3xl overflow-hidden transform -rotate-1 hover:rotate-0 transition-transform duration-300 shadow-2xl">
                 <img
                   src="https://i.ibb.co.com/MqXny7y/Screenshot-2025-08-16-234031.png"
                   alt="LearnIQ Platform"
