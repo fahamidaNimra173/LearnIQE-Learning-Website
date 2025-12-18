@@ -128,7 +128,7 @@ const AboutUs = () => {
                 <img
                   src="https://i.ibb.co.com/MqXny7y/Screenshot-2025-08-16-234031.png"
                   alt="LearnIQ Platform"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full border-2 object-cover"
                 />
               </div>
             </div>
