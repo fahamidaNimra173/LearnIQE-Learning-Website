@@ -56,12 +56,12 @@ const AboutUs = () => {
             <div className="h-1 w-32 bg-gradient-to-r from-[#fbbc2c] to-[#2185f7] mx-auto mb-8"></div>
           </div>
 
-          <p className="text-2xl md:text-4xl font-light mb-8 text-gray-400">
+          <p className="text-2xl md:text-4xl font-light mb-8 bg-black/10 p-3 text-gray-100">
             Where <span className="text-[#fbbc2c] font-bold">Knowledge</span> Meets{" "}
             <span className="text-[#6d93fc] font-bold">Innovation</span>
           </p>
 
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Bridging learners and educators in a space where skills are built,
             opportunities thrive, and futures are shaped.
           </p>
