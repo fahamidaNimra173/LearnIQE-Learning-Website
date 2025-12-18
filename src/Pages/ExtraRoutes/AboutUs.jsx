@@ -93,18 +93,21 @@ const AboutUs = () => {
         <div className="max-w-6xl z-20 mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 overflow-hidden items-center">
             <  motion.div
-            initial={{rotate:0}}
-            whileInView={{rotate:-7}}
-            transition={{duration:2, ease:"linear"}}
-            
-            className="space-y-6 border-1 border-blue-500 shadow-2xl shadow-blue-300  p-8">
+              initial={{ rotate: 0 }}
+              whileInView={{ rotate: -7 }}
+              transition={{ duration: 2, ease: "linear" }}
+
+              className="space-y-6 relative border-1 border-blue-500 shadow-2xl shadow-blue-300  p-8">
+              <div className="absolute bg-blue-500 rounded-full rotate-60 -z-10 opacity-50 top-0 right-0 blur-3xl w-76 h-76 ">
+
+              </div>
               <h2 className="text-6xl font-black">
                 <span className=" text-white">
                   Our <span className="text-blue-500">Story</span>
                 </span>
               </h2>
               <div className="h-1 w-24 bg-gradient-to-r from-[#fbbc2c] to-[#0f98e7]"></div>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <p className="text-xl z-20 text-gray-100 leading-relaxed">
                 LearnIQ was born from a simple idea: making quality education accessible to everyone, everywhere.
                 This platform is being built to gather and share as many free learning resources as possible —
                 courses that many people are unaware of or have never discovered.
