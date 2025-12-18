@@ -87,16 +87,19 @@ const AboutUs = () => {
 
       {/* Our Story Section with Image */}
       <div className="relative py-32 px-6 ">
+        <div className="absolute bg-blue-500 rounded-b-2xl rotate-90 z-10 -bottom-25 right-1/2 blur-xl w-20 h-96 ">
+
+        </div>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <h2 className="text-6xl font-black">
-                <span className="bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] bg-clip-text text-transparent">
-                  Our Story
+                <span className=" text-white">
+                  Our <span className="text-blue-500">Story</span> 
                 </span>
               </h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78]"></div>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <div className="h-1 w-24 bg-gradient-to-r from-[#fbbc2c] to-[#0f98e7]"></div>
+              <p className="text-xl text-gray-300 leading-relaxed">
                 LearnIQ was born from a simple idea: making quality education
                 accessible to everyone, everywhere. What started as a vision to
                 connect learners with passionate instructors has now become a
