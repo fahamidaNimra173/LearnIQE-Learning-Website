@@ -21,7 +21,7 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-[#060606] dark:bg-[#000101] text-gray-900 overflow-hidden">
       {/* Hero Section with Animated Gradient */}
-      <div className="relative mt-24 min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative mt-24 lg:mt-10 min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Orbs */}
         <div className="absolute inset-0 z-10 ">
           <div className="absolute top-1/7 -left-30 w-86 h-72  bg-[#f4d99c] rounded-t-full   opacity-25 blur-2xl border-[30px] border-black animate-blob"></div>
@@ -123,7 +123,7 @@ const AboutUs = () => {
             </motion.div>
             {/* for smaller device */}
             <  motion.div
-             
+
 
               className="space-y-6 block lg:hidden relative border-1 border-blue-500 shadow-2xl shadow-blue-300  p-2">
               <div className="absolute bg-blue-500 rounded-full rotate-60 -z-10 opacity-50 top-0 right-0 blur-3xl w-76 h-76 ">
@@ -181,14 +181,14 @@ const AboutUs = () => {
       {/* Mission & Vision */}
       <div className="relative py-32 px-6 bg-[#020202]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 ">
             {/* Mission */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-[#fbbc2c] to-transparent opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500"></div>
-              <div className="relative bg-white backdrop-blur-sm border-2 border-[#fbbc2c]/20 rounded-3xl p-12 h-full hover:border-[#fbbc2c] transition-all duration-300 shadow-lg hover:shadow-2xl">
+              <div className="relative  backdrop-blur-sm border-r-2 border-b-2 p-12 h-full hover:border-[#fbbc2c] transition-all duration-300 shadow-lg hover:shadow-2xl">
                 <FaRocket className="text-6xl text-[#fbbc2c] mb-6" />
                 <h3 className="text-4xl font-black mb-6 text-[#fbbc2c]">Our Mission</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg text-gray-100 leading-relaxed">
                   To empower learners with skills, knowledge, and opportunities
                   through modern, engaging, and flexible online education that
                   adapts to your pace and goals.
@@ -196,19 +196,34 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* Vision */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1e8a78] to-transparent opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500"></div>
-              <div className="relative bg-white backdrop-blur-sm border-2 border-[#1e8a78]/20 rounded-3xl p-12 h-full hover:border-[#1e8a78] transition-all duration-300 shadow-lg hover:shadow-2xl">
-                <FaGlobe className="text-6xl text-[#1e8a78] mb-6" />
-                <h3 className="text-4xl font-black mb-6 text-[#1e8a78]">Our Vision</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="group relative h-full ">
+              {/* Hover Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90  rounded-3xl transition-opacity duration-500" />
+
+              <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-l-2 border-b-2 md:p-12 p-6 h-full  
+                  transition-all duration-300 shadow-lg hover:shadow-2xl">
+
+                <FaGlobe className="text-6xl text-[#1983da] group-hover:text-white mb-6 transition-transform duration-300 group-hover:scale-170 " />
+
+                {/* Title */}
+                <h3 className="text-4xl font-black mb-6 group-hover:text-white habibi text-[#1983da]
+                   transition-all duration-300 group-hover:text-5xl">
+                  Our Vision
+                </h3>
+
+                {/* Description (keeps space, fades out) */}
+                <p
+                  className="text-lg text-gray-100 leading-relaxed
+                 transition-all duration-300
+                 group-hover:opacity-0 group-hover:hidden "
+                >
                   To build a global learning platform where students and
                   instructors grow together, breaking barriers of geography,
                   background, and resources.
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
