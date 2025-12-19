@@ -87,9 +87,14 @@ const AboutUs = () => {
         <div className="absolute bg-transparent  bottom-15 md:bottom-48 lg:top-53 right-13 w-70 h-70 border-2 border-t-blue-400 border-b-blue-400 border-l-black border-r-blue-400 rotate-180 rounded-full z-10 animate-[pulse_4s_ease-in-out_infinite] shadow-2xl shadow-blue-400/70"></div>
 
         <div className="absolute bg-transparent -bottom-3 lg:top-56 right-16 w-64 h-64 border border-blue-400/30 rounded-full z-10 animate-[spin_12s_linear_infinite] blur-sm"></div>
-        <div className="absolute bg-blue-500 rounded-b-2xl rotate-60 z-10 opacity-70 bottom-25 right-1/2 blur-3xl w-4/5 h-26 ">
-
+        <div className="absolute bg-blue-500 rounded-b-2xl rotate-60 lg:rotate-70 z-10 opacity-50 bottom-1 lg:bottom-65 right-1/2 blur-3xl w-4/5 h-26 ">
         </div>
+        <div className="absolute bg-blue-500 rounded-b-2xl -rotate-60 lg:-rotate-70 z-10 opacity-50 bottom-2 lg:bottom-65 left-1/2 blur-3xl w-4/5 h-26 ">
+        </div>
+
+
+
+
         <div className="lg:max-w-6xl w-full z-20 lg:mx-auto">
           <div className="lg:grid lg:grid-cols-2 gap-10 lg:overflow-hidden items-center">
             <  motion.div
@@ -183,12 +188,29 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 ">
             {/* Mission */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#fbbc2c] to-transparent opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500"></div>
-              <div className="relative  backdrop-blur-sm border-r-2 border-b-2 p-12 h-full hover:border-[#fbbc2c] transition-all duration-300 shadow-lg hover:shadow-2xl">
-                <FaRocket className="text-6xl text-[#fbbc2c] mb-6" />
-                <h3 className="text-4xl font-black mb-6 text-[#fbbc2c]">Our Mission</h3>
-                <p className="text-lg text-gray-100 leading-relaxed">
+            <div className="group relative h-full ">
+              <div className="absolute blur-3xl bg-blue-400 lg:right-56 opacity-35 lg:w-96 lg:h-60 w-60 h-60 rounded-full z-0"></div>
+              {/* Hover Gradient */}
+              <div className="absolute z-20 inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90  rounded-3xl transition-opacity duration-500" />
+
+
+              <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-l-2 border-b-2 md:p-12 p-6 h-full  
+                  transition-all duration-300 shadow-lg hover:shadow-2xl">
+
+                <FaRocket className="text-6xl text-[#fbbc2c]  group-hover:text-white mb-6 transition-transform duration-300 group-hover:scale-170 " />
+
+                {/* Title */}
+                <h3 className="text-4xl font-black mb-6 group-hover:text-white habibi text-[#0289f7]
+                   transition-all duration-300 group-hover:text-5xl">
+                  Our Mission
+                </h3>
+
+                {/* Description (keeps space, fades out) */}
+                <p
+                  className="text-lg text-gray-100 leading-relaxed
+                 transition-all duration-300
+                 group-hover:opacity-0 group-hover:hidden "
+                >
                   To empower learners with skills, knowledge, and opportunities
                   through modern, engaging, and flexible online education that
                   adapts to your pace and goals.
@@ -196,17 +218,25 @@ const AboutUs = () => {
               </div>
             </div>
 
+
+
+
+
+
+
             <div className="group relative h-full ">
+              <div className="absolute blur-3xl bg-blue-400 lg:right-26 opacity-35 lg:w-96 lg:h-60 w-60 h-60 rounded-full z-0"></div>
               {/* Hover Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90  rounded-3xl transition-opacity duration-500" />
+              <div className="absolute z-20 inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90   transition-opacity duration-500" />
+
 
               <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-l-2 border-b-2 md:p-12 p-6 h-full  
                   transition-all duration-300 shadow-lg hover:shadow-2xl">
 
-                <FaGlobe className="text-6xl text-[#1983da] group-hover:text-white mb-6 transition-transform duration-300 group-hover:scale-170 " />
+                <FaGlobe className="text-6xl text-[#058dfd] group-hover:text-white mb-6 transition-transform duration-300 group-hover:scale-170 " />
 
                 {/* Title */}
-                <h3 className="text-4xl font-black mb-6 group-hover:text-white habibi text-[#1983da]
+                <h3 className="text-4xl font-black mb-6 group-hover:text-white habibi text-[#0289f7]
                    transition-all duration-300 group-hover:text-5xl">
                   Our Vision
                 </h3>
@@ -278,7 +308,7 @@ const AboutUs = () => {
       {/* CTA Section */}
       <div className="relative py-32 px-6 ">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="relative bg-gradient-to-r from-[#fbbc2c] via-[#1e8a78] to-[#fbbc2c] rounded-3xl p-16 overflow-hidden shadow-2xl">
+          <div className="relative bg-gradient-to-r from-[#fbbc2c] via-[#1e8a78] to-[#fbbc2c]  p-16 overflow-hidden shadow-2xl">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzBoLTZ2LTZoNnYtNmg2djZoNnY2aC02djZoLTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')]"></div>
             </div>
