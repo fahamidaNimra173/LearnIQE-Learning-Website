@@ -211,9 +211,8 @@ const AboutUs = () => {
                  transition-all duration-300
                  group-hover:opacity-0 group-hover:hidden "
                 >
-                  To empower learners with skills, knowledge, and opportunities
-                  through modern, engaging, and flexible online education that
-                  adapts to your pace and goals.
+                 Our mission is to simplify access to quality education by bringing together free courses from multiple trusted learning platforms such as Udemy, edX, Coursera, Ostad, and Khan Academy in one centralized place. We aim to help learners easily discover relevant courses, develop practical skills, and learn at their own pace—without worrying about cost, platform confusion, or geographical limitations.
+                
                 </p>
               </div>
             </div>
@@ -247,9 +246,7 @@ const AboutUs = () => {
                  transition-all duration-300
                  group-hover:opacity-0 group-hover:hidden "
                 >
-                  To build a global learning platform where students and
-                  instructors grow together, breaking barriers of geography,
-                  background, and resources.
+               Our vision is to create a globally accessible learning ecosystem where education is truly free, inclusive, and barrier-free. We envision a future where learners from all backgrounds can continuously grow by accessing high-quality educational resources across platforms, empowering them to improve their skills, unlock opportunities, and shape a better future for themselves and their communities.
                 </p>
               </div>
             </div>
