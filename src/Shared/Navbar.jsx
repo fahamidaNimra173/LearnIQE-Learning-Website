@@ -33,8 +33,8 @@ const NavigationBar = ({ activeSection }) => {
   };
 
   return (
-    <div className={`navbar fixed top-0 z-50 w-full md:px-25 transition-all duration-300 px-6 py-4`}>
-      
+    <div className={`navbar fixed top-0 z-50 w-full bg-black/75 md:bg-none md:px-25 transition-all duration-300 px-6 py-2`}>
+
       {/* Left Brand */}
       <div className="navbar-start">
         <div className="flex items-center pt-1.5">
@@ -53,7 +53,7 @@ const NavigationBar = ({ activeSection }) => {
       {/* Middle Links */}
       <div className={`navbar-center ${isScrolled ? "border-1 rounded-3xl border-gray-400 bg-black/70  px-15 py-2" : "border-0"}     
         habibi hidden dark:text-[#000000] lg:flex gap-6`}>
-        
+
         <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] 
           font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
           Home
@@ -118,7 +118,7 @@ const NavigationBar = ({ activeSection }) => {
           </>
         ) : (
           <>
-            <NavLink to="/login" className="btnUI outfit">Log In</NavLink>
+
 
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -157,7 +157,7 @@ const NavigationBar = ({ activeSection }) => {
           </div>
 
           {/* Mobile Nav Links */}
-          <div className='flex flex-col justify-center h-full relative z-10 space-y-2 pt-16'>
+          <div className='flex flex-col justify-center h-full relative z-10 space-y-2 py-10 md:pt-16'>
 
             <NavLink to="/" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
               <span className="relative z-10 outfit group-hover:text-[#FFCFEF]">Home</span>
@@ -178,6 +178,7 @@ const NavigationBar = ({ activeSection }) => {
             <NavLink to="/aboutUs" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
               <span className="relative outfit z-10 group-hover:text-[#FFCFEF]">About Us</span>
             </NavLink>
+            <NavLink to="/login" className="btnUI outfit">Log In</NavLink>
 
           </div>
 
