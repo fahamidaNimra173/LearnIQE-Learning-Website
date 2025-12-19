@@ -21,7 +21,7 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-[#060606] dark:bg-[#000101] text-gray-900 overflow-hidden">
       {/* Hero Section with Animated Gradient */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative mt-24 min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Orbs */}
         <div className="absolute inset-0 z-10 ">
           <div className="absolute top-1/7 -left-30 w-86 h-72  bg-[#f4d99c] rounded-t-full   opacity-25 blur-2xl border-[30px] border-black animate-blob"></div>
@@ -33,18 +33,11 @@ const AboutUs = () => {
           >
             Coursera
           </motion.div>
-          <motion.div
-            style={{ scale }}
-            className="absolute top-0 right-20 w-86 h-72 uppercase text-5xl font-extrabold text-blue-500 opacity-65 animation-delay-4000"
-          >
-            udemy
-          </motion.div>
-
-
-          <motion.div style={{ scale }} className="absolute bottom-70 right-40 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-400  opacity-60    animation-delay-4000">edx</motion.div>
-          <motion.div style={{ scale }} className="absolute -bottom-30 right-120 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-100  opacity-60    animation-delay-4000">Alison</motion.div>
-          <motion.div style={{ scale }} className="absolute -bottom-20 right-35 w-86 h-72 uppercase   text-5xl font-extrabold text-yellow-400  opacity-60    animation-delay-4000">Ostad</motion.div>
-          <motion.div style={{ scale }} className="absolute bottom-20 right-10 w-86 h-72 uppercase   text-5xl font-extrabold text-green-400  opacity-60    animation-delay-4000">KhanAcademy</motion.div>
+          <motion.div style={{ scale }} className="absolute  top-0      md:right-40  left-26 w-86 h-72 uppercase text-5xl font-extrabold text-blue-500 opacity-65 animation-delay-4000">udemy</motion.div>
+          <motion.div style={{ scale }} className="absolute  bottom-70  md:right-40  right-4  w-86 h-72 uppercase   text-5xl font-extrabold text-blue-400   md:opacity-60 opacity-30    animation-delay-4000">edx</motion.div>
+          <motion.div style={{ scale }} className="absolute -bottom-30  md:right-120 right-0 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-100   md:opacity-60 opacity-30    animation-delay-4000">Alison</motion.div>
+          <motion.div style={{ scale }} className="absolute -bottom-20  md:right-35  left-3  w-86 h-72 uppercase   text-5xl font-extrabold text-yellow-400 md:opacity-60 opacity-30    animation-delay-4000">Ostad</motion.div>
+          <motion.div style={{ scale }} className="absolute  bottom-20  md:right-10  right-1  w-86 h-72 uppercase   text-5xl font-extrabold text-green-400  md:opacity-60 opacity-30    animation-delay-4000">KhanAcademy</motion.div>
         </div>
 
         {/* Hero Content */}
@@ -87,21 +80,24 @@ const AboutUs = () => {
 
       {/* Our Story Section with Image */}
       <div className="relative py-32 px-6 ">
-         <div className="absolute  bg-transparent top-50 right-10 w-76 h-76 border-2 border-t-blue-400 border-b-blue-400 border-l-black border-r-blue-400 rotate-6  rounded-full z-10 "></div>
-         <div className="absolute  bg-transparent top-60 right-20 w-56 h-56 border-2 border-t-blue-400 border-b-blue-400 border-l-black border-r-black -rotate-20 animate-spin bg-gradient-to-b from-blue-400/40 via-transparent to-transparent rounded-full z-10 "></div>
-         <div className="absolute  bg-transparent top-53 shadow-2xl shadow-blue-400/70 right-13 w-70 h-70 border-2 border-t-blue-400 border-b-blue-400 border-l-black border-r-blue-400 rotate-180  rounded-full z-10 "></div>
+        <div className="absolute bg-transparent bottom-11 md:bottom-44 lg:top-49 right-8 lg:right-9 w-78 h-78 border-8 border-t-blue-400 border-b-blue-400 border-l-black border-r-black rotate-6 rounded-full z-10 animate-[spin_8s_linear_infinite_reverse] opacity-70"></div>
 
+        <div className="absolute bg-transparent bottom-22  md:bottom-55 lg:top-60 right-20 w-56 h-56 border-8 border-t-blue-400 border-b-blue-400 border-l-black border-r-black -rotate-20 animate-[spin_3s_ease-in-out_infinite] bg-gradient-to-b from-blue-400/40 via-transparent to-transparent rounded-full z-10 shadow-lg shadow-blue-400/30"></div>
+
+        <div className="absolute bg-transparent  bottom-15 md:bottom-48 lg:top-53 right-13 w-70 h-70 border-2 border-t-blue-400 border-b-blue-400 border-l-black border-r-blue-400 rotate-180 rounded-full z-10 animate-[pulse_4s_ease-in-out_infinite] shadow-2xl shadow-blue-400/70"></div>
+
+        <div className="absolute bg-transparent -bottom-3 lg:top-56 right-16 w-64 h-64 border border-blue-400/30 rounded-full z-10 animate-[spin_12s_linear_infinite] blur-sm"></div>
         <div className="absolute bg-blue-500 rounded-b-2xl rotate-60 z-10 opacity-70 bottom-25 right-1/2 blur-3xl w-4/5 h-26 ">
-         
+
         </div>
-        <div className="max-w-6xl z-20 mx-auto">
-          <div className="grid lg:grid-cols-2 gap-10 overflow-hidden items-center">
+        <div className="lg:max-w-6xl w-full z-20 lg:mx-auto">
+          <div className="lg:grid lg:grid-cols-2 gap-10 lg:overflow-hidden items-center">
             <  motion.div
               initial={{ rotate: 0 }}
               whileInView={{ rotate: -7 }}
               transition={{ duration: 2, ease: "linear" }}
 
-              className="space-y-6 relative border-1 border-blue-500 shadow-2xl shadow-blue-300  p-8">
+              className="space-y-6 lg:block hidden relative border-1 border-blue-500 shadow-2xl shadow-blue-300  p-8">
               <div className="absolute bg-blue-500 rounded-full rotate-60 -z-10 opacity-50 top-0 right-0 blur-3xl w-76 h-76 ">
 
               </div>
@@ -125,8 +121,36 @@ const AboutUs = () => {
               </p>
 
             </motion.div>
+            {/* for smaller device */}
+            <  motion.div
+             
 
-            <div className="relative z-20">
+              className="space-y-6 block lg:hidden relative border-1 border-blue-500 shadow-2xl shadow-blue-300  p-2">
+              <div className="absolute bg-blue-500 rounded-full rotate-60 -z-10 opacity-50 top-0 right-0 blur-3xl w-76 h-76 ">
+
+              </div>
+              <h2 className="text-4xl z-30 font-medium uppercase">
+                <span className=" text-white">
+                  Our <span className="text-blue-500">Story</span>
+                </span>
+              </h2>
+              <div className="h-[3px]  w-74 bg-gradient-to-r from-[#0c0a05] via-[#0f98e7] to-transparent"></div>
+              <p className="text-md z-20 text-gray-100 leading-relaxed">
+                LearnIQ was born from a simple idea: making quality education accessible to everyone, everywhere.
+                This platform is being built to gather and share as many free learning resources as possible —
+                courses that many people are unaware of or have never discovered.
+              </p>
+
+              <p className="text-md z-50 text-gray-300 leading-relaxed">
+                By connecting learners with trusted platforms and valuable free courses, LearnIQ helps people
+                learn new skills, explore their interests, and build meaningful careers. We believe education
+                should break barriers, not create them, and everyone deserves access to world-class learning
+                opportunities.
+              </p>
+
+            </motion.div>
+
+            <div className="relative z-20 mt-10">
 
 
               <div className="absolute inset-0 bg-gradient-to-br from-[#f7bd36] via-transparent to-[#010302] rounded-3xl transform rotate-3"></div>
