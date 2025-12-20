@@ -19,7 +19,7 @@ const AboutUs = () => {
 
   const scale = useTransform(scrollYProgress, [0, 0.4], [0.4, 7])
   return (
-    <div className="min-h-screen bg-[#060606] dark:bg-[#a5e410] text-gray-900 overflow-hidden">
+    <div className="min-h-screen bg-[#060606] dark:bg-[#050505] text-gray-900 overflow-hidden">
       {/* Hero Section with Animated Gradient */}
       <div className="relative  min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Orbs */}
@@ -56,7 +56,7 @@ const AboutUs = () => {
 
 
           <div className="mb-8 mt-28 lg:mt-10">
-            <h1 className="text-7xl md:text-9xl font-black mb-6 righteous bg-gradient-to-r from-[#fcf801] via-[#53c0fa] to-[#fbfb2c] bg-clip-text text-transparent animate-pulse-slow ">
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black mb-6 righteous bg-gradient-to-r from-[#fcf801] via-[#53c0fa] to-[#fbfb2c] bg-clip-text text-transparent animate-pulse-slow ">
               <span className="text-yellow-100">L</span>earnIQ
             </h1>
             <div className="h-1 w-32 bg-gradient-to-r from-[#fbbc2c] to-[#2185f7] mx-auto mb-8"></div>
@@ -277,8 +277,8 @@ const AboutUs = () => {
 
         <div className="absolute inset-0 bg-[#2c86fb]/80"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 w-full lg:max-w-7xl lg:mx-auto">
+          <div className="lg:grid lg:grid-cols-2 gap-16 items-center">
 
             {/* Left Side - Student Image with Floating Platform Logos */}
             <div className="relative h-[600px] flex items-center justify-center">
@@ -337,7 +337,7 @@ const AboutUs = () => {
             {/* Right Side - Motivational Content */}
             <div className="text-white space-y-8">
               <div className="space-y-4">
-                <h2 className="text-5xl lg:text-6xl font-black leading-tight">
+                <h2 className="sm:text-5xl text-4xl lg:text-6xl font-black leading-tight">
                   Learn Anything,
                   <span className="block text-[#fbbc2c]">Completely Free</span>
                 </h2>
@@ -350,7 +350,7 @@ const AboutUs = () => {
                 </p>
 
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <div className="flex items-start gap-4">
+                  <div className="flex sm:flex-row flex-col items-start gap-4">
                     <div className="w-12 h-12 bg-[#fbbc2c] rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
