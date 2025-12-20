@@ -184,17 +184,17 @@ const AboutUs = () => {
       </div> */}
 
       {/* Mission & Vision */}
-      <div className="relative py-32 px-6 bg-[#020202]">
+      <div className="relative py-32 px-6 ">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 ">
             {/* Mission */}
             <div className="group relative h-full ">
               <div className="absolute blur-3xl bg-blue-400 lg:right-56 opacity-35 lg:w-96 lg:h-60 w-60 h-60 rounded-full z-0"></div>
               {/* Hover Gradient */}
-              <div className="absolute z-20 inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90  rounded-3xl transition-opacity duration-500" />
+              <div className="absolute z-20 inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90   transition-opacity duration-500" />
 
 
-              <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-l-2 border-b-2 md:p-12 p-6 h-full  
+              <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-r-2 border-b-2 md:p-12 p-6 h-full  
                   transition-all duration-300 shadow-lg hover:shadow-2xl">
 
                 <FaRocket className="text-6xl text-[#fbbc2c]  group-hover:text-white mb-6 transition-transform duration-300 group-hover:scale-170 " />
