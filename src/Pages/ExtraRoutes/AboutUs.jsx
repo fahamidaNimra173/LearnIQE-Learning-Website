@@ -19,7 +19,7 @@ const AboutUs = () => {
 
   const scale = useTransform(scrollYProgress, [0, 0.4], [0.4, 7])
   return (
-    <div className="min-h-screen bg-[#060606] dark:bg-[#000101] text-gray-900 overflow-hidden">
+    <div className="min-h-screen bg-[#060606] dark:bg-[#a5e410] text-gray-900 overflow-hidden">
       {/* Hero Section with Animated Gradient */}
       <div className="relative  min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Orbs */}
@@ -27,26 +27,27 @@ const AboutUs = () => {
           <div className="absolute top-1/7 -left-30 w-86 h-72  bg-[#f4d99c] rounded-t-full   opacity-25 blur-2xl border-[30px] border-black animate-blob"></div>
           <div className="absolute bottom-1/5 -left-0 w-86  h-72 bg-[#2092f0]  mix-blend-multiply filter   opacity-45 animate-blob border-[20px] border-white blur-2xl animation-delay-2000"></div>
           <div className="absolute bottom-0 -left-30 w-86 h-72  bg-[#a427ca] rounded-full mix-blend-multiply filter  opacity-25 blur-2xl animate-blob animation-delay-4000"></div>
-         
+
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
-          <div className=" absolute top-40 blur-2xl -right-70 opacity-35   w-90 h-80 rounded-b-full z-20 rotate-12    bg-[#dafc00]     "></div>
-                    <div className=" absolute -top-10   opacity-100 -right-90 blur-xl w-[600px] h-8  z-20 rotate-10      bg-gradient-to-r from-[#c0fb00] via-black to-black     "></div>
+          <div className=" absolute top-40 blur-2xl -right-70 opacity-30   w-90 h-80 rounded-b-full z-20 rotate-12    bg-[#dafc00]     "></div>
+          <div className=" absolute -top-8  blur-2xl opacity-100 -right-120  w-[600px] h-15  z-20 rotate-8     bg-black     "></div>
+          <div className=" absolute -bottom-32 blur-xl   opacity-100 -right-110  w-[600px] h-15  z-20 rotate-0     bg-black     "></div>
           <div className="flex rotate-10 absolute items-end justify-end -right-70 lg:-right-120">
             <div className="   opacity-19 -mt-95       w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25    w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
             <div className="   opacity-25 -mt-0  w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
             <div className="   opacity-25 -mt-0  w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70 "></div>
-            <div className="   opacity-25 -mt-0   w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
+            <div className="   opacity-25 -mt-0  w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
             <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70   "></div>
             <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70   "></div>
             <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70 "></div>
@@ -67,8 +68,7 @@ const AboutUs = () => {
           </p>
 
           <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-            Bridging learners and educators in a space where skills are built,
-            opportunities thrive, and futures are shaped.
+            Making free online learning easy to find and accessible for everyone.
           </p>
 
           <div className="mt-12 flex flex-wrap gap-4 justify-center">
