@@ -269,47 +269,119 @@ const AboutUs = () => {
 
       {/* What We Offer - with background image */}
       <div
-        className="relative py-32 px-6 bg-cover bg-center"
+        className="relative py-10 px-6 bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: "url('https://i.ibb.co/twJJ5LmD/school-work-851328-1280.jpg')" }}
       >
+        {/* Add keyframes style */}
+
+
         <div className="absolute inset-0 bg-[#2c86fb]/80"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-6xl font-black mb-6 text-white">
-              What We Offer
-            </h2>
-            <div className="h-1 w-32 bg-gradient-to-r from-white to-[#1e8a78] mx-auto"></div>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <FeatureCard
-              icon={FaChalkboardTeacher}
-              title="Expert Instructors"
-              description="Learn from industry professionals and subject experts who are passionate about teaching."
-              color="#fbbc2c"
-              isHovered={hoveredCard === 0}
-              onHover={() => setHoveredCard(0)}
-              onLeave={() => setHoveredCard(null)}
-            />
-            <FeatureCard
-              icon={MdCastForEducation}
-              title="Flexible Learning"
-              description="Access courses anytime, anywhere at your own pace. Learn on your schedule."
-              color="#1e8a78"
-              isHovered={hoveredCard === 1}
-              onHover={() => setHoveredCard(1)}
-              onLeave={() => setHoveredCard(null)}
-            />
-            <FeatureCard
-              icon={IoMdCodeWorking}
-              title="Practical Skills"
-              description="Hands-on projects, real-world examples, and career growth opportunities await."
-              color="#fbbc2c"
-              isHovered={hoveredCard === 2}
-              onHover={() => setHoveredCard(2)}
-              onLeave={() => setHoveredCard(null)}
-            />
+            {/* Left Side - Student Image with Floating Platform Logos */}
+            <div className="relative h-[600px] flex items-center justify-center">
+              {/* Central Student Image */}
+              <div className="relative z-20 w-80 h-80 rounded-full overflow-hidden border-2 border-white shadow-2xl">
+                <img
+                  src="https://i.ibb.co.com/Ldh3T7gX/home-based-learning-8968710-1280-1-1.png"
+                  alt="Student learning"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
+              </div>
+
+              {/* Floating Platform Logos */}
+              {/* Udemy - Top Left */}
+              <div className="float-1 absolute top-0 left-0 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <img src="https://i.ibb.co.com/pBtG5PQ5/udemy.png" alt="Udemy" className="w-16 h-16 object-contain" />
+              </div>
+
+              {/* Coursera - Top Right */}
+              <div className="float-2 absolute top-10 right-0 w-28 h-28 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <img src="https://i.ibb.co.com/r2KS9zf4/Coursera-Logo.png" alt="Coursera" className="w-18 h-18 object-contain" />
+              </div>
+
+              {/* edX - Left Middle */}
+              <div className="float-3 absolute left-0 top-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <img src="https://i.ibb.co.com/QvYnY3q0/favicon.jpg" alt="edX" className="w-14 h-14 object-contain" />
+              </div>
+
+              {/* Khan Academy - Right Middle */}
+              <div className="float-4 absolute right-0 top-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Khan_Academy_logo.svg" alt="Khan Academy" className="w-16 h-16 object-contain" />
+              </div>
+
+              {/* Ostad - Bottom Left */}
+            <div className="float-5 absolute bottom-5 left-10 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <img src="hhttps://i.ibb.co.com/SDHnw2fD/ostad-logo.jpg" alt="Khan Academy" className="w-16 h-16 object-contain" />
+              </div>
+
+              {/* Alison - Bottom Right */}
+             <div className="float-6 absolute bottom-0 right-20 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <img src="https://i.ibb.co.com/Y4ftBZVB/Screenshot-2025-12-11-230019.png" alt="Khan Academy" className="w-16 h-16 object-contain" />
+              </div>
+
+              {/* 10 Minute School - Bottom Center */}
+              <div className="float-7 absolute top-10 left-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <img src="https://i.ibb.co.com/SXJx72YD/10min-School.png" alt="Khan Academy" className="w-16 h-16 object-contain" />
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="ping-custom absolute top-1/4 left-1/4 w-3 h-3 bg-yellow-400 rounded-full"></div>
+              <div className="ping-custom absolute bottom-1/4 right-1/4 w-2 h-2 bg-green-400 rounded-full" style={{ animationDelay: '0.5s' }}></div>
+              <div className="ping-custom absolute top-1/2 right-1/3 w-2 h-2 bg-pink-400 rounded-full" style={{ animationDelay: '1s' }}></div>
+            </div>
+
+            {/* Right Side - Motivational Content */}
+            <div className="text-white space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-5xl lg:text-6xl font-black leading-tight">
+                  Learn Anything,
+                  <span className="block text-[#fbbc2c]">Completely Free</span>
+                </h2>
+                <div className="h-1 w-32 bg-gradient-to-r from-white to-[#fbbc2c]"></div>
+              </div>
+
+              <div className="space-y-6 text-lg">
+                <p className="leading-relaxed text-white/90">
+                  Access <span className="font-bold text-[#fbbc2c]">thousands of premium courses</span> from world-renowned platforms like Udemy, Coursera, edX, and Khan Academy — all at zero cost.
+                </p>
+
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-[#fbbc2c] rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl mb-2">AI-Powered Learning Assistant</h3>
+                      <p className="text-white/80">Get instant help, personalized recommendations, and 24/7 support from our intelligent AI tutor.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-[#fbbc2c] rounded-full"></div>
+                    <p className="text-white/90">No hidden fees, no credit card required</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-[#1e8a78] rounded-full"></div>
+                    <p className="text-white/90">Learn at your own pace, on your schedule</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-[#fbbc2c] rounded-full"></div>
+                    <p className="text-white/90">Certificates and practical skills for career growth</p>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
           </div>
         </div>
       </div>
@@ -341,6 +413,39 @@ const AboutUs = () => {
         </div>
       </div>
 
+      {/* learn anything complety free animation */}
+      <style jsx>{`
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes float-delayed-1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-25px); }
+    }
+    @keyframes float-delayed-2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-18px); }
+    }
+    @keyframes float-delayed-3 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-22px); }
+    }
+    @keyframes ping-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+    
+    .float-1 { animation: float 3s ease-in-out infinite; }
+    .float-2 { animation: float-delayed-1 4s ease-in-out infinite; }
+    .float-3 { animation: float-delayed-2 3.5s ease-in-out infinite; }
+    .float-4 { animation: float-delayed-3 4.5s ease-in-out infinite; }
+    .float-5 { animation: float 3.8s ease-in-out infinite; }
+    .float-6 { animation: float-delayed-1 4.2s ease-in-out infinite; }
+    .float-7 { animation: float-delayed-2 3.3s ease-in-out infinite; }
+    .ping-custom { animation: ping-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+  `}</style>
+      {/* banner animation */}
       <style jsx>{`
         @keyframes blob {
           0%, 100% { transform: translate(0, 0) scale(1); }
