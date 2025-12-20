@@ -42,6 +42,23 @@ const AboutUs = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
+
+          <div className="flex absolute items-end justify-end -right-90">
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    via-transparent to-white/10      "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50  via-transparent to-blue-300/40   "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50  via-transparent to-blue-300/40   "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    via-transparent to-white/10      "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50    via-transparent to-white/10      "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  via-transparent to-blue-300/40   "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50     via-transparent to-blue-300/40 "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50    via-transparent to-white/10      "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    via-transparent to-white/10      "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50  via-transparent to-blue-300/40   "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50     via-transparent to-blue-300/40 "></div>
+            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    via-transparent to-white/10      "></div>
+          </div>
+
+
           <div className="mb-8">
             <h1 className="text-7xl md:text-9xl font-black mb-6 righteous bg-gradient-to-r from-[#fcf801] via-[#53c0fa] to-[#fbfb2c] bg-clip-text text-transparent animate-pulse-slow ">
               <span className="text-yellow-100">L</span>earnIQ
@@ -211,8 +228,8 @@ const AboutUs = () => {
                  transition-all duration-300
                  group-hover:opacity-0 group-hover:hidden "
                 >
-                 Our mission is to simplify access to quality education by bringing together free courses from multiple trusted learning platforms such as Udemy, edX, Coursera, Ostad, and Khan Academy in one centralized place. We aim to help learners easily discover relevant courses, develop practical skills, and learn at their own pace—without worrying about cost, platform confusion, or geographical limitations.
-                
+                  Our mission is to simplify access to quality education by bringing together free courses from multiple trusted learning platforms such as Udemy, edX, Coursera, Ostad, and Khan Academy in one centralized place. We aim to help learners easily discover relevant courses, develop practical skills, and learn at their own pace—without worrying about cost, platform confusion, or geographical limitations.
+
                 </p>
               </div>
             </div>
@@ -246,7 +263,7 @@ const AboutUs = () => {
                  transition-all duration-300
                  group-hover:opacity-0 group-hover:hidden "
                 >
-               Our vision is to create a globally accessible learning ecosystem where education is truly free, inclusive, and barrier-free. We envision a future where learners from all backgrounds can continuously grow by accessing high-quality educational resources across platforms, empowering them to improve their skills, unlock opportunities, and shape a better future for themselves and their communities.
+                  Our vision is to create a globally accessible learning ecosystem where education is truly free, inclusive, and barrier-free. We envision a future where learners from all backgrounds can continuously grow by accessing high-quality educational resources across platforms, empowering them to improve their skills, unlock opportunities, and shape a better future for themselves and their communities.
                 </p>
               </div>
             </div>
