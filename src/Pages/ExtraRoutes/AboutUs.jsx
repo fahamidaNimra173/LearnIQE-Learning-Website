@@ -21,45 +21,40 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-[#060606] dark:bg-[#000101] text-gray-900 overflow-hidden">
       {/* Hero Section with Animated Gradient */}
-      <div className="relative mt-24 lg:mt-10 min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative  min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Orbs */}
         <div className="absolute inset-0 z-10 ">
           <div className="absolute top-1/7 -left-30 w-86 h-72  bg-[#f4d99c] rounded-t-full   opacity-25 blur-2xl border-[30px] border-black animate-blob"></div>
           <div className="absolute bottom-1/5 -left-0 w-86  h-72 bg-[#2092f0]  mix-blend-multiply filter   opacity-45 animate-blob border-[20px] border-white blur-2xl animation-delay-2000"></div>
           <div className="absolute bottom-0 -left-30 w-86 h-72  bg-[#a427ca] rounded-full mix-blend-multiply filter  opacity-25 blur-2xl animate-blob animation-delay-4000"></div>
-          <motion.div
-            style={{ scale }}
-            className="absolute bottom-0 right-20 w-86 h-72 uppercase text-5xl font-extrabold text-blue-500 opacity-65 animation-delay-4000"
-          >
-            Coursera
-          </motion.div>
-          <motion.div style={{ scale }} className="absolute  top-0      md:right-40  left-26 w-86 h-72 uppercase text-5xl font-extrabold text-blue-500 opacity-65 animation-delay-4000">udemy</motion.div>
-          <motion.div style={{ scale }} className="absolute  bottom-70  md:right-40  right-4  w-86 h-72 uppercase   text-5xl font-extrabold text-blue-400   md:opacity-60 opacity-30    animation-delay-4000">edx</motion.div>
-          <motion.div style={{ scale }} className="absolute -bottom-30  md:right-120 right-0 w-86 h-72 uppercase   text-5xl font-extrabold text-blue-100   md:opacity-60 opacity-30    animation-delay-4000">Alison</motion.div>
-          <motion.div style={{ scale }} className="absolute -bottom-20  md:right-35  left-3  w-86 h-72 uppercase   text-5xl font-extrabold text-yellow-400 md:opacity-60 opacity-30    animation-delay-4000">Ostad</motion.div>
-          <motion.div style={{ scale }} className="absolute  bottom-20  md:right-10  right-1  w-86 h-72 uppercase   text-5xl font-extrabold text-green-400  md:opacity-60 opacity-30    animation-delay-4000">KhanAcademy</motion.div>
+         
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
-
-          <div className="flex absolute items-end justify-end -right-90">
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    via-transparent to-white/10      "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50  via-transparent to-blue-300/40   "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50  via-transparent to-blue-300/40   "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    via-transparent to-white/10      "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50    via-transparent to-white/10      "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  via-transparent to-blue-300/40   "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50     via-transparent to-blue-300/40 "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50    via-transparent to-white/10      "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    via-transparent to-white/10      "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50  via-transparent to-blue-300/40   "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50     via-transparent to-blue-300/40 "></div>
-            <div className="  rotate-5 opacity-25   w-10 h-screen z-20    border-l-[#fcfdff] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    via-transparent to-white/10      "></div>
+          <div className=" absolute top-40 blur-2xl -right-70 opacity-35   w-90 h-80 rounded-b-full z-20 rotate-12    bg-[#dafc00]     "></div>
+                    <div className=" absolute -top-10   opacity-100 -right-90 blur-xl w-[600px] h-8  z-20 rotate-10      bg-gradient-to-r from-[#c0fb00] via-black to-black     "></div>
+          <div className="flex rotate-10 absolute items-end justify-end -right-70 lg:-right-120">
+            <div className="   opacity-19 -mt-95       w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-25    w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
+            <div className="   opacity-25 -mt-0  w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
+            <div className="   opacity-25 -mt-0  w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70 "></div>
+            <div className="   opacity-25 -mt-0   w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70   "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70 "></div>
+            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70   "></div>
           </div>
 
 
-          <div className="mb-8">
+          <div className="mb-8 mt-28 lg:mt-10">
             <h1 className="text-7xl md:text-9xl font-black mb-6 righteous bg-gradient-to-r from-[#fcf801] via-[#53c0fa] to-[#fbfb2c] bg-clip-text text-transparent animate-pulse-slow ">
               <span className="text-yellow-100">L</span>earnIQ
             </h1>
