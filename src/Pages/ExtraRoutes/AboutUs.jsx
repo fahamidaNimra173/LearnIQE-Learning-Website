@@ -140,8 +140,6 @@ const AboutUs = () => {
             </motion.div>
             {/* for smaller device */}
             <  motion.div
-
-
               className="space-y-6 block lg:hidden relative border-1 border-blue-500 shadow-2xl shadow-blue-300  p-2">
               <div className="absolute bg-blue-500 rounded-full rotate-60 -z-10 opacity-50 top-0 right-0 blur-3xl w-76 h-76 ">
 
@@ -183,17 +181,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
-      {/* <div className="relative py-20 px-6 bg-gradient-to-b from-white to-[#e7efee]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatCard number="50K+" label="Active Learners" />
-            <StatCard number="1K+" label="Expert Instructors" />
-            <StatCard number="500+" label="Courses Available" />
-            <StatCard number="95%" label="Success Rate" />
-          </div>
-        </div>
-      </div> */}
 
       {/* Mission & Vision */}
       <div className="relative py-32 px-6 ">
@@ -228,13 +215,7 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
-
-
-
-
-
-
-
+            {/* vission section */}
             <div className="group relative h-full ">
               <div className="absolute blur-3xl bg-blue-400 lg:right-26 opacity-35 lg:w-96 lg:h-60 w-60 h-60 rounded-full z-0"></div>
               {/* Hover Gradient */}
@@ -314,12 +295,12 @@ const AboutUs = () => {
               </div>
 
               {/* Ostad - Bottom Left */}
-            <div className="float-5 absolute bottom-5 left-10 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-5 absolute bottom-5 left-10 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="hhttps://i.ibb.co.com/SDHnw2fD/ostad-logo.jpg" alt="Khan Academy" className="w-16 h-16 object-contain" />
               </div>
 
               {/* Alison - Bottom Right */}
-             <div className="float-6 absolute bottom-0 right-20 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-6 absolute bottom-0 right-20 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="https://i.ibb.co.com/Y4ftBZVB/Screenshot-2025-12-11-230019.png" alt="Khan Academy" className="w-16 h-16 object-contain" />
               </div>
 
@@ -387,29 +368,162 @@ const AboutUs = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="relative py-32 px-6 ">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="relative bg-gradient-to-r from-[#fbbc2c] via-[#1e8a78] to-[#fbbc2c]  p-16 overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzBoLTZ2LTZoNnYtNmg2djZoNnY2aC02djZoLTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')]"></div>
+      <div
+        className="relative py-20 px-6 bg-cover bg-center overflow-hidden"
+
+      >
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e]/95 via-[#16213e]/90 to-[#0f3460]/95"></div>
+
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-6xl lg:text-7xl font-black text-white mb-4">
+              Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fbbc2c] to-[#f97316]">Connect</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Have a question or want to collaborate? I'd love to hear from you!
+            </p>
+            <div className="h-1 w-40 bg-gradient-to-r from-[#fbbc2c] to-[#f97316] mx-auto mt-6"></div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left Side - Creative Contact Cards */}
+            <div className="space-y-6">
+
+              {/* Email Card */}
+              <div className="group relative bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
+                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="ml-8">
+                  <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Email Address</h3>
+                  <a href="mailto:your.email@example.com" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
+                    your.email@example.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Phone Card */}
+              <div className="group relative bg-gradient-to-r from-green-500/10 to-emerald-500/10 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-green-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-2">
+                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div className="ml-8">
+                  <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Phone Number</h3>
+                  <a href="tel:+1234567890" className="text-2xl font-bold text-white hover:text-green-400 transition-colors">
+                    +1 (234) 567-890
+                  </a>
+                </div>
+              </div>
+
+              {/* Social Links Grid */}
+              <div className="grid grid-cols-3 gap-4 pt-4">
+
+                {/* Portfolio */}
+                <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer" className="group relative bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-lg rounded-2xl p-2 border border-white/10 hover:border-orange-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/30 hover:-translate-y-2 flex flex-col items-center justify-center aspect-square">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-bold text-white">Portfolio</span>
+                </a>
+
+                {/* GitHub */}
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="group relative bg-gradient-to-br from-gray-500/20 to-gray-700/20 backdrop-blur-lg rounded-2xl p-2 border border-white/10 hover:border-gray-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-gray-500/30 hover:-translate-y-2 flex flex-col items-center justify-center aspect-square">
+                  <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-bold text-white">GitHub</span>
+                </a>
+
+                {/* LinkedIn */}
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="group relative bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-lg rounded-2xl p-2 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-2 flex flex-col items-center justify-center aspect-square">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-bold text-white">LinkedIn</span>
+                </a>
+
+              </div>
+
             </div>
 
-            <div className="relative z-10">
-              <h2 className="text-5xl font-black mb-6 text-white">Join the LearnIQ Journey</h2>
-              <p className="text-2xl mb-10 text-white/90">
-                Start your path to knowledge, growth, and success today.
-              </p>
+            {/* Right Side - Creative Visual Element */}
+            <div className="relative h-[400px] hidden lg:flex items-center justify-center">
 
-              <div className="flex flex-wrap gap-6 justify-center">
-                <button nClick={() => { navigate('/allapprovedclasses') }} className="group relative px-10 py-5 bg-white text-[#fbbc2c] rounded-full font-bold text-xl overflow-hidden transition-all duration-300 hover:scale-110 shadow-xl">
-                  <span className="relative z-10">Explore Courses</span>
-                </button>
-                <button nClick={() => { navigate('/teacherform') }} className="px-10 py-5 bg-transparent backdrop-blur-sm border-2 border-white text-white rounded-full font-bold text-xl hover:bg-white/20 transition-all duration-300 hover:scale-110">
-                  Teach With Us
-                </button>
+              {/* Main Circle with Gradient */}
+              <div className="relative w-96 h-96">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#fbbc2c] via-[#f97316] to-[#ef4444] rounded-full blur-2xl opacity-30"></div>
+                <div className="absolute inset-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-xl opacity-40"></div>
+
+                {/* Center Content */}
+                <div className="relative w-full h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e] rounded-full border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
+                  <div className="relative text-center z-10 p-8">
+                    <div className="w-24 h-24 bg-gradient-to-br from-[#fbbc2c] to-[#f97316] rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl">
+                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-3xl font-black text-white mb-3">Start a Conversation</h3>
+                    <p className="text-gray-300 text-lg">Whether it's a project idea, question, or just to say hi!</p>
+                  </div>
+                </div>
+
+                {/* Orbiting Icons */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full shadow-lg shadow-pink-500/50 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+
+                <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/50 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-lg shadow-yellow-500/50 flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                  </svg>
+                </div>
               </div>
+
+            </div>
+
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <p className="text-gray-400 text-lg mb-6">Available for freelance projects and collaborations</p>
+            <div className="flex gap-4 justify-center">
+              <button className="px-10 py-4 bg-gradient-to-r from-[#fbbc2c] to-[#f97316] hover:from-[#f97316] hover:to-[#ef4444] text-white font-bold rounded-full shadow-lg shadow-orange-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/50">
+                Send Message
+              </button>
+              <button className="px-10 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-lg text-white font-bold rounded-full border-2 border-white/20 hover:border-white/40 transition-all hover:scale-105">
+                Download CV
+              </button>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -429,7 +543,9 @@ const AboutUs = () => {
     }
     @keyframes float-delayed-3 {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-22px); }
+      25% { transform: translateY(-32px); }
+      50% { transform: translateY(32px); }
+      50% { transform: translateX(-22px); }
     }
     @keyframes ping-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -470,43 +586,6 @@ const AboutUs = () => {
   );
 };
 
-const StatCard = ({ number, label }) => (
-  <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
-    <div className="text-5xl font-black bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] bg-clip-text text-transparent mb-2">
-      {number}
-    </div>
-    <div className="text-gray-600 font-medium">{label}</div>
-  </div>
-);
 
-const FeatureCard = ({ icon: Icon, title, description, color, isHovered, onHover, onLeave }) => (
-  <div
-    onMouseEnter={onHover}
-    onMouseLeave={onLeave}
-    className="group relative cursor-pointer"
-  >
-    <div className={`absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-0 group-hover:opacity-30 rounded-3xl transition-all duration-500 blur-xl`}></div>
-
-    <div className="relative bg-white/90 backdrop-blur-sm border-2 border-white/50 rounded-3xl p-10 h-full hover:border-white transition-all duration-300 transform hover:-translate-y-2 shadow-lg hover:shadow-2xl">
-      <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${isHovered ? 'bg-gradient-to-br from-[#fbbc2c] to-[#1e8a78] scale-110' : 'bg-[#e7efee]'
-        }`}>
-        <Icon className={`text-4xl ${isHovered ? 'text-white' : 'text-[#fbbc2c]'} transition-colors duration-300`} />
-      </div>
-
-      <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-[#1e8a78] transition-colors duration-300">
-        {title}
-      </h3>
-
-      <p className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
-        {description}
-      </p>
-
-      <div className="mt-6 flex items-center text-[#1e8a78] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
-        <span className="text-sm font-semibold">Learn More</span>
-        <span className="ml-2">→</span>
-      </div>
-    </div>
-  </div>
-);
 
 export default AboutUs;
