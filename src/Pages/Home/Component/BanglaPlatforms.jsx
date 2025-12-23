@@ -75,7 +75,7 @@ export default function BanglaLearningPlatforms() {
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col h-full relative">
                 {/* Image Section with Overlay Title */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
                   <img 
                     src={platform.image}
                     alt={platform.name}
@@ -105,7 +105,7 @@ export default function BanglaLearningPlatforms() {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-6 flex-grow flex flex-col">
+                <div className="px-2 py-4 flex-grow flex flex-col">
                   {/* Focus */}
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -119,22 +119,22 @@ export default function BanglaLearningPlatforms() {
                   </motion.div>
 
                   {/* Courses */}
-                  <div className="flex-grow">
-                    <h3 className="text-lg font-bold text-black mb-4">
+                  <div className="flex-grow ">
+                    <h3 className="text-lg font-bold text-black mb-2">
                       কোর্স সমূহ:
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className=" grid grid-cols-2 gap-0">
                       {platform.courses.map((course, idx) => (
                         <motion.li
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.15 + 0.5 + idx * 0.1 }}
-                          className="flex items-start gap-3"
+                          className="flex space-y-1 items-start justify-center gap-0"
                         >
-                          <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-yellow-400" />
-                          <span className="text-gray-700">
-                            {course}
+                          <div className="w-2 h-2 rounded-full mt-2   " />
+                          <span className="text-gray-700 text-xs">
+                            {course} <span className='text-yellow-300'>|</span>|
                           </span>
                         </motion.li>
                       ))}
@@ -145,7 +145,7 @@ export default function BanglaLearningPlatforms() {
                 {/* Bottom Accent - Fixed at absolute bottom */}
                 <div className="relative w-full">
                   <motion.div
-                    className="h-2 bg-gradient-to-r from-blue-600 to-yellow-400"
+                    className="h-3 -mb-1 bg-gradient-to-r from-blue-600 to-black -rotate-1"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
