@@ -49,7 +49,7 @@ export default function BanglaLearningPlatforms() {
         >
           <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-blue-500 via-yellow-400 to-blue-500 text-transparent bg-clip-text">
-              বাংলা মাধ্যম শিক্ষা প্ল্যাটফর্ম
+             বাংলায় শেখার প্ল্যাটফর্ম
             </span>
           </h1>
           <p className="text-white text-xl max-w-2xl mx-auto">
