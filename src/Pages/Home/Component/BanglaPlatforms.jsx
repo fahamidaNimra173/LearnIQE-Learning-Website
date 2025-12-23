@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Bike, Cast } from 'lucide-react';
 
 export default function BanglaLearningPlatforms() {
   const platforms = [
@@ -49,7 +50,7 @@ export default function BanglaLearningPlatforms() {
         >
           <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-blue-500 via-yellow-400 to-blue-500 text-transparent bg-clip-text">
-             বাংলায় শেখার প্ল্যাটফর্ম
+              বাংলায় শেখার প্ল্যাটফর্ম
             </span>
           </h1>
           <p className="text-white text-xl max-w-2xl mx-auto">
@@ -64,8 +65,8 @@ export default function BanglaLearningPlatforms() {
               key={platform.id}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: index * 0.15,
                 type: "spring",
                 stiffness: 100
@@ -76,14 +77,14 @@ export default function BanglaLearningPlatforms() {
               <div className="bg-white rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col h-full relative">
                 {/* Image Section with Overlay Title */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <img
                     src={platform.image}
                     alt={platform.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   {/* Dark Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent" />
-                  
+
                   {/* Platform Name on Image */}
                   <div className="absolute bottom-0 left-10 right-0 -mb-2">
                     <h2 className="text-2xl font-medium uppercase text-white mb-2 font-mono">
@@ -113,15 +114,15 @@ export default function BanglaLearningPlatforms() {
                     transition={{ delay: index * 0.15 + 0.4 }}
                     className="mb-6"
                   >
-                    <div className="inline-block px-4 py-2 rounded-xl text-sm font-bold text-white bg-blue-600">
-                      {platform.focus}
+                    <div className=" flex items-center justify-around gap-2 px-3 py-1 rounded-xl text-sm font-bold text-white bg-blue-600">
+                      {platform.focus} <span><Cast></Cast></span>
                     </div>
                   </motion.div>
 
                   {/* Courses */}
                   <div className="flex-grow ">
-                    <h3 className="text-lg font-bold text-black mb-2">
-                      কোর্স সমূহ:
+                    <h3 className="text-lg flex gap-1 font-bold text-black mb-2">
+                     <Bike className='text-yellow-400 '></Bike> কোর্স সমূহ:
                     </h3>
                     <ul className=" grid grid-cols-2 gap-0">
                       {platform.courses.map((course, idx) => (
@@ -140,6 +141,12 @@ export default function BanglaLearningPlatforms() {
                       ))}
                     </ul>
                   </div>
+                  <div className='flex items-center justify-center -mb-4'>
+                    <button className='bg-black text-white px-6 py-1 border border-blue-500'>
+                      আরও জানুন
+                    </button>
+                  </div>
+
                 </div>
 
                 {/* Bottom Accent - Fixed at absolute bottom */}
