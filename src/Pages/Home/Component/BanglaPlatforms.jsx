@@ -48,8 +48,8 @@ export default function BanglaLearningPlatforms() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            <span className="bg-gradient-to-r from-blue-500 via-yellow-400 to-blue-500 text-transparent bg-clip-text">
+          <h1 className="text-4xl md:text-7xl font-black mb-6 tracking-tight">
+            <span className="bg-gradient-to-r from-blue-500 via-yellow-200 to-blue-500 text-transparent bg-clip-text">
               বাংলায় শেখার প্ল্যাটফর্ম
             </span>
           </h1>
@@ -59,7 +59,7 @@ export default function BanglaLearningPlatforms() {
         </motion.div>
 
         {/* Platforms Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {platforms.map((platform, index) => (
             <motion.div
               key={platform.id}
@@ -97,12 +97,14 @@ export default function BanglaLearningPlatforms() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: index * 0.15 + 0.3 }}
-                    className="absolute top-4 right-4 bg-black/80  px-4 py-2 rounded-lg backdrop-blur-lg  "
+                    className="absolute top-0 right-0 bg-blue-950/90 px-4 py-2 rounded-lg backdrop-blur-lg border border-blue-400/40 shadow-[0_0_15px_rgba(59,130,246,0.6)]
+  "
                   >
                     <span className="text-sm font-bold text-white">
                       {platform.type}
                     </span>
                   </motion.div>
+
                 </div>
 
                 {/* Content Section */}
@@ -112,7 +114,7 @@ export default function BanglaLearningPlatforms() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: index * 0.15 + 0.4 }}
-                    className="mb-6"
+                    className="mb-3"
                   >
                     <div className=" flex items-center justify-around gap-2 px-3 py-1 rounded-xl text-sm font-bold text-white bg-blue-600">
                       {platform.focus} <span><Cast></Cast></span>
@@ -122,7 +124,7 @@ export default function BanglaLearningPlatforms() {
                   {/* Courses */}
                   <div className="flex-grow ">
                     <h3 className="text-lg flex gap-1 font-bold text-black mb-2">
-                     <Bike className='text-yellow-400 '></Bike> কোর্স সমূহ:
+                      <Bike className='text-yellow-400 '></Bike> কোর্স সমূহ:
                     </h3>
                     <ul className=" grid grid-cols-2 gap-0">
                       {platform.courses.map((course, idx) => (
@@ -141,7 +143,7 @@ export default function BanglaLearningPlatforms() {
                       ))}
                     </ul>
                   </div>
-                  <div className='flex items-center justify-center -mb-4'>
+                  <div className='flex items-center justify-center -mb-4 mt-2'>
                     <button className='bg-black text-white px-6 py-1 border border-blue-500'>
                       আরও জানুন
                     </button>
