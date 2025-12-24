@@ -10,7 +10,8 @@ export default function BanglaLearningPlatforms() {
       image: "https://i.ibb.co.com/999ZB1YB/Screenshot-2025-12-23-021519.png",
       type: "ফ্রি ও পেইড কোর্স",
       focus: "বিভিন্ন ধরনের কোর্স",
-      courses: ["একাডেমিক কোর্স", "স্কিল ডেভেলপমেন্ট", "ভাষা শিক্ষা", "চাকরির প্রস্তুতি", "প্রোগ্রামিং"]
+      courses: ["একাডেমিক কোর্স", "স্কিল ডেভেলপমেন্ট", "ভাষা শিক্ষা", "চাকরির প্রস্তুতি", "প্রোগ্রামিং"],
+      url: "https://10minuteschool.com/"
     },
     {
       id: 2,
@@ -18,7 +19,8 @@ export default function BanglaLearningPlatforms() {
       image: "https://i.ibb.co.com/ZRyGK1cD/Screenshot-2025-12-23-021547.png",
       type: "ফ্রি ও পেইড কোর্স",
       focus: "বিভিন্ন ধরনের কোর্স",
-      courses: ["প্রোগ্রামিং", "ডিজিটাল মার্কেটিং", "গ্রাফিক ডিজাইন", "ফ্রিল্যান্সিং", "ব্যবসা"]
+      courses: ["প্রোগ্রামিং", "ডিজিটাল মার্কেটিং", "গ্রাফিক ডিজাইন", "ফ্রিল্যান্সিং", "ব্যবসা"],
+      url: "https://ostad.app/"
     },
     {
       id: 3,
@@ -26,7 +28,8 @@ export default function BanglaLearningPlatforms() {
       image: "https://i.ibb.co.com/RG3HR2Wr/Screenshot-2025-12-23-021443.png",
       type: "পেইড কোর্স",
       focus: "শুধুমাত্র ওয়েব ডেভেলপমেন্ট",
-      courses: ["ওয়েব ডেভেলপমেন্ট", "ফ্রন্টএন্ড ডেভেলপমেন্ট", "ব্যাকএন্ড ডেভেলপমেন্ট", "ফুল স্ট্যাক"]
+      courses: ["ওয়েব ডেভেলপমেন্ট", "ফ্রন্টএন্ড ডেভেলপমেন্ট", "ব্যাকএন্ড ডেভেলপমেন্ট", "ফুল স্ট্যাক"],
+      url: "https://www.programming-hero.com/"
     },
     {
       id: 4,
@@ -34,13 +37,14 @@ export default function BanglaLearningPlatforms() {
       image: "https://i.ibb.co.com/cXrqtvNC/Screenshot-2025-12-23-021617.png",
       type: "পেইড কোর্স",
       focus: "শুধুমাত্র ওয়েব ডেভেলপমেন্ট",
-      courses: ["ওয়েব ডেভেলপমেন্ট", "সফটওয়্যার ইঞ্জিনিয়ারিং", "প্রবলেম সলভিং", "DSA"]
+      courses: ["ওয়েব ডেভেলপমেন্ট", "সফটওয়্যার ইঞ্জিনিয়ারিং", "প্রবলেম সলভিং", "DSA"],
+      url: "https://phitron.io/"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-black py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-black -mt-20 sm:-mt-10 lg:mt-2 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="md:max-w-7xl md:mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -53,7 +57,7 @@ export default function BanglaLearningPlatforms() {
               বাংলায় শেখার প্ল্যাটফর্ম
             </span>
           </h1>
-          <p className="text-white text-xl max-w-2xl mx-auto">
+          <p className="text-white text-xl md:max-w-2xl md:mx-auto">
             দেশের শীর্ষস্থানীয় অনলাইন শিক্ষা প্ল্যাটফর্মসমূহ
           </p>
         </motion.div>
@@ -87,7 +91,7 @@ export default function BanglaLearningPlatforms() {
 
                   {/* Platform Name on Image */}
                   <div className="absolute bottom-0 left-10 right-0 -mb-2">
-                    <h2 className="text-2xl font-medium uppercase text-white mb-2 font-mono">
+                    <h2 className="text-2xl font-bold  text-yellow-300 mb-2 font-mono">
                       {platform.name}
                     </h2>
                   </div>
@@ -116,8 +120,8 @@ export default function BanglaLearningPlatforms() {
                     transition={{ delay: index * 0.15 + 0.4 }}
                     className="mb-3"
                   >
-                    <div className=" flex items-center justify-around gap-2 px-3 py-1 rounded-xl text-sm font-bold text-white bg-blue-600">
-                      {platform.focus} <span><Cast></Cast></span>
+                    <div className=" flex items-center justify-around gap-2 px-3 py-1 rounded-xl text-sm font-bold text-white bg-yellow-400">
+                      {platform.focus} <span><Cast ></Cast></span>
                     </div>
                   </motion.div>
 
@@ -144,9 +148,11 @@ export default function BanglaLearningPlatforms() {
                     </ul>
                   </div>
                   <div className='flex items-center justify-center -mb-4 mt-2'>
-                    <button className='bg-black text-white px-6 py-1 border border-blue-500'>
-                      আরও জানুন
-                    </button>
+                    <a href={platform.url} target='blank'>
+                      <button className='bg-black text-white px-6 py-1 border border-blue-500'>
+                        আরও জানুন
+                      </button>
+                    </a>
                   </div>
 
                 </div>
@@ -171,11 +177,11 @@ export default function BanglaLearningPlatforms() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="text-center mt-16"
+          className="text-center mt-12"
         >
-          <div className="inline-block bg-gradient-to-r from-blue-600 to-yellow-400 p-1 rounded-full">
-            <div className="bg-black px-8 py-4 rounded-full">
-              <p className="text-xl font-bold text-white">
+          <div className="inline-block bg-gradient-to-r from-blue-600 via-white to-yellow-400 p-1 rounded-full">
+            <div className="bg-black px-4 py-2 rounded-full">
+              <p className="text-xs sm:text-xl font-bold text-white">
                 আপনার পছন্দের প্ল্যাটফর্মে আজই শুরু করুন ✨
               </p>
             </div>
