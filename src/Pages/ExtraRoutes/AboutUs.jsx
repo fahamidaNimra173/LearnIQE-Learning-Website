@@ -250,7 +250,7 @@ const AboutUs = () => {
 
       {/* What We Offer - with background image */}
       <div
-        className="relative py-10 px-6 bg-cover bg-center overflow-hidden"
+        className="relative py-10 md:px-6 px-2 bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: "url('https://i.ibb.co/twJJ5LmD/school-work-851328-1280.jpg')" }}
       >
         {/* Add keyframes style */}
@@ -275,37 +275,37 @@ const AboutUs = () => {
 
               {/* Floating Platform Logos */}
               {/* Udemy - Top Left */}
-              <div className="float-1 absolute top-0 left-0 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-1 absolute top-0 md:left-0 left-20 md:w-24 mdh-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="https://i.ibb.co.com/pBtG5PQ5/udemy.png" alt="Udemy" className="w-16 h-16 object-contain" />
               </div>
 
               {/* Coursera - Top Right */}
-              <div className="float-2 absolute top-10 right-0 w-28 h-28 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-2 absolute top-10 right-0 md:w-28 md:h-28 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="https://i.ibb.co.com/r2KS9zf4/Coursera-Logo.png" alt="Coursera" className="w-18 h-18 object-contain" />
               </div>
 
               {/* edX - Left Middle */}
-              <div className="float-3 absolute left-0 top-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-3 absolute left-0 top-1/5 md:left-1/2 -translate-y-1/2 md:w-20 md:h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="https://i.ibb.co.com/QvYnY3q0/favicon.jpg" alt="edX" className="w-14 h-14 object-contain" />
               </div>
 
               {/* Khan Academy - Right Middle */}
-              <div className="float-4 absolute right-0 top-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-4 absolute right-0 top-1/2 -translate-y-1/2 md:w-24 md:h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Khan_Academy_logo.svg" alt="Khan Academy" className="w-16 h-16 object-contain" />
               </div>
 
               {/* Ostad - Bottom Left */}
-              <div className="float-5 absolute bottom-5 left-10 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-5 absolute bottom-5 left-10 -translate-y-1/2 md:w-24 md:h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="hhttps://i.ibb.co.com/SDHnw2fD/ostad-logo.jpg" alt="Khan Academy" className="w-16 h-16 object-contain" />
               </div>
 
               {/* Alison - Bottom Right */}
-              <div className="float-6 absolute bottom-0 right-20 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-6 absolute bottom-0 md:right-20 right-0 -translate-y-1/2 md:w-24 md:h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="https://i.ibb.co.com/Y4ftBZVB/Screenshot-2025-12-11-230019.png" alt="Khan Academy" className="w-16 h-16 object-contain" />
               </div>
 
               {/* 10 Minute School - Bottom Center */}
-              <div className="float-7 absolute top-10 left-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-7 absolute top-10 md:left-1/2 left-0 -translate-y-1/2 md:w-24 md:h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="https://i.ibb.co.com/SXJx72YD/10min-School.png" alt="Khan Academy" className="w-16 h-16 object-contain" />
               </div>
 
@@ -330,7 +330,7 @@ const AboutUs = () => {
                   Access <span className="font-bold text-[#fbbc2c]">thousands of premium courses</span> from world-renowned platforms like Udemy, Coursera, edX, and Khan Academy — all at zero cost.
                 </p>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl md:p-6 p-2 border border-white/20">
                   <div className="flex sm:flex-row flex-col items-start gap-4">
                     <div className="w-12 h-12 bg-[#fbbc2c] rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -369,7 +369,7 @@ const AboutUs = () => {
 
       {/* CTA Section */}
       <div
-        className="relative py-20 px-6 bg-cover bg-center overflow-hidden"
+        className="relative py-20 md:px-6 px-2 bg-cover bg-center overflow-hidden"
 
       >
         {/* Gradient Overlay */}
@@ -384,46 +384,46 @@ const AboutUs = () => {
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-6xl lg:text-7xl font-black text-white mb-4">
+            <h2 className="md:text-6xl text-4xl lg:text-7xl font-black text-white mb-4">
               Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fbbc2c] to-[#f97316]">Connect</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="md:text-xl text-[14px] text-gray-300 max-w-2xl mx-auto">
               Have a question or want to collaborate? I'd love to hear from you!
             </p>
             <div className="h-1 w-40 bg-gradient-to-r from-[#fbbc2c] to-[#f97316] mx-auto mt-6"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="lg:grid lg:grid-cols-2 gap-16 items-center">
 
             {/* Left Side - Creative Contact Cards */}
             <div className="space-y-6">
 
               {/* Email Card */}
-              <div className="group relative bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
-                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <div className="group relative bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-lg rounded-3xl md:p-8 p-2 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
+                <div className="absolute -top-6 md:-left-6 -left-2 md:w-16 md:h-16 w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <div className="ml-8">
+                <div className="lg:ml-8 ml-2">
                   <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Email Address</h3>
-                  <a href="mailto:your.email@example.com" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
-                    your.email@example.com
+                  <a href="mailto:fahmidanimra@gmail.com" className="md:text-2xl text-[15px] md:font-bold font-medium text-white hover:text-blue-400 transition-colors">
+                    fahmidanimra@gmail.com
                   </a>
                 </div>
               </div>
 
               {/* Phone Card */}
               <div className="group relative bg-gradient-to-r from-green-500/10 to-emerald-500/10 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-green-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-2">
-                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <div className="absolute -top-6 md:-left-6 -left-2 md:w-16 md:h-16 w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <div className="ml-8">
+                <div className="md:ml-8 ">
                   <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Phone Number</h3>
-                  <a href="tel:+1234567890" className="text-2xl font-bold text-white hover:text-green-400 transition-colors">
-                    +1 (234) 567-890
+                  <a href="tel:+8801568029731" className="md:text-2xl text-[15px] font-bold text-white hover:text-green-400 transition-colors">
+                    01568029731
                   </a>
                 </div>
               </div>
@@ -515,10 +515,10 @@ const AboutUs = () => {
           <div className="text-center mt-16">
             <p className="text-gray-400 text-lg mb-6">Available for freelance projects and collaborations</p>
             <div className="flex gap-4 justify-center">
-              <button className="px-10 py-4 bg-gradient-to-r from-[#fbbc2c] to-[#f97316] hover:from-[#f97316] hover:to-[#ef4444] text-white font-bold rounded-full shadow-lg shadow-orange-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/50">
+              <button className="md:px-10 px-5 md:py-4 py-2 bg-gradient-to-r from-[#fbbc2c] to-[#f97316] hover:from-[#f97316] hover:to-[#ef4444] text-white font-bold rounded-full shadow-lg shadow-orange-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/50">
                 Send Message
               </button>
-              <button className="px-10 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-lg text-white font-bold rounded-full border-2 border-white/20 hover:border-white/40 transition-all hover:scale-105">
+              <button className="md:px-10 px-5  md:py-4 py-2 bg-white/5 hover:bg-white/10 backdrop-blur-lg text-white font-bold rounded-full border-2 border-white/20 hover:border-white/40 transition-all hover:scale-105">
                 Download CV
               </button>
             </div>
