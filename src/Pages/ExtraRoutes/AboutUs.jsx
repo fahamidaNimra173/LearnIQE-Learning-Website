@@ -216,20 +216,20 @@ const AboutUs = () => {
               </div>
             </div>
             {/* vission section */}
-            <div className="md:group relative h-full ">
+            <div className="group relative h-full ">
               <div className="absolute blur-3xl bg-blue-400 lg:right-26 opacity-35 lg:w-96 lg:h-60 w-60 h-60 rounded-full z-0"></div>
               {/* Hover Gradient */}
-              <div className="absolute z-20 inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90   transition-opacity duration-500" />
+              <div className="absolute z-20 inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 md:group-hover:opacity-90   md:transition-opacity duration-500" />
 
 
-              <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-l-2 border-b-2 md:p-12 p-2 h-full  
+              <div className="relative  md:group-hover:flex md:group-hover:flex-col md:group-hover:gap-10 md:group-hover:items-center md:group-hover:justify-center backdrop-blur-sm border-l-2 border-b-2 md:p-12 p-2 h-full  
                   transition-all duration-300 shadow-lg hover:shadow-2xl">
 
-                <FaGlobe className="text-6xl text-[#058dfd] group-hover:text-white mb-6 transition-transform duration-300 group-hover:scale-170 " />
+                <FaGlobe className="text-6xl text-[#058dfd] md:group-hover:text-white mb-6 transition-transform duration-300 md:group-hover:scale-170 " />
 
                 {/* Title */}
-                <h3 className="text-4xl font-black mb-6 group-hover:text-white habibi text-[#0289f7]
-                   transition-all duration-300 group-hover:text-5xl">
+                <h3 className="text-4xl font-black mb-6 md:group-hover:text-white habibi text-[#0289f7]
+                   transition-all duration-300 md:group-hover:text-5xl">
                   Our Vision
                 </h3>
 
@@ -285,7 +285,7 @@ const AboutUs = () => {
               </div>
 
               {/* edX - Left Middle */}
-              <div className="float-3 absolute left-0 top-1/5 md:left-1/2 -translate-y-1/2 md:w-20 md:h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+              <div className="float-3 absolute left-0 top-1/5 md:top-1/2 md:left-1 -translate-y-1/2 md:w-20 md:h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                 <img src="https://i.ibb.co.com/QvYnY3q0/favicon.jpg" alt="edX" className="w-14 h-14 object-contain" />
               </div>
 
@@ -385,7 +385,7 @@ const AboutUs = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="md:text-6xl text-4xl lg:text-7xl font-black text-white mb-4">
-              Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fbbc2c] to-[#f97316]">Connect</span>
+              Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d8fb2c] to-[#80f916]">Connect</span>
             </h2>
             <p className="md:text-xl text-[14px] text-gray-300 max-w-2xl mx-auto">
               Have a question or want to collaborate? I'd love to hear from you!
@@ -399,22 +399,22 @@ const AboutUs = () => {
             <div className="space-y-6">
 
               {/* Email Card */}
-              <div className="group relative bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-lg rounded-3xl md:p-8 p-2 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
+              <div className="group relative bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-lg rounded-3xl md:p-6 p-2 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
                 <div className="absolute -top-6 md:-left-6 -left-2 md:w-16 md:h-16 w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <div className="lg:ml-8 ml-2">
+                <div className="lg:ml-8 ml-6">
                   <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Email Address</h3>
-                  <a href="mailto:fahmidanimra@gmail.com" className="md:text-2xl text-[15px] md:font-bold font-medium text-white hover:text-blue-400 transition-colors">
+                  <a href="mailto:fahmidanimra@gmail.com" className="md:text-2xl text-[15px]  font-medium text-white hover:text-blue-400 transition-colors">
                     fahmidanimra@gmail.com
                   </a>
                 </div>
               </div>
 
               {/* Phone Card */}
-              <div className="group relative bg-gradient-to-r from-green-500/10 to-emerald-500/10 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-green-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-2">
+              <div className="group relative bg-gradient-to-r from-green-500/10 to-emerald-500/10 backdrop-blur-lg rounded-3xl p-6 border border-white/10 hover:border-green-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-2">
                 <div className="absolute -top-6 md:-left-6 -left-2 md:w-16 md:h-16 w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -422,17 +422,17 @@ const AboutUs = () => {
                 </div>
                 <div className="md:ml-8 ">
                   <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Phone Number</h3>
-                  <a href="tel:+8801568029731" className="md:text-2xl text-[15px] font-bold text-white hover:text-green-400 transition-colors">
-                    01568029731
+                  <a href="tel:+8801568029731" className="md:text-2xl text-[15px] font-medium text-white hover:text-green-400 transition-colors">
+                    +8801568029731
                   </a>
                 </div>
               </div>
 
               {/* Social Links Grid */}
-              <div className="grid grid-cols-3 gap-4 pt-4">
+              <div className="flex items-center justify-center gap-4 pt-4">
 
                 {/* Portfolio */}
-                <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer" className="group relative bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-lg rounded-2xl p-2 border border-white/10 hover:border-orange-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/30 hover:-translate-y-2 flex flex-col items-center justify-center aspect-square">
+                <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer" className="group relative ">
                   <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -442,7 +442,7 @@ const AboutUs = () => {
                 </a>
 
                 {/* GitHub */}
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="group relative bg-gradient-to-br from-gray-500/20 to-gray-700/20 backdrop-blur-lg rounded-2xl p-2 border border-white/10 hover:border-gray-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-gray-500/30 hover:-translate-y-2 flex flex-col items-center justify-center aspect-square">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="group relative ">
                   <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -452,7 +452,7 @@ const AboutUs = () => {
                 </a>
 
                 {/* LinkedIn */}
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="group relative bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-lg rounded-2xl p-2 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-2 flex flex-col items-center justify-center aspect-square">
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="group relative ">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -470,11 +470,11 @@ const AboutUs = () => {
 
               {/* Main Circle with Gradient */}
               <div className="relative w-96 h-96">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#fbbc2c] via-[#f97316] to-[#ef4444] rounded-full blur-2xl opacity-30"></div>
-                <div className="absolute inset-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-xl opacity-40"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2caffb] via-[#1693f9] to-[#ef4444] rounded-full blur-2xl opacity-70"></div>
+                <div className="absolute inset-4 bg-gradient-to-br from-[#2ce3fb] to-purple-600 rounded-full blur-xl opacity-50"></div>
 
                 {/* Center Content */}
-                <div className="relative w-full h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e] rounded-full border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-full bg-gradient-to-br from-[#0f92f5] to-[#204ecb] rounded-full border-2 border-[#328df5] shadow-2xl flex items-center justify-center overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
                   <div className="relative text-center z-10 p-8">
                     <div className="w-24 h-24 bg-gradient-to-br from-[#fbbc2c] to-[#f97316] rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl">
@@ -482,7 +482,7 @@ const AboutUs = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
                     </div>
-                    <h3 className="text-3xl font-black text-white mb-3">Start a Conversation</h3>
+                    <h3 className="text-3xl font-black text-white mb-3">Start a <span className="text-[#a2fa76]">Conversation</span> </h3>
                     <p className="text-gray-300 text-lg">Whether it's a project idea, question, or just to say hi!</p>
                   </div>
                 </div>
