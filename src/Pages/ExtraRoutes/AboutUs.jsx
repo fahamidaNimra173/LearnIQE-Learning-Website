@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaChalkboardTeacher, FaRocket, FaGlobe } from "react-icons/fa";
 import { MdCastForEducation } from "react-icons/md";
 import { IoMdCodeWorking } from "react-icons/io";
 import { useNavigate } from "react-router";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion,  } from "framer-motion";
 
 
 
 const AboutUs = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  // const [hoveredCard, setHoveredCard] = useState(null);
   const navigate = useNavigate()
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
   // const ref = useRef(null)
   // const { scrollYProgress } = useScroll({
   //   target: ref,
   //   offset: ["start end", "end start"]
   // })
 
-  const scale = useTransform(scrollYProgress, [0, 0.4], [0.4, 7])
+  // const scale = useTransform(scrollYProgress, [0, 0.4], [0.4, 7])
   return (
     <div className="min-h-screen bg-[#060606] dark:bg-[#050505] text-gray-900 overflow-hidden">
       {/* Hero Section with Animated Gradient */}
@@ -31,7 +31,7 @@ const AboutUs = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
+        <div className="relative z-10 text-center px-2 md:px-6 md:max-w-7xl mx-auto">
           <div className=" absolute top-40 blur-2xl -right-70 opacity-30   w-90 h-80 rounded-b-full z-20 rotate-12    bg-[#dafc00]     "></div>
           <div className=" absolute -top-8  blur-2xl opacity-100 -right-120  w-[600px] h-15  z-20 rotate-8     bg-black     "></div>
           <div className=" absolute -bottom-32 blur-xl   opacity-100 -right-110  w-[600px] h-15  z-20 rotate-0     bg-black     "></div>
@@ -71,19 +71,19 @@ const AboutUs = () => {
             Making free online learning easy to find and accessible for everyone.
           </p>
 
-          <div className="mt-12 flex flex-wrap gap-4 justify-center">
-            <button onClick={() => { navigate('/allapprovedclasses') }} className="group relative px-8 py-4 bg-[#fbbc2c] text-white rounded-full font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl">
+          <div className="mt-5 md:mt-12 flex flex-wrap gap-4 justify-center">
+            <button onClick={() => { navigate('/allapprovedclasses') }} className="group relative px-4 md:px-8 py-2 md:py-4 bg-[#fbbc2c] text-white rounded-full font-bold md:text-lg text-[14px] overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl">
               <span className="relative z-10">Start Learning</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-            <button onClick={() => { navigate('/teacherform') }} className="px-8 py-4 bg-transparent border-2 border-[#1e8a78] text-[#1e8a78] rounded-full font-bold text-lg hover:bg-[#1e8a78] hover:text-white transition-all duration-300 hover:scale-105 shadow-lg">
+            <button onClick={() => { navigate('/teacherform') }} className="px-4 md:px-8 py-2 md:py-4 bg-transparent border-2 border-[#1e8a78] text-[#1e8a78] rounded-full font-bold md:text-lg text-[14px] hover:bg-[#1e8a78] hover:text-white transition-all duration-300 hover:scale-105 shadow-lg">
               Become an Instructor
             </button>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-52 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-[#fbbc2c] rounded-full flex justify-center">
             <div className="w-1 h-3 bg-[#1e8a78] rounded-full mt-2 animate-pulse"></div>
           </div>
@@ -193,14 +193,14 @@ const AboutUs = () => {
               <div className="absolute z-20 inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90   transition-opacity duration-500" />
 
 
-              <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-r-2 border-b-2 md:p-12 p-6 h-full  
+              <div className="relative  md:group-hover:flex md:group-hover:flex-col group-hover:gap-10 md:group-hover:items-center md:group-hover:justify-center backdrop-blur-sm border-r-2 border-b-2 md:p-12 p-2 h-full  
                   transition-all duration-300 shadow-lg hover:shadow-2xl">
 
-                <FaRocket className="text-6xl text-[#fbbc2c]  group-hover:text-white mb-6 transition-transform duration-300 group-hover:scale-170 " />
+                <FaRocket className="text-6xl text-[#fbbc2c]  group-hover:text-white mb-6 md:transition-transform duration-300 md:group-hover:scale-170 " />
 
                 {/* Title */}
                 <h3 className="text-4xl font-black mb-6 group-hover:text-white habibi text-[#0289f7]
-                   transition-all duration-300 group-hover:text-5xl">
+                   transition-all duration-300 md:group-hover:text-5xl">
                   Our Mission
                 </h3>
 
@@ -208,7 +208,7 @@ const AboutUs = () => {
                 <p
                   className="text-lg text-gray-100 leading-relaxed
                  transition-all duration-300
-                 group-hover:opacity-0 group-hover:hidden "
+                 md:group-hover:opacity-0 md:group-hover:hidden "
                 >
                   Our mission is to simplify access to quality education by bringing together free courses from multiple trusted learning platforms such as Udemy, edX, Coursera, Ostad, and Khan Academy in one centralized place. We aim to help learners easily discover relevant courses, develop practical skills, and learn at their own pace—without worrying about cost, platform confusion, or geographical limitations.
 
@@ -216,13 +216,13 @@ const AboutUs = () => {
               </div>
             </div>
             {/* vission section */}
-            <div className="group relative h-full ">
+            <div className="md:group relative h-full ">
               <div className="absolute blur-3xl bg-blue-400 lg:right-26 opacity-35 lg:w-96 lg:h-60 w-60 h-60 rounded-full z-0"></div>
               {/* Hover Gradient */}
               <div className="absolute z-20 inset-0 bg-gradient-to-br from-[#044085] to-transparent opacity-0 group-hover:opacity-90   transition-opacity duration-500" />
 
 
-              <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-l-2 border-b-2 md:p-12 p-6 h-full  
+              <div className="relative  group-hover:flex group-hover:flex-col group-hover:gap-10 group-hover:items-center group-hover:justify-center backdrop-blur-sm border-l-2 border-b-2 md:p-12 p-2 h-full  
                   transition-all duration-300 shadow-lg hover:shadow-2xl">
 
                 <FaGlobe className="text-6xl text-[#058dfd] group-hover:text-white mb-6 transition-transform duration-300 group-hover:scale-170 " />
@@ -237,7 +237,7 @@ const AboutUs = () => {
                 <p
                   className="text-lg text-gray-100 leading-relaxed
                  transition-all duration-300
-                 group-hover:opacity-0 group-hover:hidden "
+                 md:group-hover:opacity-0 md:group-hover:hidden "
                 >
                   Our vision is to create a globally accessible learning ecosystem where education is truly free, inclusive, and barrier-free. We envision a future where learners from all backgrounds can continuously grow by accessing high-quality educational resources across platforms, empowering them to improve their skills, unlock opportunities, and shape a better future for themselves and their communities.
                 </p>
