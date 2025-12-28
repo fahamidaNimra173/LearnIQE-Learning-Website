@@ -89,7 +89,7 @@ const AllApprovedClasses = () => {
                     setCategory("");
                     setCurrentPage(1);
                   }}
-                  className={`w-full text-left py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
+                  className={`w-full text-left py-3 px-4 cursor-pointer rounded-xl font-medium transition-all duration-300 ${
                     category === ""
                       ? "bg-gradient-to-r from-[#1e8a78] to-[#2a9d88] text-white shadow-lg"
                       : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
@@ -142,7 +142,7 @@ const AllApprovedClasses = () => {
                 setCategory(e.target.value);
                 setCurrentPage(1);
               }}
-              className="input font-medium bg-[#1e8a78] text-white"
+              className="input font-medium cursor-pointer bg-[#1e8a78] text-white"
             >
               <option value="">All Categories</option>
               {categories.map((cat) => (
