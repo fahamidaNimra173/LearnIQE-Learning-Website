@@ -28,6 +28,8 @@ import ContactUs from '../Pages/ExtraRoutes/ContactUs';
 import AllTeacher from '../Pages/ExtraRoutes/AllTeacher';
 import PrivacyPolicy from '../Pages/ExtraRoutes/PrivacyPolicy';
 import TermsAndConditions from '../Pages/ExtraRoutes/TermsAndConditions';
+import FreeCourses from '@/Pages/FreeCourses/FreeCourses';
+
 
 
 const router = createBrowserRouter([
@@ -50,39 +52,44 @@ const router = createBrowserRouter([
       ,
       {
         path: 'teacherform',
-        element:<PrivateRoute><TeacherForm></TeacherForm></PrivateRoute>
-      
+        element: <PrivateRoute><TeacherForm></TeacherForm></PrivateRoute>
+
       },
       {
         path: 'allapprovedclasses',
-        
+
         Component: AllApprovedClasses
       },
       {
+        path: 'freeCourses',
+
+        Component: FreeCourses
+      },
+      {
         path: 'classdetails/:id',
-         element:<PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>
-       
+        element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>
+
       },
       {
         path: 'payment/:id',
         Component: Payment
       },
       {
-        path:'aboutUs',
-        Component:AboutUs
+        path: 'aboutUs',
+        Component: AboutUs
       },
       {
-        path:'allTeacher',
-        Component:AllTeacher
+        path: 'allTeacher',
+        Component: AllTeacher
       },
       {
-        path:'privacy',
-        Component:PrivacyPolicy
+        path: 'privacy',
+        Component: PrivacyPolicy
 
       },
       {
-        path:'termsandcondition',
-        Component:TermsAndConditions
+        path: 'termsandcondition',
+        Component: TermsAndConditions
 
       }
 
@@ -91,7 +98,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element:<PrivateRoute> <DashBoard></DashBoard></PrivateRoute>,
+    element: <PrivateRoute> <DashBoard></DashBoard></PrivateRoute>,
     children: [
       {
         path: 'users',

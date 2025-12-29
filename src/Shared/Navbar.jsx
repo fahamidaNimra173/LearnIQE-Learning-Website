@@ -64,7 +64,7 @@ const NavigationBar = ({ activeSection }) => {
           Explore <IoMdArrowDropdown />
         </NavLink>
 
-        <NavLink to="/allapprovedclasses" className={`${getTextColorClass()} 
+        <NavLink to="/freeCourses" className={`${getTextColorClass()} 
           font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
           Free Cources
         </NavLink>
@@ -165,6 +165,10 @@ const NavigationBar = ({ activeSection }) => {
 
             <NavLink to="/allapprovedclasses" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
               <span className="relative z-10 outfit group-hover:text-[#FFCFEF]">All Classes</span>
+            </NavLink>
+            <NavLink to="/freeCourses" className={`${getTextColorClass()} 
+          font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
+              Free Cources
             </NavLink>
 
             <NavLink to="/teacherform" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">

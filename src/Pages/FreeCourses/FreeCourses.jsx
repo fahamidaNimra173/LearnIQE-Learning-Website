@@ -13,6 +13,7 @@ const FreeCourses = () => {
             return res.data
         }
     })
+    console.log(courses)
     if (isLoading) {
         return <div><h1>courses are on the way</h1></div>
     }
@@ -22,8 +23,15 @@ const FreeCourses = () => {
 
 
     return (
-        <div>
-            {courses}
+        <div className='grid-cols-2 grid gap-5 mt-20 px-6'>
+            {courses.map(course => (
+
+                <div className='border-2 p-5'>
+                    <div>
+                       
+                </div>
+
+            ))}
         </div>
     );
 };
