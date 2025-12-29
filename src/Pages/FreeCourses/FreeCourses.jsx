@@ -37,7 +37,7 @@ const FreeCourses = () => {
                             <h1 className='text-black'>{course.platform}</h1>
                             <h1 className='text-black'>{course.language}</h1>
                             <h1 className='text-black'>{course.Enrollment}</h1>
-                            <h1 className='text-black'>{course.rating}</h1>
+                            <h1 className='text-black'>{course.rating===0?"not given":course.rating}</h1>
                             <div>
                                 <a href={course.url} target='blank'>
                                     <button className='bg-blue-500 text-white cursor-pointer px-5 py-2 w-full font-bold rounded-2xl'>Visit</button>
