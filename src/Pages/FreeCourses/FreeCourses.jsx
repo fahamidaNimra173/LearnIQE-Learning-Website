@@ -16,7 +16,9 @@ const FreeCourses = () => {
     if (isLoading) {
         return <div><h1>courses are on the way</h1></div>
     }
-
+    if (error) {
+        return <div><h1>{error}</h1></div>
+    }
 
 
     return (
