@@ -28,7 +28,17 @@ const FreeCourses = () => {
 
                 <div className='border-2 p-5'>
                     <div>
-                       
+                        <img src={course?.image} alt="course image" />
+                        <h1 className='text-white'>{course.title}</h1>
+                        <h1 className='text-white'>{course.platform}</h1>
+                        <h1 className='text-white'>{course.language}</h1>
+                        <h1 className='text-white'>{course.Enrollment}</h1>
+                        <h1 className='text-white'>{course.rating}</h1>
+                        <div>
+                            <a href={course.url}></a>
+                            <button className='bg-blue-500 text-white px-5 py-2 w-full font-bold rounded-2xl'>Visit</button>
+                        </div>
+                    </div>
                 </div>
 
             ))}
