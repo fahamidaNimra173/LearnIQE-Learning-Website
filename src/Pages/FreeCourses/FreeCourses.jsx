@@ -1,6 +1,6 @@
 import AxiosSecure from '@/Axios/AxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import { RatIcon, Stars, UsersIcon } from 'lucide-react';
+import { RatIcon, SquareArrowUpLeft, Stars, UsersIcon } from 'lucide-react';
 import React from 'react';
 import { useNavigate } from 'react-router';
 
@@ -49,7 +49,7 @@ const FreeCourses = () => {
 
                         <div>
                             <a href={course.url} target='blank'>
-                                <button className='bg-blue-500 text-white cursor-pointer px-5 py-2 w-full font-bold rounded-2xl'>Visit</button>
+                                <button className='bg-blue-500 text-white cursor-pointer px-5 py-1 w-full text-md font-medium rounded-2xl flex items-center justify-center gap-3 '>Visit <SquareArrowUpLeft className='text-yellow-300 rotate-94'></SquareArrowUpLeft> </button>
                             </a>
 
                         </div>
