@@ -61,23 +61,24 @@ const FreeCourses = () => {
                                 </p>
                             </div>
 
-                            <div class="flex items-center gap-8 pt-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="flex items-center justify-center w-12 h-12 bg-yellow-500/10 rounded-lg border border-yellow-500/30">
+                            <div class="flex items-center gap-20 pt-4">
+                                <div class="flex items-center gap-1">
+                                    <div class="flex items-center mt-1 justify-center w-12 h-12 ">
                                         <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                                         </svg>
                                     </div>
-                                    <div className='flex items-end'>
-                                        <div class="text-3xl font-bold text-yellow-400">90+</div>
+                                    <div className='flex gap-3 items-end'>
+                                        <div class="text-2xl  text-yellow-400">90+</div>
                                         <div class="text-gray-100 text-lg">Courses</div>
                                     </div>
                                 </div>
 
                                 <div class="flex items-center gap-3">
                                 <Earth className='text-white h-5'></Earth>
-                                    <div className='flex gap-5'>
+                                    <div className='flex items-center gap-2'>
                                         <div class="text-gray-300 text-lg font-medium">Bangla</div>
+                                        <hr className='w-8 border-1  mt-1 border-dotted border-yellow-300' />
                                         <div class="text-gray-300 text-lg font-medium">English</div>
                                     </div>
                                 </div>
