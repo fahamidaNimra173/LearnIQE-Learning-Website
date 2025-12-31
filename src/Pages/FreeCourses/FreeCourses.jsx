@@ -37,7 +37,7 @@ const FreeCourses = () => {
     return (
         <div>
 
-            <div class="max-w-7xl mx-auto">
+            <div class="mt-20 mx-auto">
                 <div class="relative bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl overflow-hidden backdrop-blur-sm p-12 lg:p-16">
 
                     <div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -88,8 +88,8 @@ const FreeCourses = () => {
 
                         <div class="flex items-center justify-center">
                             <div class="relative w-full">
-                                <div class="rounded-3xl overflow-hidden border-2 border-blue-500/30 shadow-2xl">
-                                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop" alt="Students learning" class="w-full h-96 object-cover"/>
+                                <div class="rounded-3xl shadow-2xl">
+                                    <img src="https://i.ibb.co.com/PZyvJSr9/adult-education-2706977-1280.jpg" alt="Students learning" class="w-full h-96 object-contain"/>
                                 </div>
                             </div>
                         </div>
