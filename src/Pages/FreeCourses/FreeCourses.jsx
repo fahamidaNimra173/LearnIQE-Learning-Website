@@ -1,6 +1,6 @@
 import AxiosSecure from '@/Axios/AxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import { SquareArrowUpLeft, UsersIcon } from 'lucide-react';
+import { Earth, SquareArrowUpLeft, UsersIcon } from 'lucide-react';
 import React from 'react';
 import { BsStars } from 'react-icons/bs';
 import { useNavigate } from 'react-router';
@@ -68,21 +68,17 @@ const FreeCourses = () => {
                                             <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                                         </svg>
                                     </div>
-                                    <div>
+                                    <div className='flex items-end'>
                                         <div class="text-3xl font-bold text-yellow-400">90+</div>
-                                        <div class="text-gray-400 text-sm">Courses</div>
+                                        <div class="text-gray-100 text-lg">Courses</div>
                                     </div>
                                 </div>
 
                                 <div class="flex items-center gap-3">
-                                    <div class="flex items-center justify-center w-12 h-12 bg-blue-500/10 rounded-lg border border-blue-500/30">
-                                        <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z" clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
+                                <Earth className='text-white h-5'></Earth>
                                     <div className='flex gap-5'>
-                                        <div class="text-gray-300 text-sm font-medium">Bangla</div>
-                                        <div class="text-gray-300 text-sm font-medium">English</div>
+                                        <div class="text-gray-300 text-lg font-medium">Bangla</div>
+                                        <div class="text-gray-300 text-lg font-medium">English</div>
                                     </div>
                                 </div>
                             </div>
