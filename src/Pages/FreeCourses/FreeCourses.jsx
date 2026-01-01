@@ -177,7 +177,7 @@ const FreeCourses = () => {
 
                             {/* Visit Button */}
                             <a href={course.url} target="_blank" rel="noreferrer">
-                                <button className="bg-blue-500 text-white w-full py-1 mt-3 rounded-2xl flex items-center justify-center gap-2">
+                                <button className="bg-blue-500 text-white cursor-pointer w-full py-1 mt-3 rounded-2xl flex items-center justify-center gap-2">
                                     Visit
                                     <SquareArrowUpLeft className="text-yellow-300 rotate-90" />
                                 </button>
