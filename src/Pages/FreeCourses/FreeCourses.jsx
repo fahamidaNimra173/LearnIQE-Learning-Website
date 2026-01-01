@@ -33,7 +33,8 @@ const FreeCourses = () => {
     if (error) {
         return <h1 className="text-red-500">Something went wrong</h1>;
     }
-
+    const categories=[...new Set(courses.map(cls=>cls.category))];
+    console.log('all categories',categories)
     return (
         <div>
 
@@ -122,6 +123,7 @@ const FreeCourses = () => {
                 <div>
                     <h1 className='text-white text-center text-3xl'>Filters</h1>
                 </div>
+
 
             </div>
 
