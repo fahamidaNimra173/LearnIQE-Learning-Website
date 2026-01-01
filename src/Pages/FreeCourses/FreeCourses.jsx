@@ -37,31 +37,31 @@ const FreeCourses = () => {
     return (
         <div>
 
-            <div class="mt-20 mx-auto">
-                <div class="relative bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl overflow-hidden backdrop-blur-sm p-12 lg:p-16">
+            <div class="mt-20  w-full overflow-hidden">
+                <div class="relative  bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl text-wrap backdrop-blur-sm  lg:p-16">
 
-                    <div class="relative z-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div class="relative z-10  flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 items-center">
 
-                        <div class="space-y-8">
+                        <div class="space-y-8 z-20">
 
-                            <div class="space-y-6">
-                                <div class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
+                            <div class="space-y-6 p-6">
+                                <div class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-5 py-2 rounded-full text-xs font-bold uppercase lg:tracking-wider">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
                                     </svg>
                                     <span>বিনামূল্যে শিখুন</span>
                                 </div>
 
-                                <h1 class="text-6xl lg:text-7xl font-bold leading-none bg-gradient-to-r from-yellow-400 to-blue-400 bg-clip-text text-transparent">
+                                <h1 class=" text-2xl md:text-5xl lg:text-7xl font-bold leading-none bg-gradient-to-r from-yellow-400 to-blue-400 bg-clip-text text-transparent">
                                     FREE COURSES
                                 </h1>
 
-                                <p class="text-gray-300 text-lg leading-relaxed max-w-xl">
+                                <p class="text-gray-300 text-lg leading-relaxed lg:max-w-xl">
                                     বিশ্বমানের শিক্ষা এখন সবার হাতের মুঠোয়! 10 Minute School, Ostad, Udemy, Alison, Khan Academy থেকে সংগৃহীত সেরা কোর্সগুলো একদম ফ্রি।
                                 </p>
                             </div>
 
-                            <div class="flex items-center gap-20 pt-4">
+                            <div class="flex md:flex-row flex-col items-center gap-0 md:gap-5 lg:gap-20 md:pt-4">
                                 <div class="flex items-center gap-1">
                                     <div class="flex items-center mt-1 justify-center w-12 h-12 ">
                                         <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -85,19 +85,32 @@ const FreeCourses = () => {
                             </div>
 
                         </div>
+                        <div className='absolute z-0 blur-3xl bg-blue-500/30  top-1/7 left-1/3  h-66 w-66  rounded-full  '>
+
+                        </div>
+                        <div className='absolute  bg-black z-5 lg:blur-none blur-xl  top-1/9 left-1/6  h-96 w-96  rounded-full  '>
+
+                        </div>
+                        <div className='absolute z-0 lg:blur-xs blur-2xl opacity-50 lg:opacity-100 bg-blue-500  lg:top-1/6 top-1/7 left-10 sm:left-20 md:left-40 lg:left-74  h-85 w-83  rounded-full  '>
+
+                        </div>
 
                         <div class="flex relative items-center justify-center">
 
-                            <div className='absolute bg-yellow-400 blur-xs top-20 z-10 h-60 w-75 rotate-45 rounded-t-2xl  '>
+                            <div className='absolute hidden md:block bg-yellow-400 blur-xs top-20 z-10 h-60 w-75 rotate-45 rounded-t-2xl  '>
 
                             </div>
                             <div className='absolute blur-b-xs bg-blue-500  top-20 right-10 z-0 h-60 w-75 rotate-45 rounded-t-2xl  '>
 
                             </div>
+
                             <div class="relative z-20 w-full">
+                                <div className='absolute md:block hidden bg-gradient-to-t from-black via-transparent bottom-7 to-transparent  w-full h-full '>
+
+                                </div>
 
                                 <div class="rounded-3xl shadow-2xl">
-                                    <img src="https://i.ibb.co.com/FkhZv3V5/adult-education-2706977-1280-removebg-preview.png" alt="Students learning" class="w-full h-96 object-contain" />
+                                    <img src="https://i.ibb.co.com/FkhZv3V5/adult-education-2706977-1280-removebg-preview.png" alt="Students learning" class="w-full md:h-96 h-full object-contain" />
                                 </div>
                             </div>
                         </div>
@@ -105,8 +118,14 @@ const FreeCourses = () => {
                     </div>
                 </div>
             </div>
+            <div className='px-6 py-5'>
+                <div>
+                    <h1 className='text-white text-center text-3xl'>Filters</h1>
+                </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-20 px-6">
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-20 px-6">
                 {courses.map((course) => (
                     <div key={course._id} className='flex bg-white flex-col rounded-xl justify-between'>
                         {/* Image */}
@@ -121,14 +140,14 @@ const FreeCourses = () => {
                             {/* Enrollment & Rating */}
                             <div className='flex flex-col  justify-between'>
                                 <div className="flex items-center justify-between px-3">
-                                    <span className="text-[12px] bg-blue-100/50 px-3 py-1 flex items-center rounded-full gap-1 font-medium">
-                                        <UsersIcon className="w-4 text-green-500" />
+                                    <span className="text-[12px] bg-black text-white px-3  flex items-center rounded-full gap-1 font-medium">
+                                        <UsersIcon className="w-4 text-green-400 " />
                                         {course.Enrollment}
                                     </span>
                                     <hr className='w-40 border-1 border-gray-400 border-dashed' />
                                     {course.rating !== undefined && (
-                                        <span className="text-[12px] bg-blue-100/50 px-3 py-1 flex items-center rounded-full gap-1 font-medium">
-                                            <BsStars className="text-yellow-400 w-4 h-4" />
+                                        <span className="text-[12px] bg-black text-white px-7 font-bold relative   flex items-center rounded-tr-full gap-1">
+                                            <BsStars className="text-yellow-400 w-7 h-9 absolute left-0 " />
                                             {course.rating === 0 ? '...' : course.rating}
                                         </span>
                                     )}
