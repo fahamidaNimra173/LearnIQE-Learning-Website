@@ -17,13 +17,13 @@ const FreeCourses = () => {
         },
     });
 
-    // ✅ Platform → Logo mapping
+    // Platform → Logo mapping
     const platformLogos = {
         Ostad: 'https://i.ibb.co.com/yBmxh0Xx/Screenshot-2025-11-28-125756.png',
         '10 Minute School': 'https://10minuteschool.com/images/logo.svg',
         Alison: 'https://i.ibb.co.com/7xK4KMX7/Screenshot-2025-12-11-230019.png',
-        Udemy: 'https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg',
-        EdX: 'https://i.ibb.co.com/pvFPY5XT/favicon.jpg',
+        udemy: 'https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg',
+        edx: 'https://i.ibb.co.com/pvFPY5XT/favicon.jpg',
     };
 
     if (isLoading) {
@@ -40,7 +40,7 @@ const FreeCourses = () => {
             <div class="mt-20 mx-auto">
                 <div class="relative bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl overflow-hidden backdrop-blur-sm p-12 lg:p-16">
 
-                    <div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative z-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 items-center">
 
                         <div class="space-y-8">
 
@@ -75,7 +75,7 @@ const FreeCourses = () => {
                                 </div>
 
                                 <div class="flex items-center gap-3">
-                                <Earth className='text-white h-5'></Earth>
+                                    <Earth className='text-white h-5'></Earth>
                                     <div className='flex items-center gap-2'>
                                         <div class="text-gray-300 text-lg font-medium">Bangla</div>
                                         <hr className='w-8 border-1  mt-1 border-dotted border-yellow-300' />
@@ -86,10 +86,18 @@ const FreeCourses = () => {
 
                         </div>
 
-                        <div class="flex items-center justify-center">
-                            <div class="relative w-full">
+                        <div class="flex relative items-center justify-center">
+
+                            <div className='absolute bg-yellow-400 blur-xs top-20 z-10 h-60 w-75 rotate-45 rounded-t-2xl  '>
+
+                            </div>
+                            <div className='absolute blur-b-xs bg-blue-500  top-20 right-10 z-0 h-60 w-75 rotate-45 rounded-t-2xl  '>
+
+                            </div>
+                            <div class="relative z-20 w-full">
+
                                 <div class="rounded-3xl shadow-2xl">
-                                    <img src="https://i.ibb.co.com/PZyvJSr9/adult-education-2706977-1280.jpg" alt="Students learning" class="w-full h-96 object-contain"/>
+                                    <img src="https://i.ibb.co.com/FkhZv3V5/adult-education-2706977-1280-removebg-preview.png" alt="Students learning" class="w-full h-96 object-contain" />
                                 </div>
                             </div>
                         </div>
@@ -100,7 +108,7 @@ const FreeCourses = () => {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-20 px-6">
                 {courses.map((course) => (
-                    <div key={course._id}>
+                    <div key={course._id} className='flex bg-white flex-col rounded-xl justify-between'>
                         {/* Image */}
                         <img
                             src={course?.image}
@@ -111,30 +119,32 @@ const FreeCourses = () => {
                         {/* Content */}
                         <div className="p-2 bg-white text-black rounded-b-2xl">
                             {/* Enrollment & Rating */}
-                            <div className="flex items-center justify-between px-3">
-                                <span className="text-[12px] bg-blue-100/50 px-3 py-1 flex items-center rounded-full gap-1 font-medium">
-                                    <UsersIcon className="w-4 text-green-500" />
-                                    {course.Enrollment}
-                                </span>
-                                <hr className='w-40 border-1 border-gray-400 border-dashed' />
-                                {course.rating !== undefined && (
+                            <div className='flex flex-col  justify-between'>
+                                <div className="flex items-center justify-between px-3">
                                     <span className="text-[12px] bg-blue-100/50 px-3 py-1 flex items-center rounded-full gap-1 font-medium">
-                                        <BsStars className="text-yellow-400 w-4 h-4" />
-                                        {course.rating === 0 ? '...' : course.rating}
+                                        <UsersIcon className="w-4 text-green-500" />
+                                        {course.Enrollment}
                                     </span>
-                                )}
+                                    <hr className='w-40 border-1 border-gray-400 border-dashed' />
+                                    {course.rating !== undefined && (
+                                        <span className="text-[12px] bg-blue-100/50 px-3 py-1 flex items-center rounded-full gap-1 font-medium">
+                                            <BsStars className="text-yellow-400 w-4 h-4" />
+                                            {course.rating === 0 ? '...' : course.rating}
+                                        </span>
+                                    )}
+                                </div>
+
+                                {/* Title */}
+                                <h1 className="font-bold text-lg mt-2">{course.title}</h1>
                             </div>
 
-                            {/* Title */}
-                            <h1 className="font-bold text-lg mt-2">{course.title}</h1>
-
                             {/* Platform + Logo */}
-                            <div className="flex items-center justify-between gap-4 my-3">
+                            <div className="flex items-end my-5 justify-between  gap-4">
                                 {platformLogos[course.platform] && (
                                     <img
                                         src={platformLogos[course.platform]}
                                         alt={course.platform}
-                                        className="h-9 object-contain"
+                                        className="h-7 object-contain"
                                     />
                                 )}
                                 <h1 className="text-center text-sm bg-purple-500 text-gray-100 px-2 py-1   font-medium">

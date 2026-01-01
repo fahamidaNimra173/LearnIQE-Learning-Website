@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Loader1 from "../../Shared/Loaders/Loader1";
 import { FiUsers, FiDollarSign, FiFilter } from "react-icons/fi";
 
+
+//in this page filtering is implemented from frontend not from backend
 const AllApprovedClasses = () => {
   const axiosSecure = AxiosSecure();
   const navigate = useNavigate();
