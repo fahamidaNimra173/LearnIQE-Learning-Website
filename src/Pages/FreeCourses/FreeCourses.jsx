@@ -1,13 +1,14 @@
 import AxiosSecure from '@/Axios/AxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { Earth, SquareArrowUpLeft, UsersIcon } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { BsStars } from 'react-icons/bs';
 import { useNavigate } from 'react-router';
 
 const FreeCourses = () => {
     const axiosSecure = AxiosSecure();
     const navigate = useNavigate();
+    const[category,setCategory]=useState('')
 
     const { data: courses = [], isLoading, error } = useQuery({
         queryKey: ['courses'],
@@ -33,6 +34,7 @@ const FreeCourses = () => {
     if (error) {
         return <h1 className="text-red-500">Something went wrong</h1>;
     }
+    //created this array to catch all categories uniquely and use in filters instead of doing this manually
     const categories=[...new Set(courses.map(cls=>cls.category))];
     console.log('all categories',categories)
     return (
@@ -122,6 +124,14 @@ const FreeCourses = () => {
             <div className='px-6 py-5'>
                 <div>
                     <h1 className='text-white text-center text-3xl'>Filters</h1>
+                </div>
+             
+                <div className=' p-5 flex flex-col gap-2 border-2'>
+                    {categories.map((cat)=>{
+                       return (<div>
+                            <h1 className='text-white font-medium text-xl'>{cat}</h1>
+                        </div>)
+                    })}
                 </div>
 
 
