@@ -135,7 +135,7 @@ const FreeCourses = () => {
                                 </div>
 
                                 {/* Title */}
-                                <h1 className="font-bold text-lg mt-2">{course.title}</h1>
+                                <h1 className="font-bold text-lg mt-2 h-15">{course.title}</h1>
                             </div>
 
                             {/* Platform + Logo */}
