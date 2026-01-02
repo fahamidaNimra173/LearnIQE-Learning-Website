@@ -11,7 +11,7 @@ const FreeCourses = () => {
     const [category, setCategory] = useState('')
 
     const { data: courses = [], isLoading, error } = useQuery({
-        queryKey: ['courses'],
+        queryKey: ['courses', category],
         queryFn: async () => {
             const res = await axiosSecure.get(`/freeCourses?category=${category}`);
             return res.data;
@@ -97,6 +97,9 @@ const FreeCourses = () => {
                         <div className='absolute z-0 lg:blur-xs blur-2xl opacity-50 lg:opacity-100 bg-blue-500  lg:top-1/6 top-1/7 left-10 sm:left-20 md:left-40 lg:left-74  h-85 w-83  rounded-full  '>
 
                         </div>
+                        <div className='absolute z-0  opacity-100 bg-blue-700  lg:top-1/6 top-1/7 left-10 sm:left-20 md:left-40 lg:left-74  h-84 w-81  rounded-full  '>
+
+                        </div>
 
                         <div class="flex relative items-center justify-center">
 
@@ -129,7 +132,7 @@ const FreeCourses = () => {
                 <div className=' p-5 flex flex-col gap-2 border-2'>
                     {categories.map((cat) => {
                         return (<div>
-
+                            {/* in this i forgot to use ()=> in onclick function which creates infinite loop problem  */}
                             <button onClick={() =>
                                 setCategory(cat)
                             } className='text-white bg-blue-700 p-4 cursor-pointer font-medium text-xl' >
