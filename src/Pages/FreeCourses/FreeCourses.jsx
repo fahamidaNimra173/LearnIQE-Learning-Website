@@ -7,13 +7,13 @@ import { useNavigate } from 'react-router';
 
 const FreeCourses = () => {
     const axiosSecure = AxiosSecure();
-    const navigate = useNavigate();
-    const[category,setCategory]=useState('')
+    const navigate = useNavigate(); 3
+    const [category, setCategory] = useState('')
 
     const { data: courses = [], isLoading, error } = useQuery({
         queryKey: ['courses'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/freeCourses');
+            const res = await axiosSecure.get(`/freeCourses?category=${category}`);
             return res.data;
         },
     });
@@ -35,8 +35,8 @@ const FreeCourses = () => {
         return <h1 className="text-red-500">Something went wrong</h1>;
     }
     //created this array to catch all categories uniquely and use in filters instead of doing this manually
-    const categories=[...new Set(courses.map(cls=>cls.category))];
-    console.log('all categories',categories)
+    const categories = [...new Set(courses.map(cls => cls.category))];
+    console.log('all categories', categories)
     return (
         <div>
 
@@ -125,11 +125,16 @@ const FreeCourses = () => {
                 <div>
                     <h1 className='text-white text-center text-3xl'>Filters</h1>
                 </div>
-             
+
                 <div className=' p-5 flex flex-col gap-2 border-2'>
-                    {categories.map((cat)=>{
-                       return (<div>
-                            <h1 className='text-white font-medium text-xl'>{cat}</h1>
+                    {categories.map((cat) => {
+                        return (<div>
+
+                            <button onClick={() =>
+                                setCategory(cat)
+                            } className='text-white bg-blue-700 p-4 cursor-pointer font-medium text-xl' >
+                                {cat}
+                            </button>
                         </div>)
                     })}
                 </div>
