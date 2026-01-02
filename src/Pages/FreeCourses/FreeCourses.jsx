@@ -8,12 +8,21 @@ import { useNavigate } from 'react-router';
 const FreeCourses = () => {
     const axiosSecure = AxiosSecure();
     const navigate = useNavigate(); 3
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState('');
+    const [language, setLanguage] = useState('');
+    const [platform, setPlatform] = useState('');
 
     const { data: courses = [], isLoading, error } = useQuery({
-        queryKey: ['courses', category],
+        queryKey: ['courses', category, language, platform],//in this i used category to tell the query to refetch, otherwise it doesen't refetch autometically
         queryFn: async () => {
             const res = await axiosSecure.get(`/freeCourses?category=${category}`);
+            return res.data;
+        },
+    });
+    //This API is for getting all filters
+    const { data: filters = []} = useQuery({
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/freeCourses/filters`);
             return res.data;
         },
     });
@@ -36,7 +45,7 @@ const FreeCourses = () => {
     }
     //created this array to catch all categories uniquely and use in filters instead of doing this manually
     const categories = [...new Set(courses.map(cls => cls.category))];
-    console.log('all categories', categories)
+    console.log('all categories', filters)
     return (
         <div>
 
@@ -130,7 +139,7 @@ const FreeCourses = () => {
                 </div>
 
                 <div className=' p-5 flex flex-col gap-2 border-2'>
-                    {categories.map((cat) => {
+                    {filters.categories.map((cat) => {
                         return (<div>
                             {/* in this i forgot to use ()=> in onclick function which creates infinite loop problem  */}
                             <button onClick={() =>
