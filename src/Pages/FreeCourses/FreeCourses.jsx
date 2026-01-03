@@ -138,7 +138,7 @@ const FreeCourses = () => {
                 {/* Mobile Filter Toggle Button */}
                 <button
                     onClick={() => setIsFilterOpen(true)}
-                    className="lg:hidden flex   fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-500 to-indigo-900 text-white p-4 rounded-full shadow-2xl border-1 border-white/70 shadow-black"
+                    className="lg:hidden flex cursor-pointer  fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-500 to-indigo-900 text-white p-4 rounded-full shadow-2xl border-1 border-white/70 shadow-black"
                 >
                     <div className='absolute bg-white w-8 blur-xs -rotate-45 h-2 border-2 border-blue-600 rounded-2xl z-10 top-3 -left-1'>
 
@@ -174,11 +174,11 @@ const FreeCourses = () => {
                     lg:mb-0
                     transition-transform duration-300 ease-in-out
                 `}>
-                    <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-none lg:rounded-2xl shadow-xl overflow-y-scroll h-full">
+                    <div className="bg-white border border-slate-700 rounded-none lg:rounded-2xl shadow-xl overflow-y-scroll h-full">
                         {/* Header */}
-                        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6">
+                        <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-6">
                             <div className="flex items-center justify-between">
-                                <h2 className="text-white text-2xl font-bold tracking-tight">Filters</h2>
+                                <h2 className="text-white text-2xl font-medium font-mono uppercase tracking-tight">Filters</h2>
                                 <div className="flex items-center gap-2">
                                     {hasActiveFilters && (
                                         <button
@@ -209,7 +209,7 @@ const FreeCourses = () => {
                         <div className="p-6 space-y-8">
                             {/* Categories */}
                             <div>
-                                <h3 className="text-slate-300 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <h3 className="text-slate-900 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <span className="w-1 h-4 bg-yellow-400 rounded-full"></span>
                                     Categories
                                 </h3>
@@ -220,7 +220,7 @@ const FreeCourses = () => {
                                             onClick={() => toggleCategory(cat)}
                                             className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${category === cat
                                                 ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-500/30'
-                                                : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
+                                                : 'bg-yellow-500 border-yellow-100 text-slate-50 hover:bg-blue-600 hover:border-slate-600'
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between">
@@ -236,7 +236,7 @@ const FreeCourses = () => {
 
                             {/* Languages */}
                             <div>
-                                <h3 className="text-slate-300 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <h3 className="text-slate-900 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <span className="w-1 h-4 bg-green-400 rounded-full"></span>
                                     Language
                                 </h3>
@@ -247,7 +247,7 @@ const FreeCourses = () => {
                                             onClick={() => toggleLanguage(lan)}
                                             className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${language === lan
                                                 ? 'bg-green-600 border-green-500 text-white shadow-lg shadow-green-500/30'
-                                                : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
+                                                : 'bg-yellow-500 border-yellow-100 text-slate-50 hover:bg-blue-600 hover:border-slate-600'
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between">
@@ -263,7 +263,7 @@ const FreeCourses = () => {
 
                             {/* Platforms */}
                             <div>
-                                <h3 className="text-slate-300 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <h3 className="text-slate-900 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <span className="w-1 h-4 bg-purple-400 rounded-full"></span>
                                     Platform
                                 </h3>
@@ -274,7 +274,7 @@ const FreeCourses = () => {
                                             onClick={() => togglePlatform(p)}
                                             className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${platform === p
                                                 ? 'bg-purple-600 border-purple-500 text-white shadow-lg shadow-purple-500/30'
-                                                : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
+                                                : 'bg-yellow-500 border-yellow-100 text-slate-50 hover:bg-blue-600 hover:border-slate-600'
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between">
