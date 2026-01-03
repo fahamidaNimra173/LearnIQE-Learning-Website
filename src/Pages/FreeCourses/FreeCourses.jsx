@@ -206,24 +206,33 @@ const FreeCourses = () => {
                         </div>
 
                         {/* Filter Content */}
-                        <div className="p-6 space-y-8">
+                        <div className="p-6 relative space-y-8">
+                            <div className='absolute bg-amber-400 w-10 h-10 t-0 rounded-full blur-xl top-0'>
+
+                            </div>
+                            <div className='absolute  bg-gradient-to-b from-amber-400 via-amber-400 to-transparent  w-2.5 h-30 t-0   right-0 top-0'>
+
+                            </div>
+                            <div className='absolute bg-gradient-to-b from-green-400 via-green-400 to-transparent  w-2.5 h-20 t-0   right-2 top-0'>
+
+                            </div>
                             {/* Categories */}
                             <div>
-                                <h3 className="text-slate-900 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <h3 className="text-slate-900 text-xl font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <span className="w-1 h-4 bg-yellow-400 rounded-full"></span>
                                     Categories
                                 </h3>
-                                <div className="space-y-2">
+                                <div className="space-y-3">
                                     {filters.categories && filters.categories.map((cat) => (
                                         <button
                                             key={cat}
                                             onClick={() => toggleCategory(cat)}
-                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${category === cat
-                                                ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-500/30'
-                                                : 'bg-yellow-500 border-yellow-100 text-slate-50 hover:bg-blue-600 hover:border-slate-600'
+                                            className={`w-full text-left  rounded-lg font-medium py-1 border-b-2 shadow-2xl shadow-slate-400 px-2 text-sm  ${category === cat
+                                                ? 'bg-blue-600 border-blue-500 text-white px-4 py-3 shadow-lg shadow-blue-500/30'
+                                                : ' text-slate-900 cursor-pointer hover:pl-5  hover:underline hover:pb-1 hover:border-slate-600'
                                                 }`}
                                         >
-                                            <div className="flex items-center justify-between">
+                                            <div className="flex items-center text-lg justify-between">
                                                 <span>{cat}</span>
                                                 {category === cat && (
                                                     <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
@@ -236,8 +245,8 @@ const FreeCourses = () => {
 
                             {/* Languages */}
                             <div>
-                                <h3 className="text-slate-900 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
-                                    <span className="w-1 h-4 bg-green-400 rounded-full"></span>
+                                <h3 className="text-slate-900 text-xl font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
+                                    <span className="w-1 h-4 bg-green-400  rounded-full"></span>
                                     Language
                                 </h3>
                                 <div className="space-y-2">
@@ -245,12 +254,12 @@ const FreeCourses = () => {
                                         <button
                                             key={lan}
                                             onClick={() => toggleLanguage(lan)}
-                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${language === lan
-                                                ? 'bg-green-600 border-green-500 text-white shadow-lg shadow-green-500/30'
-                                                : 'bg-yellow-500 border-yellow-100 text-slate-50 hover:bg-blue-600 hover:border-slate-600'
+                                            className={`w-full text-left  rounded-lg py-1 border-b-2 shadow-2xl shadow-slate-400 px-2 font-medium text-sm  ${language === lan
+                                                ? 'bg-green-500 border-green-600 px-4 py-3 text-white shadow-lg shadow-purple-500/30'
+                                                : '  text-slate-900 cursor-pointer hover:pl-5  hover:underline hover:pb-1 hover:border-slate-600'
                                                 }`}
                                         >
-                                            <div className="flex items-center justify-between">
+                                            <div className="flex items-center text-lg justify-between">
                                                 <span>{lan}</span>
                                                 {language === lan && (
                                                     <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
@@ -263,7 +272,7 @@ const FreeCourses = () => {
 
                             {/* Platforms */}
                             <div>
-                                <h3 className="text-slate-900 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <h3 className="text-slate-900 text-xl font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <span className="w-1 h-4 bg-purple-400 rounded-full"></span>
                                     Platform
                                 </h3>
@@ -272,13 +281,13 @@ const FreeCourses = () => {
                                         <button
                                             key={p}
                                             onClick={() => togglePlatform(p)}
-                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${platform === p
-                                                ? 'bg-purple-600 border-purple-500 text-white shadow-lg shadow-purple-500/30'
-                                                : 'bg-yellow-500 border-yellow-100 text-slate-50 hover:bg-blue-600 hover:border-slate-600'
+                                            className={`w-full text-left  rounded-lg py-1 border-b-2 shadow-2xl shadow-slate-400 px-2 font-medium text-sm  ${platform === p
+                                                ? 'bg-purple-600 border-purple-500 px-4 py-3 text-white shadow-lg shadow-purple-500/30'
+                                                : '  text-slate-900 cursor-pointer hover:pl-5  hover:underline hover-pb-1 hover:border-slate-600'
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between">
-                                                <span>{p}</span>
+                                                <span className='text-lg'>{p}</span>
                                                 {platform === p && (
                                                     <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
                                                 )}
