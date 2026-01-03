@@ -55,6 +55,7 @@ const FreeCourses = () => {
         setPlatform('');
     };
 
+    const hasActiveFilters = category || language || platform;
 
     if (isLoading) {
         return <h1 className="text-white">Courses are on the way...</h1>;
@@ -140,13 +141,21 @@ const FreeCourses = () => {
                         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6">
                             <div className="flex items-center justify-between">
                                 <h2 className="text-white text-2xl font-bold tracking-tight">Filters</h2>
-                               
+                                {hasActiveFilters && (
+                                    <button
+                                        onClick={clearAllFilters}
+                                        className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-sm font-medium px-4 py-2 rounded-lg backdrop-blur-sm border border-white/30"
+                                    >
+                                        <X className="w-4 h-4" />
+                                        Clear All
+                                    </button>
+                                )}
                             </div>
-
+                       
                         </div>
 
                         {/* Filter Content */}
-                        <div className="lg:p-6 p-2 space-y-8">
+                        <div className="p-6 space-y-8">
                             {/* Categories */}
                             <div>
                                 <h3 className="text-slate-300 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
