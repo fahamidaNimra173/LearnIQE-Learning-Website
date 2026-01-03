@@ -134,13 +134,22 @@ const FreeCourses = () => {
             </div>
 
             {/* Filter and Courses Section */}
-            <div className="mt-12 px-6 lg:flex lg:gap-8 lg:items-start">
+            <div className="mt-12 relative px-6 lg:flex lg:gap-8 lg:items-start">
                 {/* Mobile Filter Toggle Button */}
                 <button
                     onClick={() => setIsFilterOpen(true)}
-                    className="lg:hidden fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 rounded-full shadow-2xl border-2 border-white/20"
+                    className="lg:hidden flex   fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-500 to-indigo-900 text-white p-4 rounded-full shadow-2xl border-1 border-white/70 shadow-black"
                 >
-                    <Filter className="w-6 h-6" />
+                    <div className='absolute bg-white w-8 blur-xs -rotate-45 h-2 border-2 border-blue-600 rounded-2xl z-10 top-3 -left-1'>
+
+                    </div>
+                    <div className='absolute bg-blue-600 w-9 blur-xs -rotate-45 h-2 border-2 border-blue-600 rounded-2xl z-10 bottom-3 -right-1'>
+
+                    </div>
+                    <div className='absolute bg-blue-900 w-full blur-md  h-5 border-2 border-blue-600 rounded-2xl z-10 -bottom-6 right-0'>
+
+                    </div>
+                    <Filter className="w-6 h-6" /><span className=''>Filter</span>
                 </button>
 
                 {/* Overlay for mobile */}
@@ -209,11 +218,10 @@ const FreeCourses = () => {
                                         <button
                                             key={cat}
                                             onClick={() => toggleCategory(cat)}
-                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${
-                                                category === cat
-                                                    ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-500/30'
-                                                    : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
-                                            }`}
+                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${category === cat
+                                                ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-500/30'
+                                                : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
+                                                }`}
                                         >
                                             <div className="flex items-center justify-between">
                                                 <span>{cat}</span>
@@ -237,11 +245,10 @@ const FreeCourses = () => {
                                         <button
                                             key={lan}
                                             onClick={() => toggleLanguage(lan)}
-                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${
-                                                language === lan
-                                                    ? 'bg-green-600 border-green-500 text-white shadow-lg shadow-green-500/30'
-                                                    : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
-                                            }`}
+                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${language === lan
+                                                ? 'bg-green-600 border-green-500 text-white shadow-lg shadow-green-500/30'
+                                                : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
+                                                }`}
                                         >
                                             <div className="flex items-center justify-between">
                                                 <span>{lan}</span>
@@ -265,11 +272,10 @@ const FreeCourses = () => {
                                         <button
                                             key={p}
                                             onClick={() => togglePlatform(p)}
-                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${
-                                                platform === p
-                                                    ? 'bg-purple-600 border-purple-500 text-white shadow-lg shadow-purple-500/30'
-                                                    : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
-                                            }`}
+                                            className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm border-2 ${platform === p
+                                                ? 'bg-purple-600 border-purple-500 text-white shadow-lg shadow-purple-500/30'
+                                                : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-slate-600'
+                                                }`}
                                         >
                                             <div className="flex items-center justify-between">
                                                 <span>{p}</span>
