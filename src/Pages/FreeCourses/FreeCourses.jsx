@@ -135,7 +135,13 @@ const FreeCourses = () => {
 
             {/* Filter and Courses Section */}
             <div className="mt-12 px-6 lg:flex lg:gap-8 lg:items-start">
-
+                {/* Mobile Filter Toggle Button */}
+                <button
+                    onClick={() => setIsFilterOpen(true)}
+                    className="lg:hidden flex   fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-500 to-indigo-900 text-white p-4 rounded-full shadow-2xl border-2 border-white/20"
+                >
+                    <Filter className="w-6 h-6" />Filter
+                </button>
 
 
 
