@@ -165,7 +165,7 @@ const FreeCourses = () => {
                     lg:mb-0
                     transition-transform duration-300 ease-in-out
                 `}>
-                    <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-none lg:rounded-2xl shadow-xl overflow-hidden h-full">
+                    <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-none lg:rounded-2xl shadow-xl overflow-y-scroll h-full">
                         {/* Header */}
                         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6">
                             <div className="flex items-center justify-between">
@@ -197,7 +197,7 @@ const FreeCourses = () => {
                         </div>
 
                         {/* Filter Content */}
-                        <div className="p-6 space-y-8 ">
+                        <div className="p-6 space-y-8">
                             {/* Categories */}
                             <div>
                                 <h3 className="text-slate-300 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
