@@ -1,6 +1,6 @@
 import AxiosSecure from '@/Axios/AxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import { Earth, SquareArrowUpLeft, UsersIcon, X } from 'lucide-react';
+import { Earth, SquareArrowUpLeft, UsersIcon, X, Filter } from 'lucide-react';
 import React, { useState } from 'react';
 import { BsStars } from 'react-icons/bs';
 
@@ -11,7 +11,7 @@ const FreeCourses = () => {
     const [category, setCategory] = useState('');
     const [language, setLanguage] = useState('');
     const [platform, setPlatform] = useState('');
-
+   
     const { data: courses = [], isLoading, error } = useQuery({
         queryKey: ['courses', category, language, platform],
         queryFn: async () => {
@@ -134,24 +134,42 @@ const FreeCourses = () => {
 
             {/* Filter and Courses Section */}
             <div className="mt-12 px-6 lg:flex lg:gap-8 lg:items-start">
-                {/* Filters Sidebar - Fixed on large screens */}
-                <aside className="lg:sticky lg:top-6 lg:w-80 mb-8 lg:mb-0 lg:h-screen lg:overflow-y-auto">
-                    <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-2xl shadow-xl overflow-hidden">
+
+
+
+
+                {/* Filters Sidebar */}
+                <aside className={`
+                  
+                    lg:translate-x-0
+                    fixed lg:sticky
+                    top-0 lg:top-6
+                    left-0
+                    h-screen lg:h-screen
+                    w-80
+                    z-50 lg:z-auto
+                    overflow-y-auto
+                    lg:mb-0
+                    transition-transform duration-300 ease-in-out
+                `}>
+                    <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-none lg:rounded-2xl shadow-xl overflow-hidden h-full">
                         {/* Header */}
                         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6">
                             <div className="flex items-center justify-between">
                                 <h2 className="text-white text-2xl font-bold tracking-tight">Filters</h2>
-                                {hasActiveFilters && (
-                                    <button
-                                        onClick={clearAllFilters}
-                                        className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-sm font-medium px-4 py-2 rounded-lg backdrop-blur-sm border border-white/30"
-                                    >
-                                        <X className="w-4 h-4" />
-                                        Clear All
-                                    </button>
-                                )}
+                                <div className="flex items-center gap-2">
+                                    {hasActiveFilters && (
+                                        <button
+                                            onClick={clearAllFilters}
+                                            className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-sm font-medium px-4 py-2 rounded-lg backdrop-blur-sm border border-white/30"
+                                        >
+                                            <X className="w-4 h-4" />
+                                            Clear
+                                        </button>
+                                    )}
+                                 
+                                </div>
                             </div>
-                            {/* this is for to tell the user how many courses are found */}
                             {hasActiveFilters && (
                                 <p className="text-blue-100 text-sm mt-2">
                                     {courses.length} course{courses.length !== 1 ? 's' : ''} found
@@ -160,7 +178,7 @@ const FreeCourses = () => {
                         </div>
 
                         {/* Filter Content */}
-                        <div className="p-6 space-y-8">
+                        <div className="p-6 space-y-8 ">
                             {/* Categories */}
                             <div>
                                 <h3 className="text-slate-300 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
