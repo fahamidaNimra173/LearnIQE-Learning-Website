@@ -151,7 +151,12 @@ const FreeCourses = () => {
                                     </button>
                                 )}
                             </div>
-                       
+                            {/* this is for to tell the user how many courses are found */}
+                            {hasActiveFilters && (
+                                <p className="text-blue-100 text-sm mt-2">
+                                    {courses.length} course{courses.length !== 1 ? 's' : ''} found
+                                </p>
+                            )}
                         </div>
 
                         {/* Filter Content */}
