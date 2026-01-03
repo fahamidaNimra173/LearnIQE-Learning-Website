@@ -138,12 +138,18 @@ const FreeCourses = () => {
                 {/* Mobile Filter Toggle Button */}
                 <button
                     onClick={() => setIsFilterOpen(true)}
-                    className="lg:hidden flex   fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-500 to-indigo-900 text-white p-4 rounded-full shadow-2xl border-2 border-white/20"
+                    className="lg:hidden fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 rounded-full shadow-2xl border-2 border-white/20"
                 >
-                    <Filter className="w-6 h-6" />Filter
+                    <Filter className="w-6 h-6" />
                 </button>
 
-
+                {/* Overlay for mobile */}
+                {isFilterOpen && (
+                    <div
+                        className="lg:hidden fixed inset-0 bg-black/60 z-40 backdrop-blur-sm"
+                        onClick={() => setIsFilterOpen(false)}
+                    ></div>
+                )}
 
                 {/* Filters Sidebar */}
                 <aside className={`
