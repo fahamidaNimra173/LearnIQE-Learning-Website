@@ -11,7 +11,8 @@ const FreeCourses = () => {
     const [category, setCategory] = useState('');
     const [language, setLanguage] = useState('');
     const [platform, setPlatform] = useState('');
-   
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+
     const { data: courses = [], isLoading, error } = useQuery({
         queryKey: ['courses', category, language, platform],
         queryFn: async () => {
@@ -140,7 +141,7 @@ const FreeCourses = () => {
 
                 {/* Filters Sidebar */}
                 <aside className={`
-                  
+                    ${isFilterOpen ? 'translate-x-0' : '-translate-x-full'}
                     lg:translate-x-0
                     fixed lg:sticky
                     top-0 lg:top-6
@@ -167,7 +168,13 @@ const FreeCourses = () => {
                                             Clear
                                         </button>
                                     )}
-                                 
+                                    {/* Close button for mobile */}
+                                    <button
+                                        onClick={() => setIsFilterOpen(false)}
+                                        className="lg:hidden bg-white/20 hover:bg-white/30 text-white p-2 rounded-lg backdrop-blur-sm border border-white/30"
+                                    >
+                                        <X className="w-5 h-5" />
+                                    </button>
                                 </div>
                             </div>
                             {hasActiveFilters && (
