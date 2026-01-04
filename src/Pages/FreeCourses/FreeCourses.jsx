@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { BsStars } from 'react-icons/bs';
 
 
+
 const FreeCourses = () => {
     const axiosSecure = AxiosSecure();
 
@@ -68,8 +69,9 @@ const FreeCourses = () => {
 
     return (
         <div>
-            <div className="mt-20 w-full overflow-hidden">
-                <div className="relative bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl text-wrap backdrop-blur-sm lg:p-16">
+            <div className="mt-20  w-full overflow-hidden">
+                
+                <div className="relative mb-10 shadow-xl shadow-yellow-300/50 bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl text-wrap backdrop-blur-sm lg:p-16">
                     <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 items-center">
                         <div className="space-y-8 z-20">
                             <div className="space-y-6 p-6">
@@ -117,6 +119,10 @@ const FreeCourses = () => {
                         <div className='absolute bg-black z-5 lg:blur-none blur-xl top-1/9 left-1/6 h-96 w-96 rounded-full'></div>
                         <div className='absolute z-0 lg:blur-xs blur-2xl opacity-50 lg:opacity-100 bg-blue-500 lg:top-1/6 top-1/7 left-10 sm:left-20 md:left-40 lg:left-74 h-85 w-83 rounded-full'></div>
                         <div className='absolute z-0 opacity-100 bg-blue-700 lg:top-1/6 top-1/7 left-10 sm:left-20 md:left-40 lg:left-74 h-84 w-81 rounded-full'></div>
+                        <div className="absolute z-50 border-blue-700/90 border-2 left-120 top-0 h-[500px]  w-27 rounded-[70%_60%_70%_60%]  ">
+                        </div>
+
+
 
                         <div className="flex relative items-center justify-center">
                             <div className='absolute hidden md:block bg-yellow-400 blur-xs top-20 z-10 h-60 w-75 rotate-45 rounded-t-2xl'></div>
@@ -134,7 +140,7 @@ const FreeCourses = () => {
             </div>
 
             {/* Filter and Courses Section */}
-            <div className="mt-12 relative px-6 lg:flex lg:gap-8 lg:items-start">
+            <div className="mt-12 relative lg:p-0 p-3 lg:flex lg:gap-3 lg:items-start">
                 {/* Mobile Filter Toggle Button */}
                 <button
                     onClick={() => setIsFilterOpen(true)}
@@ -168,13 +174,13 @@ const FreeCourses = () => {
                     top-0 lg:top-6
                     left-0
                     h-screen lg:h-screen
-                    w-80
+                    w-95
                     z-50 lg:z-auto
                     overflow-y-auto
                     lg:mb-0
                     transition-transform duration-300 ease-in-out
                 `}>
-                    <div className="bg-white border border-slate-700 rounded-none lg:rounded-2xl shadow-xl overflow-y-scroll h-full">
+                    <div className="bg-white mt-10 border  border-slate-700 rounded-none lg:rounded-tr-2xl shadow-xl overflow-y-scroll h-full">
                         {/* Header */}
                         <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-6">
                             <div className="flex items-center justify-between">
@@ -206,7 +212,7 @@ const FreeCourses = () => {
                         </div>
 
                         {/* Filter Content */}
-                        <div className="p-6 relative space-y-8">
+                        <div className="p-6 relative  space-y-8">
                             <div className='absolute bg-amber-400 w-10 h-10 t-0 rounded-full blur-xl top-0'>
 
                             </div>
@@ -222,7 +228,7 @@ const FreeCourses = () => {
                                     <span className="w-1 h-4 bg-yellow-400 rounded-full"></span>
                                     Categories
                                 </h3>
-                                <div className="space-y-3">
+                                <div className="space-y-3 gap-2 md:grid  md:grid-cols-2">
                                     {filters.categories && filters.categories.map((cat) => (
                                         <button
                                             key={cat}
@@ -232,7 +238,7 @@ const FreeCourses = () => {
                                                 : ' text-slate-900 cursor-pointer hover:pl-5  hover:underline hover:pb-1 hover:border-slate-600'
                                                 }`}
                                         >
-                                            <div className="flex items-center text-lg justify-between">
+                                            <div className="flex items-center text-md justify-between">
                                                 <span>{cat}</span>
                                                 {category === cat && (
                                                     <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
@@ -303,7 +309,7 @@ const FreeCourses = () => {
                 {/* Courses Grid */}
                 <div className="flex-1">
                     {courses.length === 0 ? (
-                        <div className="text-center py-16">
+                        <div className="text-center  py-16">
                             <div className="text-slate-400 text-xl">No courses found matching your filters</div>
                             <button
                                 onClick={clearAllFilters}
@@ -313,7 +319,7 @@ const FreeCourses = () => {
                             </button>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
                             {courses.map((course) => (
                                 <div key={course._id} className='flex bg-white flex-col rounded-xl justify-between'>
                                     <img
