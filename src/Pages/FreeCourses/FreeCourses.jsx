@@ -71,7 +71,7 @@ const FreeCourses = () => {
         <div>
             <div className="mt-20  w-full overflow-hidden">
                 
-                <div className="relative mb-10 shadow-xl shadow-yellow-300/50 bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl text-wrap backdrop-blur-sm lg:p-16">
+                <div className="relative mb-10  bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl text-wrap backdrop-blur-sm lg:p-16">
                     <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 items-center">
                         <div className="space-y-8 z-20">
                             <div className="space-y-6 p-6">
@@ -117,9 +117,14 @@ const FreeCourses = () => {
 
                         <div className='absolute z-0 blur-3xl bg-blue-500/30 top-1/7 left-1/3 h-66 w-66 rounded-full'></div>
                         <div className='absolute bg-black z-5 lg:blur-none blur-xl top-1/9 left-1/6 h-96 w-96 rounded-full'></div>
+                         <div className='absolute bg-gradient-to-l from-black via-transparent to-transparent hidden lg:block z-10 lg:blur-none blur-xl top-1/13 left-1/8 h-[420px] w-96 rounded-full'></div>
                         <div className='absolute z-0 lg:blur-xs blur-2xl opacity-50 lg:opacity-100 bg-blue-500 lg:top-1/6 top-1/7 left-10 sm:left-20 md:left-40 lg:left-74 h-85 w-83 rounded-full'></div>
                         <div className='absolute z-0 opacity-100 bg-blue-700 lg:top-1/6 top-1/7 left-10 sm:left-20 md:left-40 lg:left-74 h-84 w-81 rounded-full'></div>
-                        <div className="absolute z-50 border-blue-700/90 border-2 left-120 top-0 h-[500px]  w-27 rounded-[70%_60%_70%_60%]  ">
+                        <div className="absolute z-5 border-blue-700/90 border-2 left-120 top-0 h-[500px]  w-27 rounded-[70%_60%_70%_60%] opacity-24 ">
+                        </div>
+                        <div className="absolute z-5 border-blue-700/90 border-2 left-117 top-5 h-[450px]  w-27 rounded-[70%_60%_70%_60%] opacity-24 ">
+                        </div>
+                        <div className="absolute z-5 border-blue-700/90 border-2 left-115 top-7 h-[440px]  w-27 rounded-[70%_60%_70%_60%] opacity-24 ">
                         </div>
 
 
