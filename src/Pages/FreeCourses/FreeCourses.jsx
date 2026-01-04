@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Earth, SquareArrowUpLeft, UsersIcon, X, Filter } from 'lucide-react';
 import React, { useState } from 'react';
 import { BsStars } from 'react-icons/bs';
+import ShapeIllusion from '../Home/Component/ShapeIllusion';
 
 
 
@@ -70,6 +71,7 @@ const FreeCourses = () => {
     return (
         <div>
             <div className="mt-20  w-full overflow-hidden">
+                <ShapeIllusion></ShapeIllusion>
                 
                 <div className="relative mb-10  bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5 border-2 border-yellow-500/20 rounded-3xl text-wrap backdrop-blur-sm lg:p-16">
                     <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 items-center">
