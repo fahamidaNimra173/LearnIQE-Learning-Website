@@ -1,6 +1,6 @@
 import React from 'react';
 import ShapeIllusion from '../Home/Component/ShapeIllusion';
-import { Award, BookOpen, GraduationCap } from 'lucide-react';
+import { Award, BookOpen, Check, FileText, GraduationCap, GraduationCapIcon, Users, Video, X } from 'lucide-react';
 
 
 
@@ -335,15 +335,82 @@ const Explore = () => {
                                                 </h4>
                                                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-green-500/30 to-transparent"></div>
                                             </div>
-
+                                            <div className="grid grid-cols-2 gap-2 text-xs">
+                                                <FeatureItem
+                                                    icon={<Video className="w-3.5 h-3.5" />}
+                                                    label="Videos"
+                                                    available={platform.freeFeatures.videos}
+                                                />
+                                                <FeatureItem
+                                                    icon={<FileText className="w-3.5 h-3.5" />}
+                                                    label="Materials"
+                                                    available={platform.freeFeatures.materials}
+                                                />
+                                                <FeatureItem
+                                                    icon={<Users className="w-3.5 h-3.5" />}
+                                                    label="Support"
+                                                    available={platform.freeFeatures.support}
+                                                />
+                                                <FeatureItem
+                                                    icon={<Award className="w-3.5 h-3.5" />}
+                                                    label="Certificate"
+                                                    available={platform.freeFeatures.certificate}
+                                                />
+                                                <div className="col-span-2">
+                                                    <FeatureItem
+                                                        icon={<GraduationCap className="w-3.5 h-3.5" />}
+                                                        label="Verified Certificate"
+                                                        available={platform.freeFeatures.verifiedCert}
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
                                     )}
 
+                                    {/* Paid Features */}
+                                    {platform.paidFeatures && (
+                                        <div className="space-y-3">
+                                            <div className="flex items-center gap-2 mb-3">
+                                                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+                                                <h4 className="text-blue-400 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+                                                    <GraduationCap className="w-4 h-4" />
+                                                    Paid Tier
+                                                </h4>
+                                                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+                                            </div>
+                                            <div className="grid grid-cols-2 gap-2 text-xs">
+                                                <FeatureItem
+                                                    icon={<Video className="w-3.5 h-3.5" />}
+                                                    label="Videos"
+                                                    available={platform.paidFeatures.videos}
+                                                />
+                                                <FeatureItem
+                                                    icon={<FileText className="w-3.5 h-3.5" />}
+                                                    label="Materials"
+                                                    available={platform.paidFeatures.materials}
+                                                />
+                                                <FeatureItem
+                                                    icon={<Users className="w-3.5 h-3.5" />}
+                                                    label="Support"
+                                                    available={platform.paidFeatures.support}
+                                                />
+                                                <FeatureItem
+                                                    icon={<Award className="w-3.5 h-3.5" />}
+                                                    label="Certificate"
+                                                    available={platform.paidFeatures.certificate}
+                                                />
+                                                <div className="col-span-2">
+                                                    <FeatureItem
+                                                        icon={<GraduationCapIcon className="w-3.5 h-3.5" />}
+                                                        label="Verified Certificate"
+                                                        available={platform.paidFeatures.verifiedCert}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
 
-
-
-
-
+                             
                                 </div>
 
                                 {/* Bottom hover effect */}
@@ -369,244 +436,5 @@ const Explore = () => {
 export default Explore;
 
 
-
-
-// import React from 'react';
-// import { Award, Video, FileText, Users, Check, X, ExternalLink, BookOpen, GraduationCap } from 'lucide-react';
-
-
-
-// const ExplorePlatforms = () => {
-
-
-//     return (
-//         <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
-//             {/* Hero Section with Flowing Pipe Illusion */}
-//             <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-//                 {/* Flowing Pipe/Spring Illusion - Creates a twisted flowing effect */}
-//                 <div className="absolute inset-0 overflow-hidden">
-//                     {/* Main flowing curve - like a pipe */}
-//                     <div className="absolute left-0 top-1/4 h-32 w-[800px] rounded-[80%_70%_80%_70%] border-2 border-blue-500/40 rotate-12"></div>
-//                     <div className="absolute left-0 top-1/4 h-32 w-[800px] rounded-[80%_70%_80%_70%] bg-blue-500/10 blur-xl rotate-12"></div>
-
-//                     <div className="absolute left-40 top-1/3 h-40 w-[700px] rounded-[75%_65%_75%_65%] border-2 border-cyan-500/40 rotate-[20deg]"></div>
-//                     <div className="absolute left-40 top-1/3 h-40 w-[700px] rounded-[75%_65%_75%_65%] bg-cyan-500/10 blur-xl rotate-[20deg]"></div>
-
-//                     <div className="absolute left-80 top-2/5 h-48 w-[650px] rounded-[70%_80%_70%_80%] border-2 border-indigo-500/40 rotate-[28deg]"></div>
-//                     <div className="absolute left-80 top-2/5 h-48 w-[650px] rounded-[70%_80%_70%_80%] bg-indigo-500/10 blur-xl rotate-[28deg]"></div>
-
-//                     <div className="absolute left-96 top-1/2 h-56 w-[600px] rounded-[65%_75%_65%_75%] border-2 border-violet-500/40 rotate-[35deg]"></div>
-//                     <div className="absolute left-96 top-1/2 h-56 w-[600px] rounded-[65%_75%_65%_75%] bg-violet-500/10 blur-xl rotate-[35deg]"></div>
-
-//                     <div className="absolute left-[500px] top-3/5 h-52 w-[550px] rounded-[70%_70%_70%_70%] border-2 border-purple-500/40 rotate-[42deg]"></div>
-//                     <div className="absolute left-[500px] top-3/5 h-52 w-[550px] rounded-[70%_70%_70%_70%] bg-purple-500/10 blur-xl rotate-[42deg]"></div>
-
-//                     <div className="absolute left-[600px] top-2/3 h-48 w-[500px] rounded-[75%_65%_75%_65%] border-2 border-pink-500/40 rotate-[48deg]"></div>
-//                     <div className="absolute left-[600px] top-2/3 h-48 w-[500px] rounded-[75%_65%_75%_65%] bg-pink-500/10 blur-xl rotate-[48deg]"></div>
-
-//                     {/* Right side continuation */}
-//                     <div className="absolute right-40 top-1/4 h-36 w-[700px] rounded-[70%_80%_70%_80%] border-2 border-emerald-500/40 -rotate-12"></div>
-//                     <div className="absolute right-40 top-1/4 h-36 w-[700px] rounded-[70%_80%_70%_80%] bg-emerald-500/10 blur-xl -rotate-12"></div>
-
-//                     <div className="absolute right-80 top-1/3 h-44 w-[650px] rounded-[75%_70%_75%_70%] border-2 border-teal-500/40 -rotate-[20deg]"></div>
-//                     <div className="absolute right-80 top-1/3 h-44 w-[650px] rounded-[75%_70%_75%_70%] bg-teal-500/10 blur-xl -rotate-[20deg]"></div>
-
-//                     {/* Glow accents */}
-//                     <div className="absolute left-1/3 top-1/2 h-96 w-96 rounded-full bg-blue-500/5 blur-3xl"></div>
-//                     <div className="absolute right-1/3 top-1/3 h-96 w-96 rounded-full bg-violet-500/5 blur-3xl"></div>
-//                 </div>
-
-//                 {/* Hero Content */}
-//                 <div className="relative z-10 max-w-4xl text-center">
-//                     <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-//                         <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">
-//                             Explore Learning Platforms
-//                         </span>
-//                     </h1>
-
-//                     <div className="space-y-6 text-lg md:text-xl text-slate-300 leading-relaxed">
-//                         <p>
-//                             I tried to bring all platforms together so that people can know about them and explore.
-//                             I couldn't bring all free courses and paid courses individually.
-//                         </p>
-//                         <p>
-//                             So I built this page to introduce platforms with detailed information - what they offer,
-//                             what's free, what's paid, and the limitations of each.
-//                         </p>
-//                         <p className="text-cyan-400 font-medium">
-//                             Sometimes a small step can bring great changes. So just explore and gain knowledge.
-//                         </p>
-//                     </div>
-
-//                 </div>
-//             </section>
-
-//             {/* Platforms Grid */}
-//             <section className="relative px-6 py-20">
-//                 <div className="max-w-7xl mx-auto">
-//                     <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-//                         Platform Details
-//                     </h2>
-
-//                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//                         {platforms.map((platform, index) => (
-//                             <div
-//                                 key={index}
-//                                 className="group relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl overflow-hidden hover:border-slate-600 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2"
-//                             >
-//                                 {/* Accent gradient line at top */}
-//                                 <div className={`h-1 w-full bg-gradient-to-r from-${platform.accentColor}-500 to-${platform.accentColor}-600`}></div>
-
-//                                 {/* Platform Logo & Badge */}
-//                                 <div className="p-6 pb-4">
-//                                     <div className="flex items-start justify-between mb-6">
-//                                         <div className="h-16 w-40 flex items-center">
-//                                             <img
-//                                                 src={platform.logo}
-//                                                 alt={platform.name}
-//                                                 className="max-h-12 max-w-full object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
-//                                             />
-//                                         </div>
-//                                         <a
-//                                             href={platform.website}
-//                                             target="_blank"
-//                                             rel="noopener noreferrer"
-//                                             className="text-slate-400 hover:text-blue-400 transition-colors"
-//                                         >
-//                                             <ExternalLink className="w-5 h-5" />
-//                                         </a>
-//                                     </div>
-
-//                                     {/* Type Badge */}
-//                                     <div className="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-4 py-2 rounded-full mb-4">
-//                                         <div className={`w-2 h-2 rounded-full bg-${platform.accentColor}-400 animate-pulse`}></div>
-//                                         <span className="text-slate-300 text-xs font-semibold tracking-wide uppercase">
-//                                             {platform.type}
-//                                         </span>
-//                                     </div>
-
-//                                     {/* Description */}
-//                                     <p className="text-slate-400 text-sm leading-relaxed mb-6 min-h-20">
-//                                         {platform.details}
-//                                     </p>
-//                                 </div>
-
-//                                 {/* Features Section */}
-//                                 <div className="px-6 pb-6 space-y-5">
-//                                     {/* Free Features */}
-//                                     {platform.freeFeatures && (
-//                                         <div className="space-y-3">
-//                                             <div className="flex items-center gap-2 mb-3">
-//                                                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-green-500/30 to-transparent"></div>
-//                                                 <h4 className="text-green-400 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
-//                                                     <Award className="w-4 h-4" />
-//                                                     Free Tier
-//                                                 </h4>
-//                                                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-green-500/30 to-transparent"></div>
-//                                             </div>
-//                                             <div className="grid grid-cols-2 gap-2 text-xs">
-//                                                 <FeatureItem
-//                                                     icon={<Video className="w-3.5 h-3.5" />}
-//                                                     label="Videos"
-//                                                     available={platform.freeFeatures.videos}
-//                                                 />
-//                                                 <FeatureItem
-//                                                     icon={<FileText className="w-3.5 h-3.5" />}
-//                                                     label="Materials"
-//                                                     available={platform.freeFeatures.materials}
-//                                                 />
-//                                                 <FeatureItem
-//                                                     icon={<Users className="w-3.5 h-3.5" />}
-//                                                     label="Support"
-//                                                     available={platform.freeFeatures.support}
-//                                                 />
-//                                                 <FeatureItem
-//                                                     icon={<Award className="w-3.5 h-3.5" />}
-//                                                     label="Certificate"
-//                                                     available={platform.freeFeatures.certificate}
-//                                                 />
-//                                                 <div className="col-span-2">
-//                                                     <FeatureItem
-//                                                         icon={<GraduationCap className="w-3.5 h-3.5" />}
-//                                                         label="Verified Certificate"
-//                                                         available={platform.freeFeatures.verifiedCert}
-//                                                     />
-//                                                 </div>
-//                                             </div>
-//                                         </div>
-//                                     )}
-
-//                                     {/* Paid Features */}
-//                                     {platform.paidFeatures && (
-//                                         <div className="space-y-3">
-//                                             <div className="flex items-center gap-2 mb-3">
-//                                                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
-//                                                 <h4 className="text-blue-400 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
-//                                                     <GraduationCap className="w-4 h-4" />
-//                                                     Paid Tier
-//                                                 </h4>
-//                                                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
-//                                             </div>
-//                                             <div className="grid grid-cols-2 gap-2 text-xs">
-//                                                 <FeatureItem
-//                                                     icon={<Video className="w-3.5 h-3.5" />}
-//                                                     label="Videos"
-//                                                     available={platform.paidFeatures.videos}
-//                                                 />
-//                                                 <FeatureItem
-//                                                     icon={<FileText className="w-3.5 h-3.5" />}
-//                                                     label="Materials"
-//                                                     available={platform.paidFeatures.materials}
-//                                                 />
-//                                                 <FeatureItem
-//                                                     icon={<Users className="w-3.5 h-3.5" />}
-//                                                     label="Support"
-//                                                     available={platform.paidFeatures.support}
-//                                                 />
-//                                                 <FeatureItem
-//                                                     icon={<Award className="w-3.5 h-3.5" />}
-//                                                     label="Certificate"
-//                                                     available={platform.paidFeatures.certificate}
-//                                                 />
-//                                                 <div className="col-span-2">
-//                                                     <FeatureItem
-//                                                         icon={<GraduationCap className="w-3.5 h-3.5" />}
-//                                                         label="Verified Certificate"
-//                                                         available={platform.paidFeatures.verifiedCert}
-//                                                     />
-//                                                 </div>
-//                                             </div>
-//                                         </div>
-//                                     )}
-
-//                                     {/* No Free Access Message */}
-//                                     {platform.freeFeatures === null && (
-//                                         <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
-//                                             <p className="text-slate-500 text-xs font-medium">No free tier available</p>
-//                                         </div>
-//                                     )}
-
-//                                     {/* No Paid Access Message */}
-//                                     {platform.paidFeatures === null && (
-//                                         <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
-//                                             <p className="text-slate-500 text-xs font-medium">All content is free</p>
-//                                         </div>
-//                                     )}
-//                                 </div>
-
-//                                 {/* Bottom hover effect */}
-//                                 <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-${platform.accentColor}-500 to-${platform.accentColor}-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
-//                             </div>
-//                         ))}
-//                     </div>
-//                 </div>
-//             </section>
-
-
-//         </div>
-//     );
-// };
-
-// export default ExplorePlatforms;
 
 
