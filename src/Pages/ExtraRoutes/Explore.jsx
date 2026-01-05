@@ -11,7 +11,7 @@ import { Award, BookOpen, Check, ExternalLink, FileText, GraduationCap, Graduati
 const FeatureItem = ({ icon, label, available }) => (
     <div className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${available
         ? 'bg-slate-800/50 border-slate-700 text-slate-300'
-        : 'bg-slate-800/20 border-slate-700/30 text-slate-600'
+        : 'bg-slate-800/20 border-slate-700/30 text-slate-400'
         }`}>
         <div className={available ? 'text-slate-400' : 'text-slate-700'}>
             {icon}
@@ -44,7 +44,8 @@ const Explore = () => {
                 certificate: true,
                 verifiedCert: true
             },
-            details: "Offers both free and premium courses with instructor support. Free courses include certificates.",
+            details:
+                "10 Minute School offers a wide range of courses including academic subjects, skill development, and competitive exam preparation. Both free and paid courses are available, and many courses include certificates and instructor support.",
             accentColor: "emerald"
         },
         {
@@ -66,7 +67,8 @@ const Explore = () => {
                 certificate: true,
                 verifiedCert: true
             },
-            details: "Provides comprehensive tech education with free introductory courses and premium professional tracks.",
+            details:
+                "Ostad provides career-focused technology courses with structured learning paths. It offers free introductory classes and paid professional programs mainly in development, design, and digital skills.",
             accentColor: "blue"
         },
         {
@@ -82,7 +84,8 @@ const Explore = () => {
                 certificate: true,
                 verifiedCert: true
             },
-            details: "Premium coding bootcamp focused on hands-on learning with mentor support and job placement assistance.",
+            details:
+                "Programming Hero focuses only on MERN-based courses. Level 1 covers the MERN stack fundamentals, while Level 2 is an advanced full-stack program. All courses are paid and follow a bootcamp-style learning approach.",
             accentColor: "purple"
         },
         {
@@ -104,7 +107,8 @@ const Explore = () => {
                 certificate: true,
                 verifiedCert: false
             },
-            details: "Massive course library. Free courses have limited instructor interaction. Paid courses include Q&A and certificate.",
+            details:
+                "Udemy hosts thousands of courses across many categories. It offers both free and paid courses, but most high-quality and advanced courses are paid and certificates depend on the instructor.",
             accentColor: "violet"
         },
         {
@@ -126,7 +130,8 @@ const Explore = () => {
                 certificate: true,
                 verifiedCert: true
             },
-            details: "Free access to all course content. Certificates require payment. Limited instructor support on all courses.",
+            details:
+                "Alison provides free access to all course content across various subjects. Learning is completely free, but certificates and verified credentials require payment.",
             accentColor: "orange"
         },
         {
@@ -148,7 +153,8 @@ const Explore = () => {
                 certificate: true,
                 verifiedCert: true
             },
-            details: "Audit courses for free with full content access. Pay for verified certificates and graded assignments.",
+            details:
+                "edX offers university-level courses from top global institutions. Most courses can be audited for free, but verified certificates and graded assignments require payment.",
             accentColor: "cyan"
         },
         {
@@ -164,7 +170,8 @@ const Explore = () => {
                 verifiedCert: false
             },
             paidFeatures: null,
-            details: "Completely free educational content. Video lessons and practice exercises. No certificates or instructor support.",
+            details:
+                "Khan Academy offers completely free courses in math, science, programming, and more. All learning materials are free, but certificates and paid features are not available.",
             accentColor: "teal"
         },
         {
@@ -186,7 +193,8 @@ const Explore = () => {
                 certificate: true,
                 verifiedCert: true
             },
-            details: "University-level courses. Audit for free or pay for certificates and peer-graded assignments.",
+            details:
+                "Coursera mainly offers paid courses from universities and companies. Some courses include a 7-day free trial, a few are fully free, and certificates are available only with paid enrollment.",
             accentColor: "indigo"
         },
         {
@@ -208,10 +216,12 @@ const Explore = () => {
                 certificate: false,
                 verifiedCert: false
             },
-            details: "Monthly subscription for unlimited access. Focus on creative skills. No formal certificates offered.",
+            details:
+                "Skillshare is a subscription-based learning platform focused on creative and practical skills. All courses require a paid membership and certificates are not provided.",
             accentColor: "pink"
         }
     ];
+
     return (
         <div className=' min-h-screen pt-30 text-white overflow-hidden"'>
 
@@ -324,7 +334,7 @@ const Explore = () => {
                                     </div>
 
                                     {/* Description */}
-                                    <p className="text-slate-400 text-sm leading-relaxed mb-6 min-h-20">
+                                    <p className="text-slate-200 text-sm leading-relaxed mb-6 min-h-20">
                                         {platform.details}
                                     </p>
                                 </div>
@@ -420,14 +430,14 @@ const Explore = () => {
                                     {/* No Free Access Message */}
                                     {platform.freeFeatures === null && (
                                         <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
-                                            <p className="text-slate-500 text-xs font-medium">No free tier available</p>
+                                            <p className="text-slate-100 text-xs font-medium">No free tier available</p>
                                         </div>
                                     )}
 
                                     {/* No Paid Access Message */}
                                     {platform.paidFeatures === null && (
                                         <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
-                                            <p className="text-slate-500 text-xs font-medium">All content is free</p>
+                                            <p className="text-slate-100 text-xs font-medium">All content is free</p>
                                         </div>
                                     )}
                                 </div>
