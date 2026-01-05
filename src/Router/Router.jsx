@@ -65,6 +65,7 @@ const router = createBrowserRouter([
 
         Component: FreeCourses
       },
+      
       {
         path: 'classdetails/:id',
         element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>

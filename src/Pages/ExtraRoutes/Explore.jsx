@@ -4,7 +4,7 @@ const Explore = () => {
     const platforms = [
         {
             name: "10 Minute School",
-            logo: "https://10minuteschool.com/images/logo.svg",
+            logo: "https://i.ibb.co.com/svMxxXbm/10min-School.png",
             website: "https://10minuteschool.com",
             type: "Free & Paid",
             freeFeatures: {
@@ -26,7 +26,7 @@ const Explore = () => {
         },
         {
             name: "Ostad",
-            logo: "https://i.ibb.co.com/yBmxh0Xx/Screenshot-2025-11-28-125756.png",
+            logo: "https://i.ibb.co.com/Nnf7wgCw/Screenshot-2025-11-28-125756.png",
             website: "https://ostad.app",
             type: "Free & Paid",
             freeFeatures: {
@@ -48,7 +48,7 @@ const Explore = () => {
         },
         {
             name: "Programming Hero",
-            logo: "https://i.ibb.co.com/example/programming-hero.png",
+            logo: "https://i.ibb.co.com/Gvdpd8wf/Screenshot-2025-11-28-130644.png",
             website: "https://programminghero.com",
             type: "Paid Only",
             freeFeatures: null,
@@ -64,7 +64,7 @@ const Explore = () => {
         },
         {
             name: "Udemy",
-            logo: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
+            logo: "https://i.ibb.co.com/JRjjTGLj/udemy.png",
             website: "https://udemy.com",
             type: "Free & Paid",
             freeFeatures: {
@@ -86,7 +86,7 @@ const Explore = () => {
         },
         {
             name: "Alison",
-            logo: "https://i.ibb.co.com/7xK4KMX7/Screenshot-2025-12-11-230019.png",
+            logo: "https://i.ibb.co.com/XfKZrn4T/Screenshot-2025-12-11-230019.png",
             website: "https://alison.com",
             type: "Free with Premium Options",
             freeFeatures: {
@@ -108,7 +108,7 @@ const Explore = () => {
         },
         {
             name: "edX",
-            logo: "https://i.ibb.co.com/pvFPY5XT/favicon.jpg",
+            logo: "https://i.ibb.co.com/yb5S4L5/Screenshot-2025-11-28-130455.png",
             website: "https://edx.org",
             type: "Audit Free / Verified Paid",
             freeFeatures: {
@@ -130,7 +130,7 @@ const Explore = () => {
         },
         {
             name: "Khan Academy",
-            logo: "https://cdn.kastatic.org/images/khan-logo-dark-background.png",
+            logo: "https://i.ibb.co.com/mCRwvvtC/Screenshot-2025-12-11-225942.png",
             website: "https://khanacademy.org",
             type: "100% Free",
             freeFeatures: {
@@ -146,7 +146,7 @@ const Explore = () => {
         },
         {
             name: "Coursera",
-            logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-assets/coursera-logo.png",
+            logo: "https://i.ibb.co.com/zVpT8qJM/Screenshot-2026-01-05-163058.png",
             website: "https://coursera.org",
             type: "Audit Free / Verified Paid",
             freeFeatures: {
