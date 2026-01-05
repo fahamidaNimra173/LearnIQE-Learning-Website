@@ -59,7 +59,7 @@ const NavigationBar = ({ activeSection }) => {
           Home
         </NavLink>
 
-        <NavLink to="/" className={`${getTextColorClass()} dark:text-[#51a3f5] 
+        <NavLink to="/explore" className={`${getTextColorClass()} dark:text-[#51a3f5] 
           font-medium flex items-end outfit text-[18px] hover:text-[#0A97B0]`}>
           Explore <IoMdArrowDropdown />
         </NavLink>

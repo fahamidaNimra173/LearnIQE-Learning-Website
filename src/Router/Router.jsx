@@ -29,6 +29,7 @@ import AllTeacher from '../Pages/ExtraRoutes/AllTeacher';
 import PrivacyPolicy from '../Pages/ExtraRoutes/PrivacyPolicy';
 import TermsAndConditions from '../Pages/ExtraRoutes/TermsAndConditions';
 import FreeCourses from '@/Pages/FreeCourses/FreeCourses';
+import Explore from '@/Pages/ExtraRoutes/Explore';
 
 
 
@@ -65,7 +66,11 @@ const router = createBrowserRouter([
 
         Component: FreeCourses
       },
-      
+      {
+        path: 'explore',
+
+        Component: Explore
+      },
       {
         path: 'classdetails/:id',
         element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>
