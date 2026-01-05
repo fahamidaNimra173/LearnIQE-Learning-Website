@@ -287,6 +287,13 @@ const Explore = () => {
                                      
                                     </div>
 
+                                    {/* Type Badge */}
+                                    <div className="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-4 py-2 rounded-full mb-4">
+                                        <div className={`w-2 h-2 rounded-full bg-${platform.accentColor}-400 animate-pulse`}></div>
+                                        <span className="text-slate-300 text-xs font-semibold tracking-wide uppercase">
+                                            {platform.type}
+                                        </span>
+                                    </div>
 
                                     {/* Description */}
                                     <p className="text-slate-400 text-sm leading-relaxed mb-6 min-h-20">
