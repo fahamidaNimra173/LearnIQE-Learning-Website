@@ -410,8 +410,14 @@ const Explore = () => {
                                         </div>
                                     )}
 
-                             
+
                                 </div>
+                                {/* No Free Access Message */}
+                                {platform.freeFeatures === null && (
+                                    <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
+                                        <p className="text-slate-500 text-xs font-medium">No free tier available</p>
+                                    </div>
+                                )}
 
                                 {/* Bottom hover effect */}
                                 <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-${platform.accentColor}-500 to-${platform.accentColor}-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
