@@ -302,6 +302,12 @@ const Explore = () => {
                                 key={index}
                                 className="group relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl overflow-hidden hover:border-slate-600 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2"
                             >
+                                <div className='absolute -z-10 w-20 h-20 bg-blue-500 blur-2xl opacity-90 rounded-full'>
+
+                                </div>
+                                <div className='absolute -z-10 top-45 right-10 w-50 h-20 bg-blue-500 blur-2xl opacity-50 rounded-full'>
+
+                                </div>
                                 {/* Accent gradient line at top */}
                                 <div className={`h-1 w-full bg-gradient-to-r from-${platform.accentColor}-500 to-${platform.accentColor}-600`}></div>
 
