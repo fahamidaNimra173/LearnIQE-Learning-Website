@@ -1,7 +1,28 @@
 import React from 'react';
 import ShapeIllusion from '../Home/Component/ShapeIllusion';
-import { BookOpen, GraduationCap } from 'lucide-react';
+import { Award, BookOpen, GraduationCap } from 'lucide-react';
 
+
+
+
+
+
+// Feature Item Component
+const FeatureItem = ({ icon, label, available }) => (
+    <div className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${available
+        ? 'bg-slate-800/50 border-slate-700 text-slate-300'
+        : 'bg-slate-800/20 border-slate-700/30 text-slate-600'
+        }`}>
+        <div className={available ? 'text-slate-400' : 'text-slate-700'}>
+            {icon}
+        </div>
+        <span className="text-xs font-medium flex-1">{label}</span>
+        {available ?
+            <Check className="w-4 h-4 text-green-400 flex-shrink-0" /> :
+            <X className="w-4 h-4 text-red-400/50 flex-shrink-0" />
+        }
+    </div>
+);
 const Explore = () => {
     const platforms = [
         {
@@ -281,10 +302,10 @@ const Explore = () => {
                                             <img
                                                 src={platform.logo}
                                                 alt={platform.name}
-                                                className="max-h-12 max-w-full object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
+                                                className="max-h-12 max-w-full object-contain  invert opacity-90 group-hover:opacity-100 transition-opacity"
                                             />
                                         </div>
-                                     
+
                                     </div>
 
                                     {/* Type Badge */}
@@ -303,13 +324,26 @@ const Explore = () => {
 
                                 {/* Features Section */}
                                 <div className="px-6 pb-6 space-y-5">
+                                    {/* Free Features */}
+                                    {platform.freeFeatures && (
+                                        <div className="space-y-3">
+                                            <div className="flex items-center gap-2 mb-3">
+                                                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-green-500/30 to-transparent"></div>
+                                                <h4 className="text-green-400 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+                                                    <Award className="w-4 h-4" />
+                                                    Free Tier
+                                                </h4>
+                                                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-green-500/30 to-transparent"></div>
+                                            </div>
+
+                                        </div>
+                                    )}
 
 
-                           
 
-   
 
-                               
+
+
                                 </div>
 
                                 {/* Bottom hover effect */}
@@ -340,22 +374,7 @@ export default Explore;
 // import React from 'react';
 // import { Award, Video, FileText, Users, Check, X, ExternalLink, BookOpen, GraduationCap } from 'lucide-react';
 
-// // Feature Item Component
-// const FeatureItem = ({ icon, label, available }) => (
-//     <div className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${available
-//         ? 'bg-slate-800/50 border-slate-700 text-slate-300'
-//         : 'bg-slate-800/20 border-slate-700/30 text-slate-600'
-//         }`}>
-//         <div className={available ? 'text-slate-400' : 'text-slate-700'}>
-//             {icon}
-//         </div>
-//         <span className="text-xs font-medium flex-1">{label}</span>
-//         {available ?
-//             <Check className="w-4 h-4 text-green-400 flex-shrink-0" /> :
-//             <X className="w-4 h-4 text-red-400/50 flex-shrink-0" />
-//         }
-//     </div>
-// );
+
 
 // const ExplorePlatforms = () => {
 
