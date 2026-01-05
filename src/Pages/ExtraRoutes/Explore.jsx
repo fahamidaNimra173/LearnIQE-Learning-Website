@@ -1,6 +1,6 @@
 import React from 'react';
 import ShapeIllusion from '../Home/Component/ShapeIllusion';
-import { Award, BookOpen, Check, FileText, GraduationCap, GraduationCapIcon, Users, Video, X } from 'lucide-react';
+import { Award, BookOpen, Check, ExternalLink, FileText, GraduationCap, GraduationCapIcon, Users, Video, X } from 'lucide-react';
 
 
 
@@ -280,13 +280,13 @@ const Explore = () => {
             </div>
 
             {/* Platforms Grid */}
-            <section className="relative px-6 py-20">
+            <section className="relative px-6 z-40 py-20">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                         Platform Details
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1  md:grid-cols-2 z-20 lg:grid-cols-3 gap-8">
                         {platforms.map((platform, index) => (
                             <div
                                 key={index}
@@ -302,10 +302,17 @@ const Explore = () => {
                                             <img
                                                 src={platform.logo}
                                                 alt={platform.name}
-                                                className="max-h-12 max-w-full object-contain  invert opacity-90 group-hover:opacity-100 transition-opacity"
+                                                className="max-h-12 max-w-full object-contain  "
                                             />
                                         </div>
-
+                                        <a
+                                            href={platform.website}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-green-400  hover:text-blue-400 transition-colors"
+                                        >
+                                            <button className='cursor-pointer'> <ExternalLink className="w-5 h-5" /></button>
+                                        </a>
                                     </div>
 
                                     {/* Type Badge */}
@@ -401,7 +408,7 @@ const Explore = () => {
                                                 />
                                                 <div className="col-span-2">
                                                     <FeatureItem
-                                                        icon={<GraduationCapIcon className="w-3.5 h-3.5" />}
+                                                        icon={<GraduationCap className="w-3.5 h-3.5" />}
                                                         label="Verified Certificate"
                                                         available={platform.paidFeatures.verifiedCert}
                                                     />
@@ -410,20 +417,20 @@ const Explore = () => {
                                         </div>
                                     )}
 
+                                    {/* No Free Access Message */}
+                                    {platform.freeFeatures === null && (
+                                        <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
+                                            <p className="text-slate-500 text-xs font-medium">No free tier available</p>
+                                        </div>
+                                    )}
 
+                                    {/* No Paid Access Message */}
+                                    {platform.paidFeatures === null && (
+                                        <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
+                                            <p className="text-slate-500 text-xs font-medium">All content is free</p>
+                                        </div>
+                                    )}
                                 </div>
-                                {/* No Free Access Message */}
-                                {platform.freeFeatures === null && (
-                                    <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
-                                        <p className="text-slate-500 text-xs font-medium">No free tier available</p>
-                                    </div>
-                                )}
-                                {/* No Paid Access Message */}
-                                {platform.paidFeatures === null && (
-                                    <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-center">
-                                        <p className="text-slate-500 text-xs font-medium">All content is free</p>
-                                    </div>
-                                )}
 
                                 {/* Bottom hover effect */}
                                 <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-${platform.accentColor}-500 to-${platform.accentColor}-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
