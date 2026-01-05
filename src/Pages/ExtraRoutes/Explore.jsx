@@ -258,6 +258,55 @@ const Explore = () => {
                 </div>
             </div>
 
+            {/* Platforms Grid */}
+            <section className="relative px-6 py-20">
+                <div className="max-w-7xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                        Platform Details
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {platforms.map((platform, index) => (
+                            <div
+                                key={index}
+                                className="group relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl overflow-hidden hover:border-slate-600 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2"
+                            >
+                                {/* Accent gradient line at top */}
+                                <div className={`h-1 w-full bg-gradient-to-r from-${platform.accentColor}-500 to-${platform.accentColor}-600`}></div>
+
+                                {/* Platform Logo & Badge */}
+                                <div className="p-6 pb-4">
+                                    <div className="flex items-start justify-between mb-6">
+
+                                     
+                                    </div>
+
+
+                                    {/* Description */}
+                                    <p className="text-slate-400 text-sm leading-relaxed mb-6 min-h-20">
+                                        {platform.details}
+                                    </p>
+                                </div>
+
+                                {/* Features Section */}
+                                <div className="px-6 pb-6 space-y-5">
+
+
+                           
+
+   
+
+                               
+                                </div>
+
+                                {/* Bottom hover effect */}
+                                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-${platform.accentColor}-500 to-${platform.accentColor}-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <footer className="relative px-6 py-12 border-t border-slate-800">
                 <div className="max-w-4xl mx-auto text-center">
                     <p className="text-slate-400 text-sm">
