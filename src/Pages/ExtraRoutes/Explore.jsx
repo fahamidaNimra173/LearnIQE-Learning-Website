@@ -1,4 +1,5 @@
 import React from 'react';
+import ShapeIllusion from '../Home/Component/ShapeIllusion';
 
 const Explore = () => {
     const platforms = [
@@ -190,12 +191,39 @@ const Explore = () => {
         }
     ];
     return (
-        <div className=' className="min-h-screen bg-slate-950 text-white overflow-hidden"'>
+        <div className=' min-h-screen pt-30 text-white overflow-hidden"'>
+
+            <div className='absolute opacity-90 top-1 overflow-hidden left-0 z-10 w-full'>
+                <div className='flex'>
+                    <div className='blur-xs'>
+                        <ShapeIllusion></ShapeIllusion>
+                    </div>
+
+                    <div className='rotate-190'>
+                        <ShapeIllusion></ShapeIllusion>
+
+                    </div>
+
+                </div>
 
 
+            </div>
+            <div className='absolute  opacity-10 top-20 animate-pulse  right-50 z-10 '>
+                <div className='flex'>
+                    <div className='blur-xs'>
+                        <ShapeIllusion></ShapeIllusion>
+                    </div>
+
+                   
+
+                </div>
+
+
+            </div>
 
             {/* Hero Content */}
-            <div className="relative z-10 max-w-4xl text-center">
+            <div className="relative z-10 max-w-4xl mx-auto text-center">
+
                 <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
                     <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">
                         Explore Learning Platforms

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ShapeIllusion = () => {
     return (
-        <div className="relative w-full h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 overflow-hidden">
+        <div className=" max-w-[400px] mx-auto h-screen overflow-hidden">
 
 
             {/* Center - the twist/curve point */}
@@ -52,11 +52,7 @@ const ShapeIllusion = () => {
 
 
 
-            {/* Glow effects */}
-            <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
-            <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-cyan-500/10 blur-2xl"></div>
-            <div className="absolute z-5 left-1/4 top-1/2 h-80 w-80 rounded-full bg-indigo-600/5 blur-3xl"></div>
-            <div className="absolute z-5 right-1/4 top-1/2 h-80 w-80 rounded-full bg-cyan-600/5 blur-3xl"></div>
+          
         </div>
     );
 };
