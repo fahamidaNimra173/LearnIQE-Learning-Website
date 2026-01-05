@@ -190,7 +190,35 @@ const Explore = () => {
         }
     ];
     return (
-        <div>
+        <div className=' className="min-h-screen bg-slate-950 text-white overflow-hidden"'>
+
+
+
+            {/* Hero Content */}
+            <div className="relative z-10 max-w-4xl text-center">
+                <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                    <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">
+                        Explore Learning Platforms
+                    </span>
+                </h1>
+
+                <div className="space-y-6 text-lg md:text-xl text-slate-300 leading-relaxed">
+                    <p>
+                        I tried to bring all platforms together so that people can know about them and explore.
+                        I couldn't bring all free courses and paid courses individually.
+                    </p>
+                    <p>
+                        So I built this page to introduce platforms with detailed information - what they offer,
+                        what's free, what's paid, and the limitations of each.
+                    </p>
+                    <p className="text-cyan-400 font-medium">
+                        Sometimes a small step can bring great changes. So just explore and gain knowledge.
+                    </p>
+                </div>
+
+            </div>
+
+
 
         </div>
     );
