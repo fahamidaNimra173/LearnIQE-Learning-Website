@@ -214,7 +214,7 @@ const Explore = () => {
                         <ShapeIllusion></ShapeIllusion>
                     </div>
 
-                   
+
 
                 </div>
 
@@ -246,7 +246,13 @@ const Explore = () => {
 
             </div>
 
-
+            <footer className="relative px-6 py-12 border-t border-slate-800">
+                <div className="max-w-4xl mx-auto text-center">
+                    <p className="text-slate-400 text-sm">
+                        Platform information is compiled for educational purposes. Please visit official websites for the most up-to-date details.
+                    </p>
+                </div>
+            </footer>
 
         </div>
     );
