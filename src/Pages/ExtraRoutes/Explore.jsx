@@ -277,7 +277,13 @@ const Explore = () => {
                                 {/* Platform Logo & Badge */}
                                 <div className="p-6 pb-4">
                                     <div className="flex items-start justify-between mb-6">
-
+                                        <div className="h-16 w-40 flex items-center">
+                                            <img
+                                                src={platform.logo}
+                                                alt={platform.name}
+                                                className="max-h-12 max-w-full object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
+                                            />
+                                        </div>
                                      
                                     </div>
 
