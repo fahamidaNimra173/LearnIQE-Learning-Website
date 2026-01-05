@@ -256,13 +256,13 @@ const Explore = () => {
             {/* Hero Content */}
             <div className="relative z-10 max-w-4xl mx-auto text-center">
 
-                <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                <h1 className="text-5xl md:text-7xl font-bold mb-8 font-mono uppercase leading-tight">
                     <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">
                         Explore Learning Platforms
                     </span>
                 </h1>
 
-                <div className="space-y-6 text-lg md:text-xl text-slate-300 font-medium bg-black/20 py-5 leading-relaxed">
+                <div className="space-y-6 text-lg md:text-xl text-slate-300 font-mono  bg-black/20 py-5 leading-relaxed">
                     <p>
                         I tried to bring all platforms together so that people can know about them and explore.
                         I couldn't bring all free courses and paid courses individually.
@@ -290,10 +290,10 @@ const Explore = () => {
             </div>
 
             {/* Platforms Grid */}
-            <section className="relative px-6 z-40 py-20">
+            <section className="relative px-2 z-40 py-20">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                        Platform Details
+                    <h2 className="text-4xl md:text-5xl font-mono font-bold text-center mb-16 ">
+                        Platform <span className='text-yellow-300'>Details</span>
                     </h2>
 
                     <div className="grid grid-cols-1  md:grid-cols-2 z-20 lg:grid-cols-3 gap-8">
@@ -312,13 +312,13 @@ const Explore = () => {
                                 <div className={`h-1 w-full bg-gradient-to-r from-${platform.accentColor}-500 to-${platform.accentColor}-600`}></div>
 
                                 {/* Platform Logo & Badge */}
-                                <div className="p-6 pb-4">
+                                <div className="p-2 pb-4">
                                     <div className="flex items-start justify-between mb-6">
                                         <div className="h-16 w-40 flex items-center">
                                             <img
                                                 src={platform.logo}
                                                 alt={platform.name}
-                                                className="max-h-12 max-w-full object-contain  "
+                                                className="max-h-12 rounded-xl max-w-full object-contain  "
                                             />
                                         </div>
                                         <a
@@ -346,7 +346,7 @@ const Explore = () => {
                                 </div>
 
                                 {/* Features Section */}
-                                <div className="px-6 pb-6 space-y-5">
+                                <div className="px-2 pb-6 space-y-5">
                                     {/* Free Features */}
                                     {platform.freeFeatures && (
                                         <div className="space-y-3">
