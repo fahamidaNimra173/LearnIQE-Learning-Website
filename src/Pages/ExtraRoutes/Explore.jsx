@@ -193,7 +193,7 @@ const Explore = () => {
     return (
         <div className=' min-h-screen pt-30 text-white overflow-hidden"'>
 
-            <div className='absolute opacity-90 top-1 overflow-hidden left-0 z-10 w-full'>
+            <div className='fixed opacity-60 top-1 overflow-hidden left-0 z-10 w-full'>
                 <div className='flex'>
                     <div className='blur-xs'>
                         <ShapeIllusion></ShapeIllusion>
@@ -230,7 +230,7 @@ const Explore = () => {
                     </span>
                 </h1>
 
-                <div className="space-y-6 text-lg md:text-xl text-slate-300 leading-relaxed">
+                <div className="space-y-6 text-lg md:text-xl text-slate-300 font-medium bg-black/20 py-5 leading-relaxed">
                     <p>
                         I tried to bring all platforms together so that people can know about them and explore.
                         I couldn't bring all free courses and paid courses individually.
@@ -259,3 +259,5 @@ const Explore = () => {
 };
 
 export default Explore;
+
+
