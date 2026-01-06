@@ -133,6 +133,7 @@ const NavigationBar = ({ activeSection }) => {
       <div
         className={`fixed clip-open ${isMenuOpen ? "show" : ""} top-0 right-0 z-50 overflow-y-scroll lg:hidden h-screen w-11/12`}>
         <div className="absolute top-0 right-0 min-h-screen min-w-11/12 rounded-l-[2.5rem] bg-gradient-to-br from-[#0A5EB0] via-[#5FA8FF] to-[#EBFFD8] shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-2  overflow-y-scroll mb-10">
+          {/* this divs are for creating folding effect on close button */}
           <div className='absolute -top-2 right-17 -rotate-30 w-3 h-14 blur-xs   border-black/60 border-[1.5px] bg-gradient-to-r from-transparent to-white/17'>
 
           </div>
