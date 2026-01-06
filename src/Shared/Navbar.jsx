@@ -118,8 +118,6 @@ const NavigationBar = ({ activeSection }) => {
           </>
         ) : (
           <>
-
-
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <Menu className={`${getTextColorClass()} text-3xl`} />
@@ -137,57 +135,215 @@ const NavigationBar = ({ activeSection }) => {
       >
         <div className="absolute top-0 right-0 mt-2 bg-gradient-to-br 
           from-[#fcb40d] via-[#e6cb89] to-[#624604] rounded-l-3xl shadow-2xl 
-          p-6 min-w-11/12 min-h-screen overflow-hidden">
+          p-6 min-w-11/12 min-h-screen overflow-y-auto">
 
           {/* Close Button */}
-          <div className='relative top-0 mb-8'>
-            <button onClick={() => setIsMenuOpen(false)} className='absolute top-2 right-2 group'>
-              <div className="absolute inset-0 bg-yellow-400 rounded-full blur-xl opacity-50 group-hover:opacity-70 animate-pulse"></div>
-              <div className="absolute inset-0 bg-amber-300 rounded-full blur-lg opacity-30 group-hover:opacity-50"></div>
+          <div className='flex justify-between items-center mb-8'>
+            {/* Logo */}
+            <div className="flex items-center">
+              <span className="text-2xl text-gray-900 righteous">
+                Learn
+                <span className="text-[#2a8aff]">IQ</span>
+              </span>
+              <img
+                src="https://i.ibb.co/8ndphk5P/Screenshot-2025-07-28-152838.png"
+                className="h-10 -ml-7 -mt-4"
+                alt="Logo"
+              />
+            </div>
 
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-white via-yellow-50 to-amber-100 rounded-full opacity-60"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-100 via-amber-200 to-orange-200 rounded-full shadow-lg"></div>
-
-                <div className="absolute top-1 left-2 w-4 h-4 bg-white/70 rounded-full blur-sm"></div>
-
-                <RxCrossCircled className='w-8 h-8 text-gray-800 relative z-10 transition-all duration-500 group-hover:rotate-90 group-hover:scale-110' />
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsMenuOpen(false)} 
+              className='relative group transition-transform duration-300 hover:scale-110'
+            >
+              <div className="absolute inset-0 bg-yellow-400 rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <div className="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-white/60 to-yellow-100/60 rounded-full shadow-lg border border-yellow-600/30">
+                <RxCrossCircled className='w-6 h-6 text-gray-900 transition-transform duration-300 group-hover:rotate-90' />
               </div>
             </button>
           </div>
 
+          {/* User Profile Section (if logged in) */}
+          {user && (
+            <div className="mb-6 px-4 py-5 bg-white/30 backdrop-blur-sm rounded-2xl border border-yellow-700/20 shadow-lg">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full ring-2 ring-yellow-700/50 overflow-hidden">
+                  <img src={user.photoURL} alt="User" className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-gray-900 font-semibold text-lg outfit">{user.displayName}</p>
+                  <p className="text-gray-700 text-sm">{user.email}</p>
+                </div>
+              </div>
+              <div className="flex gap-3 mt-4">
+                <NavLink 
+                  to="/dashboard" 
+                  className="flex-1 text-center py-2 bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-colors outfit font-medium text-sm"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Dashboard
+                </NavLink>
+                <button 
+                  onClick={() => { handleLogout(); setIsMenuOpen(false); }}
+                  className="flex-1 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors outfit font-medium text-sm"
+                >
+                  Sign Out
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Mobile Nav Links */}
-          <div className='flex flex-col justify-center h-full relative z-10 space-y-2 py-10 md:pt-16'>
-
-            <NavLink to="/" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative z-10 outfit group-hover:text-[#FFCFEF]">Home</span>
+          <div className='flex flex-col space-y-2 px-2'>
+            
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => `group relative overflow-hidden py-4 px-5 rounded-xl transition-all duration-300 border ${
+                isActive 
+                  ? 'bg-gray-900 border-gray-900 shadow-lg' 
+                  : 'bg-white/20 border-transparent hover:bg-white/30'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className={({ isActive }) => `relative font-semibold text-xl outfit transition-colors ${
+                isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'
+              }`}>
+                {({ isActive }) => (
+                  <span className={isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'}>
+                    Home
+                  </span>
+                )}
+              </span>
             </NavLink>
 
-            <NavLink to="/allapprovedclasses" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative z-10 outfit group-hover:text-[#FFCFEF]">All Classes</span>
-            </NavLink>
-            <NavLink to="/explore" className={`${getTextColorClass()} dark:text-[#51a3f5] 
-          font-medium flex items-end outfit text-[18px] hover:text-[#0A97B0]`}>
-              Explore <IoMdArrowDropdown />
-            </NavLink>
-            <NavLink to="/freeCourses" className={`${getTextColorClass()} 
-          font-medium text-[18px] outfit hover:text-[#0A97B0]`}>
-              Free Cources
+            <NavLink 
+              to="/allapprovedclasses" 
+              className={({ isActive }) => `group relative overflow-hidden py-4 px-5 rounded-xl transition-all duration-300 border ${
+                isActive 
+                  ? 'bg-gray-900 border-gray-900 shadow-lg' 
+                  : 'bg-white/20 border-transparent hover:bg-white/30'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className={({ isActive }) => `relative font-semibold text-xl outfit transition-colors ${
+                isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'
+              }`}>
+                {({ isActive }) => (
+                  <span className={isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'}>
+                    All Classes
+                  </span>
+                )}
+              </span>
             </NavLink>
 
-            <NavLink to="/teacherform" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative outfit z-10 group-hover:text-[#FFCFEF]">Teach On</span>
+            <NavLink 
+              to="/explore" 
+              className={({ isActive }) => `group relative overflow-hidden py-4 px-5 rounded-xl transition-all duration-300 border ${
+                isActive 
+                  ? 'bg-gray-900 border-gray-900 shadow-lg' 
+                  : 'bg-white/20 border-transparent hover:bg-white/30'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {({ isActive }) => (
+                <span className={`relative font-semibold text-xl outfit transition-colors flex items-center gap-1 ${
+                  isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'
+                }`}>
+                  Explore <IoMdArrowDropdown className="text-2xl" />
+                </span>
+              )}
             </NavLink>
 
-            <NavLink to="/allTeacher" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative outfit z-10 group-hover:text-[#FFCFEF]">Instructors</span>
+            <NavLink 
+              to="/freeCourses" 
+              className={({ isActive }) => `group relative overflow-hidden py-4 px-5 rounded-xl transition-all duration-300 border ${
+                isActive 
+                  ? 'bg-gray-900 border-gray-900 shadow-lg' 
+                  : 'bg-white/20 border-transparent hover:bg-white/30'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {({ isActive }) => (
+                <span className={`relative font-semibold text-xl outfit transition-colors ${
+                  isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'
+                }`}>
+                  Free Courses
+                </span>
+              )}
             </NavLink>
 
-            <NavLink to="/aboutUs" className="group text-black font-semibold text-3xl py-4 px-6 rounded-2xl hover:bg-white/20">
-              <span className="relative outfit z-10 group-hover:text-[#FFCFEF]">About Us</span>
+            <NavLink 
+              to="/teacherform" 
+              className={({ isActive }) => `group relative overflow-hidden py-4 px-5 rounded-xl transition-all duration-300 border ${
+                isActive 
+                  ? 'bg-gray-900 border-gray-900 shadow-lg' 
+                  : 'bg-white/20 border-transparent hover:bg-white/30'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {({ isActive }) => (
+                <span className={`relative font-semibold text-xl outfit transition-colors ${
+                  isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'
+                }`}>
+                  Teach On
+                </span>
+              )}
             </NavLink>
-            <NavLink to="/login" className="btnUI outfit">Log In</NavLink>
 
+            <NavLink 
+              to="/allTeacher" 
+              className={({ isActive }) => `group relative overflow-hidden py-4 px-5 rounded-xl transition-all duration-300 border ${
+                isActive 
+                  ? 'bg-gray-900 border-gray-900 shadow-lg' 
+                  : 'bg-white/20 border-transparent hover:bg-white/30'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {({ isActive }) => (
+                <span className={`relative font-semibold text-xl outfit transition-colors ${
+                  isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'
+                }`}>
+                  Instructors
+                </span>
+              )}
+            </NavLink>
+
+            <NavLink 
+              to="/aboutUs" 
+              className={({ isActive }) => `group relative overflow-hidden py-4 px-5 rounded-xl transition-all duration-300 border ${
+                isActive 
+                  ? 'bg-gray-900 border-gray-900 shadow-lg' 
+                  : 'bg-white/20 border-transparent hover:bg-white/30'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {({ isActive }) => (
+                <span className={`relative font-semibold text-xl outfit transition-colors ${
+                  isActive ? 'text-white' : 'text-gray-900 group-hover:text-gray-700'
+                }`}>
+                  About Us
+                </span>
+              )}
+            </NavLink>
+
+            {/* Login Button (if not logged in) */}
+            {!user && (
+              <NavLink 
+                to="/login" 
+                className="mt-6 py-4 px-5 bg-gray-900 hover:bg-gray-800 text-white font-semibold text-xl rounded-xl shadow-lg transition-all duration-300 text-center outfit"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Log In
+              </NavLink>
+            )}
+          </div>
+
+          {/* Footer Section */}
+          <div className="mt-8 pt-6 border-t border-yellow-800/30 px-4">
+            <p className="text-gray-800 text-sm text-center outfit">
+              © 2025 LearnIQ. All rights reserved.
+            </p>
           </div>
 
         </div>
