@@ -168,10 +168,11 @@
 
 
 .active{
-  font-size: large;
-  font-weight: 700;
-  padding-bottom: 2px;
-  text-decoration: underline;
+  background-color: #fbc30d;
+
+  font-weight: 600;
+ 
+
 }
 
 
