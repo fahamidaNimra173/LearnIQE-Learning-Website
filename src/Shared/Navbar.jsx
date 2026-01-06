@@ -133,13 +133,33 @@ const NavigationBar = ({ activeSection }) => {
       <div
         className={`fixed clip-open ${isMenuOpen ? "show" : ""} top-0 right-0 z-50 overflow-y-scroll lg:hidden h-screen w-11/12`}>
         <div className="absolute top-0 right-0 min-h-screen min-w-11/12 rounded-l-[2.5rem] bg-gradient-to-br from-[#0A5EB0] via-[#5FA8FF] to-[#EBFFD8] shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-2  overflow-y-scroll mb-10">
+          <div className='absolute -top-2 right-17 -rotate-30 w-3 h-14 blur-xs   border-black/60 border-[1.5px] bg-gradient-to-r from-transparent to-white/17'>
 
+          </div>
+          <div className='absolute -top-2 right-12 -rotate-12 w-3 h-14 blur-xs   border-black/40 border-1 bg-white/20'>
+
+          </div>
+          <div className='absolute -top-2 right-8 -rotate-0 w-3 h-14 blur-xs   border-black/90 border-1 bg-white/25'>
+
+          </div>
+          <div className='absolute -top-2 right-5 rotate-17 w-3 h-14 blur-xs   border-black/40 border-1 bg-white/17'>
+
+          </div>
+          <div className='absolute -top-2 right-0 rotate-37 w-3 h-17 blur-xs   border-black/40 border-1 bg-white/47'>
+
+          </div>
+          <div className='absolute top-10 right-0 rotate-90 w-2 h-10 blur-xs   border-black/60 border-1 bg-white/37'>
+
+          </div>
+          <div className='absolute top-5 right-20 rotate-110 w-3 h-14 blur-xs   border-black/40 border-1 bg-gradient-to-r from-transparent to-white/17'>
+
+          </div>
           {/* Close Button */}
           <div className="relative mb-10 mt-6">
             <button
               onClick={() => setIsMenuOpen(false)}
               className="absolute right-4 top-2 group">
-              <div className="relative w-11 h-11 rounded-full bg-yellow-200 backdrop-blur-md
+              <div className="relative w-11 h-11 rounded-full border-1 border-black/30 bg-yellow-200 backdrop-blur-md
           flex items-center justify-center shadow-lg
           transition-all duration-300 group-hover:scale-110">
                 <RxCrossCircled className="w-8 h-8 text-[#079607] transition-transform duration-300 group-hover:rotate-90" />
