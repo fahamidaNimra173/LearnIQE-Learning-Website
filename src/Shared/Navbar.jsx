@@ -131,31 +131,18 @@ const NavigationBar = ({ activeSection }) => {
 
       {/* MOBILE SIDEBAR */}
       <div
-        className={`fixed clip-open ${isMenuOpen ? "show" : ""} 
-  top-0 right-0 z-50 overflow-hidden lg:hidden`}
-        style={{ width: "90vw", height: "100vh" }}
-      >
-        <div className="
-    absolute top-0 right-0
-    min-h-screen min-w-11/12
-    rounded-l-[2.5rem]
-    bg-gradient-to-br from-[#0A5EB0] via-[#5FA8FF] to-[#EBFFD8]
-    shadow-[0_0_60px_rgba(0,0,0,0.35)]
-    backdrop-blur-xl
-    p-6
-    overflow-hidden
-  ">
+        className={`fixed clip-open ${isMenuOpen ? "show" : ""} top-0 right-0 z-50 overflow-y-scroll lg:hidden h-screen w-11/12`}>
+        <div className="absolute top-0 right-0 min-h-screen min-w-11/12 rounded-l-[2.5rem] bg-gradient-to-br from-[#0A5EB0] via-[#5FA8FF] to-[#EBFFD8] shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-2  overflow-y-scroll mb-10">
 
           {/* Close Button */}
           <div className="relative mb-10 mt-6">
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="absolute right-4 top-2 group"
-            >
-              <div className="relative w-11 h-11 rounded-full bg-white/30 backdrop-blur-md
+              className="absolute right-4 top-2 group">
+              <div className="relative w-11 h-11 rounded-full bg-yellow-200 backdrop-blur-md
           flex items-center justify-center shadow-lg
           transition-all duration-300 group-hover:scale-110">
-                <RxCrossCircled className="w-8 h-8 text-[#0A2540] transition-transform duration-300 group-hover:rotate-90" />
+                <RxCrossCircled className="w-8 h-8 text-[#079607] transition-transform duration-300 group-hover:rotate-90" />
               </div>
             </button>
           </div>
@@ -175,15 +162,7 @@ const NavigationBar = ({ activeSection }) => {
               <NavLink
                 key={item.to}
                 to={item.to}
-                className="
-            group relative
-            text-white text-3xl outfit font-semibold
-            px-6 py-4 rounded-2xl
-            bg-white/10
-            hover:bg-white/25
-            transition-all duration-300
-          "
-              >
+                className=" group relative text-white text-2xl font-mono font-medium px-6 py-3 rounded-2xl bg-black/15 hover:bg-white/25 transition-all duration-300">
                 <span className="relative z-10 group-hover:tracking-wide">
                   {item.label}
                 </span>
@@ -192,13 +171,7 @@ const NavigationBar = ({ activeSection }) => {
 
             <NavLink
               to="/login"
-              className="
-          mt-6 text-center
-          text-[#0A2540] font-semibold outfit
-          bg-white rounded-2xl py-3
-          shadow-md hover:shadow-xl
-          transition-all duration-300
-        "
+              className="my-6 bg-[#ffdc2f] text-center text-[#000000] font-semibold font-mono uppercase text-zxl  rounded-2xl py-3 shadow-md hover:shadow-xl transition-all duration-300"
             >
               Log In
             </NavLink>
