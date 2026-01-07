@@ -1,6 +1,6 @@
 import AxiosSecure from '@/Axios/AxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import { Earth, SquareArrowUpLeft, UsersIcon, X, Filter } from 'lucide-react';
+import { Earth, SquareArrowUpLeft, UsersIcon, X, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';
 import { BsStars } from 'react-icons/bs';
 import ShapeIllusion from '../Home/Component/ShapeIllusion';
@@ -14,21 +14,28 @@ const FreeCourses = () => {
     const [language, setLanguage] = useState('');
     const [platform, setPlatform] = useState('');
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 9;
 
-    const { data: courses = [], isLoading, error } = useQuery({
-        queryKey: ['courses', category, language, platform],
+    const { data: coursesData = {}, isLoading, error } = useQuery({
+        queryKey: ['courses', category, language, platform, currentPage],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/freeCourses?category=${category}&platform=${platform}&language=${language}`);
+            const res = await axiosSecure.get(`/freeCourses?category=${category}&platform=${platform}&language=${language}&page=${currentPage}&limit=${itemsPerPage}`);
             return res.data;
         },
     });
 
     const { data: filters = [] } = useQuery({
+        queryKey: ['filters'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/freeCourses/filters`);
             return res.data;
         },
     });
+
+    // Extract courses and pagination data
+    const courses = coursesData.data || [];
+    const pagination = coursesData.pagination || {};
 
     // Platform → Logo mapping
     const platformLogos = {
@@ -42,30 +49,93 @@ const FreeCourses = () => {
     // Toggle filter functions
     const toggleCategory = (cat) => {
         setCategory(category === cat ? '' : cat);
+        setCurrentPage(1); // Reset to page 1 when filter changes
     };
 
     const toggleLanguage = (lan) => {
         setLanguage(language === lan ? '' : lan);
+        setCurrentPage(1);
     };
 
     const togglePlatform = (p) => {
         setPlatform(platform === p ? '' : p);
+        setCurrentPage(1);
     };
 
     const clearAllFilters = () => {
         setLanguage('');
         setCategory('');
         setPlatform('');
+        setCurrentPage(1);
+    };
+
+    // Pagination handlers
+    const handleNextPage = () => {
+        if (pagination.hasNextPage) {
+            setCurrentPage(prev => prev + 1);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
+    const handlePrevPage = () => {
+        if (pagination.hasPrevPage) {
+            setCurrentPage(prev => prev - 1);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
+    const handlePageClick = (pageNumber) => {
+        setCurrentPage(pageNumber);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Generate page numbers array
+    const getPageNumbers = () => {
+        const totalPages = pagination.totalPages || 1;
+        const pages = [];
+        const maxVisiblePages = 5;
+
+        if (totalPages <= maxVisiblePages) {
+            for (let i = 1; i <= totalPages; i++) {
+                pages.push(i);
+            }
+        } else {
+            if (currentPage <= 3) {
+                for (let i = 1; i <= 4; i++) pages.push(i);
+                pages.push('...');
+                pages.push(totalPages);
+            } else if (currentPage >= totalPages - 2) {
+                pages.push(1);
+                pages.push('...');
+                for (let i = totalPages - 3; i <= totalPages; i++) pages.push(i);
+            } else {
+                pages.push(1);
+                pages.push('...');
+                pages.push(currentPage - 1);
+                pages.push(currentPage);
+                pages.push(currentPage + 1);
+                pages.push('...');
+                pages.push(totalPages);
+            }
+        }
+        return pages;
     };
 
     const hasActiveFilters = category || language || platform;
 
     if (isLoading) {
-        return <h1 className="text-white">Courses are on the way...</h1>;
+        return (
+            <div className="flex items-center justify-center min-h-screen">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500 mx-auto mb-4"></div>
+                    <h1 className="text-white text-2xl">Courses are on the way...</h1>
+                </div>
+            </div>
+        );
     }
 
     if (error) {
-        return <h1 className="text-red-500">Something went wrong</h1>;
+        return <h1 className="text-red-500 text-center text-2xl mt-20">Something went wrong</h1>;
     }
 
     return (
@@ -101,7 +171,7 @@ const FreeCourses = () => {
                                         </svg>
                                     </div>
                                     <div className='flex gap-3 items-end'>
-                                        <div className="text-2xl text-yellow-400">90+</div>
+                                        <div className="text-2xl text-yellow-400">{pagination.totalItems || 90}+</div>
                                         <div className="text-gray-100 text-lg">Courses</div>
                                     </div>
                                 </div>
@@ -213,7 +283,7 @@ const FreeCourses = () => {
                             </div>
                             {hasActiveFilters && (
                                 <p className="text-blue-100 text-sm mt-2">
-                                    {courses.length} course{courses.length !== 1 ? 's' : ''} found
+                                    {pagination.totalItems || courses.length} course{(pagination.totalItems || courses.length) !== 1 ? 's' : ''} found
                                 </p>
                             )}
                         </div>
@@ -326,57 +396,122 @@ const FreeCourses = () => {
                             </button>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
-                            {courses.map((course) => (
-                                <div key={course._id} className='flex bg-white flex-col rounded-xl justify-between'>
-                                    <img
-                                        src={course?.image}
-                                        alt="course image"
-                                        className="h-40 w-full object-cover"
-                                    />
+                        <>
+                            <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
+                                {courses.map((course) => (
+                                    <div key={course._id} className='flex bg-white flex-col rounded-xl justify-between'>
+                                        <img
+                                            src={course?.image}
+                                            alt="course image"
+                                            className="h-40 w-full object-cover"
+                                        />
 
-                                    <div className="p-2 bg-white text-black rounded-b-2xl">
-                                        <div className='flex flex-col justify-between'>
-                                            <div className="flex items-center justify-between px-3">
-                                                <span className="text-[12px] bg-black text-white px-3 flex items-center rounded-full gap-1 font-medium">
-                                                    <UsersIcon className="w-4 text-green-400" />
-                                                    {course.Enrollment}
-                                                </span>
-                                                <hr className='w-40 border-1 border-gray-400 border-dashed' />
-                                                {course.rating !== undefined && (
-                                                    <span className="text-[12px] bg-black text-white px-7 font-bold relative flex items-center rounded-tr-full gap-1">
-                                                        <BsStars className="text-yellow-400 w-7 h-9 absolute left-0" />
-                                                        {course.rating === 0 ? '...' : course.rating}
+                                        <div className="p-2 bg-white text-black rounded-b-2xl">
+                                            <div className='flex flex-col justify-between'>
+                                                <div className="flex items-center justify-between px-3">
+                                                    <span className="text-[12px] bg-black text-white px-3 flex items-center rounded-full gap-1 font-medium">
+                                                        <UsersIcon className="w-4 text-green-400" />
+                                                        {course.Enrollment}
                                                     </span>
-                                                )}
+                                                    <hr className='w-40 border-1 border-gray-400 border-dashed' />
+                                                    {course.rating !== undefined && (
+                                                        <span className="text-[12px] bg-black text-white px-7 font-bold relative flex items-center rounded-tr-full gap-1">
+                                                            <BsStars className="text-yellow-400 w-7 h-9 absolute left-0" />
+                                                            {course.rating === 0 ? '...' : course.rating}
+                                                        </span>
+                                                    )}
+                                                </div>
+
+                                                <h1 className="font-bold text-lg mt-2 h-15">{course.title}</h1>
                                             </div>
 
-                                            <h1 className="font-bold text-lg mt-2 h-15">{course.title}</h1>
-                                        </div>
+                                            <div className="flex items-end my-5 justify-between gap-4">
+                                                {platformLogos[course.platform] && (
+                                                    <img
+                                                        src={platformLogos[course.platform]}
+                                                        alt={course.platform}
+                                                        className="h-7 object-contain"
+                                                    />
+                                                )}
+                                                <h1 className="text-center text-sm bg-purple-500 text-gray-100 px-2 py-1 font-medium">
+                                                    Language: <span className='text-yellow-200 uppercase'>{course.language}</span>
+                                                </h1>
+                                            </div>
 
-                                        <div className="flex items-end my-5 justify-between gap-4">
-                                            {platformLogos[course.platform] && (
-                                                <img
-                                                    src={platformLogos[course.platform]}
-                                                    alt={course.platform}
-                                                    className="h-7 object-contain"
-                                                />
-                                            )}
-                                            <h1 className="text-center text-sm bg-purple-500 text-gray-100 px-2 py-1 font-medium">
-                                                Language: <span className='text-yellow-200 uppercase'>{course.language}</span>
-                                            </h1>
+                                            <a href={course.url} target="_blank" rel="noreferrer">
+                                                <button className="bg-blue-500 text-white cursor-pointer w-full py-1 mt-3 rounded-2xl flex items-center justify-center gap-2">
+                                                    Visit
+                                                    <SquareArrowUpLeft className="text-yellow-300 rotate-90" />
+                                                </button>
+                                            </a>
                                         </div>
-
-                                        <a href={course.url} target="_blank" rel="noreferrer">
-                                            <button className="bg-blue-500 text-white cursor-pointer w-full py-1 mt-3 rounded-2xl flex items-center justify-center gap-2">
-                                                Visit
-                                                <SquareArrowUpLeft className="text-yellow-300 rotate-90" />
-                                            </button>
-                                        </a>
                                     </div>
+                                ))}
+                            </div>
+
+                            {/* Pagination Controls */}
+                            {pagination.totalPages > 1 && (
+                                <div className="mt-12 mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                                    {/* Previous Button */}
+                                    <button
+                                        onClick={handlePrevPage}
+                                        disabled={!pagination.hasPrevPage}
+                                        className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
+                                            pagination.hasPrevPage
+                                                ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl'
+                                                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                        }`}
+                                    >
+                                        <ChevronLeft className="w-5 h-5" />
+                                        Previous
+                                    </button>
+
+                                    {/* Page Numbers */}
+                                    <div className="flex items-center gap-2">
+                                        {getPageNumbers().map((page, index) => (
+                                            page === '...' ? (
+                                                <span key={`ellipsis-${index}`} className="px-3 text-gray-400">
+                                                    ...
+                                                </span>
+                                            ) : (
+                                                <button
+                                                    key={page}
+                                                    onClick={() => handlePageClick(page)}
+                                                    className={`w-10 h-10 rounded-lg font-semibold transition-all duration-300 ${
+                                                        currentPage === page
+                                                            ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg scale-110'
+                                                            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+                                                    }`}
+                                                >
+                                                    {page}
+                                                </button>
+                                            )
+                                        ))}
+                                    </div>
+
+                                    {/* Next Button */}
+                                    <button
+                                        onClick={handleNextPage}
+                                        disabled={!pagination.hasNextPage}
+                                        className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
+                                            pagination.hasNextPage
+                                                ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl'
+                                                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                        }`}
+                                    >
+                                        Next
+                                        <ChevronRight className="w-5 h-5" />
+                                    </button>
                                 </div>
-                            ))}
-                        </div>
+                            )}
+
+                            {/* Pagination Info */}
+                            {pagination.totalItems && (
+                                <div className="text-center text-gray-400 mb-8">
+                                    Showing {((currentPage - 1) * itemsPerPage) + 1} to {Math.min(currentPage * itemsPerPage, pagination.totalItems)} of {pagination.totalItems} courses
+                                </div>
+                            )}
+                        </>
                     )}
                 </div>
             </div>
