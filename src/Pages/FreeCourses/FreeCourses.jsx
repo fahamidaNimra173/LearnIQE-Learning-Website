@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Earth, SquareArrowUpLeft, UsersIcon, X, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';
 import { BsStars } from 'react-icons/bs';
-import ShapeIllusion from '../Home/Component/ShapeIllusion';
+
 
 
 
@@ -73,23 +73,23 @@ const FreeCourses = () => {
     const handleNextPage = () => {
         if (pagination.hasNextPage) {
             setCurrentPage(prev => prev + 1);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
     const handlePrevPage = () => {
         if (pagination.hasPrevPage) {
             setCurrentPage(prev => prev - 1);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
     const handlePageClick = (pageNumber) => {
         setCurrentPage(pageNumber);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    // Generate page numbers array
+    // generate page numbers array
     const getPageNumbers = () => {
         const totalPages = pagination.totalPages || 1;
         const pages = [];
