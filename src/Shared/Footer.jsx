@@ -21,21 +21,20 @@ const FooteR = () => {
   return (
     <Footer className="text-[#e7efee] relative pt-0 lg:mt-20 border-t-1 border-dotted border-blue-600/40 bg-[#000108] dark:text-[#f9fdfc] rounded-none shadow-none overflow-hidden">
       <div className="w-full px-6 lg:px-25">
-        
+
         {/* Glowing Background Text */}
         <div className='absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none'>
-          <h1 className='md:text-7xl text-6xl lg:text-[160px] xl:text-[200px] font-extrabold tracking-widest select-none
+          <h1 className='md:text-7xl text-6xl lg:text-[100px] xl:text-[200px] font-extrabold tracking-widest select-none
             bg-gradient-to-r from-blue-500 via-purple-600 to-blue-600 bg-clip-text text-transparent
-            opacity-40 blur-[1px]
-            '>
+            opacity-40 blur-[1px]45'>
             LEARNIQ
           </h1>
-          
+
           {/* Glow Effects */}
           <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full'>
             <div className='absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-[120px] '></div>
-            <div className='absolute top-1/3 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-[100px] ' style={{animationDelay: '1s'}}></div>
-            <div className='absolute bottom-1/4 left-1/3 w-72 h-72 bg-indigo-500/25 rounded-full blur-[90px] animate-pulse' style={{animationDelay: '2s'}}></div>
+            <div className='absolute top-1/3 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-[100px] ' style={{ animationDelay: '1s' }}></div>
+            <div className='absolute bottom-1/4 left-1/3 w-72 h-72 bg-indigo-500/25 rounded-full blur-[90px] animate-pulse' style={{ animationDelay: '2s' }}></div>
           </div>
         </div>
 
@@ -53,7 +52,11 @@ const FooteR = () => {
                 alt="LearnIQ Logo"
               />
             </div>
-            <p className='text-gray-400 mt-2 max-w-xs'>Your Journey to Knowledge Starts Here.</p>
+            <p className='text-gray-200  mt-2 max-w-xs'>
+              We bring together free learning resources from trusted platforms.
+              Explore courses and continue your learning journey where knowledge has no limits.
+            </p>
+
           </div>
 
           {/* Link Sections */}
@@ -61,46 +64,58 @@ const FooteR = () => {
             <div>
               <FooterTitle className='text-[#fcffff] dark:text-[#fefefe] font-bold mb-4' title="About" />
               <FooterLinkGroup col>
-                <FooterLink 
-                  className='text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block' 
+                <FooterLink
+                  className='text-gray-200 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block'
                   href="/aboutUs"
                 >
                   About Us
                 </FooterLink>
+                <FooterLink
+                  className='text-gray-200 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block'
+                  href="/freeCourses"
+                >
+                  Free Courses
+                </FooterLink>
+                <FooterLink
+                  className='text-gray-200 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block'
+                  href="/explore"
+                >
+                  Explore
+                </FooterLink>
               </FooterLinkGroup>
             </div>
-            
+
             <div>
               <FooterTitle className='text-[#fcffff] dark:text-[#fefefe] font-bold mb-4' title="Follow us" />
               <FooterLinkGroup col>
-                <FooterLink 
-                  className='text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block' 
-                  href="https://github.com/fahamidaNimra173" 
+                <FooterLink
+                  className='text-gray-200 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block'
+                  href="https://github.com/fahamidaNimra173"
                   target="_blank"
                 >
                   GitHub
                 </FooterLink>
-                <FooterLink 
-                  className='text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block' 
-                  href="https://www.linkedin.com/in/fahmida-nimra/" 
+                <FooterLink
+                  className='text-gray-200 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block'
+                  href="https://www.linkedin.com/in/fahmida-nimra/"
                   target="_blank"
                 >
                   LinkedIn
                 </FooterLink>
               </FooterLinkGroup>
             </div>
-            
+
             <div>
               <FooterTitle className='text-[#fcffff] dark:text-[#fefefe] font-bold mb-4' title="Legal" />
               <FooterLinkGroup col>
-                <FooterLink 
-                  className='text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block' 
+                <FooterLink
+                  className='text-gray-200 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block'
                   href="privacy"
                 >
                   Privacy Policy
                 </FooterLink>
-                <FooterLink 
-                  className='text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block' 
+                <FooterLink
+                  className='text-gray-200 hover:text-blue-400 transition-colors duration-300 hover:translate-x-1 inline-block'
                   href="termsandcondition"
                 >
                   Terms & Conditions
