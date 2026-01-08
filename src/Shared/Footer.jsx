@@ -19,14 +19,14 @@ import {
 
 const FooteR = () => {
   return (
-    <Footer  className=" text-[#e7efee] relative py-10 lg:mt-20 border-t-1 border-dotted border-blue-600/40 bg-[#000108] dark:text-[#f9fdfc]  rounded-none shadow-none">
-      <div className="w-full lg:px-25 ">
-        <div className='absolute flex items-center justify-center w-3/4 h-full tracking-widest overflow-hidden z-10'>
-          <h1 className='text-9xl text-blue-500/40 shadow-2xl shadow-blue-400 py-5 px-3 font-extrabold'>LEARNIQ</h1>
+    <Footer  className=" text-[#e7efee] relative pt-0 lg:mt-20 border-t-1 border-dotted border-blue-600/40 bg-[#000108] dark:text-[#f9fdfc]  rounded-none shadow-none">
+      <div className="w-full px-6 lg:px-25 ">
+        <div className='absolute flex lg:blur-sm items-center justify-center w-3/4 h-full tracking-widest overflow-hidden z-10'>
+          <h1 className='md:text-6xl text-5xl lg:text-9xl text-blue-500/70 shadow-2xl shadow-blue-400/0 py-5 px-3 font-extrabold'>LEARNIQ</h1>
         </div>
-        <div className="grid  w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+        <div className="grid pt-20 w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           {/* Custom Brand */}
-          <div className="flex z-50 flex-col mb-5">
+          <div className="flex z-10 flex-col mb-5">
             <div className="flex items-center pt-1.5">
               <span className="text-2xl sm:text-3xl font-extrabold text-[#e7efee] righteous">
                 Learn
@@ -42,7 +42,7 @@ const FooteR = () => {
           </div>
 
           {/* Link Sections */}
-          <div className="grid z-50 grid-cols-2 text-[#fcffff] dark:text-[#fefefe] gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+          <div className="grid z-10 grid-cols-2 text-[#fcffff] dark:text-[#fefefe] gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
               <FooterTitle className='text-[#fcffff] dark:text-[#fefefe]' title="About" />
               <FooterLinkGroup col>
