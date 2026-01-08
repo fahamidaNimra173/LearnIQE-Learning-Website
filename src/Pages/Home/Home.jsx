@@ -20,6 +20,7 @@ import LightweightGlobe from "./Component/Globe";
 import ScrollSteps from "./Component/Steps";
 import ExploreCategories from "./Component/ExploreCategories";
 import BanglaLearningPlatforms from "./Component/BanglaPlatforms";
+import HeightsEnrolledCourses from "./Component/HeighestEnrolledCourses";
 
 
 
@@ -67,6 +68,9 @@ const Home = () => {
                     totalEnrollments={counts.enrollments} /> */}
 
                 <TopCources></TopCources>
+                <HeightsEnrolledCourses>
+                    
+                </HeightsEnrolledCourses>
                 <ScrollSteps></ScrollSteps>
                 <BanglaLearningPlatforms></BanglaLearningPlatforms>
                 <section id='studentLove'>

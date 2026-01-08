@@ -169,10 +169,24 @@
 
 .active{
   background-color: #fbc30d;
-
+  padding: 2px;
   font-weight: 600;
  
 
+}
+@media  (min-width: 768px) and (max-width: 1023px) {
+  .active{
+     background-color: #fbc30d;
+       padding: 9px  ;
+     font-weight: 600;
+  }
+}
+@media  (min-width: 76px) and (max-width: 768px)  {
+  .active{
+     background-color: #fbc30d;
+    
+     font-weight: 600;
+  }
 }
 
 

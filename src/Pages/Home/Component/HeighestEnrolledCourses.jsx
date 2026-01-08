@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../../../Axios/AxiosSecure';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 
 const HeightsEnrolledCourses = () => {
@@ -29,7 +30,7 @@ const HeightsEnrolledCourses = () => {
         <div className="relative md:py-1o px-6 md:px-25">
             <div className="relative z-10 mx-auto">
                 <h1 className="text-[#ffffff] md:text-5xl lg:text-7xl text-2xl font-mono font-extrabold uppercase  md:mt-40 mb-15 text-center">
-                    Popular <span className="text-[#ddff00]">Courses</span> to Boost Your Skills
+                    highest enrolled <span className="text-[#ddff00]">Courses</span> to Boost Your Skills
                 </h1>
 
                 <Swiper
@@ -75,7 +76,7 @@ const HeightsEnrolledCourses = () => {
                                             <div className="  ">
                                                 <div className="flex  items-center text-center">
                                                     {/* <FiUsers className="text-[#fbbc2c] w-7 h-7 mb-2" /> */}
-                                                    <span className="text-[13px] lg:text-md text-[#010101] habibi mb-1">Enrollments : <span className=" font-bold text-[#fbbc2c]">{course.totalEnroll}</span></span>
+                                                    <span className="text-[13px] lg:text-md text-[#010101] habibi mb-1">Enrollments : <span className=" font-bold text-[#fbbc2c]">{course.Enrollment}</span></span>
 
                                                 </div>
                                             </div>
@@ -84,7 +85,7 @@ const HeightsEnrolledCourses = () => {
                                             <div className="">
                                                 <div className="flex  items-center text-center">
                                                     {/* <FiDollarSign className="text-[#1e8a78] w-7 h-7 mb-2" /> */}
-                                                    <span className="text-[13px] lg:text-md  text-[#e9dc2f] habibi mb-1"> <span className=" font-bold text-[#000000]">৳{course.price}</span></span>
+                                                    <span className="text-[13px] lg:text-md  text-[#e9dc2f] habibi mb-1"> <span className=" font-bold text-[#000000]">৳free</span></span>
 
                                                 </div>
                                             </div>
