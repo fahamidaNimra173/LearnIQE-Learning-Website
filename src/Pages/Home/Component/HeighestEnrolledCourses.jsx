@@ -6,17 +6,16 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../../../Axios/AxiosSecure';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 
-const TopCources = () => {
+const HeightsEnrolledCourses = () => {
     const axiosSecure = useAxiosSecure();
     const navigate = useNavigate();
 
     const { data: courses = [], isLoading } = useQuery({
         queryKey: ['sorted-courses'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/sorted-courses');
+            const res = await axiosSecure.get('/freeCourses/enrollmentSorted');
             return res.data.slice(0, 6);
         },
     });
@@ -167,7 +166,7 @@ const TopCources = () => {
     );
 };
 
-export default TopCources;
+export default HeightsEnrolledCourses;
 
 
 

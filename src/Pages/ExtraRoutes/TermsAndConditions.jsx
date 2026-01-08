@@ -132,10 +132,7 @@ const TermsAndConditions = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Please read these terms carefully before using LearnIQ.
           </p>
-          <div className="mt-6 inline-flex items-center gap-2 border border-gray-600 px-6 py-3 rounded-full text-gray-300">
-            <AlertCircle className="w-5 h-5" />
-            <span className="font-medium">Effective Date: January 2025</span>
-          </div>
+         
         </div>
       </div>
 
