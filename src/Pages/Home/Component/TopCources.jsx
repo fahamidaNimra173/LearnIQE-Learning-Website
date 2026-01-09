@@ -30,7 +30,7 @@ const TopCources = () => {
         <div className="relative md:py-1o px-6 md:px-25">
             <div className="relative z-10 mx-auto">
                 <h1 className="text-[#ffffff] md:text-5xl lg:text-7xl text-2xl font-mono font-extrabold uppercase  md:mt-40 mb-15 text-center">
-                    Popular <span className="text-[#ddff00]">Courses</span> to Boost Your Skills
+                    Demo  <span className="text-[#ffdd00]">Courses</span> to Boost Your Skills
                 </h1>
 
                 <Swiper
@@ -145,10 +145,10 @@ const TopCources = () => {
                 </Swiper>
 
                 {/*  Custom Navigation Arrows */}
-                <div className="flex justify-center gap-8 mt-10">
+                <div className="flex justify-start gap-8 mt-10">
                     <button
                         ref={prevRef}
-                        className="group relative cursor-pointer bg-gradient-to-br from-purple-100 to-pink-100 hover:from-[#fbbc2c] hover:to-[#8a5a8e] p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#937f94]/30 hover:border-transparent overflow-hidden"
+                        className="group relative cursor-pointer bg-gradient-to-br from-purple-100 to-pink-100 hover:from-[#fbbc2c] hover:to-[#8a5a8e] p-2 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#937f94]/30 hover:border-transparent overflow-hidden"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                         <IoIosArrowBack className="md:w-10 w-5 h-5 md:h-10 text-[#fbbc2c] group-hover:text-white transition-colors duration-300 relative z-10 group-hover:-translate-x-1 transition-transform" />
@@ -156,7 +156,7 @@ const TopCources = () => {
                     </button>
                     <button
                         ref={nextRef}
-                        className="group relative cursor-pointer bg-gradient-to-br from-teal-100 to-cyan-100 hover:from-[#1e8a78] hover:to-[#2a9d88] p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#1e8a78]/30 hover:border-transparent overflow-hidden"
+                        className="group relative cursor-pointer bg-gradient-to-br from-teal-100 to-cyan-100 hover:from-[#1e8a78] hover:to-[#2a9d88] p-2 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#1e8a78]/30 hover:border-transparent overflow-hidden"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                         <IoIosArrowForward className="md:w-10 w-5 h-5 md:h-10 text-[#1e8a78] group-hover:text-white transition-colors duration-300 relative z-10 group-hover:translate-x-1 transition-transform" />
