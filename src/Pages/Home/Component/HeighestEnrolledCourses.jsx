@@ -27,7 +27,7 @@ const HeightsEnrolledCourses = () => {
     if (isLoading) return <div className="text-center py-10">Loading...</div>;
 
     return (
-        <div className="relative md:py-1o px-6 md:px-25">
+        <div className="relative md:py-10 px-6 md:px-15 lg:px-25">
             <div className="relative z-10 mx-auto">
                 <h1 className="text-[#ffffff] md:text-5xl lg:text-7xl text-2xl font-mono font-extrabold uppercase  md:mt-40 mb-15 text-center">
                     highest enrolled <span className="text-[#ddff00]">Courses</span> to Boost Your Skills
@@ -40,7 +40,8 @@ const HeightsEnrolledCourses = () => {
                     breakpoints={{
                         600: { slidesPerView: 2 },
                         768: { slidesPerView: 3 },
-                        1000: { slidesPerView: 5 },
+                        1350: { slidesPerView: 4 },
+                        1500: { slidesPerView: 5 },
                     }}
                     // Initialize navigation after refs are set
                     onSwiper={(swiper) => {
@@ -106,17 +107,41 @@ const HeightsEnrolledCourses = () => {
                                         href={course.url}
                                         target='_blank'
                                         rel="noopener noreferrer"
-                                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl group/btn"
+                                        
                                     >
-                                        <span className="text-sm">Start Learning</span>
-                                        <svg
-                                            className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
+                                        <button
+
+                                            className="w-full buttonMore"
                                         >
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                        </svg>
+                                            <span className="buttonMore__icon-wrapper">
+                                                <svg
+                                                    viewBox="0 0 14 15"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    class="buttonMore__icon-svg"
+                                                    width="10"
+                                                >
+                                                    <path
+                                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                                        fill="black"
+                                                    ></path>
+                                                </svg>
+
+                                                <svg
+                                                    viewBox="0 0 14 15"
+                                                    fill="none"
+                                                    width="10"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    class="buttonMore__icon-svg buttonMore__icon-svg--copy"
+                                                >
+                                                    <path
+                                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                            Explore More
+                                        </button>
                                     </a>
                                 </div>
                             </div>
