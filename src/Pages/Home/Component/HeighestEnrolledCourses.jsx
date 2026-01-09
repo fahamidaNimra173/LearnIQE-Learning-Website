@@ -36,8 +36,9 @@ const HeightsEnrolledCourses = () => {
                 <Swiper
                     modules={[Navigation]}
                     spaceBetween={20}
-                    slidesPerView={2}
+                    slidesPerView={1}
                     breakpoints={{
+                        600: { slidesPerView: 2 },
                         768: { slidesPerView: 3 },
                         1000: { slidesPerView: 5 },
                     }}
@@ -66,9 +67,10 @@ const HeightsEnrolledCourses = () => {
                                     <div className='p-2 flex flex-col h-full gap-5 '>
 
                                         {/* Title */}
-                                        <h3 className="text-[15px]  md:text-xl  font-semibold text-[#0f1119]   h-[5rem] lg:h-[5rem]  leading-tight">
+                                        <h3 className="text-[15px]  md:text-xl  font-semibold text-[#0f1119]   h-[3rem]  leading-tight">
                                             {course.title}
                                         </h3>
+                                        <h1>{course.platform}</h1>
 
                                         {/* Info Grid */}
                                         <div className="flex items-center justify-between  gap-3">
