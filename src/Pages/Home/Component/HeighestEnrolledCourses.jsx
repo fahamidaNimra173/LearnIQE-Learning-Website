@@ -4,20 +4,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import { useNavigate } from 'react-router-dom';
+
 import useAxiosSecure from '../../../Axios/AxiosSecure';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 
 const HeightsEnrolledCourses = () => {
     const axiosSecure = useAxiosSecure();
-    const navigate = useNavigate();
 
-    const { data: courses = [], isLoading } = useQuery({
-        queryKey: ['sorted-courses'],
+
+    const { data: highestEnrolledCourses = [], isLoading } = useQuery({
+        queryKey: ['highestEnrolled'],
         queryFn: async () => {
             const res = await axiosSecure.get('/freeCourses/enrollmentSorted');
-            return res.data.slice(0, 6);
+            return res.data.slice(0, 10);
         },
     });
 
@@ -52,12 +52,12 @@ const HeightsEnrolledCourses = () => {
                     }}
                     className="relative"
                 >
-                    {courses.map((course) => (
+                    {highestEnrolledCourses.map((course) => (
                         <SwiperSlide key={course._id}>
                             <div className="relative h-full rounded-b-xl  overflow-hidden  bg-[#ffffff]  shadow-black hover:shadow-2xl transition-all duration-500 ">
                                 {/* Decorative Corner Shape */}
                                 {/* <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffff02] opacity-40 z-10  rounded-bl-full"></div> */}
-                                
+
 
 
 
@@ -92,10 +92,8 @@ const HeightsEnrolledCourses = () => {
                                         </div>
 
                                         {/* Button */}
-                                        <button
-                                            onClick={() => navigate(`/classdetails/${course._id}`)}
-                                            className="w-full buttonMore"
-                                        >
+                                        <button className="w-full buttonMore">
+
                                             <span className="buttonMore__icon-wrapper">
                                                 <svg
                                                     viewBox="0 0 14 15"
@@ -123,8 +121,12 @@ const HeightsEnrolledCourses = () => {
                                                     ></path>
                                                 </svg>
                                             </span>
-                                            Explore More
+                                            <a href={course.url} target='_blank' className='z-20'>
+                                                Explore More
+                                            </a>
+
                                         </button>
+
 
                                     </div>
                                     {/* Image Section */}
