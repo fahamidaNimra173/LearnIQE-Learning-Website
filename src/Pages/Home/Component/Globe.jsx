@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function OptimizedGlobe() {
   const [connections, setConnections] = useState([]);
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
   
-  // Make the initial scale smaller (0.6) and reduce max scale to 2.5 for smoother animation
-  const scaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.6, 2.5]);
+  // // Make the initial scale smaller (0.6) and reduce max scale to 2.5 for smoother animation
+  // const scaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.6, 2.5]);
   
-  // Add spring physics for smoother, more natural animation
-  const scale = useSpring(scaleRaw, {
-    stiffness: 100,
-    damping: 30,
-    mass: 0.5
-  });
+  // // Add spring physics for smoother, more natural animation
+  // const scale = useSpring(scaleRaw, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   mass: 0.5
+  // });
 
   // Generate random connections on mount
   useEffect(() => {
@@ -37,9 +37,9 @@ export default function OptimizedGlobe() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden mt-20 pt-10 md:py-20 bg-black">
+    <div className="relative w-full min-h-screen overflow-hidden mt-20 pt-10 md:py-20 ">
       {/* Header Content */}
-      <div className="text-center mb-8 bg-black/10 py-13 relative z-40">
+      <div className="text-center mb-8  py-13 relative z-40">
         <h1 className="md:text-4xl lg:text-6xl leading-10 text-2xl font-bold text-[#ffff09] uppercase">
           <span className="text-blue-400">Join</span> the Movement to Learn & Grow
         </h1>
@@ -69,7 +69,7 @@ export default function OptimizedGlobe() {
       <motion.div 
         className="absolute inset-0 w-full h-full z-10 flex items-center justify-center"
         style={{ 
-          scale,
+          
           willChange: 'transform' // Performance hint for browser
         }}
       >
