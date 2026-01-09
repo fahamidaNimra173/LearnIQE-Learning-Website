@@ -55,92 +55,69 @@ const HeightsEnrolledCourses = () => {
                 >
                     {highestEnrolledCourses.map((course) => (
                         <SwiperSlide key={course._id}>
-                            <div className="relative h-full rounded-b-xl  overflow-hidden  bg-[#ffffff]  shadow-black hover:shadow-2xl transition-all duration-500 ">
-                                {/* Decorative Corner Shape */}
-                                {/* <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffff02] opacity-40 z-10  rounded-bl-full"></div> */}
+                            <div className="relative h-full rounded-2xl overflow-hidden bg-white border-2 border-gray-100 hover:border-blue-500 shadow-md hover:shadow-2xl transition-all duration-500 group">
 
+                                {/* Image with Overlay Info */}
+                                <div className="relative h-44 overflow-hidden">
+                                    <img
+                                        src={course.image}
+                                        alt={course.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20"></div>
 
-
-
-                                {/* Content Area */}
-                                <div className="flex flex-col h-full items-stretch  ">
-                                    <div className='p-2 flex flex-col h-full gap-5 '>
-
-                                        {/* Title */}
-                                        <h3 className="text-[15px]  md:text-xl  font-semibold text-[#0f1119]   h-[3rem]  leading-tight">
-                                            {course.title}
-                                        </h3>
-                                        <h1>{course.platform}</h1>
-
-                                        {/* Info Grid */}
-                                        <div className="flex items-center justify-between  gap-3">
-                                            {/* Enrollments Box */}
-                                            <div className="  ">
-                                                <div className="flex  items-center text-center">
-                                                    {/* <FiUsers className="text-[#fbbc2c] w-7 h-7 mb-2" /> */}
-                                                    <span className="text-[13px] lg:text-md text-[#010101] habibi mb-1">Enrollments : <span className=" font-bold text-[#fbbc2c]">{course.Enrollment}</span></span>
-
-                                                </div>
-                                            </div>
-
-                                            {/* Price Box */}
-                                            <div className="">
-                                                <div className="flex  items-center text-center">
-                                                    {/* <FiDollarSign className="text-[#1e8a78] w-7 h-7 mb-2" /> */}
-                                                    <span className="text-[13px] lg:text-md  text-[#e9dc2f] habibi mb-1"> <span className=" font-bold text-[#000000]">৳free</span></span>
-
-                                                </div>
-                                            </div>
+                                    {/* Platform Logo Area */}
+                                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                                        <div className="bg-white px-3 py-1 rounded-full shadow-lg">
+                                            <span className="text-xs font-bold text-gray-800">{course.platform}</span>
                                         </div>
-
-                                        {/* Button */}
-                                        <button className="w-full buttonMore">
-
-                                            <span className="buttonMore__icon-wrapper">
-                                                <svg
-                                                    viewBox="0 0 14 15"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="buttonMore__icon-svg"
-                                                    width="10"
-                                                >
-                                                    <path
-                                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                                        fill="black"
-                                                    ></path>
-                                                </svg>
-
-                                                <svg
-                                                    viewBox="0 0 14 15"
-                                                    fill="none"
-                                                    width="10"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="buttonMore__icon-svg buttonMore__icon-svg--copy"
-                                                >
-                                                    <path
-                                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                                        fill="currentColor"
-                                                    ></path>
-                                                </svg>
-                                            </span>
-                                            <a href={course.url} target='_blank' className='z-20'>
-                                                Explore More
-                                            </a>
-
-                                        </button>
-
-
-                                    </div>
-                                    {/* Image Section */}
-                                    <div className="relative  rounded-b-xl overflow-hidden shadow-md h-42">
-                                        <img
-                                            src={course.image}
-                                            alt={course.title}
-                                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                                        <div className="bg-green-500 px-3 py-1 rounded-full shadow-lg">
+                                            <span className="text-xs font-bold text-white">FREE</span>
+                                        </div>
                                     </div>
 
+                                    {/* Bottom Stats on Image */}
+                                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                        <div className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg">
+                                            <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                            </svg>
+                                            <span className="text-xs font-bold text-gray-800">{course.Enrollment}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg">
+                                            <svg className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                            <span className="text-xs font-bold text-gray-800">{course.rating || 'N/A'}</span>
+                                        </div>
+                                        <div className="bg-blue-500/90 backdrop-blur-sm px-2 py-1 rounded-lg">
+                                            <span className="text-xs font-semibold text-white uppercase">{course.language}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <div className="p-4 flex flex-col gap-3">
+                                    <h3 className="text-base font-bold text-gray-900 line-clamp-2 leading-tight min-h-[2.5rem]">
+                                        {course.title}
+                                    </h3>
+
+                                    <a
+                                        href={course.url}
+                                        target='_blank'
+                                        rel="noopener noreferrer"
+                                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl group/btn"
+                                    >
+                                        <span className="text-sm">Start Learning</span>
+                                        <svg
+                                            className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </SwiperSlide>
