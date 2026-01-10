@@ -181,7 +181,22 @@ const PersonalDevelopment = () => {
                 {course.title}
               </h3>
 
-
+              <a 
+                href={course.url} 
+                target='_blank' 
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+              >
+                <span className="text-sm">Start Learning</span>
+                <svg 
+                  className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
             </div>
           </div>
         ))}
