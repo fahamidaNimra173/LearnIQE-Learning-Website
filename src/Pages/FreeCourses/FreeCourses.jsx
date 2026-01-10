@@ -251,7 +251,7 @@ const FreeCourses = () => {
                     top-0 lg:top-6
                     left-0
                     h-screen lg:h-screen
-                    w-95
+                    
                     z-50 lg:z-auto
                     overflow-y-auto
                     lg:mb-0

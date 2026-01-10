@@ -37,30 +37,30 @@ export default function OptimizedGlobe() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden mt-20 px-6 md:px-15 lg:px-25 pt-10 md:py-20 ">
+    <div className="relative w-full min-h-screen overflow-hidden lg:mt-20 px-6 md:px-15 lg:px-25 pt-10 md:py-20 ">
       {/* Header Content */}
       <div className="text-center mb-8  py-13 relative z-40">
-        <h1 className="md:text-4xl lg:text-6xl leading-10 text-2xl font-bold text-[#ffff09] uppercase">
+        <h1 className="md:text-4xl lg:text-6xl leading-10 text-2xl font-bold text-[#ffd209] uppercase">
           <span className="text-blue-400">Join</span> the Movement to Learn & Grow
         </h1>
-        <div className="flex items-start mt-20 gap-10 justify-between">
-          <div className="max-w-2/6">
-            <p className="text-[25px] text-start font-mono  text-white"> Start learning today by choosing your preferred platform, course, and language. Explore both free and paid courses from trusted learning platforms to boost your skills. We bring selected courses together—dive deeper by exploring the original platforms and continue learning without limits.
+        <div className="flex lg:max-w-8xl mx-auto lg:flex-row justify-center flex-col lg:items-start mt-10 md:mt-20  lg:gap-10 ">
+          <div className="lg:max-w-2/4">
+            <p className="md:text-[25px] text-[15px] lg:text-start font-mono  text-white"> Start learning today by choosing your preferred platform, course, and language. Explore both free and paid courses from trusted learning platforms to boost your skills. We bring selected courses together—dive deeper by exploring the original platforms and continue learning without limits.
             </p>
           </div>
           <div>
-            <div className="flex md:flex-wrap gap-5 sm:gap-10 text-white items-center justify-center my-20 z-40">
+            <div className="flex flex-wrap gap-3  sm:gap-10 text-white items-center justify-center my-10 lg:my-20 z-40">
               <div>
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">150+</h1>
-                <h1 className="uppercase text-lg font-medium my-5">Free Courses</h1>
+                <h1 className="text-xl md:text-5xl lg:text-6xl font-bold font-mono">150+</h1>
+                <h1 className="uppercase text-sm md:text-lg font-medium my-5">Free Courses</h1>
               </div>
               <div>
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">10</h1>
-                <h1 className="uppercase text-lg font-medium my-5">Platforms</h1>
+                <h1 className="text-xl md:text-5xl lg:text-6xl font-bold font-mono text-yellow-400">10</h1>
+                <h1 className="uppercase text-sm md:text-lg font-medium my-5">Platforms</h1>
               </div>
-              <div>
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">10+</h1>
-                <h1 className="uppercase text-lg font-medium my-5">Categories</h1>
+              <div className="z-50">
+                <h1 className="text-xl z-40 md:text-5xl lg:text-6xl font-bold font-mono">10+</h1>
+                <h1 className="uppercase text-sm lg:text-lg font-medium my-5">Categories</h1>
               </div>
             </div>
           </div>
@@ -73,12 +73,12 @@ export default function OptimizedGlobe() {
       </div>
 
       {/* Gradient overlay */}
-      <div className="absolute w-full bottom-0 inset-x-0 h-80 bg-gradient-to-b pointer-events-none select-none from-transparent via-black to-black z-40" />
+      <div className="absolute w-full  bottom-0 inset-x-0 h-80 bg-gradient-to-b pointer-events-none select-none from-transparent via-black to-black z-20" />
 
       {/* CSS Globe - Lightweight alternative with smooth scaling */}
       <div
         className="absolute inset-0 w-full h-full z-10 flex items-center justify-center">
-        <div className="relative w-[500px] h-[300px] sm:h-[500px]">
+        <div className="relative w-[500px] h-[300px] sm:h-[500px] ">
           {/* Main Globe Sphere */}
           <motion.div
             className="absolute inset-0 rounded-full z-20 bg-gradient-to-br from-[#d416de] via-[#ffffff] to-[#020b2e] shadow-2xl overflow-hidden"

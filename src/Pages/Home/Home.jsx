@@ -21,6 +21,7 @@ import ScrollSteps from "./Component/Steps";
 import ExploreCategories from "./Component/ExploreCategories";
 import BanglaLearningPlatforms from "./Component/BanglaPlatforms";
 import HeightsEnrolledCourses from "./Component/HeighestEnrolledCourses";
+import PersonalDevelopment from "./Component/PersonalDevelopemnt";
 
 
 
@@ -59,7 +60,9 @@ const Home = () => {
                 <div className="absolute -bottom-5 z-20 overflow-x-hidden">
                     <LogoMarquee></LogoMarquee>
                 </div> */}
+
             </div>
+
             <LightweightGlobe></LightweightGlobe>
             <div className="z-10 relative ">
                 {/* <TotalDataCollections
@@ -68,13 +71,14 @@ const Home = () => {
                     totalEnrollments={counts.enrollments} /> */}
 
                 <TopCources></TopCources>
+                <PersonalDevelopment></PersonalDevelopment>
                 <HeightsEnrolledCourses>
-                    
+
                 </HeightsEnrolledCourses>
                 <ScrollSteps></ScrollSteps>
                 <BanglaLearningPlatforms></BanglaLearningPlatforms>
                 <section id='studentLove'>
-                        <ExploreCategories></ExploreCategories>
+                    <ExploreCategories></ExploreCategories>
                 </section>
 
                 <FeedBack></FeedBack>
