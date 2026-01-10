@@ -132,10 +132,30 @@ const PersonalDevelopment = () => {
         {personalDevelopmentCourses.map((course) => (
           <div 
             key={course._id} 
-            className="relative h-full rounded-2xl overflow-hidden bg-white border-2 border-gray-700 hover:border-blue-500 transition-all duration-300 group" >
+            className="relative h-full rounded-2xl overflow-hidden bg-white border-2 border-gray-700 hover:border-blue-500 transition-all duration-300 group"
+          >
+            {/* Image Section */}
+            <div className="relative h-44 overflow-hidden">
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20"></div>
+              
 
 
 
+            </div>
+
+            {/* Content */}
+            <div className="p-4 flex flex-col gap-3">
+              <h3 className="text-base font-bold text-gray-900 line-clamp-2 leading-tight min-h-[2.5rem]">
+                {course.title}
+              </h3>
+
+
+            </div>
           </div>
         ))}
       </div>
