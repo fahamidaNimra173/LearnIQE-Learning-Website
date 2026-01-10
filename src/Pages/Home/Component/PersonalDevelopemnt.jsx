@@ -127,7 +127,18 @@ const PersonalDevelopment = () => {
         </p>
       </div>
 
+      {/* Courses Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        {personalDevelopmentCourses.map((course) => (
+          <div 
+            key={course._id} 
+            className="relative h-full rounded-2xl overflow-hidden bg-white border-2 border-gray-700 hover:border-blue-500 transition-all duration-300 group" >
 
+
+
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
