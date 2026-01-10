@@ -70,11 +70,15 @@ const Home = () => {
                     totalClasses={counts.courses}
                     totalEnrollments={counts.enrollments} /> */}
 
-                <TopCources></TopCources>
-                <PersonalDevelopment></PersonalDevelopment>
                 <HeightsEnrolledCourses>
 
                 </HeightsEnrolledCourses>
+                <HeightsEnrolledCourses>
+
+                </HeightsEnrolledCourses>
+                <PersonalDevelopment></PersonalDevelopment>
+
+                <TopCources></TopCources>
                 <ScrollSteps></ScrollSteps>
                 <BanglaLearningPlatforms></BanglaLearningPlatforms>
                 <section id='studentLove'>
