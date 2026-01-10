@@ -144,13 +144,12 @@ const PersonalDevelopment = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20"></div>
 
                             {/* Top Badges */}
-                            <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                            <div className="absolute top-0 left-0 right-0 flex items-center justify-between">
                                 <div className="bg-white px-3 py-1 rounded-full">
                                     <span className="text-xs font-bold text-gray-800">{course.platform}</span>
                                 </div>
-                                <div className={`px-3 py-1 rounded-full ${course.price === 'free' ? 'bg-green-500' : 'bg-orange-500'
-                                    }`}>
-                                    <span className="text-xs font-bold text-white uppercase">{course.price}</span>
+                                <div className={`bg-gradient-to-bl from-transparent via-yellow-600 to-yellow-400 px-3 py-1 rounded-md shadow-lg `}>
+                                    <span className="text-md font-medium text-white font-mono">{course.price}</span>
                                 </div>
                             </div>
 
