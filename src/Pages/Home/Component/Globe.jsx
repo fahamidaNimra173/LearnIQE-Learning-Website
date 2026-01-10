@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 export default function OptimizedGlobe() {
   const [connections, setConnections] = useState([]);
   // const { scrollYProgress } = useScroll();
-  
+
   // // Make the initial scale smaller (0.6) and reduce max scale to 2.5 for smoother animation
   // const scaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.6, 2.5]);
-  
+
   // // Add spring physics for smoother, more natural animation
   // const scale = useSpring(scaleRaw, {
   //   stiffness: 100,
@@ -37,45 +37,50 @@ export default function OptimizedGlobe() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden mt-20 pt-10 md:py-20 ">
+    <div className="relative w-full min-h-screen overflow-hidden mt-20 px-6 md:px-15 lg:px-25 pt-10 md:py-20 ">
       {/* Header Content */}
       <div className="text-center mb-8  py-13 relative z-40">
         <h1 className="md:text-4xl lg:text-6xl leading-10 text-2xl font-bold text-[#ffff09] uppercase">
           <span className="text-blue-400">Join</span> the Movement to Learn & Grow
         </h1>
-        <p className="text-base md:text-lg font-normal text-neutral-200 font-mono max-w-md mt-2 mx-auto">
-          This globe is interactive and customizable. Enjoy exploring!
-        </p>
-        <div className="flex flex-wrap gap-5 sm:gap-10 text-white items-center justify-center my-20 z-40">
-          <div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">150+</h1>
-            <h1 className="uppercase text-lg font-medium my-5">Free Courses</h1>
+        <div className="flex items-start mt-20 gap-10 justify-between">
+          <div className="max-w-2/6">
+            <p className="text-[25px] text-start font-mono  text-white"> Start learning today by choosing your preferred platform, course, and language. Explore both free and paid courses from trusted learning platforms to boost your skills. We bring selected courses together—dive deeper by exploring the original platforms and continue learning without limits.
+            </p>
           </div>
           <div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">10</h1>
-            <h1 className="uppercase text-lg font-medium my-5">Platforms</h1>
+            <div className="flex md:flex-wrap gap-5 sm:gap-10 text-white items-center justify-center my-20 z-40">
+              <div>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">150+</h1>
+                <h1 className="uppercase text-lg font-medium my-5">Free Courses</h1>
+              </div>
+              <div>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">10</h1>
+                <h1 className="uppercase text-lg font-medium my-5">Platforms</h1>
+              </div>
+              <div>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">10+</h1>
+                <h1 className="uppercase text-lg font-medium my-5">Categories</h1>
+              </div>
+            </div>
           </div>
-          <div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-mono">10+</h1>
-            <h1 className="uppercase text-lg font-medium my-5">Categories</h1>
-          </div>
+
+
+
         </div>
+
+
       </div>
 
       {/* Gradient overlay */}
       <div className="absolute w-full bottom-0 inset-x-0 h-80 bg-gradient-to-b pointer-events-none select-none from-transparent via-black to-black z-40" />
 
       {/* CSS Globe - Lightweight alternative with smooth scaling */}
-      <motion.div 
-        className="absolute inset-0 w-full h-full z-10 flex items-center justify-center"
-        style={{ 
-          
-          willChange: 'transform' // Performance hint for browser
-        }}
-      >
+      <div
+        className="absolute inset-0 w-full h-full z-10 flex items-center justify-center">
         <div className="relative w-[500px] h-[300px] sm:h-[500px]">
           {/* Main Globe Sphere */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0 rounded-full z-20 bg-gradient-to-br from-[#d416de] via-[#ffffff] to-[#020b2e] shadow-2xl overflow-hidden"
             style={{ willChange: 'transform' }}
           >
@@ -92,13 +97,11 @@ export default function OptimizedGlobe() {
                 }}
               >
                 <path
-                  d={`M ${conn.startX}% ${conn.startY}% Q ${
-                    (conn.startX + conn.endX) / 2
-                  }% ${Math.min(conn.startY, conn.endY) - 20}% ${conn.endX}% ${
-                    conn.endY
-                  }%`}
+                  d={`M ${conn.startX}% ${conn.startY}% Q ${(conn.startX + conn.endX) / 2
+                    }% ${Math.min(conn.startY, conn.endY) - 20}% ${conn.endX}% ${conn.endY
+                    }%`}
                   fill="none"
-                  stroke="#06b6d4"
+                  stroke="#06b9d4"
                   strokeWidth="2"
                   opacity="0.6"
                 />
@@ -139,7 +142,7 @@ export default function OptimizedGlobe() {
             />
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* CSS Animations */}
       <style jsx>{`
