@@ -21,10 +21,10 @@ const ScrollSteps = () => {
 
   // STEP 2: Visible from 33% to 66% scroll
   const step2Opacity = useTransform(scrollYProgress, [0.3, 0.34, 0.70, 0.77], [0, 1, 1, 0]);
-  const step2Scale = useTransform(scrollYProgress, [0.4, 0.44, 0.70, 0.77], [8, 1, 0.5, 0.1]);
+  const step2Scale = useTransform(scrollYProgress, [0.3, 0.34, 0.70, 0.57], [5, 1, 0.5, 0.1]);
 
   // STEP 3: Visible from 66% to 100% scroll
-  const step3Opacity = useTransform(scrollYProgress, [0.760, 0.77, 1], [0, 1, 1]);
+  const step3Opacity = useTransform(scrollYProgress, [0.70, 0.77, 1], [0, 1, 1]);
   const step3Scale = useTransform(scrollYProgress, [0.70, 0.77, 5], [0.1, 0.9, 3]);
 
   return (

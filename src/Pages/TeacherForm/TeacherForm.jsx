@@ -147,7 +147,7 @@ const TeacherForm = () => {
 
   if (isTeacher) {
     return (
-      <div className="min-h-screen bg-[#e7efee] flex items-center justify-center py-20 px-6">
+      <div className="min-h-screen  flex items-center justify-center py-20 px-6">
         <div className="max-w-4xl w-full">
           {/* Success Card */}
           <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
@@ -219,31 +219,31 @@ const TeacherForm = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#e7efee] py-20 px-6">
-      <div className="max-w-5xl mx-auto">
+    <div className="min-h-screen  py-20 px-6 md:px-15 lg:px-25">
+      <div className="">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Left Side - Info Card */}
           <div className="space-y-6 lg:sticky lg:top-24">
             {/* Hero Card */}
-            <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div className="relative bg-blue-300/70 rounded-3xl shadow-xl overflow-hidden">
               <div 
                 className="absolute inset-0 bg-cover bg-center opacity-10"
                 style={{ backgroundImage: "url('https://i.ibb.co/twJJ5LmD/school-work-851328-1280.jpg')" }}
               ></div>
               <div className="relative z-10 p-8">
                 <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-br from-[#fbbc2c] to-[#1e8a78] p-4 rounded-2xl">
+                  <div className="bg-gradient-to-br from-[#fbbc2c] to-[#004cfe] p-4 rounded-2xl">
                     <FaChalkboardTeacher className="text-4xl text-white" />
                   </div>
                   <div className="ml-4">
-                    <h1 className="text-3xl font-black bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] bg-clip-text text-transparent">
+                    <h1 className="text-3xl font-black bg-gradient-to-r from-[#fbbc2c] to-[#fefefe] bg-clip-text text-transparent">
                       Become a Teacher
                     </h1>
-                    <p className="text-gray-600">Share your expertise with the world</p>
+                    <p className="text-gray-200">Share your expertise with the world</p>
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 text-gray-200">
                   <BenefitItem 
                     icon={FaAward}
                     title="Get Verified"

@@ -3,7 +3,7 @@ import { FaChalkboardTeacher, FaRocket, FaGlobe } from "react-icons/fa";
 import { MdCastForEducation } from "react-icons/md";
 import { IoMdCodeWorking } from "react-icons/io";
 import { useNavigate } from "react-router";
-import { motion,  } from "framer-motion";
+import { motion, } from "framer-motion";
 
 
 
@@ -31,27 +31,34 @@ const AboutUs = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-2 md:px-6 md:max-w-7xl mx-auto">
-          <div className=" absolute top-40 blur-2xl -right-70 opacity-30   w-90 h-80 rounded-b-full z-20 rotate-12    bg-[#dafc00]     "></div>
+        <div className="relative z-10 text-center px-2 md:px-6 ">
+          <div className=" absolute top-40 blur-2xl -right-70   w-90 h-80 rounded-b-full z-20 rotate-12    bg-[#dafc00]  opacity-10   "></div>
           <div className=" absolute -top-8  blur-2xl opacity-100 -right-120  w-[600px] h-15  z-20 rotate-8     bg-black     "></div>
-          <div className=" absolute -bottom-32 blur-xl   opacity-100 -right-110  w-[600px] h-15  z-20 rotate-0     bg-black     "></div>
-          <div className="flex rotate-10 absolute items-end justify-end -right-70 lg:-right-120">
-            <div className="   opacity-19 -mt-95       w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50  to-yellow-400/50   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
-            <div className="   opacity-25 -mt-0  w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
-            <div className="   opacity-25 -mt-0  w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70 "></div>
-            <div className="   opacity-25 -mt-0  w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/50    to-blue-400/70   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70   "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70 "></div>
-            <div className="   opacity-25        w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/50    to-blue-200/70   "></div>
+          <div className=" absolute -bottom-32 w-[1800px] blur-xl -left-10  opacity-100  h-15  z-20 rotate-0     bg-black     "></div>
+          <div className="flex gap-[1px] backdrop-blur-3xl rotate-2 -top-15 absolute items-end -left-10 justify-center ">
+            <div className=" blur-xs  opacity-15       w-9 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/50 via-tranparent    to-yellow-400/50   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/60 via-transparent to-yellow-400/50   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/60 via-transparent to-yellow-400/50   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/60 via-transparent to-yellow-400/50   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/60 via-transparent to-yellow-400/50   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/60 via-transparent to-yellow-400/50   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/60 via-transparent to-yellow-400/50   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-yellow-200/60 via-transparent to-yellow-400/50   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/60  via-transparent  to-blue-400/70   "></div>
+            <div className="   opacity-20 blur-[1px]  -mt-0  w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/60  via-transparent  to-blue-400/70   "></div>
+            <div className="   opacity-20 blur-[1px]  -mt-0  w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/60  via-transparent  to-blue-400/70   "></div>
+            <div className="   opacity-20 blur-[1px]  -mt-0  w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/60  via-transparent  to-blue-400/70 "></div>
+            <div className="   opacity-20 blur-[1px]  -mt-0  w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/60  via-transparent  to-blue-400/70   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/60  via-transparent  to-blue-200/70   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/60  via-transparent  to-blue-200/70   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/60  via-transparent  to-blue-200/70 "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/60  via-transparent  to-blue-200/70   "></div>
+            <div className="   opacity-20 blur-[1px]  -mt-0  w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/60  via-transparent  to-blue-400/70 "></div>
+            <div className="   opacity-20 blur-[1px]  -mt-0  w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-400/60  via-transparent  to-blue-400/70   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/60  via-transparent  to-blue-200/70   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/60  via-transparent  to-blue-200/70   "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/60  via-transparent  to-blue-200/70 "></div>
+            <div className="   opacity-20 blur-[1px]         w-20 h-screen z-20    border-l-[#151b27] border-r-[#d9dde7]   bg-gradient-to-r from-blue-200/60  via-transparent  to-blue-200/70   "></div>
           </div>
 
 
