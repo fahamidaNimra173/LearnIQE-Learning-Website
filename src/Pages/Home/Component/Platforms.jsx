@@ -101,11 +101,51 @@ const Platforms = () => {
 
             </div>
             <div>
-                <div>
+                <div className='flex opacity-95 flex-col items-center justify-center gap-10'>
                     {/*first row  */}
+                    <div className='flex gap-5'>
+                        <div className=' bg-white rounded-tl-4xl'>
+                            <img className=' h-15 w-35 rounded-tl-4xl ' src="https://i.ibb.co.com/xSYXRLMK/Screenshot-2025-12-11-225942.png" alt="" />
+                        </div>
+                        <div className=' bg-white rounded-tr-4xl'>
+                            <img className=' h-15 w-35 rounded-tr-4xl' src="https://i.ibb.co.com/BK3XP4ZM/Screenshot-2025-12-11-230019.png" alt="" />
+                        </div>
+                    </div>
                     {/*second row  */}
+                    <div className='flex gap-5'>
+                        <div className=' bg-white rounded-tl-4xl'>
+                            <img className=' h-15 w-40 rounded-tl-4xl' src="https://i.ibb.co.com/L2MNQK9/Screenshot-2025-11-28-125756.png" alt="" />
+                        </div>
+                        <div className=' bg-white'>
+                            <img className=' h-15 w-45' src="https://i.ibb.co.com/twgR8DL9/Screenshot-2025-11-28-130644.png" alt="" />
+                        </div>
+                        <div className=' bg-white rounded-tr-4xl'>
+                            <img className=' h-15 w-40 rounded-tr-4xl' src="https://i.ibb.co.com/7dhqRQJB/Screenshot-2025-11-28-131003.png" alt="" />
+                        </div>
+
+
+                    </div>
                     {/*third row  */}
+                    <div className='flex gap-5'>
+                        <div className=' bg-white rounded-l-4xl'>
+                            <img className=' h-15 w-40 rounded-bl-4xl' src="https://i.ibb.co.com/mr90SdQ2/udemy.png" alt="" />
+                        </div>
+                        <div className=' bg-white'>
+                            <img className=' h-15 w-45' src="https://i.ibb.co.com/tPKR4D5T/edx.png" alt="" />
+                        </div>
+                        <div className=' bg-white rounded-br-4xl'>
+                            <img className=' h-15 w-40 rounded-br-4xl' src="https://i.ibb.co.com/cXKcdWm2/Coursera-Logo.png" alt="" />
+                        </div>
+                    </div>
                     {/*fourth row  */}
+                    <div className='flex gap-5'>
+                        <div className=' bg-white rounded-bl-4xl'>
+                            <img className=' h-15 w-35 rounded-bl-4xl' src="https://i.ibb.co.com/prQp9qKn/10min-School.png" alt="" />
+                        </div>
+                        <div className=' bg-white rounded-br-4xl'>
+                            <img className=' h-15 w-35 rounded-br-4xl' src="https://i.ibb.co.com/BK3XP4ZM/Screenshot-2025-12-11-230019.png" alt="" />
+                        </div>
+                    </div>
                 </div>
             </div>
 
