@@ -22,6 +22,7 @@ import ExploreCategories from "./Component/ExploreCategories";
 import BanglaLearningPlatforms from "./Component/BanglaPlatforms";
 import HeightsEnrolledCourses from "./Component/HeighestEnrolledCourses";
 import PersonalDevelopment from "./Component/PersonalDevelopemnt";
+import Platforms from "./Component/Platforms";
 
 
 
@@ -70,9 +71,7 @@ const Home = () => {
                     totalClasses={counts.courses}
                     totalEnrollments={counts.enrollments} /> */}
 
-                <HeightsEnrolledCourses>
-
-                </HeightsEnrolledCourses>
+                <Platforms></Platforms>
                 <HeightsEnrolledCourses>
 
                 </HeightsEnrolledCourses>

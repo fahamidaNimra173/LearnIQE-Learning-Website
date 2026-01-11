@@ -119,7 +119,7 @@ const PersonalDevelopment = () => {
         <div className="lg:px-25 mt-10 px-6 py-16">
             {/* Header Section */}
             <div className="mb-12">
-                <h2 className="text-4xl lg:text-7xl  font-bold text-white mb-4">
+                <h2 className="text-4xl uppercase lg:text-7xl  font-bold text-white mb-4">
                     Personal Development
                 </h2>
                 <p className="text-lg text-gray-100 font-mono max-w-3xl">
