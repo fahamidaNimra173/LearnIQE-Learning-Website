@@ -39,22 +39,22 @@ const Platforms = () => {
                 {/*LOW OPACITY BACKGROUND IMAGES */}
                 <img
                     src="https://i.ibb.co.com/3mmZPXPq/Screenshot-2026-01-10-193019.png"
-                    className="absolute top-0 left-10 w-32 opacity-20 rotate-[-8deg]"
+                    className="absolute top-0 -left-30 w-82 opacity-20 rotate-[-8deg]"
                     alt=""
                 />
                 <img
                     src="https://i.ibb.co.com/YFpqBHSK/Screenshot-2025-11-30-183411.png"
-                    className="absolute top-24 right-0 w-40 opacity-15 rotate-[6deg]"
+                    className="absolute -top-9 right-10 w-60 opacity-55 rotate-[6deg]"
                     alt=""
                 />
                 <img
                     src="https://i.ibb.co.com/4R6BjJ6s/Screenshot-2026-01-10-192645.png"
-                    className="absolute bottom-10 left-20 w-36 opacity-20 rotate-[4deg]"
+                    className="absolute -bottom-10 left-0 w-76 opacity-20 -rotate-[1deg]"
                     alt=""
                 />
                 <img
                     src="https://i.ibb.co.com/B8DKZdn/Screenshot-2026-01-10-192446.png"
-                    className="absolute bottom-0 right-20 w-28 opacity-15 rotate-[-5deg]"
+                    className="absolute -bottom-5 -right-20 w-78 opacity-45 rotate-[-7deg]"
                     alt=""
                 />
 
