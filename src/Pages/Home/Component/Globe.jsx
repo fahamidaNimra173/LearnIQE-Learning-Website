@@ -3,19 +3,9 @@ import { motion } from "framer-motion";
 
 export default function OptimizedGlobe() {
   const [connections, setConnections] = useState([]);
-  // const { scrollYProgress } = useScroll();
 
-  // // Make the initial scale smaller (0.6) and reduce max scale to 2.5 for smoother animation
-  // const scaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.6, 2.5]);
 
-  // // Add spring physics for smoother, more natural animation
-  // const scale = useSpring(scaleRaw, {
-  //   stiffness: 100,
-  //   damping: 30,
-  //   mass: 0.5
-  // });
 
-  // Generate random connections on mount
   useEffect(() => {
     const generateConnections = () => {
       const newConnections = [];
