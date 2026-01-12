@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 const Platforms = () => {
+    const navigate=useNavigate()
   return (
     <section className="relative flex flex-col lg:flex-row gap-10 items-center px-6 md:px-15 lg:px-25 py-16 overflow-hidden">
 
@@ -34,7 +36,7 @@ const Platforms = () => {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-            <span>Swipe to explore all platforms</span>
+            <span className='underline text-white font-medium cursor-pointer' onClick={()=>{navigate('/explore')}}>Wanna Explore more??</span>
           </div>
         </div>
 
