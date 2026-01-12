@@ -9,11 +9,11 @@ const Banner = () => {
     <div className="relative px-2 flex min-h-screen w-full flex-col items-start justify-start overflow-hidden">
       <BackgroundRippleEffect />
       <Circle></Circle>
-      <Boxes className="text-blue-500 rounded-2xl lg:shadow-none  shadow-2xl shadow-blue-700 opacity-50    blur-sm bottom-39 right-0 lg:top-15  w-[200px] h-[200px] absolute  z-10 "
+      {/* <Boxes className="text-blue-500 rounded-2xl lg:shadow-none  shadow-2xl shadow-blue-700 opacity-50    blur-sm bottom-39 right-0 lg:top-15  w-[200px] h-[200px] absolute  z-10 "
         style={{
           animation: "spin 8s linear infinite",
         }}
-      ></Boxes>
+      ></Boxes> */}
 
       <div className="sm:mt-50 mt-35 flex items-center flex-col gap-5 w-full">
         <div className="flex items-center justify-center sm:flex-row flex-col mx-2 gap-2">

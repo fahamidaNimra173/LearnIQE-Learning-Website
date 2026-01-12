@@ -26,7 +26,7 @@ const FooteR = () => {
         <div className='absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none'>
           <h1 className='md:text-7xl text-6xl lg:text-[100px] xl:text-[200px] font-extrabold tracking-widest select-none
             bg-gradient-to-r from-blue-500 via-purple-600 to-blue-600 bg-clip-text text-transparent
-            opacity-40 blur-[1px]45'>
+            opacity-35 blur-[1px]45'>
             LEARNIQ
           </h1>
 
@@ -38,7 +38,7 @@ const FooteR = () => {
           </div>
         </div>
 
-        <div className="grid pt-20 w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 relative z-10">
+        <div className="grid bg-black/20 pt-20 px-3 w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 relative z-10">
           {/* Custom Brand */}
           <div className="flex flex-col mb-5">
             <div className="flex items-center pt-1.5">
