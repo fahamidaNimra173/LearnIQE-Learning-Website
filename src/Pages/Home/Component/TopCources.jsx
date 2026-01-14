@@ -55,7 +55,7 @@ const TopCources = () => {
                 >
                     {courses.map((course) => (
                         <SwiperSlide key={course._id}>
-                            <div className="relative h-full rounded-b-xl  overflow-hidden  bg-[#ffffff]  shadow-black hover:shadow-2xl transition-all duration-500 ">
+                            <div className="relative h-72 rounded-2xl  overflow-hidden  bg-[#ffffff]  shadow-black hover:shadow-2xl transition-all duration-500 ">
                                 {/* Decorative Corner Shape */}
                                 {/* <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffff02] opacity-40 z-10  rounded-bl-full"></div> */}
                                 
@@ -64,10 +64,10 @@ const TopCources = () => {
 
                                 {/* Content Area */}
                                 <div className="flex flex-col h-full items-stretch  ">
-                                    <div className='p-2 flex flex-col h-full gap-5 '>
+                                    <div className='p-2 flex flex-col h-full gap-2 rounded-full '>
 
                                         {/* Title */}
-                                        <h3 className="text-[15px]  md:text-xl  font-semibold text-[#0f1119]   h-[5rem] lg:h-[5rem]  leading-tight">
+                                        <h3 className="text-[15px]  md:text-xl  font-semibold text-[#0f1119]   line-clamp-2 leading-tight">
                                             {course.title}
                                         </h3>
 
@@ -129,7 +129,7 @@ const TopCources = () => {
 
                                     </div>
                                     {/* Image Section */}
-                                    <div className="relative  rounded-b-xl overflow-hidden shadow-md h-42">
+                                    <div className="relative  rounded-b-xl overflow-hidden h-full shadow-md ">
                                         <img
                                             src={course.image}
                                             alt={course.title}
