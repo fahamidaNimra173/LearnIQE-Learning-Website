@@ -3,8 +3,10 @@ import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect
 import Circle from "./Shared/circles";
 import { Boxes } from "lucide-react";
 import { AvatarCirclesDemo } from "./UserAvatar";
+import { useNavigate } from "react-router";
 
 const Banner = () => {
+  const navigate = useNavigate()
   return (
     <div className="relative px-2 flex min-h-screen w-full flex-col items-start justify-start overflow-hidden">
       <BackgroundRippleEffect />
@@ -34,7 +36,7 @@ const Banner = () => {
           {/* Get Started Button */}
           <button
             className="flex z-30 bg-[#d7efff] rounded-[40px] justify-center items-center p-[3px] cursor-pointer border-[3px] border-[#2b88f9] shadow-[inset_0_0_20px_rgba(135,206,250,0.7),0_0_25px_rgba(135,206,250,0.9)] transition-shadow duration-300"
-          // onClick={() => navigate("/your-path")}
+           onClick={() => navigate("/login")}
           >
             <span className="flex-1 flex items-center justify-center text-[#003f8a] text-[15px] sm:text-[20px] font-semibold md:font-bold outfit tracking-wide px-[10px]">
               Get Started!
@@ -65,7 +67,7 @@ const Banner = () => {
 
           {/* Learn More Button */}
           <button className="flex z-30 bg-[#d7efff] rounded-[40px] justify-center items-center p-[3px] cursor-pointer border-[3px] border-[#2b88f9] shadow-[inset_0_0_20px_rgba(135,206,250,0.7),0_0_25px_rgba(135,206,250,0.9)] transition-shadow duration-300"
-          // onClick={() => navigate("/learn-more")}
+           onClick={() => navigate("/aboutUs")}
           >
             <span className="flex-1 flex items-center justify-center text-[#003f8a] text-[15px] sm:text-[20px] font-semibold md:font-bold outfit tracking-wide px-[10px]">
               Learn More

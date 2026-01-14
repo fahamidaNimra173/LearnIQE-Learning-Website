@@ -379,7 +379,7 @@ const ExploreCategories = () => {
                 className="p-6 md:p-8 text-white relative bg-cover bg-center"
                 style={{
                   backgroundColor: `rgba(${hexToRgb(selectedCategory.color)}, 0.5)`, // fallback overlay
-                  backgroundImage: `url('https://i.ibb.co.com/Q333ZDH5/frequency-wave-8444627-1280.png')`,
+                  backgroundImage: `url('https://i.ibb.co.com/b5PMg9Js/abstract-3079533-1280.jpg')`,
                   backgroundBlendMode: 'overlay',
                 }}
               >

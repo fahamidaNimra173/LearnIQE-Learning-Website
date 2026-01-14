@@ -69,12 +69,12 @@ const AboutUs = () => {
             <div className="h-1 w-32 bg-gradient-to-r from-[#fbbc2c] to-[#2185f7] mx-auto mb-8"></div>
           </div>
 
-          <p className="text-2xl md:text-4xl font-light mb-8 bg-black/10 p-3 text-gray-100">
+          <p className="text-2xl relative z-40 md:text-4xl font-light mb-8 bg-black/10 p-3 text-gray-100">
             Where <span className="text-[#fbbc2c] font-bold">Knowledge</span> Meets{" "}
             <span className="text-[#6d93fc] font-bold">Innovation</span>
           </p>
 
-          <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg relative z-40  md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Making free online learning easy to find and accessible for everyone.
           </p>
 
@@ -83,7 +83,7 @@ const AboutUs = () => {
               <span className="relative z-10">Start Learning</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#fbbc2c] to-[#1e8a78] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-            <button onClick={() => { navigate('/teacherform') }} className="px-4 md:px-8 py-2 md:py-4 bg-transparent border-2 border-[#1e8a78] text-[#1e8a78] rounded-full font-bold md:text-lg text-[14px] hover:bg-[#1e8a78] hover:text-white transition-all duration-300 hover:scale-105 shadow-lg">
+            <button onClick={() => { navigate('/teacherform') }} className="px-4 relative z-40 md:px-8 py-2 md:py-4 bg-transparent border-2 border-[#1e8a78] text-[#1e8a78] rounded-full font-bold md:text-lg text-[14px] hover:bg-[#1e8a78] hover:text-white transition-all duration-300 hover:scale-105 shadow-lg">
               Become an Instructor
             </button>
           </div>

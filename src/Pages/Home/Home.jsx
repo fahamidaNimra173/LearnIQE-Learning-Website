@@ -71,12 +71,12 @@ const Home = () => {
                     totalClasses={counts.courses}
                     totalEnrollments={counts.enrollments} /> */}
 
-                <Platforms></Platforms>
+
                 <HeightsEnrolledCourses>
 
                 </HeightsEnrolledCourses>
                 <PersonalDevelopment></PersonalDevelopment>
-
+                <Platforms></Platforms>
                 <TopCources></TopCources>
                 <ScrollSteps></ScrollSteps>
                 <BanglaLearningPlatforms></BanglaLearningPlatforms>
