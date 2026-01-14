@@ -168,7 +168,7 @@ const PersonalDevelopment = () => {
   return (
     <div className="lg:px-25 mt-10 px-6 py-16">
       <div className="mb-12">
-        <h2 className="md:text-4xl text-2xl lg:text-7xl font-bold text-white mb-4">
+        <h2 className="uppercase md:text-4xl lg:text-6xl  text-2xl font-mono font-bold text-white mb-4">
           Personal Development
         </h2>
         <p className="md:text-lg font-mono text-sm text-gray-100 max-w-3xl">

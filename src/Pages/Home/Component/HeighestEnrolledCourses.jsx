@@ -29,7 +29,7 @@ const HeightsEnrolledCourses = () => {
     return (
         <div className="relative pt-10 md:pt-0 md:py-10 px-6 md:px-15 lg:px-25">
             <div className="relative z-10 mx-auto">
-                <h1 className="text-[#ffffff] md:text-5xl lg:text-7xl text-2xl font-mono font-extrabold uppercase md:mt-40 mb-15 text-center">
+                <h1 className="text-[#ffffff] md:text-4xl lg:text-6xl  text-2xl font-mono font-extrabold uppercase md:mt-40 mb-15 text-center">
                     Most Popular <span className="text-[#ffe100]">Courses</span> Across Multiple Learning Platforms
                 </h1>
 

@@ -257,7 +257,7 @@ const ExploreCategories = () => {
       <div className="relative text-center mb-12 py-3 z-30">
         {/* TEXT CONTENT */}
         <div className="lg:pb-20">
-          <h2 className="relative z-30 text-3xl md:text-7xl lg:text-7xl font-bold text-white drop-shadow-lg">
+          <h2 className="relative z-30 uppercase md:text-4xl lg:text-6xl  text-2xl font-mono font-bold text-white drop-shadow-lg">
             Choose Your <span className="">Learning</span> Path
           </h2>
 
