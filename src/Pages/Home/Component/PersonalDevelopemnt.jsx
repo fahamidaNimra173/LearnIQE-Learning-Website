@@ -151,7 +151,7 @@ const CourseCard = React.memo(({ course }) => {
       </div>
 
       <div className="p-4 flex flex-col gap-3">
-        <h3 className="text-base font-bold text-gray-900 line-clamp-2 min-h-[2.5rem]">
+        <h3 className="text-base  font-bold text-gray-900 line-clamp-2 min-h-[2.5rem]">
           {course.title}
         </h3>
 
@@ -171,7 +171,7 @@ const PersonalDevelopment = () => {
         <h2 className="md:text-4xl text-2xl lg:text-7xl font-bold text-white mb-4">
           Personal Development
         </h2>
-        <p className="md:text-lg text-sm text-gray-100 max-w-3xl">
+        <p className="md:text-lg font-mono text-sm text-gray-100 max-w-3xl">
           Master essential skills for career growth with expert guidance.
         </p>
       </div>

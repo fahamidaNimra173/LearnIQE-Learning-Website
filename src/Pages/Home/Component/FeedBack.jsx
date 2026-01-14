@@ -28,7 +28,7 @@ const FeedBack = () => {
 
   return (
     <div>
-      <h2 className="md:text-4xl text-2xl habibi uppercase font-bold text-center text-[#fbbc2c] md:mt-30 mt-15  mb-12">
+      <h2 className="md:text-4xl text-2xl uppercase font-bold text-center text-[#fbbc2c] md:mt-30 mt-15  mb-12">
         What Our Students Say
       </h2>
       <div
@@ -70,12 +70,12 @@ const FeedBack = () => {
                         {item.name}
                       </h3>
                     </div>
-                    <p className="text-[22px] flex  items-center justify-center gap-5 habibi italic text-[#fbbc2c] mt-2">
+                    <p className="text-[22px] font-mono flex  items-center justify-center gap-5  italic text-[#fbbc2c] mt-2">
                       <BiSolidQuoteLeft className="w-20 h-20 text-[#1e8a78]" />{item.description}<BiSolidQuoteRight className="w-20 h-20 text-[#1e8a78]" />
                     </p>
                   </div>
-                  <p className="text-[18px] mb-10 text-[#fbbc2c] mt-3">
-                    <span className="text-[#1e8a78] font-bold uppercase">Course~</span> <span className='habibi'>{item.courseTitle}</span>
+                  <p className="text-[18px] font-mono mb-10 text-[#fbbc2c] mt-3">
+                    <span className="text-[#1e8a78] font-bold uppercase">Course~</span> <span className='font-mono'>{item.courseTitle}</span>
                   </p>
                 </div>
               </SwiperSlide>

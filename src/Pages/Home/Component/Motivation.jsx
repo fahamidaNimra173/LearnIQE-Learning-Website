@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 const Motivation = () => {
 return (
 <section className="lg:mt-40 mt-20 mb-30">
-  <h1 className="habibi text-center uppercase lg:text-5xl text-2xl my-8 font-bold text-[#fbbc2c]">
+  <h1 className=" text-center uppercase lg:text-5xl text-2xl my-8 font-bold text-[#fbbc2c]">
     Stay <span className="text-[#1e8a78]">Inspired</span>, Stay <span className="text-[#1e8a78]">Strong</span>
   </h1>
       <section className="relative grid min-h-screen w-full place-content-center overflow-hidden bg-neutral-950">

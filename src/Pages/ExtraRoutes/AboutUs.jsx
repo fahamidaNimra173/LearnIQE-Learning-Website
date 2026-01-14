@@ -4,6 +4,7 @@ import { MdCastForEducation } from "react-icons/md";
 import { IoMdCodeWorking } from "react-icons/io";
 import { useNavigate } from "react-router";
 import { motion, } from "framer-motion";
+import { Download } from "lucide-react";
 
 
 
@@ -74,7 +75,7 @@ const AboutUs = () => {
             <span className="text-[#6d93fc] font-bold">Innovation</span>
           </p>
 
-          <p className="text-lg relative z-40  md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg relative z-40 font-mono  md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Making free online learning easy to find and accessible for everyone.
           </p>
 
@@ -131,13 +132,13 @@ const AboutUs = () => {
                 </span>
               </h2>
               <div className="h-[3px] w-74 bg-gradient-to-r from-[#0c0a05] via-[#0f98e7] to-transparent"></div>
-              <p className="text-xl z-20 text-gray-100 leading-relaxed">
+              <p className="text-xl font-mono z-20 text-gray-100 leading-relaxed">
                 LearnIQ was born from a simple idea: making quality education accessible to everyone, everywhere.
                 This platform is being built to gather and share as many free learning resources as possible —
                 courses that many people are unaware of or have never discovered.
               </p>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg font-mono text-gray-300 leading-relaxed">
                 By connecting learners with trusted platforms and valuable free courses, LearnIQ helps people
                 learn new skills, explore their interests, and build meaningful careers. We believe education
                 should break barriers, not create them, and everyone deserves access to world-class learning
@@ -157,13 +158,13 @@ const AboutUs = () => {
                 </span>
               </h2>
               <div className="h-[3px]  w-74 bg-gradient-to-r from-[#0c0a05] via-[#0f98e7] to-transparent"></div>
-              <p className="text-md z-20 text-gray-100 leading-relaxed">
+              <p className="text-md font-mono z-20 text-gray-100 leading-relaxed">
                 LearnIQ was born from a simple idea: making quality education accessible to everyone, everywhere.
                 This platform is being built to gather and share as many free learning resources as possible —
                 courses that many people are unaware of or have never discovered.
               </p>
 
-              <p className="text-md z-50 text-gray-300 leading-relaxed">
+              <p className="text-md font-mono z-50 text-gray-300 leading-relaxed">
                 By connecting learners with trusted platforms and valuable free courses, LearnIQ helps people
                 learn new skills, explore their interests, and build meaningful careers. We believe education
                 should break barriers, not create them, and everyone deserves access to world-class learning
@@ -215,7 +216,7 @@ const AboutUs = () => {
                 <p
                   className="text-lg text-gray-100 leading-relaxed
                  transition-all duration-300
-                 md:group-hover:opacity-0 md:group-hover:hidden "
+                 md:group-hover:opacity-0 font-mono md:group-hover:hidden "
                 >
                   Our mission is to simplify access to quality education by bringing together free courses from multiple trusted learning platforms such as Udemy, edX, Coursera, Ostad, and Khan Academy in one centralized place. We aim to help learners easily discover relevant courses, develop practical skills, and learn at their own pace—without worrying about cost, platform confusion, or geographical limitations.
 
@@ -244,7 +245,7 @@ const AboutUs = () => {
                 <p
                   className="text-lg text-gray-100 leading-relaxed
                  transition-all duration-300
-                 md:group-hover:opacity-0 md:group-hover:hidden "
+                 md:group-hover:opacity-0 font-mono md:group-hover:hidden "
                 >
                   Our vision is to create a globally accessible learning ecosystem where education is truly free, inclusive, and barrier-free. We envision a future where learners from all backgrounds can continuously grow by accessing high-quality educational resources across platforms, empowering them to improve their skills, unlock opportunities, and shape a better future for themselves and their communities.
                 </p>
@@ -394,7 +395,7 @@ const AboutUs = () => {
             <h2 className="md:text-6xl text-4xl lg:text-7xl font-black text-white mb-4">
               Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d8fb2c] to-[#80f916]">Connect</span>
             </h2>
-            <p className="md:text-xl text-[14px] text-gray-300 max-w-2xl mx-auto">
+            <p className="md:text-xl text-[14px] text-gray-300 font-mono max-w-2xl mx-auto">
               Have a question or want to collaborate? I'd love to hear from you!
             </p>
             <div className="h-1 w-40 bg-gradient-to-r from-[#fbbc2c] to-[#f97316] mx-auto mt-6"></div>
@@ -413,8 +414,8 @@ const AboutUs = () => {
                   </svg>
                 </div>
                 <div className="lg:ml-8 ml-6">
-                  <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Email Address</h3>
-                  <a href="mailto:fahmidanimra@gmail.com" className="md:text-2xl text-[15px]  font-medium text-white hover:text-blue-400 transition-colors">
+                  <h3 className="text-sm font-semibold text-gray-400 uppercase font-mono tracking-wider mb-2">Email Address</h3>
+                  <a href="mailto:fahmidanimra@gmail.com" className="md:text-2xl font-mono text-[15px]  font-medium text-white hover:text-blue-400 transition-colors">
                     fahmidanimra@gmail.com
                   </a>
                 </div>
@@ -428,8 +429,8 @@ const AboutUs = () => {
                   </svg>
                 </div>
                 <div className="md:ml-8 ">
-                  <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Phone Number</h3>
-                  <a href="tel:+8801568029731" className="md:text-2xl text-[15px] font-medium text-white hover:text-green-400 transition-colors">
+                  <h3 className="text-sm font-mono font-semibold text-gray-400 uppercase tracking-wider mb-2">Phone Number</h3>
+                  <a href="tel:+8801568029731" className="md:text-2xl font-mono text-[15px] font-medium text-white hover:text-green-400 transition-colors">
                     +8801568029731
                   </a>
                 </div>
@@ -490,7 +491,7 @@ const AboutUs = () => {
                       </svg>
                     </div>
                     <h3 className="text-3xl font-black text-white mb-3">Start a <span className="text-[#a2fa76]">Conversation</span> </h3>
-                    <p className="text-gray-300 text-lg">Whether it's a project idea, question, or just to say hi!</p>
+                    <p className="text-gray-300 font-mono text-lg">Whether it's a project idea, question, or just to say hi!</p>
                   </div>
                 </div>
 
@@ -520,14 +521,17 @@ const AboutUs = () => {
 
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <p className="text-gray-400 text-lg mb-6">Available for freelance projects and collaborations</p>
+            <p className="text-gray-400 text-lg font-mono mb-6">Available for freelance projects and collaborations</p>
             <div className="flex gap-4 justify-center">
-              <button className="md:px-10 px-5 md:py-4 py-2 bg-gradient-to-r from-[#fbbc2c] to-[#f97316] hover:from-[#f97316] hover:to-[#ef4444] text-white font-bold rounded-full shadow-lg shadow-orange-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/50">
+              <button className="md:px-10 px-5 font-mono md:py-4 py-2 bg-gradient-to-r from-[#fbbc2c] to-[#f97316] hover:from-[#f97316] hover:to-[#ef4444] text-white font-bold rounded-full shadow-lg shadow-orange-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/50">
                 Send Message
               </button>
-              <button className="md:px-10 px-5  md:py-4 py-2 bg-white/5 hover:bg-white/10 backdrop-blur-lg text-white font-bold rounded-full border-2 border-white/20 hover:border-white/40 transition-all hover:scale-105">
-                Download CV
-              </button>
+              <a href="FAHMIDA NIMRA-MERN_Stack-Developer-fahmidanimra@gmail.pdf" download="Resume-Fahmida_Nimra-fahmidanimra@gmail.com.pdf">
+                <button className="md:px-10 flex gap-2 px-5 cursor-pointer font-mono md:py-4 py-2 bg-blue-500/50 hover:bg-white/10  text-white font-bold rounded-full border-2 border-blue-300/50 hover:border-white/40 transition-all hover:scale-105">
+                  Download CV <Download className="text-green-300"></Download>
+                </button>
+              </a>
+
             </div>
           </div>
 

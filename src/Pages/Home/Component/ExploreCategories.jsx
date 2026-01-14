@@ -408,10 +408,10 @@ const ExploreCategories = () => {
                     <h3 className="text-2xl font-bold mb-3" style={{ color: selectedCategory.color }}>
                       What is {selectedCategory.title}?
                     </h3>
-                    <p className="text-gray-700 text-lg leading-relaxed">
+                    <p className="text-gray-700 font-mono text-lg leading-relaxed">
                       {selectedCategory.description}
                     </p>
-                    <p className="text-gray-700 text-lg leading-relaxed">
+                    <p className="text-gray-700 font-mono text-lg leading-relaxed">
                       {selectedCategory.bangla}
                     </p>
                   </section>
@@ -421,7 +421,7 @@ const ExploreCategories = () => {
                     <h3 className="text-2xl font-bold mb-3" style={{ color: selectedCategory.color }}>
                       Where is it Used?
                     </h3>
-                    <p className="text-gray-700 text-lg leading-relaxed">
+                    <p className="text-gray-700 font-mono text-lg leading-relaxed">
                       {selectedCategory.usage}
                     </p>
                   </section>
@@ -442,7 +442,7 @@ const ExploreCategories = () => {
                             className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
                             style={{ backgroundColor: selectedCategory.color }}
                           />
-                          <span className="text-gray-700">{tech}</span>
+                          <span className="text-gray-700 font-mono">{tech}</span>
                         </div>
                       ))}
                     </div>
@@ -457,7 +457,7 @@ const ExploreCategories = () => {
                       className="p-5 rounded-xl text-lg"
                       style={{ backgroundColor: `${selectedCategory.color}15` }}
                     >
-                      <p className="text-gray-700 font-medium">
+                      <p className="text-gray-700 font-mono font-medium">
                         {selectedCategory.timeline}
                       </p>
                     </div>
@@ -472,7 +472,7 @@ const ExploreCategories = () => {
                       {selectedCategory.opportunities.map((opportunity, idx) => (
                         <div
                           key={idx}
-                          className="p-4 rounded-xl text-center font-semibold text-white transition-transform hover:scale-105"
+                          className="p-4 rounded-xl text-center font-semibold text-white font-mono transition-transform hover:scale-105"
                           style={{ backgroundColor: selectedCategory.color }}
                         >
                           {opportunity}
@@ -490,7 +490,7 @@ const ExploreCategories = () => {
                       className="p-5 rounded-xl"
                       style={{ backgroundColor: `${selectedCategory.color}15` }}
                     >
-                      <p className="text-gray-700 text-lg leading-relaxed">
+                      <p className="text-gray-700 font-mono text-lg leading-relaxed">
                         {selectedCategory.futureDemand}
                       </p>
                     </div>
@@ -508,7 +508,7 @@ const ExploreCategories = () => {
                         borderColor: selectedCategory.color
                       }}
                     >
-                      <p className="text-gray-700 text-lg leading-relaxed font-medium">
+                      <p className="text-gray-700 font-mono text-lg leading-relaxed font-medium">
                         {selectedCategory.whyLearn}
                       </p>
                     </div>
@@ -537,7 +537,7 @@ const ExploreCategories = () => {
           <h2 className="text-2xl habibi uppercase md:text-4xl font-extrabold text-[#1e8a78] mb-4">
             Designed for Modern Learners
           </h2>
-          <p className="text-gray-700 max-w-xl habibi mx-auto">
+          <p className="text-gray-700 font-mono max-w-xl habibi mx-auto">
             Our platform bridges the gap between traditional learning and modern digital convenience — accessible anytime, anywhere.
           </p>
         </div>

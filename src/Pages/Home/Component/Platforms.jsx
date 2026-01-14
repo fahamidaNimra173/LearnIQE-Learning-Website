@@ -27,7 +27,7 @@ const Platforms = () => {
             Explore Online Learning Platforms
           </h1>
 
-          <p className="text-blue-50 text-lg leading-relaxed max-w-xl">
+          <p className="text-blue-50 font-mono text-lg leading-relaxed max-w-xl">
             Discover popular learning platforms like Udemy, Coursera, edX, Khan Academy,
             Alison, and more offering both free and paid courses.
           </p>
@@ -36,7 +36,7 @@ const Platforms = () => {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-            <span className='underline text-white font-medium cursor-pointer' onClick={()=>{navigate('/explore')}}>Wanna Explore more??</span>
+            <span className='underline font-mono text-white font-medium cursor-pointer' onClick={()=>{navigate('/explore')}}>Wanna Explore more??</span>
           </div>
         </div>
 

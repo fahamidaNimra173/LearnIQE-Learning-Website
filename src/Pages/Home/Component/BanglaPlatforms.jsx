@@ -57,7 +57,7 @@ export default function BanglaLearningPlatforms() {
               বাংলায় শেখার প্ল্যাটফর্ম
             </span>
           </h1>
-          <p className="text-white text-xl md:max-w-2xl md:mx-auto">
+          <p className="text-white font-mono text-xl md:max-w-2xl md:mx-auto">
             দেশের শীর্ষস্থানীয় অনলাইন শিক্ষা প্ল্যাটফর্মসমূহ
           </p>
         </motion.div>

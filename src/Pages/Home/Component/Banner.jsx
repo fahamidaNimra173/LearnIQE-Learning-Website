@@ -29,7 +29,7 @@ const Banner = () => {
         <h2 className="relative uppercase z-10 mx-auto max-w-5xl text-center text-3xl sm:text-4xl font-bold text-white md:text-6xl lg:text-7xl">
           Empowering <br /> Your Learning Journey
         </h2>
-        <p className="relative z-10 mx-auto mt-4 max-w-xl text-center text-white">
+        <p className="relative font-mono z-10 mx-auto mt-4 max-w-xl text-center text-white">
           Learn with free courses, smart resources, and the skills you’ve always wanted to master.
         </p>
         <div className='flex my-5 md:my-10 z-10 items-center justify-center mx-2  gap-1 md:gap-5 lg:gap-10 '>
