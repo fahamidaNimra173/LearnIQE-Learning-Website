@@ -169,7 +169,7 @@
 
 .active{
   background-color: #fbc30d;
-  padding: 2px;
+  padding-block-start: 2px;
   font-weight: 600;
  
 
@@ -653,7 +653,7 @@
 
   /* background-size: 300% 300%; */
   cursor: pointer;
-  backdrop-filter: blur(1rem);
+  /* backdrop-filter: blur(1rem); */
   /* border-radius: 5rem; */
   transition: 0.5s;
   animation: gradient_301 5s ease infinite;

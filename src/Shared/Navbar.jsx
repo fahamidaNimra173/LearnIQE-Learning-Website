@@ -173,7 +173,7 @@ const NavigationBar = ({ activeSection }) => {
 
             {[
               { to: "/", label: "Home" },
-              { to: "/allapprovedclasses", label: "All Classes" },
+              // { to: "/allapprovedclasses", label: "All Classes" },
               { to: "/explore", label: "Explore" },
               { to: "/freeCourses", label: "Free Courses" },
               { to: "/teacherform", label: "Teach On" },
@@ -183,7 +183,7 @@ const NavigationBar = ({ activeSection }) => {
               <NavLink
                 key={item.to}
                 to={item.to}
-                className=" group relative text-white text-2xl font-mono font-medium px-6 py-3 rounded-2xl bg-black/15 hover:bg-white/25 transition-all duration-300">
+                className=" group relative text-white text-[20px] font-mono font-medium px-4 py-2 rounded-2xl bg-black/15 hover:bg-white/25 transition-all duration-300">
                 <span className="relative z-10 group-hover:tracking-wide">
                   {item.label}
                 </span>

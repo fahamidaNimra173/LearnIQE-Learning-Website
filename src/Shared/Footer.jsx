@@ -20,7 +20,7 @@ import {
 const FooteR = () => {
   return (
     <Footer className="text-[#e7efee] relative pt-0 lg:mt-20 border-t-1 border-dotted border-blue-600/40 bg-[#000108] dark:text-[#f9fdfc] rounded-none shadow-none overflow-hidden">
-      <div className="w-full px-6 lg:px-25">
+      <div className="w-full px-3 lg:px-25">
 
         {/* Glowing Background Text */}
         <div className='absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none'>

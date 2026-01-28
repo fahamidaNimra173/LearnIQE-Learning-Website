@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 const Platforms = () => {
     const navigate=useNavigate()
   return (
-    <section className="relative flex flex-col lg:flex-row gap-10 items-center px-6 md:px-15 lg:px-25 py-16 overflow-hidden">
+    <section className="relative flex flex-col lg:flex-row gap-10 items-center px-6 md:px-15 lg:px-25 py-10 mb-15 md:mb-0 overflow-hidden">
 
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 pointer-events-none" />

@@ -31,7 +31,7 @@ const partners = [
 
 const PartnerMarquee = () => {
   return (
-    <div className="relative py-16 px-4 mb-15 md:mb-30 overflow-hidden">
+    <div className="relative md:py-16 px-4 mb-15 md:mb-30 overflow-hidden">
       {/* Background Image with Blur and Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center filter blur-sm"

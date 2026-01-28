@@ -43,18 +43,19 @@ export default function BanglaLearningPlatforms() {
   ];
 
   return (
-    <div className="min-h-screen bg-black -mt-20 sm:-mt-10 lg:mt-2 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-black -mt-40 sm:-mt-10 lg:mt-2 lg:pb-20 px-4 sm:px-6 lg:px-8">
       <div className="md:max-w-7xl md:mx-auto">
-        {/* Header */}
+        {/* Header - REDUCED ANIMATION */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-7xl font-black mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-blue-500 via-yellow-200 to-blue-500 text-transparent bg-clip-text">
-              বাংলায় শেখার প্ল্যাটফর্ম
+              বাংলায় শেখার প্ল্যাটফর্ম
             </span>
           </h1>
           <p className="text-white font-mono text-xl md:max-w-2xl md:mx-auto">
@@ -62,109 +63,105 @@ export default function BanglaLearningPlatforms() {
           </p>
         </motion.div>
 
-        {/* Platforms Grid */}
+        {/* Platforms Grid - OPTIMIZED */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {platforms.map((platform, index) => (
             <motion.div
               key={platform.id}
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-                type: "spring",
-                stiffness: 100
+                duration: 0.4,
+                delay: index * 0.1
               }}
               whileHover={{ y: -10 }}
               className="group"
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col h-full relative">
-                {/* Image Section with Overlay Title */}
+                {/* Image Section - OPTIMIZED */}
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={platform.image}
                     alt={platform.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 will-change-transform"
+                    style={{ transform: 'translateZ(0)' }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1) translateZ(0)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1) translateZ(0)'}
                   />
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent" />
+                  
+                  {/* Dark Overlay - INLINE GRADIENT */}
+                  <div 
+                    className="absolute inset-0 pointer-events-none" 
+                    style={{
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%)'
+                    }}
+                  />
 
-                  {/* Platform Name on Image */}
+                  {/* Platform Name */}
                   <div className="absolute bottom-0 left-10 right-0 -mb-2">
-                    <h2 className="text-2xl font-bold  text-yellow-300 mb-2 font-mono">
+                    <h2 className="text-2xl font-bold text-yellow-300 mb-2 font-mono">
                       {platform.name}
                     </h2>
                   </div>
 
-                  {/* Type Badge */}
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: index * 0.15 + 0.3 }}
-                    className="absolute top-0 right-0 bg-blue-950/90 px-4 py-2 rounded-lg backdrop-blur-lg border border-blue-400/40 shadow-[0_0_15px_rgba(59,130,246,0.6)]
-  "
-                  >
+                  {/* Type Badge - REMOVED EXTRA ANIMATION */}
+                  <div className="absolute top-0 right-0 bg-blue-950/90 px-4 py-2 rounded-lg border border-blue-400/40"
+                       style={{
+                         boxShadow: '0 0 15px rgba(59, 130, 246, 0.6)'
+                       }}>
                     <span className="text-sm font-bold text-white">
                       {platform.type}
                     </span>
-                  </motion.div>
-
+                  </div>
                 </div>
 
-                {/* Content Section */}
+                {/* Content Section - REMOVED STAGGERED ANIMATIONS */}
                 <div className="px-2 py-4 flex-grow flex flex-col">
                   {/* Focus */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: index * 0.15 + 0.4 }}
-                    className="mb-3"
-                  >
-                    <div className=" flex items-center justify-around gap-2 px-3 py-1 rounded-xl text-sm font-bold text-white bg-yellow-400">
-                      {platform.focus} <span><Cast ></Cast></span>
+                  <div className="mb-3">
+                    <div className="flex items-center justify-around gap-2 px-3 py-1 rounded-xl text-sm font-bold text-white bg-yellow-400">
+                      {platform.focus} <span><Cast /></span>
                     </div>
-                  </motion.div>
+                  </div>
 
                   {/* Courses */}
-                  <div className="flex-grow ">
+                  <div className="flex-grow">
                     <h3 className="text-lg flex gap-1 font-bold text-black mb-2">
-                      <Bike className='text-yellow-400 '></Bike> কোর্স সমূহ:
+                      <Bike className='text-yellow-400' /> কোর্স সমূহ:
                     </h3>
-                    <ul className=" grid grid-cols-2 gap-0">
+                    <ul className="grid grid-cols-2 gap-0">
                       {platform.courses.map((course, idx) => (
-                        <motion.li
+                        <li
                           key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.15 + 0.5 + idx * 0.1 }}
                           className="flex space-y-1 items-start justify-center gap-0"
                         >
-                          <div className="w-2 h-2 rounded-full mt-2   " />
+                          <div className="w-2 h-2 rounded-full mt-2" />
                           <span className="text-gray-700 text-xs">
                             {course} <span className='text-yellow-300'>|</span>|
                           </span>
-                        </motion.li>
+                        </li>
                       ))}
                     </ul>
                   </div>
+                  
                   <div className='flex items-center justify-center -mb-4 mt-2'>
-                    <a href={platform.url} target='blank'>
-                      <button className='bg-black text-white px-6 py-1 border border-blue-500'>
+                    <a href={platform.url} target='_blank' rel='noopener noreferrer'>
+                      <button className='bg-black text-white px-6 py-1 border border-blue-500 transition-colors hover:bg-blue-600'>
                         আরও জানুন
                       </button>
                     </a>
                   </div>
-
                 </div>
 
-                {/* Bottom Accent - Fixed at absolute bottom */}
+                {/* Bottom Accent - SIMPLIFIED */}
                 <div className="relative w-full">
-                  <motion.div
-                    className="h-3 -mb-1 bg-gradient-to-r from-blue-600 to-black -rotate-1"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: index * 0.15 }}
+                  <div
+                    className="h-3 -mb-1 -rotate-1"
+                    style={{
+                      background: 'linear-gradient(to right, rgb(37, 99, 235), rgb(0, 0, 0))'
+                    }}
                   />
                 </div>
               </div>
@@ -172,14 +169,18 @@ export default function BanglaLearningPlatforms() {
           ))}
         </div>
 
-        {/* Bottom Text */}
+        {/* Bottom Text - SIMPLIFIED */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
           className="text-center mt-12"
         >
-          <div className="inline-block bg-gradient-to-r from-blue-600 via-white to-yellow-400 p-1 rounded-full">
+          <div className="inline-block p-1 rounded-full"
+               style={{
+                 background: 'linear-gradient(to right, rgb(37, 99, 235), rgb(255, 255, 255), rgb(250, 204, 21))'
+               }}>
             <div className="bg-black px-4 py-2 rounded-full">
               <p className="text-xs sm:text-xl font-bold text-white">
                 আপনার পছন্দের প্ল্যাটফর্মে আজই শুরু করুন ✨

@@ -28,7 +28,7 @@ const FeedBack = () => {
 
   return (
     <div>
-      <h2 className="uppercase md:text-4xl lg:text-6xl  text-2xl font-mono font-bold text-center text-[#ffffff] md:mt-30 mt-15  mb-12">
+      <h2 className="uppercase px-2 md:text-4xl lg:text-6xl  text-2xl font-mono font-bold text-center text-[#ffffff] md:mt-30 mt-1 mb-5 md:mb-12">
         What Our Students Say
       </h2>
       <div
